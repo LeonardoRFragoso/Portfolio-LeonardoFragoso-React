@@ -56,13 +56,13 @@ const experienceData = [
     company: "RWE Telemedicina e Diagnósticos", 
     period: "jan 2024 - jul 2024",
     description: "Coordenação de equipes de suporte técnico, infraestrutura e governança de TI. Responsável por operações diárias e implementação de melhorias nos processos.",
-    featured: true,
+    featured: false,
   },
   {
     title: "Analista de Suporte de TI",
     company: "Experiência Corporativa",
     period: "nov 2023 - jul 2024",
-    description: "Desenvolvimento back-end com Python, suporte técnico especializado e automação de processos. Transição ativa para área de desenvolvimento.",
+    description: "Desenvolvimento back-end com Python, suporte técnico especializado e automação de processos. Experiência que contribuiu para a transição para área de desenvolvimento.",
     featured: false,
   },
 ];
