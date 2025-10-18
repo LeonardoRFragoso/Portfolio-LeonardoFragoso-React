@@ -101,15 +101,21 @@ export default function Projects() {
       featured: true,
     },
     {
-      title: "API com Flask e Streamlit",
-      description: "API avançada com Flask e interface Streamlit para análise técnica de ações e FIIs com indicadores financeiros em tempo real.",
+      title: "Sistema de Monitoramento TVs ICTSI",
+      description: "Sistema de monitoramento e controle de TVs para o terminal ICTSI, desenvolvido para gerenciar displays informativos e painéis de comunicação visual em tempo real.",
       images: [
-        "/images/project6.png",
-        "/images/project6-2.png",
-        "/images/project6-3.png"
+        "/images/Tvs-ICTSI/1.jpg",
+        "/images/Tvs-ICTSI/2.jpg",
+        "/images/Tvs-ICTSI/3.jpg",
+        "/images/Tvs-ICTSI/4.jpg",
+        "/images/Tvs-ICTSI/5.jpg",
+        "/images/Tvs-ICTSI/6.jpg",
+        "/images/Tvs-ICTSI/7.jpg",
+        "/images/Tvs-ICTSI/8.jpg",
+        "/images/Tvs-ICTSI/9.jpg"
       ],
-      tags: ["Flask", "Streamlit", "PostgreSQL"],
-      github: "https://github.com/LeonardoRFragoso/API_Analyze",
+      tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
+      github: "https://github.com/LeonardoRFragoso/Tvs-ICTSI",
     },
   ];
 

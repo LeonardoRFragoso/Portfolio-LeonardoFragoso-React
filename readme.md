@@ -53,12 +53,13 @@ Bem-vindo ao meu portfólio pessoal! Este é um projeto desenvolvido para aprese
 portfolio/
 ├── public/
 │   ├── images/
-│   │   ├── project1.png
-│   │   ├── project2.png
-│   │   ├── project3.png
-│   │   ├── project4.png
+│   │   ├── Pátio/
+│   │   ├── não-conformidade/
+│   │   ├── GR/
+│   │   ├── dash-multas/
+│   │   ├── Tvs-ICTSI/
 │   │   ├── project5.png
-│   │   └── project6.png
+│   │   └── project5-2.png (e outras)
 │   └── favicon.ico
 ├── src/
 │   ├── assets/
