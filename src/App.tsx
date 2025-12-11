@@ -4,6 +4,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
   // Scroll suave para links de âncoras
@@ -35,7 +36,10 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-black min-h-screen relative overflow-x-hidden">
+    <div className="bg-black min-h-screen relative overflow-x-hidden cursor-none md:cursor-none">
+      {/* Custom Cursor */}
+      <CustomCursor />
+      
       {/* Background Effects */}
       <div className="fixed inset-0 z-0">
         {/* Subtle animated grid */}
@@ -87,7 +91,7 @@ function App() {
                 Leonardo Fragoso
               </h3>
               <p className="text-white/60 max-w-md mx-auto">
-                Transformando ideias em soluções tecnológicas inovadoras
+                Transformando ideias em soluções tecnológicas inovadoras com Python, Django, React e muito mais
               </p>
             </div>
 

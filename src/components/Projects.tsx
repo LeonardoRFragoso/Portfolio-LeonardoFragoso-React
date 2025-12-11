@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Github, ExternalLink, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -19,7 +19,7 @@ export default function Projects() {
   const projects: Project[] = [
     {
       title: "Sistema de Gestão Pátio",
-      description: "Sistema completo para gestão de pátios e estacionamentos desenvolvido com tecnologias modernas. Inclui controle de vagas, relatórios gerenciais e interface responsiva.",
+      description: "Sistema completo para gestão de pátios e estacionamentos com controle de vagas em tempo real, relatórios gerenciais, dashboard analítico e interface responsiva. Desenvolvido com arquitetura MVC e APIs REST.",
       images: [
         "/images/Pátio/1.jpg",
         "/images/Pátio/2.jpg",
@@ -34,7 +34,7 @@ export default function Projects() {
     },
     {
       title: "Sistema de Gestão de Não-Conformidades",
-      description: "Sistema completo para gestão e controle de não-conformidades com fluxos de aprovação, relatórios gerenciais e dashboard executivo para acompanhamento de indicadores de qualidade.",
+      description: "Sistema robusto para gestão de não-conformidades com workflow de aprovação multinível, notificações automáticas, relatórios PDF, dashboard executivo com KPIs e histórico completo de ações corretivas.",
       images: [
         "/images/não-conformidade/1.jpg",
         "/images/não-conformidade/2.jpg",
@@ -51,7 +51,7 @@ export default function Projects() {
     },
     {
       title: "Sistema GR - Gestão de Recursos",
-      description: "Sistema completo de gestão de recursos empresariais com controle de inventário, alocação de ativos, relatórios gerenciais e dashboard para acompanhamento de indicadores de performance.",
+      description: "Sistema ERP para gestão de recursos empresariais com módulos de inventário, alocação de ativos, controle de manutenção, relatórios gerenciais automatizados e dashboard interativo com métricas de performance.",
       images: [
         "/images/GR/1.jpg",
         "/images/GR/2.jpg",
@@ -72,7 +72,7 @@ export default function Projects() {
     },
     {
       title: "Dashboard de Multas - Streamlit",
-      description: "Dashboard interativo desenvolvido em Streamlit para análise de dados de multas de trânsito. Integração com Google Drive para coleta automática de dados e visualizações dinâmicas com gráficos e métricas.",
+      description: "Dashboard interativo para análise de multas de trânsito com ETL automatizado, integração Google Drive, visualizações dinâmicas (Plotly/Altair), filtros avançados e exportação de relatórios personalizados.",
       images: [
         "/images/dash-multas/1.jpg",
         "/images/dash-multas/2.jpg",
@@ -89,7 +89,7 @@ export default function Projects() {
     },
     {
       title: "Sistema para Andaimes Pini",
-      description: "Sistema empresarial completo feito sob medida para locações, controle de estoque, relatórios e dashboards gerenciais.",
+      description: "Sistema empresarial customizado para locação de equipamentos com controle de estoque, gestão de contratos, faturamento automático, relatórios financeiros e dashboard gerencial com indicadores de negócio.",
       images: [
         "/images/project5.png",
         "/images/project5-2.png",
@@ -102,7 +102,7 @@ export default function Projects() {
     },
     {
       title: "Sistema de Monitoramento TVs ICTSI",
-      description: "Sistema de monitoramento e controle de TVs para o terminal ICTSI, desenvolvido para gerenciar displays informativos e painéis de comunicação visual em tempo real.",
+      description: "Sistema de digital signage para terminal portuário com gerenciamento de displays informativos, agendamento de conteúdo, monitoramento em tempo real, integração com sistemas operacionais e painel administrativo.",
       images: [
         "/images/Tvs-ICTSI/1.jpg",
         "/images/Tvs-ICTSI/2.jpg",
@@ -241,7 +241,13 @@ export default function Projects() {
                 <img
                   src={project.images[0]}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                  onLoad={(e) => {
+                    (e.target as HTMLImageElement).style.opacity = '1';
+                  }}
+                  style={{ opacity: 0, transition: 'opacity 0.5s ease-in-out' }}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60"></div>
                 

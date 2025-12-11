@@ -354,3 +354,232 @@ body {
     text-shadow: none !important;
   }
 }
+
+/* Enhanced Focus States for Accessibility */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #fbbf24;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Smooth Image Loading */
+img {
+  transition: opacity 0.3s ease;
+}
+
+img[loading] {
+  opacity: 0.7;
+}
+
+/* Enhanced Selection Colors */
+::selection {
+  background: rgba(251, 191, 36, 0.3);
+  color: #fff;
+}
+
+::-moz-selection {
+  background: rgba(251, 191, 36, 0.3);
+  color: #fff;
+}
+
+/* Additional Animation for Cards */
+@keyframes card-shine {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.card-shine {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(251, 191, 36, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: card-shine 3s ease-in-out infinite;
+}
+
+/* Improved Link Underline Animation */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #fbbf24, #f59e0b);
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* Badge Pulse Effect */
+@keyframes badge-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(251, 191, 36, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(251, 191, 36, 0);
+  }
+}
+
+.badge-pulse {
+  animation: badge-pulse 2s ease-in-out infinite;
+}
+
+/* Custom Cursor Effect */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #fbbf24;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor-dot {
+  width: 6px;
+  height: 6px;
+  background: #fbbf24;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.1s ease-out;
+}
+
+.custom-cursor.hover {
+  transform: scale(1.5);
+  background: rgba(251, 191, 36, 0.1);
+}
+
+/* Parallax Effect */
+.parallax-slow {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+.parallax-medium {
+  will-change: transform;
+  transition: transform 0.08s ease-out;
+}
+
+.parallax-fast {
+  will-change: transform;
+  transition: transform 0.05s ease-out;
+}
+
+/* Scroll Reveal Animation */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal-up {
+  animation: reveal-up 0.8s ease-out forwards;
+}
+
+/* Image Lazy Loading Placeholder */
+.img-placeholder {
+  background: linear-gradient(90deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Smooth Scroll Snap */
+.scroll-snap-container {
+  scroll-snap-type: y proximity;
+}
+
+.scroll-snap-section {
+  scroll-snap-align: start;
+}
+
+/* Glassmorphism Enhancements */
+.glass-premium {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(251, 191, 36, 0.1);
+}
+
+/* Neon Glow Effect */
+.neon-glow {
+  box-shadow: 
+    0 0 5px #fbbf24,
+    0 0 10px #fbbf24,
+    0 0 20px #fbbf24,
+    0 0 40px #f59e0b;
+}
+
+.neon-glow-text {
+  text-shadow: 
+    0 0 5px #fbbf24,
+    0 0 10px #fbbf24,
+    0 0 20px #fbbf24;
+}
+
+/* Animated Border Gradient */
+@keyframes border-dance {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.border-gradient-animated {
+  background: linear-gradient(90deg, #fbbf24, #f59e0b, #fbbf24);
+  background-size: 200% 200%;
+  animation: border-dance 3s ease infinite;
+}
+
+/* Hover Lift Effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(251, 191, 36, 0.2);
+}
+
+/* Stagger Animation Delay Classes */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

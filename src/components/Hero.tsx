@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowRight, Code2, Sparkles, Star, Zap } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
+
+const roles = [
+  "Full Stack Developer",
+  "Python Specialist",
+  "Backend Engineer",
+  "Automation Expert",
+];
 
 export default function Hero() {
+  const [currentRole, setCurrentRole] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentRole((prev) => (prev + 1) % roles.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section
       id="home"
@@ -165,7 +181,20 @@ export default function Hero() {
             >
               <Sparkles className="h-6 w-6 text-yellow-400 mr-4" />
             </motion.div>
-            <span className="text-base text-yellow-300 tracking-widest font-bold uppercase">Python Developer</span>
+            <div className="relative h-6 w-48 overflow-hidden">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={currentRole}
+                  className="absolute inset-0 text-base text-yellow-300 tracking-widest font-bold uppercase text-center"
+                  initial={{ y: 20, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: -20, opacity: 0 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  {roles[currentRole]}
+                </motion.span>
+              </AnimatePresence>
+            </div>
             <motion.div
               className="ml-4 w-2 h-2 bg-yellow-400 rounded-full"
               animate={{
@@ -189,7 +218,7 @@ export default function Hero() {
           >
             {/* Subtle Glow Background - Reduced intensity */}
             <motion.div
-              className="absolute inset-0 text-6xl sm:text-8xl lg:text-9xl font-black text-yellow-400/8 blur-2xl"
+              className="absolute inset-0 text-5xl sm:text-6xl lg:text-7xl font-black text-yellow-400/8 blur-2xl"
               animate={{
                 scale: [1, 1.02, 1],
               }}
@@ -203,7 +232,7 @@ export default function Hero() {
             </motion.div>
             
             {/* Main Text - Fixed visibility for "Fragoso" */}
-            <h1 className="relative text-6xl sm:text-8xl lg:text-9xl font-black tracking-tight">
+            <h1 className="relative text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight">
               {/* Leonardo com gradiente normal */}
               <span className="bg-gradient-to-r from-white via-yellow-400 to-amber-500 bg-clip-text text-transparent">
                 Leonardo{" "}
@@ -258,7 +287,7 @@ export default function Hero() {
             transition={{ duration: 1.2, delay: 0.8 }}
           >
             <div className="relative">
-              <p className="text-3xl sm:text-4xl text-white/95 max-w-5xl mx-auto leading-relaxed font-light">
+              <p className="text-2xl sm:text-3xl text-white/95 max-w-5xl mx-auto leading-relaxed font-light">
                 Transformando ideias em{" "}
                 <motion.span
                   className="relative font-bold"
@@ -332,9 +361,9 @@ export default function Hero() {
             </div>
             
             <p className="text-xl sm:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-              Apaixonado por{" "}
-              <span className="text-yellow-400 font-semibold">Python</span> e desenvolvimento de software que{" "}
-              <span className="text-yellow-400 font-semibold">impacta pessoas e empresas</span>
+              Especialista em{" "}
+              <span className="text-yellow-400 font-semibold">Python, Django, Flask e React</span> com foco em{" "}
+              <span className="text-yellow-400 font-semibold">automação, APIs e soluções empresariais</span>
             </p>
           </motion.div>
 

@@ -6,7 +6,7 @@ const contactMethods = [
   {
     icon: <Mail />,
     title: "Email",
-    description: "Envie uma mensagem direta",
+    description: "Envie uma mensagem direta para discutir projetos, oportunidades ou colaborações",
     action: "Entrar em contato",
     href: "mailto:leonardorfragoso@gmail.com",
     featured: true,
@@ -14,7 +14,7 @@ const contactMethods = [
   {
     icon: <Github />,
     title: "GitHub",
-    description: "Veja meus projetos e código",
+    description: "Explore meus repositórios, contribuições open source e projetos pessoais",
     action: "Visitar perfil",
     href: "https://github.com/LeonardoRFragoso",
     target: "_blank",
@@ -22,7 +22,7 @@ const contactMethods = [
   {
     icon: <Linkedin />,
     title: "LinkedIn", 
-    description: "Conecte-se profissionalmente",
+    description: "Conecte-se para networking profissional e acompanhe minha trajetória",
     action: "Conectar",
     href: "https://www.linkedin.com/in/leonardo-fragoso-921b166a/",
     target: "_blank",

@@ -6,39 +6,41 @@ const skillsData = [
   { 
     icon: <Code2 />, 
     name: "Python & Frameworks", 
-    description: "Django, Flask, FastAPI | APIs RESTful e automação de processos | Selenium, Pandas | Desenvolvimento back-end", 
-    level: "Intermediário",
+    description: "Django, Flask, FastAPI | APIs RESTful e GraphQL | Selenium, Pandas, NumPy | Celery, Redis | Desenvolvimento back-end robusto", 
+    level: "Avançado",
     featured: true 
   },
   { 
     icon: <Database />, 
     name: "Banco de Dados", 
-    description: "PostgreSQL, SQLite, Firebase | Modelagem de dados e queries otimizadas | Experiência em projetos acadêmicos e profissionais", 
-    level: "Intermediário"
+    description: "PostgreSQL, MySQL, SQLite, Firebase | ORM (Django/SQLAlchemy) | Modelagem de dados, migrations e queries otimizadas", 
+    level: "Intermediário",
+    featured: true
   },
   { 
     icon: <Globe />, 
     name: "Frontend & Web", 
-    description: "React, TypeScript, HTML5, CSS3, JavaScript ES6+ | Tailwind CSS, Framer Motion | Interfaces responsivas e modernas", 
+    description: "React, TypeScript, Next.js | HTML5, CSS3, JavaScript ES6+ | Tailwind CSS, Framer Motion, shadcn/ui | PWA e SPA", 
     level: "Intermediário",
     featured: true 
   },
   { 
     icon: <Server />, 
-    name: "DevOps & Ferramentas", 
-    description: "Git/GitHub, Docker básico | Power BI para dashboards | Linux básico | Metodologias ágeis", 
-    level: "Básico+"
+    name: "DevOps & Cloud", 
+    description: "Git/GitHub, Docker, CI/CD | AWS (EC2, S3, RDS) | Vercel, Railway | Power BI | Linux | Metodologias Ágeis (Scrum/Kanban)", 
+    level: "Intermediário"
   },
   { 
     icon: <Code2 />, 
-    name: "Automação & Testing", 
-    description: "Selenium WebDriver, web scraping | Automação de processos manuais | Testes unitários básicos com pytest", 
-    level: "Intermediário"
+    name: "Automação & Dados", 
+    description: "Selenium WebDriver, BeautifulSoup, Scrapy | ETL e pipelines de dados | Streamlit para dashboards | pytest, unittest", 
+    level: "Avançado",
+    featured: true
   },
   { 
     icon: <Server />, 
     name: "Infraestrutura & TI", 
-    description: "Windows Server, Active Directory | Suporte técnico avançado | Gestão de redes e VPN | Experiência sólida em TI", 
+    description: "Windows Server, Active Directory, GPO | Redes TCP/IP, VPN, Firewall | Virtualização | Gestão de equipes técnicas", 
     level: "Avançado"
   },
 ];
@@ -48,21 +50,21 @@ const experienceData = [
     title: "Desenvolvedor de Sistemas Junior",
     company: "iTracker Logística Inteligente",
     period: "dez 2024 - Presente",
-    description: "Desenvolvimento de automação e extração de dados para otimização de processos logísticos. Foco em soluções Python para integração de sistemas.",
+    description: "Desenvolvimento de sistemas de automação e extração de dados para otimização de processos logísticos. Criação de APIs REST, dashboards gerenciais e integração de sistemas com Python, Django e React.",
     featured: true,
   },
   {
     title: "Gerente de TI",
     company: "RWE Telemedicina e Diagnósticos", 
     period: "jan 2024 - jul 2024",
-    description: "Coordenação de equipes de suporte técnico, infraestrutura e governança de TI. Responsável por operações diárias e implementação de melhorias nos processos.",
+    description: "Liderança de equipe de suporte técnico e infraestrutura. Implementação de melhorias em processos, governança de TI, gestão de projetos e tomada de decisões estratégicas.",
     featured: false,
   },
   {
     title: "Analista de Suporte de TI",
     company: "Experiência Corporativa",
     period: "nov 2023 - jul 2024",
-    description: "Desenvolvimento back-end com Python, suporte técnico especializado e automação de processos. Experiência que contribuiu para a transição para área de desenvolvimento.",
+    description: "Desenvolvimento back-end com Python e Django. Automação de processos, criação de scripts e ferramentas internas. Suporte N2/N3 e documentação técnica.",
     featured: false,
   },
 ];
@@ -73,7 +75,7 @@ const educationData = [
     institution: "Estácio de Sá",
     link: "https://portal.estacio.br",
     year: "2016 - 2019",
-    description: "Graduação com foco em gestão estratégica de TI, governança e processos",
+    description: "Graduação com foco em gestão estratégica de TI, governança corporativa, gerenciamento de projetos e processos",
     featured: true,
   },
   {
@@ -81,7 +83,7 @@ const educationData = [
     institution: "Rocketseat",
     link: "https://www.rocketseat.com.br",
     year: "abr 2024 - ago 2024",
-    description: "Especialização avançada em Python, APIs, testes automatizados e boas práticas",
+    description: "Python avançado, APIs RESTful, testes automatizados, clean code e design patterns",
     certificate: "Certificado verificado",
     featured: true,
   },
@@ -90,7 +92,7 @@ const educationData = [
     institution: "Rocketseat",
     link: "https://www.rocketseat.com.br", 
     year: "jun 2024 - set 2024",
-    description: "React, Node.js, TypeScript, banco de dados e deploy em produção",
+    description: "React, Node.js, TypeScript, PostgreSQL, Docker e deploy em produção na AWS",
     certificate: "Certificado verificado",
     featured: true,
   },
@@ -99,7 +101,7 @@ const educationData = [
     institution: "PyCode",
     link: "https://pycode.com.br",
     year: "abr 2024 - set 2024",
-    description: "Django avançado, ORM otimizado, deploy AWS, cache Redis, Celery",
+    description: "Django avançado, Django REST Framework, ORM otimizado, AWS, Redis, Celery e WebSockets",
     certificate: "140h de carga horária",
   },
   {
@@ -107,7 +109,7 @@ const educationData = [
     institution: "Rocketseat",
     link: "https://www.rocketseat.com.br",
     year: "abr 2024 - jul 2024", 
-    description: "Fundamentos sólidos de programação, lógica e estruturas de dados",
+    description: "HTML5, CSS3, JavaScript, Git, algoritmos, estruturas de dados e lógica de programação",
     certificate: "Certificado verificado",
   },
   {
@@ -115,7 +117,7 @@ const educationData = [
     institution: "Cubos Academy",
     link: "https://cubos.academy",
     year: "jan 2024 - set 2024",
-    description: "Python para análise, Pandas, NumPy, visualização de dados, SQL avançado",
+    description: "Python para análise de dados, Pandas, NumPy, Matplotlib, SQL avançado e Machine Learning básico",
     certificate: "Projeto final aprovado",
   },
 ];
@@ -433,20 +435,57 @@ export default function About() {
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500 font-bold text-2xl">
               Desenvolvedor Full Stack
             </span>{" "}
-            em crescimento, com trajetória sólida iniciada na{" "}
+            com sólida experiência em{" "}
             <span className="text-yellow-400 font-semibold">gestão de TI e infraestrutura</span>. 
             Atualmente{" "}
-            <span className="text-yellow-400 font-semibold">Desenvolvedor de Sistemas Junior</span> na iTracker Logística,
+            <span className="text-yellow-400 font-semibold">Desenvolvedor de Sistemas Junior</span> na iTracker Logística Inteligente,
             com experiência anterior como{" "}
-            <span className="text-yellow-400 font-semibold">Gerente de TI</span> coordenando equipes técnicas.
-            Especializo-me em{" "}
-            <span className="text-yellow-400 font-semibold">Python, Django, Flask e React</span>, 
+            <span className="text-yellow-400 font-semibold">Gerente de TI</span> liderando equipes técnicas.
+            Especializado em{" "}
+            <span className="text-yellow-400 font-semibold">Python, Django, Flask, FastAPI e React</span>, 
             com foco em{" "}
-            <span className="text-yellow-400 font-semibold">automação de processos e extração de dados</span>. 
-            Minha combinação única de{" "}
-            <span className="text-yellow-400 font-semibold">visão de negócios e habilidades técnicas</span>{" "}
-            me permite criar soluções completas que atendem necessidades reais, desde APIs robustas até interfaces intuitivas.
+            <span className="text-yellow-400 font-semibold">automação de processos, APIs REST e extração de dados</span>. 
+            Combino{" "}
+            <span className="text-yellow-400 font-semibold">visão estratégica de negócios com habilidades técnicas avançadas</span>{" "}
+            para criar soluções completas e escaláveis, desde back-end robusto até interfaces modernas e intuitivas.
           </motion.p>
+
+          {/* Stats Counter */}
+          <motion.div
+            className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+          >
+            {[
+              { number: "20+", label: "Projetos Entregues" },
+              { number: "3+", label: "Anos em TI" },
+              { number: "6", label: "Certificações" },
+              { number: "10+", label: "Tecnologias" },
+            ].map((stat, index) => (
+              <motion.div
+                key={index}
+                className="text-center p-6 rounded-2xl bg-black/40 border border-yellow-400/20 backdrop-blur-sm hover:border-yellow-400/40 transition-all duration-300"
+                whileHover={{ scale: 1.05, y: -5 }}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <motion.span
+                  className="text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500"
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
+                >
+                  {stat.number}
+                </motion.span>
+                <p className="text-white/70 mt-2 text-sm font-medium">{stat.label}</p>
+              </motion.div>
+            ))}
+          </motion.div>
         </motion.div>
 
         <div className="space-y-20">
