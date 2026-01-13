@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Github, ExternalLink, ChevronLeft, ChevronRight, Eye } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "../i18n";
 
 interface Project {
   title: string;
@@ -13,13 +14,14 @@ interface Project {
 }
 
 export default function Projects() {
+  const { t } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const projects: Project[] = [
     {
-      title: "Sistema de Gestão Pátio",
-      description: "Sistema completo para gestão de pátios e estacionamentos com controle de vagas em tempo real, relatórios gerenciais, dashboard analítico e interface responsiva. Desenvolvido com arquitetura MVC e APIs REST.",
+      title: t.projects.projectsList[0].title,
+      description: t.projects.projectsList[0].description,
       images: [
         "/images/Pátio/1.jpg",
         "/images/Pátio/2.jpg",
@@ -33,8 +35,8 @@ export default function Projects() {
       featured: true,
     },
     {
-      title: "Sistema de Gestão de Não-Conformidades",
-      description: "Sistema robusto para gestão de não-conformidades com workflow de aprovação multinível, notificações automáticas, relatórios PDF, dashboard executivo com KPIs e histórico completo de ações corretivas.",
+      title: t.projects.projectsList[1].title,
+      description: t.projects.projectsList[1].description,
       images: [
         "/images/não-conformidade/1.jpg",
         "/images/não-conformidade/2.jpg",
@@ -50,8 +52,8 @@ export default function Projects() {
       featured: true,
     },
     {
-      title: "Sistema GR - Gestão de Recursos",
-      description: "Sistema ERP para gestão de recursos empresariais com módulos de inventário, alocação de ativos, controle de manutenção, relatórios gerenciais automatizados e dashboard interativo com métricas de performance.",
+      title: t.projects.projectsList[2].title,
+      description: t.projects.projectsList[2].description,
       images: [
         "/images/GR/1.jpg",
         "/images/GR/2.jpg",
@@ -71,8 +73,8 @@ export default function Projects() {
       featured: true,
     },
     {
-      title: "Dashboard de Multas - Streamlit",
-      description: "Dashboard interativo para análise de multas de trânsito com ETL automatizado, integração Google Drive, visualizações dinâmicas (Plotly/Altair), filtros avançados e exportação de relatórios personalizados.",
+      title: t.projects.projectsList[3].title,
+      description: t.projects.projectsList[3].description,
       images: [
         "/images/dash-multas/1.jpg",
         "/images/dash-multas/2.jpg",
@@ -88,8 +90,8 @@ export default function Projects() {
       github: "https://github.com/LeonardoRFragoso/DashboardMultas",
     },
     {
-      title: "Sistema para Andaimes Pini",
-      description: "Sistema empresarial customizado para locação de equipamentos com controle de estoque, gestão de contratos, faturamento automático, relatórios financeiros e dashboard gerencial com indicadores de negócio.",
+      title: t.projects.projectsList[4].title,
+      description: t.projects.projectsList[4].description,
       images: [
         "/images/project5.png",
         "/images/project5-2.png",
@@ -101,8 +103,8 @@ export default function Projects() {
       featured: true,
     },
     {
-      title: "Sistema de Monitoramento TVs ICTSI",
-      description: "Sistema de digital signage para terminal portuário com gerenciamento de displays informativos, agendamento de conteúdo, monitoramento em tempo real, integração com sistemas operacionais e painel administrativo.",
+      title: t.projects.projectsList[5].title,
+      description: t.projects.projectsList[5].description,
       images: [
         "/images/Tvs-ICTSI/1.jpg",
         "/images/Tvs-ICTSI/2.jpg",
@@ -181,11 +183,11 @@ export default function Projects() {
               filter: "drop-shadow(0 0 20px rgba(251, 191, 36, 0.3))",
             }}
           >
-            Projetos
+            {t.projects.title}
           </motion.h2>
           <p className="text-xl text-white/70 max-w-2xl mx-auto">
-            Explorando ideias através do código e criando{" "}
-            <span className="text-yellow-400 font-semibold">soluções inovadoras</span>
+            {t.projects.subtitle}{" "}
+            <span className="text-yellow-400 font-semibold">{t.projects.subtitleHighlight}</span>
           </p>
           
           {/* Decorative line */}
@@ -232,7 +234,7 @@ export default function Projects() {
               {/* Featured Badge */}
               {project.featured && (
                 <div className="absolute top-4 left-4 z-20 px-3 py-1 bg-gradient-to-r from-yellow-400 to-amber-500 text-black text-xs font-bold rounded-full">
-                  DESTAQUE
+                  {t.projects.featured}
                 </div>
               )}
 
@@ -254,7 +256,7 @@ export default function Projects() {
                 {/* Image counter */}
                 {project.images.length > 1 && (
                   <div className="absolute top-4 right-4 px-2 py-1 bg-black/70 text-white text-xs rounded-lg backdrop-blur-sm">
-                    +{project.images.length - 1} fotos
+                    +{project.images.length - 1} {t.projects.photos}
                   </div>
                 )}
 
@@ -265,7 +267,7 @@ export default function Projects() {
                 >
                   <div className="flex items-center space-x-2 px-4 py-2 bg-yellow-400/90 text-black font-bold rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                     <Eye className="h-5 w-5" />
-                    <span>Ver Galeria</span>
+                    <span>{t.projects.viewGallery}</span>
                   </div>
                 </button>
               </div>
@@ -302,7 +304,7 @@ export default function Projects() {
                     aria-label={`Repositório no GitHub para ${project.title}`}
                   >
                     <Github className="h-5 w-5 group-hover/link:scale-110 transition-transform" />
-                    <span className="text-sm font-medium">Código</span>
+                    <span className="text-sm font-medium">{t.projects.code}</span>
                   </a>
                   
                   {project.demo && (

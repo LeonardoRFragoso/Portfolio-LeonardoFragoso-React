@@ -1,23 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { ArrowRight, Code2, Sparkles, Star, Zap } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const roles = [
-  "Full Stack Developer",
-  "Python Specialist",
-  "Backend Engineer",
-  "Automation Expert",
-];
+import { useLanguage } from "../i18n";
 
 export default function Hero() {
+  const { t } = useLanguage();
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % roles.length);
+      setCurrentRole((prev) => (prev + 1) % t.hero.roles.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [t.hero.roles.length]);
 
   return (
     <section
@@ -191,7 +186,7 @@ export default function Hero() {
                   exit={{ y: -20, opacity: 0 }}
                   transition={{ duration: 0.5 }}
                 >
-                  {roles[currentRole]}
+                  {t.hero.roles[currentRole % t.hero.roles.length]}
                 </motion.span>
               </AnimatePresence>
             </div>
@@ -288,7 +283,7 @@ export default function Hero() {
           >
             <div className="relative">
               <p className="text-2xl sm:text-3xl text-white/95 max-w-5xl mx-auto leading-relaxed font-light">
-                Transformando ideias em{" "}
+                {t.hero.tagline}{" "}
                 <motion.span
                   className="relative font-bold"
                   style={{
@@ -296,7 +291,7 @@ export default function Hero() {
                   }}
                 >
                   {/* Fallback sólido */}
-                  <span className="text-yellow-400">soluções tecnológicas</span>
+                  <span className="text-yellow-400">{t.hero.taglineHighlight}</span>
                   
                   {/* Gradiente animado sobreposto */}
                   <motion.span
@@ -310,7 +305,7 @@ export default function Hero() {
                       ease: "easeInOut",
                     }}
                   >
-                    soluções tecnológicas
+                    {t.hero.taglineHighlight}
                   </motion.span>
                   
                   <motion.div
@@ -329,7 +324,7 @@ export default function Hero() {
                     <Zap className="w-5 h-5 text-yellow-400" />
                   </motion.div>
                 </motion.span>{" "}
-                inovadoras
+                {t.hero.taglineEnd}
               </p>
             </div>
             
@@ -361,9 +356,9 @@ export default function Hero() {
             </div>
             
             <p className="text-xl sm:text-2xl text-white/80 max-w-4xl mx-auto leading-relaxed">
-              Especialista em{" "}
-              <span className="text-yellow-400 font-semibold">Python, Django, Flask e React</span> com foco em{" "}
-              <span className="text-yellow-400 font-semibold">automação, APIs e soluções empresariais</span>
+              {t.hero.specialist}{" "}
+              <span className="text-yellow-400 font-semibold">{t.hero.techStack}</span> {t.hero.focusOn}{" "}
+              <span className="text-yellow-400 font-semibold">{t.hero.focusAreas}</span>
             </p>
           </motion.div>
 
@@ -384,7 +379,7 @@ export default function Hero() {
               {/* Button Glow Effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400/60 to-amber-500/60 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-700 -z-10"></div>
               
-              <span className="relative font-bold text-black text-xl tracking-wide">Ver Projetos</span>
+              <span className="relative font-bold text-black text-xl tracking-wide">{t.hero.viewProjects}</span>
               <motion.div
                 className="relative ml-4"
                 animate={{
@@ -425,7 +420,7 @@ export default function Hero() {
               aria-label="Entrar em contato"
             >
               <span className="font-bold text-white text-xl group-hover:text-yellow-300 transition-colors tracking-wide">
-                Entrar em Contato
+                {t.hero.getInTouch}
               </span>
               <motion.div
                 className="ml-4 w-3 h-3 bg-yellow-400 rounded-full"
@@ -476,7 +471,7 @@ export default function Hero() {
               }}
             />
           </div>
-          <span className="text-yellow-400/80 text-xs font-medium uppercase tracking-wider">Scroll</span>
+          <span className="text-yellow-400/80 text-xs font-medium uppercase tracking-wider">{t.hero.scroll}</span>
         </motion.div>
       </motion.div>
     </section>

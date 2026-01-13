@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Github, Linkedin, Menu, X, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from "../i18n";
+import LanguageToggle from "./LanguageToggle";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,8 +21,8 @@ export default function Header() {
   return (
     <motion.header
       className={`fixed w-full z-50 transition-all duration-500 ${
-        isScrolled 
-          ? "bg-black/80 backdrop-blur-xl border-b border-yellow-400/20 shadow-2xl shadow-yellow-400/10" 
+        isScrolled
+          ? "bg-black/80 backdrop-blur-xl border-b border-yellow-400/20 shadow-2xl shadow-yellow-400/10"
           : "bg-transparent"
       }`}
       role="navigation"
@@ -65,10 +68,10 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex ml-10 space-x-8">
             {[
-              { href: "#home", label: "Home" },
-              { href: "#about", label: "Sobre" },
-              { href: "#projects", label: "Projetos" },
-              { href: "#contact", label: "Contato" },
+              { href: "#home", label: t.nav.home },
+              { href: "#about", label: t.nav.about },
+              { href: "#projects", label: t.nav.projects },
+              { href: "#contact", label: t.nav.contact },
             ].map((item, index) => (
               <motion.a
                 key={item.href}
@@ -90,15 +93,16 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Social Links */}
+          {/* Language Toggle & Social Links */}
           <div className="hidden md:flex items-center space-x-6">
+            <LanguageToggle />
             <motion.a
               href="https://github.com/LeonardoRFragoso"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
               className="group relative p-2 text-white/70 hover:text-yellow-400 transition-all duration-300"
-              whileHover={{ scale: 1.1, rotate: 5 }}
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
               <Github className="h-6 w-6" />
@@ -111,7 +115,7 @@ export default function Header() {
               rel="noopener noreferrer"
               aria-label="LinkedIn"
               className="group relative p-2 text-white/70 hover:text-yellow-400 transition-all duration-300"
-              whileHover={{ scale: 1.1, rotate: -5 }}
+              whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
               <Linkedin className="h-6 w-6" />
@@ -124,7 +128,7 @@ export default function Header() {
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="relative p-2 text-white/80 hover:text-yellow-400 transition-all duration-300"
-              aria-label={isMenuOpen ? "Fechar menu" : "Abrir menu"}
+              aria-label={isMenuOpen ? t.nav.closeMenu : t.nav.openMenu}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -168,10 +172,10 @@ export default function Header() {
           >
             <nav className="px-4 py-6 space-y-4">
               {[
-                { href: "#home", label: "Home" },
-                { href: "#about", label: "Sobre" },
-                { href: "#projects", label: "Projetos" },
-                { href: "#contact", label: "Contato" },
+                { href: "#home", label: t.nav.home },
+                { href: "#about", label: t.nav.about },
+                { href: "#projects", label: t.nav.projects },
+                { href: "#contact", label: t.nav.contact },
               ].map((item, index) => (
                 <motion.a
                   key={item.href}
@@ -190,7 +194,7 @@ export default function Header() {
                 </motion.a>
               ))}
               
-              {/* Mobile Social Links */}
+              {/* Mobile Language Toggle & Social Links */}
               <motion.div
                 className="flex items-center justify-center space-x-8 pt-4 mt-6 border-t border-yellow-400/20"
                 initial={{ opacity: 0, y: 20 }}
@@ -220,6 +224,8 @@ export default function Header() {
                 >
                   <Linkedin className="h-6 w-6" />
                 </motion.a>
+                
+                <LanguageToggle />
               </motion.div>
             </nav>
           </motion.div>

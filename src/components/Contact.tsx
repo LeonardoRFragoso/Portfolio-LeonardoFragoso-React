@@ -1,34 +1,7 @@
 import React from "react";
-import { Mail, Github, Linkedin, Sparkles, MessageCircle, Send, Star } from "lucide-react";
+import { Mail, Github, Linkedin, Send, MessageCircle, Sparkles, Star } from "lucide-react";
 import { motion } from "framer-motion";
-
-const contactMethods = [
-  {
-    icon: <Mail />,
-    title: "Email",
-    description: "Envie uma mensagem direta para discutir projetos, oportunidades ou colaborações",
-    action: "Entrar em contato",
-    href: "mailto:leonardorfragoso@gmail.com",
-    featured: true,
-  },
-  {
-    icon: <Github />,
-    title: "GitHub",
-    description: "Explore meus repositórios, contribuições open source e projetos pessoais",
-    action: "Visitar perfil",
-    href: "https://github.com/LeonardoRFragoso",
-    target: "_blank",
-  },
-  {
-    icon: <Linkedin />,
-    title: "LinkedIn", 
-    description: "Conecte-se para networking profissional e acompanhe minha trajetória",
-    action: "Conectar",
-    href: "https://www.linkedin.com/in/leonardo-fragoso-921b166a/",
-    target: "_blank",
-    featured: true,
-  },
-];
+import { useLanguage } from "../i18n";
 
 const ContactCard = ({ 
   icon, 
@@ -37,7 +10,8 @@ const ContactCard = ({
   action, 
   href, 
   target, 
-  featured = false 
+  featured = false,
+  badgeLabel 
 }: {
   icon: JSX.Element;
   title: string;
@@ -46,6 +20,7 @@ const ContactCard = ({
   href: string;
   target?: string;
   featured?: boolean;
+  badgeLabel?: string;
 }) => (
   <motion.a
     href={href}
@@ -66,7 +41,7 @@ const ContactCard = ({
     {/* Featured Badge */}
     {featured && (
       <div className="absolute -top-3 -right-3 px-3 py-1 bg-gradient-to-r from-yellow-400 to-amber-500 text-black text-xs font-bold rounded-full">
-        PREFERIDO
+        {badgeLabel}
       </div>
     )}
 
@@ -137,6 +112,36 @@ const ContactCard = ({
 );
 
 export default function Contact() {
+  const { t } = useLanguage();
+  
+  const contactMethods = [
+    {
+      icon: <Mail />,
+      title: t.contact.email.title,
+      description: t.contact.email.description,
+      action: t.contact.email.action,
+      href: "mailto:leonardorfragoso@gmail.com",
+      featured: true,
+    },
+    {
+      icon: <Github />,
+      title: t.contact.github.title,
+      description: t.contact.github.description,
+      action: t.contact.github.action,
+      href: "https://github.com/LeonardoRFragoso",
+      target: "_blank",
+    },
+    {
+      icon: <Linkedin />,
+      title: t.contact.linkedin.title,
+      description: t.contact.linkedin.description,
+      action: t.contact.linkedin.action,
+      href: "https://www.linkedin.com/in/leonardo-fragoso-921b166a/",
+      target: "_blank",
+      featured: true,
+    },
+  ];
+
   return (
     <section id="contact" className="relative py-20 bg-black overflow-hidden">
       {/* Background Effects */}
@@ -225,7 +230,7 @@ export default function Contact() {
               filter: "drop-shadow(0 0 20px rgba(251, 191, 36, 0.3))",
             }}
           >
-            Contato
+            {t.contact.title}
           </motion.h2>
           
           {/* Decorative Line */}
@@ -245,9 +250,9 @@ export default function Contact() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <p className="text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
-              Entre em contato e{" "}
+              {t.contact.subtitle}{" "}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500 font-bold">
-                vamos criar algo incrível juntos!
+                {t.contact.subtitleHighlight}
               </span>
             </p>
             
@@ -295,7 +300,7 @@ export default function Contact() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
               >
-                <ContactCard {...method} />
+                <ContactCard {...method} badgeLabel={t.contact.preferred} />
               </motion.div>
             ))}
           </div>
@@ -320,9 +325,9 @@ export default function Contact() {
               ease: "easeInOut",
             }}
           >
-            Respondo rapidamente e estou sempre aberto a novas{" "}
-            <span className="text-yellow-400 font-semibold">oportunidades</span> e{" "}
-            <span className="text-yellow-400 font-semibold">colaborações</span>
+            {t.contact.footer}{" "}
+            <span className="text-yellow-400 font-semibold">{t.contact.opportunities}</span> {t.contact.and}{" "}
+            <span className="text-yellow-400 font-semibold">{t.contact.collaborations}</span>
           </motion.p>
         </motion.div>
 
