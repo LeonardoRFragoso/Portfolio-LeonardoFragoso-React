@@ -197,25 +197,12 @@ export default function Hero() {
                 <img
                   src="/images/Leo-Perfil.png"
                   alt="Leonardo Fragoso - Full Stack Developer"
-                  className="w-full h-full object-cover object-top"
+                  className="w-full h-full object-cover"
+                  style={{ objectPosition: '50% 25%' }}
                 />
                 
                 {/* Subtle overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-              </motion.div>
-              
-              {/* Floating Badge - Available for Hire */}
-              <motion.div
-                className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 px-4 py-2 bg-gradient-to-r from-green-400 to-emerald-500 text-black text-sm font-bold rounded-full shadow-lg flex items-center gap-2"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1, duration: 0.5 }}
-              >
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-black"></span>
-                </span>
-                Open to Work
               </motion.div>
               
               {/* Decorative Elements */}
