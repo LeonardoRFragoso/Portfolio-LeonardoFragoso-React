@@ -203,8 +203,8 @@ export const translations = {
           description: 'Sistema robusto para gestão de não-conformidades com workflow de aprovação multinível, notificações automáticas, relatórios PDF, dashboard executivo com KPIs e histórico completo de ações corretivas.',
         },
         {
-          title: 'Sistema GR - Gestão de Recursos',
-          description: 'Sistema ERP para gestão de recursos empresariais com módulos de inventário, alocação de ativos, controle de manutenção, relatórios gerenciais automatizados e dashboard interativo com métricas de performance.',
+          title: 'Sistema GR - Gestão de Risco',
+          description: 'Sistema para gestão de riscos empresariais com identificação, avaliação e monitoramento de riscos, planos de mitigação, relatórios gerenciais automatizados e dashboard interativo com métricas de performance.',
         },
         {
           title: 'Dashboard de Multas - Streamlit',
@@ -486,8 +486,8 @@ export const translations = {
           description: 'Robust system for non-conformance management with multi-level approval workflow, automatic notifications, PDF reports, executive dashboard with KPIs and complete corrective action history.',
         },
         {
-          title: 'GR System - Resource Management',
-          description: 'ERP system for enterprise resource management with inventory modules, asset allocation, maintenance control, automated management reports and interactive dashboard with performance metrics.',
+          title: 'GR System - Risk Management',
+          description: 'Enterprise risk management system with risk identification, assessment and monitoring, mitigation plans, automated management reports and interactive dashboard with performance metrics.',
         },
         {
           title: 'Traffic Fines Dashboard - Streamlit',
