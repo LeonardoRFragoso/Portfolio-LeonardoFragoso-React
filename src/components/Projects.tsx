@@ -153,6 +153,47 @@ export default function Projects() {
       github: "https://github.com/LeonardoRFragoso/AndaimesPini_Project",
       featured: true,
     },
+    // Novos projetos
+    {
+      title: t.projects.projectsList[8].title,
+      description: t.projects.projectsList[8].description,
+      images: [
+        "/images/medflow/medflow1.png"
+      ],
+      tags: ["Laravel 11", "Vue 3", "PostgreSQL", "API REST"],
+      github: "https://github.com/LeonardoRFragoso/MedFlow_Finance",
+      featured: true,
+    },
+    {
+      title: t.projects.projectsList[9].title,
+      description: t.projects.projectsList[9].description,
+      images: [
+        "/images/bi-saas/bi1.png"
+      ],
+      tags: ["Python", "FastAPI", "React", "GPT-4", "Docker"],
+      github: "https://github.com/LeonardoRFragoso/SaaS",
+      featured: true,
+    },
+    {
+      title: t.projects.projectsList[10].title,
+      description: t.projects.projectsList[10].description,
+      images: [
+        "/images/apm/apm1.png"
+      ],
+      tags: ["Java 21", "Spring Boot", "WebSocket", "Clean Architecture"],
+      github: "https://github.com/LeonardoRFragoso/Plataforma-de-Monitoramento-de-Sistemas-e-APIs",
+      featured: true,
+    },
+    {
+      title: t.projects.projectsList[11].title,
+      description: t.projects.projectsList[11].description,
+      images: [
+        "/images/financecontrol/finance1.png"
+      ],
+      tags: ["React", "Django", "Python", "SQLite"],
+      github: "https://github.com/LeonardoRFragoso/gerenciador-financeiro",
+      featured: true,
+    },
   ];
 
   const nextImage = () => {

@@ -226,6 +226,22 @@ export const translations = {
           title: 'Base Corporativa - E-commerce',
           description: 'E-commerce completo para roupas corporativas com catálogo de produtos, carrinho de compras, checkout integrado com Mercado Pago, sistema de gestão de pedidos, analytics com Google Analytics e Meta Pixel, e PWA para experiência mobile.',
         },
+        {
+          title: 'MedFlow Finance',
+          description: 'Sistema de faturamento inteligente para clínicas médicas que recupera dinheiro perdido por erros de faturamento e glosas. Automação de validação e processamento com dashboard de métricas ROI.',
+        },
+        {
+          title: 'BI-as-a-Service',
+          description: 'Plataforma SaaS de Business Intelligence com IA que cria dashboards automáticos a partir de CSV. Análise inteligente via GPT-4o-mini, detecção de tendências, KPIs dinâmicos e gestão multi-tenant.',
+        },
+        {
+          title: 'APM Platform',
+          description: 'Plataforma de Monitoramento de Sistemas e APIs inspirada em New Relic e Datadog. Clean Architecture, coleta assíncrona de métricas, health checks, alertas em tempo real via WebSocket.',
+        },
+        {
+          title: 'FinanceControl',
+          description: 'Gerenciador financeiro pessoal com dashboard interativo, controle de receitas e despesas, categorização automática, relatórios visuais e gráficos de evolução financeira.',
+        },
       ],
     },
 
@@ -492,6 +508,22 @@ export const translations = {
         {
           title: 'Base Corporativa - E-commerce',
           description: 'Complete e-commerce for corporate clothing with product catalog, shopping cart, checkout integrated with Mercado Pago, order management system, analytics with Google Analytics and Meta Pixel, and PWA for mobile experience.',
+        },
+        {
+          title: 'MedFlow Finance',
+          description: 'Intelligent billing system for medical clinics that recovers money lost due to billing errors and denials. Validation and processing automation with ROI metrics dashboard.',
+        },
+        {
+          title: 'BI-as-a-Service',
+          description: 'SaaS Business Intelligence platform with AI that creates automatic dashboards from CSV. Intelligent analysis via GPT-4o-mini, trend detection, dynamic KPIs and multi-tenant management.',
+        },
+        {
+          title: 'APM Platform',
+          description: 'Application Performance Monitoring Platform inspired by New Relic and Datadog. Clean Architecture, async metrics collection, health checks, real-time alerts via WebSocket.',
+        },
+        {
+          title: 'FinanceControl',
+          description: 'Personal finance manager with interactive dashboard, income and expense tracking, automatic categorization, visual reports and financial evolution charts.',
         },
       ],
     },
