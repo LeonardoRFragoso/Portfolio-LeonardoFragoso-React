@@ -20,6 +20,37 @@ export default function Projects() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const projects: Project[] = [
+    // SaaS em Produção - Primeiro na lista
+    {
+      title: t.projects.projectsList[6].title,
+      description: t.projects.projectsList[6].description,
+      images: [
+        "/images/proflow/proflow.png",
+        "/images/proflow/proflow2.png",
+        "/images/proflow/proflow3.png"
+      ],
+      tags: ["Vue.js", "TypeScript", "Node.js", "PostgreSQL", "IA", "Stripe"],
+      demo: "https://www.proflow.pro/",
+      featured: true,
+      saas: true,
+    },
+    {
+      title: t.projects.projectsList[7].title,
+      description: t.projects.projectsList[7].description,
+      images: [
+        "/images/base/base1.png",
+        "/images/base/base2.png",
+        "/images/base/base3.png",
+        "/images/base/base4.png",
+        "/images/base/base5.png",
+        "/images/base/base6.png"
+      ],
+      tags: ["React", "TypeScript", "Node.js", "Mercado Pago", "PWA"],
+      demo: "https://basecorporativa.store/",
+      featured: true,
+      saas: true,
+    },
+    // Outros projetos
     {
       title: t.projects.projectsList[0].title,
       description: t.projects.projectsList[0].description,
@@ -119,35 +150,6 @@ export default function Projects() {
       ],
       tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
       github: "https://github.com/LeonardoRFragoso/Tvs-ICTSI",
-    },
-    {
-      title: t.projects.projectsList[6].title,
-      description: t.projects.projectsList[6].description,
-      images: [
-        "/images/proflow/proflow.png",
-        "/images/proflow/proflow2.png",
-        "/images/proflow/proflow3.png"
-      ],
-      tags: ["Vue.js", "TypeScript", "Node.js", "PostgreSQL", "IA", "Stripe"],
-      demo: "https://www.proflow.pro/",
-      featured: true,
-      saas: true,
-    },
-    {
-      title: t.projects.projectsList[7].title,
-      description: t.projects.projectsList[7].description,
-      images: [
-        "/images/base/base1.png",
-        "/images/base/base2.png",
-        "/images/base/base3.png",
-        "/images/base/base4.png",
-        "/images/base/base5.png",
-        "/images/base/base6.png"
-      ],
-      tags: ["React", "TypeScript", "Node.js", "Mercado Pago", "PWA"],
-      demo: "https://basecorporativa.store/",
-      featured: true,
-      saas: true,
     },
   ];
 
