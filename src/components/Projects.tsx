@@ -137,10 +137,19 @@ export default function Projects() {
       title: t.projects.projectsList[4].title,
       description: t.projects.projectsList[4].description,
       images: [
-        "/images/project5.png",
-        "/images/project5-2.png",
-        "/images/project5-3.png",
-        "/images/project5-4.png"
+        "/images/Andaimes Pini/pini1.png",
+        "/images/Andaimes Pini/pini2.png",
+        "/images/Andaimes Pini/pini3.png",
+        "/images/Andaimes Pini/pini4.png",
+        "/images/Andaimes Pini/pini5.png",
+        "/images/Andaimes Pini/Pini6.png",
+        "/images/Andaimes Pini/Pini7.png",
+        "/images/Andaimes Pini/pini8.png",
+        "/images/Andaimes Pini/pini9.png",
+        "/images/Andaimes Pini/Pini10.png",
+        "/images/Andaimes Pini/pini11.png",
+        "/images/Andaimes Pini/pini12.png",
+        "/images/Andaimes Pini/pini13.png"
       ],
       tags: ["Flask", "React", "PostgreSQL"],
       github: "https://github.com/LeonardoRFragoso/AndaimesPini_Project",
