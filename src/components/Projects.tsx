@@ -149,7 +149,9 @@ export default function Projects() {
         "/images/Andaimes Pini/Pini10.png",
         "/images/Andaimes Pini/pini11.png",
         "/images/Andaimes Pini/pini12.png",
-        "/images/Andaimes Pini/pini13.png"
+        "/images/Andaimes Pini/pini13.png",
+        "/images/Andaimes Pini/pini14.png",
+        "/images/Andaimes Pini/pini15.png"
       ],
       tags: ["Flask", "React", "PostgreSQL"],
       github: "https://github.com/LeonardoRFragoso/AndaimesPini_Project",
