@@ -50,6 +50,25 @@ export default function Projects() {
       featured: true,
       saas: true,
     },
+    // Sistema de Monitoramento TVs ICTSI - Terceiro na lista
+    {
+      title: t.projects.projectsList[5].title,
+      description: t.projects.projectsList[5].description,
+      images: [
+        "/images/Tvs-ICTSI/1.jpg",
+        "/images/Tvs-ICTSI/2.jpg",
+        "/images/Tvs-ICTSI/3.jpg",
+        "/images/Tvs-ICTSI/4.jpg",
+        "/images/Tvs-ICTSI/5.jpg",
+        "/images/Tvs-ICTSI/6.jpg",
+        "/images/Tvs-ICTSI/7.jpg",
+        "/images/Tvs-ICTSI/8.jpg",
+        "/images/Tvs-ICTSI/9.jpg"
+      ],
+      tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
+      github: "https://github.com/LeonardoRFragoso/Tvs-ICTSI",
+      featured: true,
+    },
     // Outros projetos
     {
       title: t.projects.projectsList[0].title,
@@ -133,23 +152,6 @@ export default function Projects() {
       tags: ["Flask", "React", "PostgreSQL"],
       github: "https://github.com/LeonardoRFragoso/AndaimesPini_Project",
       featured: true,
-    },
-    {
-      title: t.projects.projectsList[5].title,
-      description: t.projects.projectsList[5].description,
-      images: [
-        "/images/Tvs-ICTSI/1.jpg",
-        "/images/Tvs-ICTSI/2.jpg",
-        "/images/Tvs-ICTSI/3.jpg",
-        "/images/Tvs-ICTSI/4.jpg",
-        "/images/Tvs-ICTSI/5.jpg",
-        "/images/Tvs-ICTSI/6.jpg",
-        "/images/Tvs-ICTSI/7.jpg",
-        "/images/Tvs-ICTSI/8.jpg",
-        "/images/Tvs-ICTSI/9.jpg"
-      ],
-      tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
-      github: "https://github.com/LeonardoRFragoso/Tvs-ICTSI",
     },
   ];
 
