@@ -109,7 +109,11 @@ export default function Projects() {
       images: [
         "/images/APM/APM1.png",
         "/images/APM/APM2.png",
-        "/images/APM/APM3.png"
+        "/images/APM/APM3.png",
+        "/images/APM/APM4.png",
+        "/images/APM/APM5.png",
+        "/images/APM/APM6.png",
+        "/images/APM/APM7.png"
       ],
       tags: ["Java 21", "Spring Boot", "WebSocket", "Clean Architecture"],
       github: "https://github.com/LeonardoRFragoso/Plataforma-de-Monitoramento-de-Sistemas-e-APIs",
