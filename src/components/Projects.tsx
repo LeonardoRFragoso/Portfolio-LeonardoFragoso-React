@@ -158,7 +158,14 @@ export default function Projects() {
       title: t.projects.projectsList[8].title,
       description: t.projects.projectsList[8].description,
       images: [
-        "/images/medflow/medflow1.png"
+        "/images/medflow/medflow1.png",
+        "/images/medflow/medflow2.png",
+        "/images/medflow/medflow3.png",
+        "/images/medflow/medflow4.png",
+        "/images/medflow/medflow5.png",
+        "/images/medflow/medflow6.png",
+        "/images/medflow/medflow7.png",
+        "/images/medflow/medflow8.png"
       ],
       tags: ["Laravel 11", "Vue 3", "PostgreSQL", "API REST"],
       github: "https://github.com/LeonardoRFragoso/MedFlow_Finance",
@@ -168,7 +175,13 @@ export default function Projects() {
       title: t.projects.projectsList[9].title,
       description: t.projects.projectsList[9].description,
       images: [
-        "/images/bi-saas/bi1.png"
+        "/images/SaaS/1SaaS - 1.png",
+        "/images/SaaS/1SaaS - 2.png",
+        "/images/SaaS/1SaaS - 3.png",
+        "/images/SaaS/1SaaS - 4.png",
+        "/images/SaaS/1SaaS - 5.png",
+        "/images/SaaS/1SaaS - 6.png",
+        "/images/SaaS/1SaaS - 7.png"
       ],
       tags: ["Python", "FastAPI", "React", "GPT-4", "Docker"],
       github: "https://github.com/LeonardoRFragoso/SaaS",
@@ -178,7 +191,9 @@ export default function Projects() {
       title: t.projects.projectsList[10].title,
       description: t.projects.projectsList[10].description,
       images: [
-        "/images/apm/apm1.png"
+        "/images/APM/APM1.png",
+        "/images/APM/APM2.png",
+        "/images/APM/APM3.png"
       ],
       tags: ["Java 21", "Spring Boot", "WebSocket", "Clean Architecture"],
       github: "https://github.com/LeonardoRFragoso/Plataforma-de-Monitoramento-de-Sistemas-e-APIs",
@@ -188,7 +203,10 @@ export default function Projects() {
       title: t.projects.projectsList[11].title,
       description: t.projects.projectsList[11].description,
       images: [
-        "/images/financecontrol/finance1.png"
+        "/images/FinanceControl/financecontrol1.png",
+        "/images/FinanceControl/financecontrol2.png",
+        "/images/FinanceControl/financecontrol5.png",
+        "/images/FinanceControl/financecontrol6.png"
       ],
       tags: ["React", "Django", "Python", "SQLite"],
       github: "https://github.com/LeonardoRFragoso/gerenciador-financeiro",
