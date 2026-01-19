@@ -150,8 +150,8 @@ export default function Hero() {
       />
 
       {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 relative z-10 min-h-[calc(100vh-8rem)] flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
           
           {/* Profile Image - Left Side */}
           <motion.div
@@ -190,8 +190,8 @@ export default function Hero() {
               
               {/* Image Container */}
               <motion.div
-                className="relative w-64 h-64 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-yellow-400/50 shadow-2xl"
-                whileHover={{ scale: 1.05 }}
+                className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-yellow-400/50 shadow-2xl"
+                whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3 }}
               >
                 <img
