@@ -187,9 +187,12 @@ export const translations = {
       subtitle: 'Explorando ideias através do código e criando',
       subtitleHighlight: 'soluções inovadoras',
       featured: 'DESTAQUE',
+      saas: 'SaaS EM PRODUÇÃO',
+      live: 'LIVE',
       photos: 'fotos',
       viewGallery: 'Ver Galeria',
       code: 'Código',
+      visitSite: 'Visitar Site',
       projectsList: [
         {
           title: 'Sistema de Gestão Pátio',
@@ -214,6 +217,14 @@ export const translations = {
         {
           title: 'Sistema de Monitoramento TVs ICTSI',
           description: 'Sistema de digital signage para terminal portuário com gerenciamento de displays informativos, agendamento de conteúdo, monitoramento em tempo real, integração com sistemas operacionais e painel administrativo.',
+        },
+        {
+          title: 'ProFlow - Plataforma para Freelancers',
+          description: 'SaaS completo para freelancers com IA consultiva que sugere preços, gera propostas automáticas e protege contra calotes com sistema de pagamento em custódia. Inclui verificação de identidade (ProFlow Score), taxa fixa de 8% e suporte prioritário.',
+        },
+        {
+          title: 'Base Corporativa - E-commerce',
+          description: 'E-commerce completo para roupas corporativas com catálogo de produtos, carrinho de compras, checkout integrado com Mercado Pago, sistema de gestão de pedidos, analytics com Google Analytics e Meta Pixel, e PWA para experiência mobile.',
         },
       ],
     },
@@ -443,9 +454,12 @@ export const translations = {
       subtitle: 'Exploring ideas through code and creating',
       subtitleHighlight: 'innovative solutions',
       featured: 'FEATURED',
+      saas: 'SaaS IN PRODUCTION',
+      live: 'LIVE',
       photos: 'photos',
       viewGallery: 'View Gallery',
       code: 'Code',
+      visitSite: 'Visit Site',
       projectsList: [
         {
           title: 'Parking Lot Management System',
@@ -470,6 +484,14 @@ export const translations = {
         {
           title: 'ICTSI TV Monitoring System',
           description: 'Digital signage system for port terminal with informative display management, content scheduling, real-time monitoring, integration with operating systems and admin panel.',
+        },
+        {
+          title: 'ProFlow - Freelancer Platform',
+          description: 'Complete SaaS for freelancers with consultive AI that suggests prices, generates automatic proposals and protects against defaults with escrow payment system. Includes identity verification (ProFlow Score), 8% flat fee and priority support.',
+        },
+        {
+          title: 'Base Corporativa - E-commerce',
+          description: 'Complete e-commerce for corporate clothing with product catalog, shopping cart, checkout integrated with Mercado Pago, order management system, analytics with Google Analytics and Meta Pixel, and PWA for mobile experience.',
         },
       ],
     },

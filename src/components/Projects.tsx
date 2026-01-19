@@ -8,9 +8,10 @@ interface Project {
   description: string;
   images: string[];
   tags: string[];
-  github: string;
+  github?: string;
   demo?: string;
   featured?: boolean;
+  saas?: boolean;
 }
 
 export default function Projects() {
@@ -118,6 +119,35 @@ export default function Projects() {
       ],
       tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
       github: "https://github.com/LeonardoRFragoso/Tvs-ICTSI",
+    },
+    {
+      title: t.projects.projectsList[6].title,
+      description: t.projects.projectsList[6].description,
+      images: [
+        "/images/proflow/proflow.png",
+        "/images/proflow/proflow2.png",
+        "/images/proflow/proflow3.png"
+      ],
+      tags: ["Vue.js", "TypeScript", "Node.js", "PostgreSQL", "IA", "Stripe"],
+      demo: "https://www.proflow.pro/",
+      featured: true,
+      saas: true,
+    },
+    {
+      title: t.projects.projectsList[7].title,
+      description: t.projects.projectsList[7].description,
+      images: [
+        "/images/base/base1.png",
+        "/images/base/base2.png",
+        "/images/base/base3.png",
+        "/images/base/base4.png",
+        "/images/base/base5.png",
+        "/images/base/base6.png"
+      ],
+      tags: ["React", "TypeScript", "Node.js", "Mercado Pago", "PWA"],
+      demo: "https://basecorporativa.store/",
+      featured: true,
+      saas: true,
     },
   ];
 
@@ -231,8 +261,18 @@ export default function Projects() {
               } backdrop-blur-md shadow-2xl hover:shadow-yellow-400/20`}
               whileHover={{ scale: 1.02 }}
             >
-              {/* Featured Badge */}
-              {project.featured && (
+              {/* Featured/SaaS Badge */}
+              {project.saas ? (
+                <div className="absolute top-4 left-4 z-20 flex items-center gap-2">
+                  <div className="px-3 py-1 bg-gradient-to-r from-green-400 to-emerald-500 text-black text-xs font-bold rounded-full flex items-center gap-1">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-black"></span>
+                    </span>
+                    {t.projects.saas}
+                  </div>
+                </div>
+              ) : project.featured && (
                 <div className="absolute top-4 left-4 z-20 px-3 py-1 bg-gradient-to-r from-yellow-400 to-amber-500 text-black text-xs font-bold rounded-full">
                   {t.projects.featured}
                 </div>
@@ -296,26 +336,32 @@ export default function Projects() {
 
                 {/* Action Buttons */}
                 <div className="flex items-center space-x-4 pt-4">
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center space-x-2 text-white hover:text-yellow-400 transition-colors group/link"
-                    aria-label={`Repositório no GitHub para ${project.title}`}
-                  >
-                    <Github className="h-5 w-5 group-hover/link:scale-110 transition-transform" />
-                    <span className="text-sm font-medium">{t.projects.code}</span>
-                  </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 text-white hover:text-yellow-400 transition-colors group/link"
+                      aria-label={`Repositório no GitHub para ${project.title}`}
+                    >
+                      <Github className="h-5 w-5 group-hover/link:scale-110 transition-transform" />
+                      <span className="text-sm font-medium">{t.projects.code}</span>
+                    </a>
+                  )}
                   
                   {project.demo && (
                     <a
                       href={project.demo}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center space-x-2 text-white hover:text-yellow-400 transition-colors group/link"
+                      className={`flex items-center space-x-2 transition-colors group/link ${
+                        project.saas 
+                          ? 'px-4 py-2 bg-gradient-to-r from-green-400 to-emerald-500 text-black font-bold rounded-lg hover:from-green-300 hover:to-emerald-400' 
+                          : 'text-white hover:text-yellow-400'
+                      }`}
                     >
                       <ExternalLink className="h-5 w-5 group-hover/link:scale-110 transition-transform" />
-                      <span className="text-sm font-medium">Demo</span>
+                      <span className="text-sm font-medium">{t.projects.visitSite}</span>
                     </a>
                   )}
                 </div>

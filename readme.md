@@ -24,7 +24,7 @@
 
 ---
 
-## 📋 Índice
+## Índice
 
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Funcionalidades](#-funcionalidades)
@@ -32,12 +32,13 @@
 - [Estrutura do Projeto](#-estrutura-do-projeto)
 - [Como Executar](#-como-executar)
 - [Scripts Disponíveis](#-scripts-disponíveis)
+- [SaaS em Produção](#-saas-em-produção)
 - [Projetos em Destaque](#-projetos-em-destaque)
 - [Autor](#-autor)
 
 ---
 
-## 🎯 Sobre o Projeto
+## Sobre o Projeto
 
 Portfólio pessoal desenvolvido para apresentar minha trajetória profissional, habilidades técnicas e projetos desenvolvidos. A aplicação foi construída com foco em **performance**, **acessibilidade** e **experiência do usuário**, utilizando as melhores práticas de desenvolvimento front-end moderno.
 
@@ -206,6 +207,29 @@ Portfolio-LeonardoFragoso-React/
 | `npm run build` | Gera build de produção otimizado |
 | `npm run preview` | Visualiza o build de produção localmente |
 | `npm run lint` | Executa o ESLint para análise de código |
+
+---
+
+## 🚀 SaaS em Produção
+
+<div align="center">
+
+| Projeto | Descrição | Link |
+|---------|-----------|------|
+| **ProFlow** | Plataforma para freelancers com IA consultiva, precificação automática e pagamento em custódia | [![ProFlow](https://img.shields.io/badge/🌐_Acessar-ProFlow-6366f1?style=for-the-badge)](https://www.proflow.pro/) |
+| **Base Corporativa** | E-commerce de roupas corporativas com checkout Mercado Pago e PWA | [![Base](https://img.shields.io/badge/🌐_Acessar-Base_Corporativa-d4a574?style=for-the-badge)](https://basecorporativa.store/) |
+
+</div>
+
+### ProFlow - Plataforma para Freelancers
+SaaS completo para freelancers profissionais com IA consultiva que sugere preços, gera propostas automáticas e protege contra calotes com sistema de pagamento em custódia. Inclui verificação de identidade (ProFlow Score), taxa fixa de 8% e suporte prioritário.
+- **Stack**: Vue.js, TypeScript, Node.js, PostgreSQL, IA, Stripe
+- **🔗 Live**: [proflow.pro](https://www.proflow.pro/)
+
+### Base Corporativa - E-commerce
+E-commerce completo para roupas corporativas com catálogo de produtos, carrinho de compras, checkout integrado com Mercado Pago, sistema de gestão de pedidos, analytics com Google Analytics e Meta Pixel, e PWA para experiência mobile.
+- **Stack**: React, TypeScript, Node.js, Mercado Pago, PWA
+- **🔗 Live**: [basecorporativa.store](https://basecorporativa.store/)
 
 ---
 
