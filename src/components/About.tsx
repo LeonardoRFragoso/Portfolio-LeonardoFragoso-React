@@ -346,21 +346,9 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500 font-bold text-2xl">
-              Desenvolvedor Full Stack
+              {t.about.role}
             </span>{" "}
-            com sólida experiência em{" "}
-            <span className="text-yellow-400 font-semibold">gestão de TI e infraestrutura</span>. 
-            Atualmente{" "}
-            <span className="text-yellow-400 font-semibold">Desenvolvedor de Sistemas Junior</span> na iTracker Logística Inteligente,
-            com experiência anterior como{" "}
-            <span className="text-yellow-400 font-semibold">Gerente de TI</span> liderando equipes técnicas.
-            Especializado em{" "}
-            <span className="text-yellow-400 font-semibold">Python, Django, Flask, FastAPI e React</span>, 
-            com foco em{" "}
-            <span className="text-yellow-400 font-semibold">automação de processos, APIs REST e extração de dados</span>. 
-            Combino{" "}
-            <span className="text-yellow-400 font-semibold">visão estratégica de negócios com habilidades técnicas avançadas</span>{" "}
-            para criar soluções completas e escaláveis, desde back-end robusto até interfaces modernas e intuitivas.
+            {t.about.description}
           </motion.p>
 
           {/* Stats Counter */}
