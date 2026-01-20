@@ -97,7 +97,7 @@ export const translations = {
     // Experience Data
     experienceData: [
       {
-        title: 'Desenvolvedor de Sistemas Junior',
+        title: 'Desenvolvedor de Sistemas',
         company: 'iTracker Logística Inteligente',
         period: 'dez 2024 - Presente',
         description: 'Desenvolvimento de sistemas de automação e extração de dados para otimização de processos logísticos. Criação de APIs REST, dashboards gerenciais e integração de sistemas com Python, Django e React.',
@@ -366,7 +366,7 @@ export const translations = {
     // Experience Data
     experienceData: [
       {
-        title: 'Junior Systems Developer',
+        title: 'Systems Developer',
         company: 'iTracker Intelligent Logistics',
         period: 'Dec 2024 - Present',
         description: 'Development of automation and data extraction systems for logistics process optimization. Creation of REST APIs, management dashboards and system integration with Python, Django and React.',
