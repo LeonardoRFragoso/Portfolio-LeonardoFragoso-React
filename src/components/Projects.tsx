@@ -45,7 +45,7 @@ export default function Projects() {
         "/images/base/base5.png",
         "/images/base/base6.png"
       ],
-      tags: ["React", "TypeScript", "Node.js", "Mercado Pago", "PWA"],
+      tags: ["React", "Django", "PostgreSQL", "Python", "Mercado Pago"],
       demo: "https://basecorporativa.store/",
       featured: true,
       saas: true,
