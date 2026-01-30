@@ -232,6 +232,10 @@ export const translations = {
           title: 'GNLink - Site Institucional',
           description: 'Site institucional moderno e responsivo para empresa do setor de energia. Desenvolvido com Next.js 14, TypeScript e Tailwind CSS. Inclui internacionalização (PT/EN), animações com Framer Motion, menu responsivo e design premium.',
         },
+        {
+          title: 'LogiFlow CRM',
+          description: 'Sistema CRM SaaS completo para transportadoras e logística. Unifica gestão comercial, operacional e fiscal com emissão de CT-e/MDF-e integrada, rastreamento GPS em tempo real, integrações com ERPs (Omie, Bling, Tiny), WhatsApp e MercadoPago. Inclui CRM Principal, App do Motorista (PWA), Portal do Cliente e Site Institucional.',
+        },
       ],
     },
 
@@ -504,6 +508,10 @@ export const translations = {
         {
           title: 'GNLink - Institutional Website',
           description: 'Modern and responsive institutional website for an energy sector company. Built with Next.js 14, TypeScript and Tailwind CSS. Features internationalization (PT/EN), Framer Motion animations, responsive menu and premium design.',
+        },
+        {
+          title: 'LogiFlow CRM',
+          description: 'Complete SaaS CRM system for carriers and logistics. Unifies commercial, operational and fiscal management with integrated CT-e/MDF-e issuance, real-time GPS tracking, ERP integrations (Omie, Bling, Tiny), WhatsApp and MercadoPago. Includes Main CRM, Driver App (PWA), Customer Portal and Institutional Site.',
         },
       ],
     },

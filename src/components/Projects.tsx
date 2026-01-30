@@ -3,6 +3,11 @@ import { Github, ExternalLink, ChevronLeft, ChevronRight, Eye } from "lucide-rea
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../i18n";
 
+interface DemoLink {
+  label: string;
+  url: string;
+}
+
 interface Project {
   title: string;
   description: string;
@@ -10,6 +15,7 @@ interface Project {
   tags: string[];
   github?: string;
   demo?: string;
+  demoLinks?: DemoLink[];
   featured?: boolean;
   saas?: boolean;
 }
@@ -243,6 +249,40 @@ export default function Projects() {
       demo: "https://gn-link.vercel.app",
       featured: true,
     },
+    // LogiFlow CRM - Sistema completo para transportadoras
+    {
+      title: t.projects.projectsList[13].title,
+      description: t.projects.projectsList[13].description,
+      images: [
+        "/images/LogiFlow/site-divulgacao/1.png",
+        "/images/LogiFlow/site-divulgacao/2.png",
+        "/images/LogiFlow/site-divulgacao/3.png",
+        "/images/LogiFlow/site-divulgacao/4.png",
+        "/images/LogiFlow/site-divulgacao/5.png",
+        "/images/LogiFlow/site-divulgacao/6.png",
+        "/images/LogiFlow/site-divulgacao/7.png",
+        "/images/LogiFlow/site-divulgacao/8.png",
+        "/images/LogiFlow/site-divulgacao/9.png",
+        "/images/LogiFlow/site-divulgacao/10.png",
+        "/images/LogiFlow/site-divulgacao/11.png",
+        "/images/LogiFlow/site-divulgacao/12.png",
+        "/images/LogiFlow/site-divulgacao/13.png",
+        "/images/LogiFlow/site-divulgacao/14.png",
+        "/images/LogiFlow/app/1.png",
+        "/images/LogiFlow/app-motorista/1.png",
+        "/images/LogiFlow/portal-cliente/1.png"
+      ],
+      tags: ["Python", "FastAPI", "Vue.js 3", "TailwindCSS", "PostgreSQL", "Redis"],
+      github: "https://github.com/LeonardoRFragoso/LogiFlow",
+      demoLinks: [
+        { label: "Site", url: "https://logi-flow-wuhp.vercel.app" },
+        { label: "App CRM", url: "https://logi-flow-blush.vercel.app" },
+        { label: "App Motorista", url: "https://logi-flow-app-motorista.vercel.app" },
+        { label: "Portal Cliente", url: "https://logi-flow-z3t5.vercel.app" }
+      ],
+      featured: true,
+      saas: true,
+    },
   ];
 
   const nextImage = () => {
@@ -459,6 +499,22 @@ export default function Projects() {
                     </a>
                   )}
                 </div>
+                {project.demoLinks && project.demoLinks.length > 0 && (
+                  <div className="flex flex-wrap gap-2 pt-2">
+                    {project.demoLinks.map((link, linkIndex) => (
+                      <a
+                        key={linkIndex}
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center space-x-1 px-3 py-1.5 bg-yellow-400/10 text-yellow-300 text-xs font-medium rounded-lg border border-yellow-400/20 hover:bg-yellow-400/20 transition-colors group/link"
+                      >
+                        <ExternalLink className="h-3.5 w-3.5 group-hover/link:scale-110 transition-transform" />
+                        <span>{link.label}</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
               </div>
             </motion.div>
           ))}
