@@ -198,11 +198,11 @@ export const translations = {
         },
         {
           title: 'Sistema para Andaimes Pini',
-          description: 'Sistema empresarial customizado para locação de equipamentos com controle de estoque, gestão de contratos, faturamento automático, relatórios financeiros e dashboard gerencial com indicadores de negócio.',
+          description: 'Sistema de gestão de locações desenvolvido com React e Material-UI. Sidebar expansível, navbar fixa, registro de locações, visualização de pedidos, layout totalmente responsivo para mobile, tablet e desktop.',
         },
         {
           title: 'Sistema de Monitoramento Digital Signage',
-          description: 'Sistema de digital signage para terminal portuário com gerenciamento de displays informativos, agendamento de conteúdo, monitoramento em tempo real, integração com sistemas operacionais e painel administrativo.',
+          description: 'Plataforma corporativa de gerenciamento de TVs com suporte multi-empresa, comunicação em tempo real via WebSocket, compilação automática de vídeos com FFmpeg, integração nativa com Chromecast, métricas Prometheus e cache Redis para alta disponibilidade.',
         },
         {
           title: 'ProFlow - Plataforma para Freelancers',
@@ -214,15 +214,15 @@ export const translations = {
         },
         {
           title: 'MedFlow Finance',
-          description: 'Sistema de faturamento inteligente para clínicas médicas que recupera dinheiro perdido por erros de faturamento e glosas. Automação de validação e processamento com dashboard de métricas ROI.',
+          description: 'Sistema inteligente que recupera 10-20% do faturamento perdido por clínicas médicas devido a erros de faturamento e glosas. Automação de validação com Laravel 11 e Vue 3, dashboard de métricas ROI e processamento centralizado.',
         },
         {
           title: 'BI-as-a-Service',
-          description: 'Plataforma SaaS de Business Intelligence com IA que cria dashboards automáticos a partir de CSV. Análise inteligente via GPT-4o-mini, detecção de tendências, KPIs dinâmicos e gestão multi-tenant.',
+          description: 'Plataforma SaaS de Business Intelligence com IA. Upload de CSV com análise automática via GPT-4o-mini, detecção semântica de dados, dashboards automáticos, KPIs dinâmicos, insights preditivos e gestão multi-tenant com billing integrado.',
         },
         {
           title: 'APM Platform',
-          description: 'Plataforma de Monitoramento de Sistemas e APIs inspirada em New Relic e Datadog. Clean Architecture, coleta assíncrona de métricas, health checks, alertas em tempo real via WebSocket.',
+          description: 'Plataforma de Monitoramento de Sistemas e APIs em Java 21 com Spring Boot. Coleta automática de métricas (latência, CPU, memória), health checks com classificação UP/DEGRADED/DOWN, alertas configuráveis e dashboard em tempo real via WebSocket.',
         },
         {
           title: 'FinanceControl',
@@ -471,11 +471,11 @@ export const translations = {
         },
         {
           title: 'Pini Scaffolding System',
-          description: 'Customized enterprise system for equipment rental with inventory control, contract management, automatic billing, financial reports and management dashboard with business indicators.',
+          description: 'Rental management system built with React and Material-UI. Expandable sidebar, fixed navbar, rental registration, order visualization, fully responsive layout for mobile, tablet and desktop.',
         },
         {
           title: 'Digital Signage Monitoring System',
-          description: 'Digital signage system for port terminal with informative display management, content scheduling, real-time monitoring, integration with operating systems and admin panel.',
+          description: 'Corporate TV management platform with multi-company support, real-time WebSocket communication, automatic video compilation with FFmpeg, native Chromecast integration, Prometheus metrics and Redis cache for high availability.',
         },
         {
           title: 'ProFlow - Freelancer Platform',
@@ -487,15 +487,15 @@ export const translations = {
         },
         {
           title: 'MedFlow Finance',
-          description: 'Intelligent billing system for medical clinics that recovers money lost due to billing errors and denials. Validation and processing automation with ROI metrics dashboard.',
+          description: 'Intelligent system that recovers 10-20% of revenue lost by medical clinics due to billing errors and denials. Validation automation with Laravel 11 and Vue 3, ROI metrics dashboard and centralized processing.',
         },
         {
           title: 'BI-as-a-Service',
-          description: 'SaaS Business Intelligence platform with AI that creates automatic dashboards from CSV. Intelligent analysis via GPT-4o-mini, trend detection, dynamic KPIs and multi-tenant management.',
+          description: 'SaaS Business Intelligence platform with AI. CSV upload with automatic analysis via GPT-4o-mini, semantic data detection, automatic dashboards, dynamic KPIs, predictive insights and multi-tenant management with integrated billing.',
         },
         {
           title: 'APM Platform',
-          description: 'Application Performance Monitoring Platform inspired by New Relic and Datadog. Clean Architecture, async metrics collection, health checks, real-time alerts via WebSocket.',
+          description: 'Application Performance Monitoring Platform in Java 21 with Spring Boot. Automatic metrics collection (latency, CPU, memory), health checks with UP/DEGRADED/DOWN classification, configurable alerts and real-time dashboard via WebSocket.',
         },
         {
           title: 'FinanceControl',

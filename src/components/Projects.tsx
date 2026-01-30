@@ -239,6 +239,7 @@ export default function Projects() {
         "/images/GNLink/8.png"
       ],
       tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      github: "https://github.com/LeonardoRFragoso/GNLink",
       featured: true,
     },
   ];
