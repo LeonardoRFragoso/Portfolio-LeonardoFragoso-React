@@ -240,6 +240,7 @@ export default function Projects() {
       ],
       tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"],
       github: "https://github.com/LeonardoRFragoso/GNLink",
+      demo: "https://gn-link.vercel.app",
       featured: true,
     },
   ];
