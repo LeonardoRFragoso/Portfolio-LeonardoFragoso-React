@@ -66,6 +66,7 @@ export default function Projects() {
         "/images/digital-signage/9.jpg"
       ],
       tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
+      github: "https://github.com/LeonardoRFragoso/Digital-Signage-Platform",
       featured: true,
     },
     // Projetos em Destaque
