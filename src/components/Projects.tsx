@@ -225,6 +225,22 @@ export default function Projects() {
       tags: ["Streamlit", "Python", "Google Drive API", "Data Analysis"],
       github: "https://github.com/LeonardoRFragoso/DashboardMultas",
     },
+    {
+      title: t.projects.projectsList[12].title,
+      description: t.projects.projectsList[12].description,
+      images: [
+        "/images/GNLink/1.png",
+        "/images/GNLink/2.png",
+        "/images/GNLink/3.png",
+        "/images/GNLink/4.png",
+        "/images/GNLink/5.png",
+        "/images/GNLink/6.png",
+        "/images/GNLink/7.png",
+        "/images/GNLink/8.png"
+      ],
+      tags: ["Python", "Django", "PostgreSQL", "JavaScript"],
+      featured: true,
+    },
   ];
 
   const nextImage = () => {

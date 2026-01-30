@@ -228,6 +228,10 @@ export const translations = {
           title: 'FinanceControl',
           description: 'Gerenciador financeiro pessoal com dashboard interativo, controle de receitas e despesas, categorização automática, relatórios visuais e gráficos de evolução financeira.',
         },
+        {
+          title: 'GNLink - Sistema de Gestão',
+          description: 'Sistema de gestão empresarial com interface moderna, controle de processos, relatórios gerenciais e dashboard interativo para acompanhamento de métricas e indicadores de negócio.',
+        },
       ],
     },
 
@@ -496,6 +500,10 @@ export const translations = {
         {
           title: 'FinanceControl',
           description: 'Personal finance manager with interactive dashboard, income and expense tracking, automatic categorization, visual reports and financial evolution charts.',
+        },
+        {
+          title: 'GNLink - Management System',
+          description: 'Enterprise management system with modern interface, process control, management reports and interactive dashboard for tracking business metrics and indicators.',
         },
       ],
     },
