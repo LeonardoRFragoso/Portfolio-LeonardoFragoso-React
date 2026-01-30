@@ -238,7 +238,7 @@ export default function Projects() {
         "/images/GNLink/7.png",
         "/images/GNLink/8.png"
       ],
-      tags: ["Python", "Django", "PostgreSQL", "JavaScript"],
+      tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"],
       featured: true,
     },
   ];

@@ -229,8 +229,8 @@ export const translations = {
           description: 'Gerenciador financeiro pessoal com dashboard interativo, controle de receitas e despesas, categorização automática, relatórios visuais e gráficos de evolução financeira.',
         },
         {
-          title: 'GNLink - Sistema de Gestão',
-          description: 'Sistema de gestão empresarial com interface moderna, controle de processos, relatórios gerenciais e dashboard interativo para acompanhamento de métricas e indicadores de negócio.',
+          title: 'GNLink - Site Institucional',
+          description: 'Site institucional moderno e responsivo para empresa do setor de energia. Desenvolvido com Next.js 14, TypeScript e Tailwind CSS. Inclui internacionalização (PT/EN), animações com Framer Motion, menu responsivo e design premium.',
         },
       ],
     },
@@ -502,8 +502,8 @@ export const translations = {
           description: 'Personal finance manager with interactive dashboard, income and expense tracking, automatic categorization, visual reports and financial evolution charts.',
         },
         {
-          title: 'GNLink - Management System',
-          description: 'Enterprise management system with modern interface, process control, management reports and interactive dashboard for tracking business metrics and indicators.',
+          title: 'GNLink - Institutional Website',
+          description: 'Modern and responsive institutional website for an energy sector company. Built with Next.js 14, TypeScript and Tailwind CSS. Features internationalization (PT/EN), Framer Motion animations, responsive menu and premium design.',
         },
       ],
     },
