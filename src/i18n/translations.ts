@@ -36,7 +36,7 @@ export const translations = {
     about: {
       title: 'Sobre Mim',
       role: 'Desenvolvedor Full Stack',
-      description: 'com experiência comprovada em sistemas empresariais de alto impacto. Atualmente Desenvolvedor de Sistemas na iTracker Logística Inteligente, com experiência anterior como Gerente de TI liderando equipes técnicas. Especializado em Python, Django, Flask, FastAPI e React, com foco em automação de processos, APIs REST e extração de dados. Combino visão estratégica de negócios com habilidades técnicas avançadas para criar soluções completas e escaláveis, desde aplicações web em produção até interfaces modernas e intuitivas.',
+      description: 'com experiência comprovada em sistemas empresariais de alto impacto. Atualmente Desenvolvedor de Sistemas em empresa de logística, com experiência anterior como Gerente de TI liderando equipes técnicas. Especializado em Python, Django, Flask, FastAPI e React, com foco em automação de processos, APIs REST e extração de dados. Combino visão estratégica de negócios com habilidades técnicas avançadas para criar soluções completas e escaláveis, desde aplicações web em produção até interfaces modernas e intuitivas.',
       stats: {
         projects: 'Projetos Entregues',
         years: 'Anos em TI',
@@ -98,7 +98,7 @@ export const translations = {
     experienceData: [
       {
         title: 'Desenvolvedor de Sistemas',
-        company: 'iTracker Logística Inteligente',
+        company: 'Empresa de Logística',
         period: 'dez 2024 - Presente',
         description: 'Desenvolvimento de sistemas de automação e extração de dados para otimização de processos logísticos. Criação de APIs REST, dashboards gerenciais e integração de sistemas com Python, Django e React.',
         featured: true,
@@ -201,7 +201,7 @@ export const translations = {
           description: 'Sistema empresarial customizado para locação de equipamentos com controle de estoque, gestão de contratos, faturamento automático, relatórios financeiros e dashboard gerencial com indicadores de negócio.',
         },
         {
-          title: 'Sistema de Monitoramento TVs ICTSI',
+          title: 'Sistema de Monitoramento Digital Signage',
           description: 'Sistema de digital signage para terminal portuário com gerenciamento de displays informativos, agendamento de conteúdo, monitoramento em tempo real, integração com sistemas operacionais e painel administrativo.',
         },
         {
@@ -309,7 +309,7 @@ export const translations = {
     about: {
       title: 'About Me',
       role: 'Full Stack Developer',
-      description: 'with proven experience in high-impact enterprise systems. Currently Systems Developer at iTracker Intelligent Logistics, with previous experience as IT Manager leading technical teams. Specialized in Python, Django, Flask, FastAPI and React, focused on process automation, REST APIs and data extraction. I combine strategic business vision with advanced technical skills to create complete and scalable solutions, from production web applications to modern and intuitive interfaces.',
+      description: 'with proven experience in high-impact enterprise systems. Currently Systems Developer at a logistics company, with previous experience as IT Manager leading technical teams. Specialized in Python, Django, Flask, FastAPI and React, focused on process automation, REST APIs and data extraction. I combine strategic business vision with advanced technical skills to create complete and scalable solutions, from production web applications to modern and intuitive interfaces.',
       stats: {
         projects: 'Projects Delivered',
         years: 'Years in IT',
@@ -371,7 +371,7 @@ export const translations = {
     experienceData: [
       {
         title: 'Systems Developer',
-        company: 'iTracker Intelligent Logistics',
+        company: 'Logistics Company',
         period: 'Dec 2024 - Present',
         description: 'Development of automation and data extraction systems for logistics process optimization. Creation of REST APIs, management dashboards and system integration with Python, Django and React.',
         featured: true,
@@ -474,7 +474,7 @@ export const translations = {
           description: 'Customized enterprise system for equipment rental with inventory control, contract management, automatic billing, financial reports and management dashboard with business indicators.',
         },
         {
-          title: 'ICTSI TV Monitoring System',
+          title: 'Digital Signage Monitoring System',
           description: 'Digital signage system for port terminal with informative display management, content scheduling, real-time monitoring, integration with operating systems and admin panel.',
         },
         {

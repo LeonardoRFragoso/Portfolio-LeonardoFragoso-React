@@ -50,23 +50,22 @@ export default function Projects() {
       featured: true,
       saas: true,
     },
-    // Sistema de Monitoramento TVs ICTSI
+    // Sistema de Monitoramento Digital Signage
     {
       title: t.projects.projectsList[5].title,
       description: t.projects.projectsList[5].description,
       images: [
-        "/images/Tvs-ICTSI/1.jpg",
-        "/images/Tvs-ICTSI/2.jpg",
-        "/images/Tvs-ICTSI/3.jpg",
-        "/images/Tvs-ICTSI/4.jpg",
-        "/images/Tvs-ICTSI/5.jpg",
-        "/images/Tvs-ICTSI/6.jpg",
-        "/images/Tvs-ICTSI/7.jpg",
-        "/images/Tvs-ICTSI/8.jpg",
-        "/images/Tvs-ICTSI/9.jpg"
+        "/images/digital-signage/1.jpg",
+        "/images/digital-signage/2.jpg",
+        "/images/digital-signage/3.jpg",
+        "/images/digital-signage/4.jpg",
+        "/images/digital-signage/5.jpg",
+        "/images/digital-signage/6.jpg",
+        "/images/digital-signage/7.jpg",
+        "/images/digital-signage/8.jpg",
+        "/images/digital-signage/9.jpg"
       ],
       tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
-      github: "https://github.com/LeonardoRFragoso/Tvs-ICTSI",
       featured: true,
     },
     // Projetos em Destaque
