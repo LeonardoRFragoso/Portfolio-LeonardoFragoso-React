@@ -489,11 +489,11 @@ export default function Projects() {
               </button>
 
               {/* Image Display */}
-              <div className="relative">
+              <div className="relative bg-black/50">
                 <img
                   src={selectedProject.images[currentImageIndex]}
                   alt={`${selectedProject.title} - ${currentImageIndex + 1}`}
-                  className="w-full h-96 object-cover"
+                  className="w-full max-h-[60vh] object-contain"
                 />
                 
                 {/* Navigation Arrows */}
