@@ -134,7 +134,7 @@ export default function Projects() {
         "/images/FinanceControl/financecontrol5.png",
         "/images/FinanceControl/financecontrol6.png"
       ],
-      tags: ["React", "Django", "Python", "SQLite"],
+      tags: ["Flutter", "Django REST", "Riverpod", "Mercado Pago", "JWT"],
       github: "https://github.com/LeonardoRFragoso/gerenciador-financeiro",
       featured: true,
     },

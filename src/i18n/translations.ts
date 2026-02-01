@@ -226,7 +226,7 @@ export const translations = {
         },
         {
           title: 'FinanceControl',
-          description: 'Gerenciador financeiro pessoal com dashboard interativo, controle de receitas e despesas, categorização automática, relatórios visuais e gráficos de evolução financeira.',
+          description: 'Sistema completo de gestão financeira pessoal com modelo Freemium. App multiplataforma em Flutter (Windows, Android, iOS, Web) com backend Django REST. Inclui dashboard interativo, metas financeiras, orçamentos, IA assistente e integração Mercado Pago para assinaturas.',
         },
         {
           title: 'GNLink - Site Institucional',
@@ -503,7 +503,7 @@ export const translations = {
         },
         {
           title: 'FinanceControl',
-          description: 'Personal finance manager with interactive dashboard, income and expense tracking, automatic categorization, visual reports and financial evolution charts.',
+          description: 'Complete personal finance management system with Freemium model. Cross-platform Flutter app (Windows, Android, iOS, Web) with Django REST backend. Includes interactive dashboard, financial goals, budgets, AI assistant and Mercado Pago integration for subscriptions.',
         },
         {
           title: 'GNLink - Institutional Website',
