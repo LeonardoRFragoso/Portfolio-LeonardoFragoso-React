@@ -110,7 +110,7 @@ export default function Header() {
             </motion.a>
             
             <motion.a
-              href="https://linkedin.com/in/leonardorfragoso"
+              href="https://www.linkedin.com/in/leonardo-fragoso-921b166a/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
@@ -214,7 +214,7 @@ export default function Header() {
                 </motion.a>
                 
                 <motion.a
-                  href="https://linkedin.com/in/leonardorfragoso"
+                  href="https://www.linkedin.com/in/leonardo-fragoso-921b166a/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
