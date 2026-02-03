@@ -163,74 +163,6 @@ export default function Projects() {
       github: "https://github.com/LeonardoRFragoso/AndaimesPini_Project",
       featured: true,
     },
-    // Projetos Corporativos - Por último
-    {
-      title: t.projects.projectsList[0].title,
-      description: t.projects.projectsList[0].description,
-      images: [
-        "/images/Pátio/1.jpg",
-        "/images/Pátio/2.jpg",
-        "/images/Pátio/3.jpg",
-        "/images/Pátio/4.jpg",
-        "/images/Pátio/5.jpg",
-        "/images/Pátio/6.jpg"
-      ],
-      tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
-      github: "https://github.com/LeonardoRFragoso/Patio",
-    },
-    {
-      title: t.projects.projectsList[1].title,
-      description: t.projects.projectsList[1].description,
-      images: [
-        "/images/não-conformidade/1.jpg",
-        "/images/não-conformidade/2.jpg",
-        "/images/não-conformidade/3.jpg",
-        "/images/não-conformidade/4.jpg",
-        "/images/não-conformidade/5.jpg",
-        "/images/não-conformidade/6.jpg",
-        "/images/não-conformidade/7.jpg",
-        "/images/não-conformidade/8.jpg"
-      ],
-      tags: ["Django", "Python", "JavaScript", "PostgreSQL"],
-      github: "https://github.com/LeonardoRFragoso/nao-conformidade",
-    },
-    {
-      title: t.projects.projectsList[2].title,
-      description: t.projects.projectsList[2].description,
-      images: [
-        "/images/GR/1.jpg",
-        "/images/GR/2.jpg",
-        "/images/GR/3.jpg",
-        "/images/GR/4.jpg",
-        "/images/GR/5.jpg",
-        "/images/GR/6.jpg",
-        "/images/GR/7.jpg",
-        "/images/GR/8.jpg",
-        "/images/GR/9.jpg",
-        "/images/GR/10.jpg",
-        "/images/GR/11.jpg",
-        "/images/GR/12.jpg"
-      ],
-      tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
-      github: "https://github.com/LeonardoRFragoso/GR",
-    },
-    {
-      title: t.projects.projectsList[3].title,
-      description: t.projects.projectsList[3].description,
-      images: [
-        "/images/dash-multas/1.jpg",
-        "/images/dash-multas/2.jpg",
-        "/images/dash-multas/3.jpg",
-        "/images/dash-multas/4.jpg",
-        "/images/dash-multas/5.jpg",
-        "/images/dash-multas/6.jpg",
-        "/images/dash-multas/7.jpg",
-        "/images/dash-multas/8.jpg",
-        "/images/dash-multas/9.jpg"
-      ],
-      tags: ["Streamlit", "Python", "Google Drive API", "Data Analysis"],
-      github: "https://github.com/LeonardoRFragoso/DashboardMultas",
-    },
     {
       title: t.projects.projectsList[12].title,
       description: t.projects.projectsList[12].description,
@@ -300,6 +232,74 @@ export default function Projects() {
       tags: ["Go", "Vue.js 3", "PostgreSQL", "TailwindCSS", "JWT", "Docker"],
       github: "https://github.com/LeonardoRFragoso/Go-API-Gestao-de-Projetos-e-Tarefas",
       featured: true,
+    },
+    // Projetos Corporativos - Por último
+    {
+      title: t.projects.projectsList[0].title,
+      description: t.projects.projectsList[0].description,
+      images: [
+        "/images/Pátio/1.jpg",
+        "/images/Pátio/2.jpg",
+        "/images/Pátio/3.jpg",
+        "/images/Pátio/4.jpg",
+        "/images/Pátio/5.jpg",
+        "/images/Pátio/6.jpg"
+      ],
+      tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
+      github: "https://github.com/LeonardoRFragoso/Patio",
+    },
+    {
+      title: t.projects.projectsList[1].title,
+      description: t.projects.projectsList[1].description,
+      images: [
+        "/images/não-conformidade/1.jpg",
+        "/images/não-conformidade/2.jpg",
+        "/images/não-conformidade/3.jpg",
+        "/images/não-conformidade/4.jpg",
+        "/images/não-conformidade/5.jpg",
+        "/images/não-conformidade/6.jpg",
+        "/images/não-conformidade/7.jpg",
+        "/images/não-conformidade/8.jpg"
+      ],
+      tags: ["Django", "Python", "JavaScript", "PostgreSQL"],
+      github: "https://github.com/LeonardoRFragoso/nao-conformidade",
+    },
+    {
+      title: t.projects.projectsList[2].title,
+      description: t.projects.projectsList[2].description,
+      images: [
+        "/images/GR/1.jpg",
+        "/images/GR/2.jpg",
+        "/images/GR/3.jpg",
+        "/images/GR/4.jpg",
+        "/images/GR/5.jpg",
+        "/images/GR/6.jpg",
+        "/images/GR/7.jpg",
+        "/images/GR/8.jpg",
+        "/images/GR/9.jpg",
+        "/images/GR/10.jpg",
+        "/images/GR/11.jpg",
+        "/images/GR/12.jpg"
+      ],
+      tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
+      github: "https://github.com/LeonardoRFragoso/GR",
+    },
+    {
+      title: t.projects.projectsList[3].title,
+      description: t.projects.projectsList[3].description,
+      images: [
+        "/images/dash-multas/1.jpg",
+        "/images/dash-multas/2.jpg",
+        "/images/dash-multas/3.jpg",
+        "/images/dash-multas/4.jpg",
+        "/images/dash-multas/5.jpg",
+        "/images/dash-multas/6.jpg",
+        "/images/dash-multas/7.jpg",
+        "/images/dash-multas/8.jpg",
+        "/images/dash-multas/9.jpg"
+      ],
+      tags: ["Streamlit", "Python", "Google Drive API", "Data Analysis"],
+      github: "https://github.com/LeonardoRFragoso/DashboardMultas",
     },
   ];
 
