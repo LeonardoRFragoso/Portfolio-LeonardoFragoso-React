@@ -283,6 +283,24 @@ export default function Projects() {
       featured: true,
       saas: true,
     },
+    // TaskManager - Sistema de Gestão de Projetos e Tarefas
+    {
+      title: t.projects.projectsList[14].title,
+      description: t.projects.projectsList[14].description,
+      images: [
+        "/images/GO API - Task Manager/1.png",
+        "/images/GO API - Task Manager/2.png",
+        "/images/GO API - Task Manager/3.png",
+        "/images/GO API - Task Manager/4.png",
+        "/images/GO API - Task Manager/5.png",
+        "/images/GO API - Task Manager/6.png",
+        "/images/GO API - Task Manager/7.png",
+        "/images/GO API - Task Manager/8.png"
+      ],
+      tags: ["Go", "Vue.js 3", "PostgreSQL", "TailwindCSS", "JWT", "Docker"],
+      github: "https://github.com/LeonardoRFragoso/Go-API-Gestao-de-Projetos-e-Tarefas",
+      featured: true,
+    },
   ];
 
   const nextImage = () => {

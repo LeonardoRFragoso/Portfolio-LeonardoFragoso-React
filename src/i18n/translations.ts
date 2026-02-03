@@ -63,8 +63,8 @@ export const translations = {
     // Skills Data
     skillsData: [
       { 
-        name: 'Python & Frameworks', 
-        description: 'Django, Flask, FastAPI | APIs RESTful e GraphQL | Selenium, Pandas, NumPy | Celery, Redis | Desenvolvimento back-end robusto', 
+        name: 'Python, Go & Frameworks', 
+        description: 'Django, Flask, FastAPI, Gin | APIs RESTful e GraphQL | Go para alta performance | Selenium, Pandas, NumPy | Celery, Redis | Desenvolvimento back-end robusto', 
         level: 'Avançado',
       },
       { 
@@ -236,6 +236,10 @@ export const translations = {
           title: 'LogiFlow CRM',
           description: 'Sistema CRM SaaS completo para transportadoras e logística. Unifica gestão comercial, operacional e fiscal com emissão de CT-e/MDF-e integrada, rastreamento GPS em tempo real, integrações com ERPs (Omie, Bling, Tiny), WhatsApp e MercadoPago. Inclui CRM Principal, App do Motorista (PWA), Portal do Cliente e Site Institucional.',
         },
+        {
+          title: 'TaskManager - Gestão de Projetos',
+          description: 'Sistema completo estilo Trello para gestão de projetos e tarefas com backend em Go e frontend em Vue.js 3. Inclui Dark Mode, Internacionalização (PT-BR/EN), Dashboard com gráficos Chart.js, Kanban Board com drag-and-drop, sistema de Equipes/Squads, Notificações em tempo real, permissões granulares (lead/admin/member), busca e filtros avançados, atalhos de teclado e autenticação JWT com refresh tokens.',
+        },
       ],
     },
 
@@ -340,8 +344,8 @@ export const translations = {
     // Skills Data
     skillsData: [
       { 
-        name: 'Python & Frameworks', 
-        description: 'Django, Flask, FastAPI | RESTful & GraphQL APIs | Selenium, Pandas, NumPy | Celery, Redis | Robust back-end development', 
+        name: 'Python, Go & Frameworks', 
+        description: 'Django, Flask, FastAPI, Gin | RESTful & GraphQL APIs | Go for high performance | Selenium, Pandas, NumPy | Celery, Redis | Robust back-end development', 
         level: 'Advanced',
       },
       { 
@@ -512,6 +516,10 @@ export const translations = {
         {
           title: 'LogiFlow CRM',
           description: 'Complete SaaS CRM system for carriers and logistics. Unifies commercial, operational and fiscal management with integrated CT-e/MDF-e issuance, real-time GPS tracking, ERP integrations (Omie, Bling, Tiny), WhatsApp and MercadoPago. Includes Main CRM, Driver App (PWA), Customer Portal and Institutional Site.',
+        },
+        {
+          title: 'TaskManager - Project Management',
+          description: 'Complete Trello-style system for project and task management with Go backend and Vue.js 3 frontend. Features Dark Mode, Internationalization (PT-BR/EN), Dashboard with Chart.js graphs, Kanban Board with drag-and-drop, Teams/Squads system, real-time Notifications, granular permissions (lead/admin/member), advanced search and filters, keyboard shortcuts and JWT authentication with refresh tokens.',
         },
       ],
     },
