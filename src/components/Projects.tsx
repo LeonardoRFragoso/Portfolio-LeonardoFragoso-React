@@ -75,7 +75,7 @@ export default function Projects() {
       github: "https://github.com/LeonardoRFragoso/Digital-Signage-Platform",
       featured: true,
     },
-    // Projetos em Destaque
+    // MedFlow Finance
     {
       title: t.projects.projectsList[8].title,
       description: t.projects.projectsList[8].description,
@@ -91,94 +91,6 @@ export default function Projects() {
       ],
       tags: ["Laravel 11", "Vue 3", "PostgreSQL", "API REST"],
       github: "https://github.com/LeonardoRFragoso/MedFlow_Finance",
-      featured: true,
-    },
-    {
-      title: t.projects.projectsList[9].title,
-      description: t.projects.projectsList[9].description,
-      images: [
-        "/images/SaaS/1SaaS - 1.png",
-        "/images/SaaS/1SaaS - 2.png",
-        "/images/SaaS/1SaaS - 3.png",
-        "/images/SaaS/1SaaS - 4.png",
-        "/images/SaaS/1SaaS - 5.png",
-        "/images/SaaS/1SaaS - 6.png",
-        "/images/SaaS/1SaaS - 7.png"
-      ],
-      tags: ["Python", "FastAPI", "React", "GPT-4", "Docker"],
-      github: "https://github.com/LeonardoRFragoso/SaaS",
-      featured: true,
-    },
-    {
-      title: t.projects.projectsList[10].title,
-      description: t.projects.projectsList[10].description,
-      images: [
-        "/images/APM/APM1.png",
-        "/images/APM/APM2.png",
-        "/images/APM/APM3.png",
-        "/images/APM/APM4.png",
-        "/images/APM/APM5.png",
-        "/images/APM/APM6.png",
-        "/images/APM/APM7.png"
-      ],
-      tags: ["Java 21", "Spring Boot", "WebSocket", "Clean Architecture"],
-      github: "https://github.com/LeonardoRFragoso/Plataforma-de-Monitoramento-de-Sistemas-e-APIs",
-      featured: true,
-    },
-    {
-      title: t.projects.projectsList[11].title,
-      description: t.projects.projectsList[11].description,
-      images: [
-        "/images/FinanceControl/financecontrol1.png",
-        "/images/FinanceControl/financecontrol2.png",
-        "/images/FinanceControl/financecontrol5.png",
-        "/images/FinanceControl/financecontrol6.png"
-      ],
-      tags: ["Flutter", "Django REST", "Riverpod", "Mercado Pago", "JWT"],
-      github: "https://github.com/LeonardoRFragoso/gerenciador-financeiro",
-      featured: true,
-    },
-    // Outros projetos
-    {
-      title: t.projects.projectsList[4].title,
-      description: t.projects.projectsList[4].description,
-      images: [
-        "/images/Andaimes Pini/pini1.png",
-        "/images/Andaimes Pini/pini2.png",
-        "/images/Andaimes Pini/pini3.png",
-        "/images/Andaimes Pini/pini4.png",
-        "/images/Andaimes Pini/pini5.png",
-        "/images/Andaimes Pini/Pini6.png",
-        "/images/Andaimes Pini/Pini7.png",
-        "/images/Andaimes Pini/pini8.png",
-        "/images/Andaimes Pini/pini9.png",
-        "/images/Andaimes Pini/Pini10.png",
-        "/images/Andaimes Pini/pini11.png",
-        "/images/Andaimes Pini/pini12.png",
-        "/images/Andaimes Pini/pini13.png",
-        "/images/Andaimes Pini/pini14.png",
-        "/images/Andaimes Pini/pini15.png"
-      ],
-      tags: ["Flask", "React", "PostgreSQL"],
-      github: "https://github.com/LeonardoRFragoso/AndaimesPini_Project",
-      featured: true,
-    },
-    {
-      title: t.projects.projectsList[12].title,
-      description: t.projects.projectsList[12].description,
-      images: [
-        "/images/GNLink/1.png",
-        "/images/GNLink/2.png",
-        "/images/GNLink/3.png",
-        "/images/GNLink/4.png",
-        "/images/GNLink/5.png",
-        "/images/GNLink/6.png",
-        "/images/GNLink/7.png",
-        "/images/GNLink/8.png"
-      ],
-      tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com/LeonardoRFragoso/GNLink",
-      demo: "https://gn-link.vercel.app",
       featured: true,
     },
     // LogiFlow CRM - Sistema completo para transportadoras
@@ -231,6 +143,98 @@ export default function Projects() {
       ],
       tags: ["Go", "Vue.js 3", "PostgreSQL", "TailwindCSS", "JWT", "Docker"],
       github: "https://github.com/LeonardoRFragoso/Go-API-Gestao-de-Projetos-e-Tarefas",
+      featured: true,
+    },
+    // APM Platform
+    {
+      title: t.projects.projectsList[10].title,
+      description: t.projects.projectsList[10].description,
+      images: [
+        "/images/APM/APM1.png",
+        "/images/APM/APM2.png",
+        "/images/APM/APM3.png",
+        "/images/APM/APM4.png",
+        "/images/APM/APM5.png",
+        "/images/APM/APM6.png",
+        "/images/APM/APM7.png"
+      ],
+      tags: ["Java 21", "Spring Boot", "WebSocket", "Clean Architecture"],
+      github: "https://github.com/LeonardoRFragoso/Plataforma-de-Monitoramento-de-Sistemas-e-APIs",
+      featured: true,
+    },
+    // FinanceControl
+    {
+      title: t.projects.projectsList[11].title,
+      description: t.projects.projectsList[11].description,
+      images: [
+        "/images/FinanceControl/financecontrol1.png",
+        "/images/FinanceControl/financecontrol2.png",
+        "/images/FinanceControl/financecontrol5.png",
+        "/images/FinanceControl/financecontrol6.png"
+      ],
+      tags: ["Flutter", "Django REST", "Riverpod", "Mercado Pago", "JWT"],
+      github: "https://github.com/LeonardoRFragoso/gerenciador-financeiro",
+      featured: true,
+    },
+    // BI-as-a-Service
+    {
+      title: t.projects.projectsList[9].title,
+      description: t.projects.projectsList[9].description,
+      images: [
+        "/images/SaaS/1SaaS - 1.png",
+        "/images/SaaS/1SaaS - 2.png",
+        "/images/SaaS/1SaaS - 3.png",
+        "/images/SaaS/1SaaS - 4.png",
+        "/images/SaaS/1SaaS - 5.png",
+        "/images/SaaS/1SaaS - 6.png",
+        "/images/SaaS/1SaaS - 7.png"
+      ],
+      tags: ["Python", "FastAPI", "React", "GPT-4", "Docker"],
+      github: "https://github.com/LeonardoRFragoso/SaaS",
+      featured: true,
+    },
+    // GNLink - Site Institucional
+    {
+      title: t.projects.projectsList[12].title,
+      description: t.projects.projectsList[12].description,
+      images: [
+        "/images/GNLink/1.png",
+        "/images/GNLink/2.png",
+        "/images/GNLink/3.png",
+        "/images/GNLink/4.png",
+        "/images/GNLink/5.png",
+        "/images/GNLink/6.png",
+        "/images/GNLink/7.png",
+        "/images/GNLink/8.png"
+      ],
+      tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      github: "https://github.com/LeonardoRFragoso/GNLink",
+      demo: "https://gn-link.vercel.app",
+      featured: true,
+    },
+    // Sistema para Andaimes Pini
+    {
+      title: t.projects.projectsList[4].title,
+      description: t.projects.projectsList[4].description,
+      images: [
+        "/images/Andaimes Pini/pini1.png",
+        "/images/Andaimes Pini/pini2.png",
+        "/images/Andaimes Pini/pini3.png",
+        "/images/Andaimes Pini/pini4.png",
+        "/images/Andaimes Pini/pini5.png",
+        "/images/Andaimes Pini/Pini6.png",
+        "/images/Andaimes Pini/Pini7.png",
+        "/images/Andaimes Pini/pini8.png",
+        "/images/Andaimes Pini/pini9.png",
+        "/images/Andaimes Pini/Pini10.png",
+        "/images/Andaimes Pini/pini11.png",
+        "/images/Andaimes Pini/pini12.png",
+        "/images/Andaimes Pini/pini13.png",
+        "/images/Andaimes Pini/pini14.png",
+        "/images/Andaimes Pini/pini15.png"
+      ],
+      tags: ["Flask", "React", "PostgreSQL"],
+      github: "https://github.com/LeonardoRFragoso/AndaimesPini_Project",
       featured: true,
     },
     // Projetos Corporativos - Por último
