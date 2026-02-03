@@ -361,8 +361,8 @@ export default function About() {
           >
             {[
               { number: "20+", label: "Projetos Entregues" },
-              { number: "3+", label: "Anos em TI" },
-              { number: "6", label: "Certificações" },
+              { number: "10+", label: "Anos em TI" },
+              { number: "4+", label: "Anos como Dev" },
               { number: "10+", label: "Tecnologias" },
             ].map((stat, index) => (
               <motion.div
