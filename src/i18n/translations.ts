@@ -36,7 +36,7 @@ export const translations = {
     about: {
       title: 'Sobre Mim',
       role: 'Desenvolvedor Full Stack',
-      description: 'com experiência comprovada em sistemas empresariais de alto impacto. Atualmente Desenvolvedor de Sistemas em empresa de logística, com experiência anterior como Gerente de TI liderando equipes técnicas. Domínio em múltiplas stacks: Python (Django, Flask, FastAPI), Go (Gin), Java (Spring Boot), PHP (Laravel), além de frameworks frontend como React, Vue.js, Next.js e Flutter. Foco em automação de processos, APIs REST, microsserviços e arquiteturas escaláveis. Combino visão estratégica de negócios com habilidades técnicas avançadas para criar soluções completas, desde aplicações web em produção até interfaces modernas e intuitivas.',
+      description: 'com experiência comprovada em sistemas empresariais de alto impacto. Atualmente Desenvolvedor de Sistemas em empresa de logística, com experiência anterior como Gerente de TI liderando equipes técnicas. Domínio em múltiplas stacks: Python (Django, Flask, FastAPI), Go (Gin), Java (Spring Boot), Node.js, PHP (Laravel), além de frameworks frontend como React, Vue.js, Next.js, TypeScript e Flutter. Foco em automação de processos, APIs REST, microsserviços e arquiteturas escaláveis. Combino visão estratégica de negócios com habilidades técnicas avançadas para criar soluções completas, desde aplicações web em produção até interfaces modernas e intuitivas.',
       stats: {
         projects: 'Projetos Entregues',
         years: 'Anos em TI',
@@ -317,7 +317,7 @@ export const translations = {
     about: {
       title: 'About Me',
       role: 'Full Stack Developer',
-      description: 'with proven experience in high-impact enterprise systems. Currently Systems Developer at a logistics company, with previous experience as IT Manager leading technical teams. Proficient in multiple stacks: Python (Django, Flask, FastAPI), Go (Gin), Java (Spring Boot), PHP (Laravel), plus frontend frameworks like React, Vue.js, Next.js and Flutter. Focused on process automation, REST APIs, microservices and scalable architectures. I combine strategic business vision with advanced technical skills to create complete solutions, from production web applications to modern and intuitive interfaces.',
+      description: 'with proven experience in high-impact enterprise systems. Currently Systems Developer at a logistics company, with previous experience as IT Manager leading technical teams. Proficient in multiple stacks: Python (Django, Flask, FastAPI), Go (Gin), Java (Spring Boot), Node.js, PHP (Laravel), plus frontend frameworks like React, Vue.js, Next.js, TypeScript and Flutter. Focused on process automation, REST APIs, microservices and scalable architectures. I combine strategic business vision with advanced technical skills to create complete solutions, from production web applications to modern and intuitive interfaces.',
       stats: {
         projects: 'Projects Delivered',
         years: 'Years in IT',
