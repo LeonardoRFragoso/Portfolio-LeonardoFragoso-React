@@ -317,9 +317,12 @@ export default function Hero() {
               <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
                 {t.hero.specialist}{" "}
                 <span className="text-yellow-400 font-semibold">{t.hero.techStack}</span>
-                <br className="hidden sm:block" />
-                {" "}{t.hero.focusOn}{" "}
-                <span className="text-yellow-400 font-semibold">{t.hero.focusAreas}</span>
+              </p>
+              <p className="text-base sm:text-lg text-white/70 leading-relaxed">
+                <span className="text-yellow-400/90">{t.hero.focusAreas}</span>
+              </p>
+              <p className="text-base text-white/60 leading-relaxed">
+                {t.hero.heroDescription}
               </p>
             </motion.div>
 
