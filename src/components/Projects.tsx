@@ -28,6 +28,28 @@ export default function Projects() {
   const projects: Project[] = [
     // SaaS em Produção - Primeiro na lista
     {
+      title: t.projects.projectsList[15].title,
+      description: t.projects.projectsList[15].description,
+      images: [
+        "/images/AgentesIA/1.png",
+        "/images/AgentesIA/2.png",
+        "/images/AgentesIA/3.png",
+        "/images/AgentesIA/4.png",
+        "/images/AgentesIA/5.png",
+        "/images/AgentesIA/6.png",
+        "/images/AgentesIA/7.png",
+        "/images/AgentesIA/8.png",
+        "/images/AgentesIA/9.png",
+        "/images/AgentesIA/10.png",
+        "/images/AgentesIA/11.png"
+      ],
+      tags: ["FastAPI", "Next.js 14", "Claude 3", "PostgreSQL", "Redis", "JWT"],
+      github: "https://github.com/LeonardoRFragoso/AgentesIA-Consultoria-de-Negocios-com-IA-Multi-Agentes",
+      demo: "https://agentes-ia-consultoria-de-negocios.vercel.app",
+      featured: true,
+      saas: true,
+    },
+    {
       title: t.projects.projectsList[6].title,
       description: t.projects.projectsList[6].description,
       images: [

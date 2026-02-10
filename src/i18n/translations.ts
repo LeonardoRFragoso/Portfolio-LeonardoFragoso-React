@@ -241,6 +241,10 @@ export const translations = {
           title: 'TaskManager - Gestão de Projetos',
           description: 'Sistema completo estilo Trello para gestão de projetos e tarefas com backend em Go e frontend em Vue.js 3. Inclui Dark Mode, Internacionalização (PT-BR/EN), Dashboard com gráficos Chart.js, Kanban Board com drag-and-drop, sistema de Equipes/Squads, Notificações em tempo real, permissões granulares (lead/admin/member), busca e filtros avançados, atalhos de teclado e autenticação JWT com refresh tokens.',
         },
+        {
+          title: 'AgentesIA - Consultoria com IA',
+          description: 'Plataforma SaaS de análise estratégica de negócios com múltiplos agentes de IA especializados (Claude 3). 5 agentes trabalham em conjunto: Analista de Negócio, Estrategista Comercial, Analista Financeiro, Especialista de Mercado e Revisor Executivo. Processamento assíncrono com Redis, exportação de relatórios (PDF, PPTX, Markdown), sistema de planos (Free/Pro/Enterprise) e arquitetura multi-tenant.',
+        },
       ],
     },
 
@@ -522,6 +526,10 @@ export const translations = {
         {
           title: 'TaskManager - Project Management',
           description: 'Complete Trello-style system for project and task management with Go backend and Vue.js 3 frontend. Features Dark Mode, Internationalization (PT-BR/EN), Dashboard with Chart.js graphs, Kanban Board with drag-and-drop, Teams/Squads system, real-time Notifications, granular permissions (lead/admin/member), advanced search and filters, keyboard shortcuts and JWT authentication with refresh tokens.',
+        },
+        {
+          title: 'AgentesIA - AI Business Consulting',
+          description: 'SaaS platform for strategic business analysis with multiple specialized AI agents (Claude 3). 5 agents work together: Business Analyst, Commercial Strategist, Financial Analyst, Market Specialist and Executive Reviewer. Async processing with Redis, report export (PDF, PPTX, Markdown), plan system (Free/Pro/Enterprise) and multi-tenant architecture.',
         },
       ],
     },
