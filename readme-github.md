@@ -3,7 +3,7 @@
 
 > **Transformando desafios de negócio em soluções tecnológicas escaláveis e eficientes**
 
-🚀 **Projetos em PRODUÇÃO:** [ProFlow.pro](https://www.proflow.pro/) | [BaseCorporativa.store](https://basecorporativa.store/) | [LogiFlow CRM](https://logi-flow-wuhp.vercel.app)
+🚀 **Projetos em PRODUÇÃO:** [AgentesIA](https://agentes-ia-consultoria-de-negocios.vercel.app) | [ProFlow.pro](https://www.proflow.pro/) | [BaseCorporativa.store](https://basecorporativa.store/) | [LogiFlow CRM](https://logi-flow-wuhp.vercel.app)
 
 Desenvolvedor full-stack com foco em **sistemas empresariais completos**, **automação de processos** e **aplicações data-driven**. Domínio em múltiplas stacks: **Python** (Django, Flask, FastAPI), **Go** (Gin), **Java** (Spring Boot), **PHP** (Laravel), além de **React**, **Vue.js**, **Next.js** e **Flutter**.
 
@@ -13,7 +13,7 @@ Atualmente **Desenvolvedor de Sistemas em empresa de logística**, criando autom
 
 ## 🎯 Diferenciais Técnicos
 
-- 🌐 **4 Projetos ONLINE em Produção** - Aplicações web rodando com usuários reais
+- 🌐 **5 Projetos ONLINE em Produção** - Aplicações web rodando com usuários reais
 - ✅ **Arquitetura Full-Stack Completa** - Do banco de dados à interface do usuário
 - ✅ **Multi-Stack** - Python, Go, Java, PHP, JavaScript/TypeScript, Flutter
 - ✅ **Soluções Enterprise-Ready** - CRMs, APM, ERPs, e-commerce e SaaS
@@ -24,6 +24,23 @@ Atualmente **Desenvolvedor de Sistemas em empresa de logística**, criando autom
 ---
 
 ## 💼 Projetos em Destaque
+
+### 🧠 **AgentesIA** - Consultoria de Negócios com IA Multi-Agentes ⚡ ONLINE
+**Stack:** Python • FastAPI • Next.js 14 • Claude 3 • PostgreSQL • Redis  
+**🌐 Frontend (Vercel):** [agentes-ia-consultoria-de-negocios.vercel.app](https://agentes-ia-consultoria-de-negocios.vercel.app)  
+**🔧 Backend (Railway):** FastAPI + PostgreSQL + Redis
+
+- Plataforma SaaS de análise estratégica de negócios com múltiplos agentes de IA
+- 5 agentes especializados trabalhando em conjunto: Analista de Negócio, Estrategista Comercial, Analista Financeiro, Especialista de Mercado e Revisor Executivo
+- Processamento assíncrono com Redis para alta performance
+- Exportação de relatórios em PDF, PPTX e Markdown
+- Sistema de planos (Free, Pro, Enterprise) com limites configuráveis
+- Arquitetura multi-tenant com isolamento por organização
+- Autenticação JWT e integração com Claude 3 API
+
+🔗 [Ver Código](https://github.com/LeonardoRFragoso/AgentesIA-Consultoria-de-Negocios-com-IA-Multi-Agentes) | 🌐 [Acessar Plataforma](https://agentes-ia-consultoria-de-negocios.vercel.app)
+
+---
 
 ### 🚀 **ProFlow** - Plataforma para Freelancers ⚡ ONLINE
 **Stack:** Vue.js • TypeScript • Node.js • PostgreSQL • IA • Stripe  
