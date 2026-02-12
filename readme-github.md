@@ -174,6 +174,20 @@ Atualmente **Desenvolvedor de Sistemas em empresa de logística**, criando autom
 
 ---
 
+### 🐍 **PyScript.tech** - Site Institucional
+**Stack:** React 18 • JavaScript • CSS Modules • EmailJS  
+**🌐 Produção:** [py-script-tech-react.vercel.app](https://py-script-tech-react.vercel.app/)
+
+- Website institucional e portfólio da PyScript.tech
+- Design moderno com glassmorphism e gradientes animados
+- Formulário de contato integrado com EmailJS
+- Carrossel de depoimentos e páginas de serviços
+- Filtros por categoria na página de projetos
+
+🔗 [Ver Código](https://github.com/LeonardoRFragoso/PyScriptTech_React) | 🌐 [Ver Site](https://py-script-tech-react.vercel.app/)
+
+---
+
 ## 🛠️ Stack Tecnológico
 
 ### **Back-End**
@@ -193,9 +207,9 @@ shadcn/ui • Material-UI              PWA • SPA
 
 ### **Banco de Dados**
 ```
-PostgreSQL • MySQL • SQLite          Firebase • Redis
-ORM (Django/SQLAlchemy)              Modelagem de Dados
-Migrations & Seeds                   Otimização de Queries
+PostgreSQL • MySQL • MariaDB         MongoDB • SQLite • Firebase
+Redis                                ORM (Django/SQLAlchemy)
+Modelagem de Dados                   Migrations & Seeds
 ```
 
 ### **DevOps & Cloud**

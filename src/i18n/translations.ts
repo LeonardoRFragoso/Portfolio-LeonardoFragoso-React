@@ -65,7 +65,7 @@ export const translations = {
     skillsData: [
       { 
         name: 'Python, Go & Frameworks', 
-        description: 'Django, Flask, FastAPI, Gin | APIs RESTful e GraphQL | Go para alta performance | Selenium, Pandas, NumPy | Celery, Redis | Desenvolvimento back-end robusto | Integração com MongoDB e MariaDB', 
+        description: 'Django, Flask, FastAPI, Gin | APIs RESTful e GraphQL | Go para alta performance | Selenium, Pandas, NumPy | Celery, Redis | Desenvolvimento back-end robusto', 
         level: 'Avançado',
       },
       { 
@@ -80,7 +80,7 @@ export const translations = {
       },
       { 
         name: 'DevOps & Cloud', 
-        description: 'Git/GitHub, Docker, CI/CD | AWS (EC2, S3, RDS) | Vercel, Railway | Power BI | Linux (administração, shell scripts, serviços) | Metodologias Ágeis (Scrum/Kanban)', 
+        description: 'Git/GitHub, Docker, CI/CD | AWS (EC2, S3, RDS) | Vercel, Railway | Power BI | Linux | Metodologias Ágeis (Scrum/Kanban)', 
         level: 'Intermediário',
       },
       { 
@@ -246,8 +246,8 @@ export const translations = {
           description: 'Plataforma SaaS de análise estratégica de negócios com múltiplos agentes de IA especializados (Claude 3). 5 agentes trabalham em conjunto: Analista de Negócio, Estrategista Comercial, Analista Financeiro, Especialista de Mercado e Revisor Executivo. Processamento assíncrono com Redis, exportação de relatórios (PDF, PPTX, Markdown), sistema de planos (Free/Pro/Enterprise) e arquitetura multi-tenant.',
         },
         {
-          title: 'PyScriptTech - Plataforma de Cursos',
-          description: 'Plataforma educacional para cursos de programação com foco em Python e tecnologias web. Interface moderna e responsiva desenvolvida com React, catálogo de cursos, sistema de autenticação, dashboard do aluno e integração com pagamentos.',
+          title: 'PyScript.tech - Site Institucional',
+          description: 'Website institucional e portfólio da PyScript.tech - empresa de desenvolvimento de software sob medida. Design moderno com glassmorphism e gradientes animados. Formulário de contato integrado com EmailJS, carrossel de depoimentos e páginas de serviços e projetos com filtros por categoria.',
         },
       ],
     },
@@ -355,7 +355,7 @@ export const translations = {
     skillsData: [
       { 
         name: 'Python, Go & Frameworks', 
-        description: 'Django, Flask, FastAPI, Gin | RESTful & GraphQL APIs | Go for high performance | Selenium, Pandas, NumPy | Celery, Redis | Robust back-end development | MongoDB and MariaDB integration', 
+        description: 'Django, Flask, FastAPI, Gin | RESTful & GraphQL APIs | Go for high performance | Selenium, Pandas, NumPy | Celery, Redis | Robust back-end development', 
         level: 'Advanced',
       },
       { 
@@ -370,7 +370,7 @@ export const translations = {
       },
       { 
         name: 'DevOps & Cloud', 
-        description: 'Git/GitHub, Docker, CI/CD | AWS (EC2, S3, RDS) | Vercel, Railway | Power BI | Linux (administration, shell scripts, services) | Agile Methodologies (Scrum/Kanban)', 
+        description: 'Git/GitHub, Docker, CI/CD | AWS (EC2, S3, RDS) | Vercel, Railway | Power BI | Linux | Agile Methodologies (Scrum/Kanban)', 
         level: 'Intermediate',
       },
       { 
@@ -536,8 +536,8 @@ export const translations = {
           description: 'SaaS platform for strategic business analysis with multiple specialized AI agents (Claude 3). 5 agents work together: Business Analyst, Commercial Strategist, Financial Analyst, Market Specialist and Executive Reviewer. Async processing with Redis, report export (PDF, PPTX, Markdown), plan system (Free/Pro/Enterprise) and multi-tenant architecture.',
         },
         {
-          title: 'PyScriptTech - Programming Courses Platform',
-          description: 'Educational platform for programming courses focused on Python and web technologies. Modern and responsive interface built with React, course catalog, authentication system, student dashboard and payment integration.',
+          title: 'PyScript.tech - Institutional Website',
+          description: 'Institutional website and portfolio for PyScript.tech - custom software development company. Modern design with glassmorphism and animated gradients. Contact form integrated with EmailJS, testimonial carousel and services/projects pages with category filters.',
         },
       ],
     },

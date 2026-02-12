@@ -234,6 +234,33 @@ export default function Projects() {
       demo: "https://gn-link.vercel.app",
       featured: true,
     },
+    // PyScript.tech - Site Institucional
+    {
+      title: t.projects.projectsList[16].title,
+      description: t.projects.projectsList[16].description,
+      images: [
+        "/images/PyScriptTech/1.png",
+        "/images/PyScriptTech/2.png",
+        "/images/PyScriptTech/3.png",
+        "/images/PyScriptTech/4.png",
+        "/images/PyScriptTech/5.png",
+        "/images/PyScriptTech/6.png",
+        "/images/PyScriptTech/7.png",
+        "/images/PyScriptTech/8.png",
+        "/images/PyScriptTech/9.png",
+        "/images/PyScriptTech/10.png",
+        "/images/PyScriptTech/11.png",
+        "/images/PyScriptTech/12.png",
+        "/images/PyScriptTech/13.png",
+        "/images/PyScriptTech/14.png",
+        "/images/PyScriptTech/15.png",
+        "/images/PyScriptTech/16.png"
+      ],
+      tags: ["React 18", "JavaScript", "CSS Modules", "EmailJS"],
+      github: "https://github.com/LeonardoRFragoso/PyScriptTech_React",
+      demo: "https://py-script-tech-react.vercel.app/",
+      featured: true,
+    },
     // Sistema para Andaimes Pini
     {
       title: t.projects.projectsList[4].title,
@@ -309,7 +336,6 @@ export default function Projects() {
       ],
       tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
       github: "https://github.com/LeonardoRFragoso/GR",
-      featured: true,
     },
     {
       title: t.projects.projectsList[3].title,
@@ -327,20 +353,6 @@ export default function Projects() {
       ],
       tags: ["Streamlit", "Python", "Google Drive API", "Data Analysis"],
       github: "https://github.com/LeonardoRFragoso/DashboardMultas",
-    },
-    {
-      title: t.projects.projectsList[17].title,
-      description: t.projects.projectsList[17].description,
-      images: [
-        "/images/PyScriptTech/1.png",
-        "/images/PyScriptTech/2.png",
-        "/images/PyScriptTech/3.png",
-        "/images/PyScriptTech/4.png",
-        "/images/PyScriptTech/5.png"
-      ],
-      tags: ["React", "JavaScript", "Responsive Design", "Education"],
-      demo: "https://py-script-tech-react.vercel.app/",
-      featured: true,
     },
   ];
 
