@@ -57,7 +57,11 @@ export default function Projects() {
       images: [
         "/images/WhatsAppFinance/1.png",
         "/images/WhatsAppFinance/2.png",
-        "/images/WhatsAppFinance/3.png"
+        "/images/WhatsAppFinance/3.png",
+        "/images/WhatsAppFinance/4.png",
+        "/images/WhatsAppFinance/5.png",
+        "/images/WhatsAppFinance/6.png",
+        "/images/WhatsAppFinance/7.png"
       ],
       tags: ["FastAPI", "Next.js 14", "OpenAI GPT-4", "PostgreSQL", "Redis", "Twilio"],
       github: "https://github.com/LeonardoRFragoso/WhatsApp-Financial-Assistant",
