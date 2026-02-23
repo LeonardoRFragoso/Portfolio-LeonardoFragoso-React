@@ -180,6 +180,7 @@ export const translations = {
       viewGallery: 'Ver Galeria',
       code: 'Código',
       visitSite: 'Visitar Site',
+      whatsappContact: 'Testar WhatsApp',
       projectsList: [
         {
           title: 'Sistema de Gestão Pátio',
@@ -248,6 +249,10 @@ export const translations = {
         {
           title: 'PyScript.tech - Site Institucional',
           description: 'Website institucional e portfólio da PyScript.tech - empresa de desenvolvimento de software sob medida. Design moderno com glassmorphism e gradientes animados. Formulário de contato integrado com EmailJS, carrossel de depoimentos e páginas de serviços e projetos com filtros por categoria.',
+        },
+        {
+          title: 'Assistente Financeiro via WhatsApp',
+          description: 'Sistema SaaS completo de gestão financeira pessoal via WhatsApp com dashboard web e IA para processamento de linguagem natural. Registre despesas, receitas e lembretes usando linguagem informal. Backend Python/FastAPI com PostgreSQL e Redis, frontend Next.js 14 com TailwindCSS, integração Twilio WhatsApp e OpenAI GPT-4o.',
         },
       ],
     },
@@ -470,6 +475,7 @@ export const translations = {
       viewGallery: 'View Gallery',
       code: 'Code',
       visitSite: 'Visit Site',
+      whatsappContact: 'Test WhatsApp',
       projectsList: [
         {
           title: 'Parking Lot Management System',
@@ -538,6 +544,10 @@ export const translations = {
         {
           title: 'PyScript.tech - Institutional Website',
           description: 'Institutional website and portfolio for PyScript.tech - custom software development company. Modern design with glassmorphism and animated gradients. Contact form integrated with EmailJS, testimonial carousel and services/projects pages with category filters.',
+        },
+        {
+          title: 'Financial Assistant via WhatsApp',
+          description: 'Complete SaaS personal finance management system via WhatsApp with web dashboard and AI for natural language processing. Register expenses, income and reminders using informal language. Python/FastAPI backend with PostgreSQL and Redis, Next.js 14 frontend with TailwindCSS, Twilio WhatsApp integration and OpenAI GPT-4o.',
         },
       ],
     },

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Github, ExternalLink, ChevronLeft, ChevronRight, Eye } from "lucide-react";
+import { Github, ExternalLink, ChevronLeft, ChevronRight, Eye, MessageCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../i18n";
 
@@ -18,6 +18,7 @@ interface Project {
   demoLinks?: DemoLink[];
   featured?: boolean;
   saas?: boolean;
+  whatsapp?: string;
 }
 
 export default function Projects() {
@@ -46,6 +47,21 @@ export default function Projects() {
       tags: ["FastAPI", "Next.js 14", "Claude 3", "PostgreSQL", "Redis", "JWT"],
       github: "https://github.com/LeonardoRFragoso/AgentesIA-Consultoria-de-Negocios-com-IA-Multi-Agentes",
       demo: "https://agentes-ia-consultoria-de-negocios.vercel.app",
+      featured: true,
+      saas: true,
+    },
+    // Assistente Financeiro via WhatsApp - SaaS com contato WhatsApp
+    {
+      title: t.projects.projectsList[17].title,
+      description: t.projects.projectsList[17].description,
+      images: [
+        "/images/WhatsAppFinance/1.png",
+        "/images/WhatsAppFinance/2.png",
+        "/images/WhatsAppFinance/3.png"
+      ],
+      tags: ["FastAPI", "Next.js 14", "OpenAI GPT-4", "PostgreSQL", "Redis", "Twilio"],
+      github: "https://github.com/LeonardoRFragoso/WhatsApp-Financial-Assistant",
+      whatsapp: "https://wa.me/14155238886?text=join%20your-sandbox-code",
       featured: true,
       saas: true,
     },
@@ -567,6 +583,19 @@ export default function Projects() {
                     >
                       <ExternalLink className="h-5 w-5 group-hover/link:scale-110 transition-transform" />
                       <span className="text-sm font-medium">{t.projects.visitSite}</span>
+                    </a>
+                  )}
+                  
+                  {project.whatsapp && (
+                    <a
+                      href={project.whatsapp}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-green-500 to-green-600 text-white font-bold rounded-lg hover:from-green-400 hover:to-green-500 transition-colors group/link"
+                      aria-label={`${t.projects.whatsappContact} - ${project.title}`}
+                    >
+                      <MessageCircle className="h-5 w-5 group-hover/link:scale-110 transition-transform" />
+                      <span className="text-sm font-medium">{t.projects.whatsappContact}</span>
                     </a>
                   )}
                 </div>
