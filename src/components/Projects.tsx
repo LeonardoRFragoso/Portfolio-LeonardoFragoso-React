@@ -616,7 +616,11 @@ export default function Projects() {
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center space-x-1 px-3 py-1.5 bg-yellow-400/10 text-yellow-300 text-xs font-medium rounded-lg border border-yellow-400/20 hover:bg-yellow-400/20 transition-colors group/link"
+                        className={`flex items-center space-x-1 transition-colors group/link ${
+                          project.saas 
+                            ? 'px-3 py-1.5 bg-gradient-to-r from-green-400 to-emerald-500 text-black text-xs font-bold rounded-lg hover:from-green-300 hover:to-emerald-400' 
+                            : 'px-3 py-1.5 bg-yellow-400/10 text-yellow-300 text-xs font-medium rounded-lg border border-yellow-400/20 hover:bg-yellow-400/20'
+                        }`}
                       >
                         <ExternalLink className="h-3.5 w-3.5 group-hover/link:scale-110 transition-transform" />
                         <span>{link.label}</span>
