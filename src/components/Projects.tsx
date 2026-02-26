@@ -199,6 +199,54 @@ export default function Projects() {
       featured: true,
       saas: true,
     },
+    // 9. GNLink - Site Institucional
+    {
+      title: t.projects.projectsList[12].title,
+      description: t.projects.projectsList[12].description,
+      images: [
+        "/images/GNLink/1.png",
+        "/images/GNLink/2.png",
+        "/images/GNLink/3.png",
+        "/images/GNLink/4.png",
+        "/images/GNLink/5.png",
+        "/images/GNLink/6.png",
+        "/images/GNLink/7.png",
+        "/images/GNLink/8.png"
+      ],
+      tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"],
+      github: "https://github.com/LeonardoRFragoso/GNLink",
+      demo: "https://gn-link.vercel.app",
+      featured: true,
+      saas: true,
+    },
+    // 10. PyScript.tech - Site Institucional
+    {
+      title: t.projects.projectsList[16].title,
+      description: t.projects.projectsList[16].description,
+      images: [
+        "/images/PyScriptTech/1.png",
+        "/images/PyScriptTech/2.png",
+        "/images/PyScriptTech/3.png",
+        "/images/PyScriptTech/4.png",
+        "/images/PyScriptTech/5.png",
+        "/images/PyScriptTech/6.png",
+        "/images/PyScriptTech/7.png",
+        "/images/PyScriptTech/8.png",
+        "/images/PyScriptTech/9.png",
+        "/images/PyScriptTech/10.png",
+        "/images/PyScriptTech/11.png",
+        "/images/PyScriptTech/12.png",
+        "/images/PyScriptTech/13.png",
+        "/images/PyScriptTech/14.png",
+        "/images/PyScriptTech/15.png",
+        "/images/PyScriptTech/16.png"
+      ],
+      tags: ["React 18", "JavaScript", "CSS Modules", "EmailJS"],
+      github: "https://github.com/LeonardoRFragoso/PyScriptTech_React",
+      demo: "https://py-script-tech-react.vercel.app/",
+      featured: true,
+      saas: true,
+    },
     // TaskManager - Sistema de Gestão de Projetos e Tarefas
     {
       title: t.projects.projectsList[14].title,
@@ -263,52 +311,6 @@ export default function Projects() {
       ],
       tags: ["Python", "FastAPI", "React", "GPT-4", "Docker"],
       github: "https://github.com/LeonardoRFragoso/SaaS",
-      featured: true,
-    },
-    // GNLink - Site Institucional
-    {
-      title: t.projects.projectsList[12].title,
-      description: t.projects.projectsList[12].description,
-      images: [
-        "/images/GNLink/1.png",
-        "/images/GNLink/2.png",
-        "/images/GNLink/3.png",
-        "/images/GNLink/4.png",
-        "/images/GNLink/5.png",
-        "/images/GNLink/6.png",
-        "/images/GNLink/7.png",
-        "/images/GNLink/8.png"
-      ],
-      tags: ["Next.js 14", "TypeScript", "Tailwind CSS", "Framer Motion"],
-      github: "https://github.com/LeonardoRFragoso/GNLink",
-      demo: "https://gn-link.vercel.app",
-      featured: true,
-    },
-    // PyScript.tech - Site Institucional
-    {
-      title: t.projects.projectsList[16].title,
-      description: t.projects.projectsList[16].description,
-      images: [
-        "/images/PyScriptTech/1.png",
-        "/images/PyScriptTech/2.png",
-        "/images/PyScriptTech/3.png",
-        "/images/PyScriptTech/4.png",
-        "/images/PyScriptTech/5.png",
-        "/images/PyScriptTech/6.png",
-        "/images/PyScriptTech/7.png",
-        "/images/PyScriptTech/8.png",
-        "/images/PyScriptTech/9.png",
-        "/images/PyScriptTech/10.png",
-        "/images/PyScriptTech/11.png",
-        "/images/PyScriptTech/12.png",
-        "/images/PyScriptTech/13.png",
-        "/images/PyScriptTech/14.png",
-        "/images/PyScriptTech/15.png",
-        "/images/PyScriptTech/16.png"
-      ],
-      tags: ["React 18", "JavaScript", "CSS Modules", "EmailJS"],
-      github: "https://github.com/LeonardoRFragoso/PyScriptTech_React",
-      demo: "https://py-script-tech-react.vercel.app/",
       featured: true,
     },
     // Projetos Corporativos - Por último
