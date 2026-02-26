@@ -37,6 +37,7 @@ export default function Projects() {
         "/images/proflow/proflow3.png"
       ],
       tags: ["Vue.js", "TypeScript", "Node.js", "PostgreSQL", "IA", "Stripe"],
+      github: "https://github.com/LeonardoRFragoso/ProFlow-Freelancer-Platform",
       demo: "https://www.proflow.pro/",
       featured: true,
       saas: true,
@@ -54,6 +55,7 @@ export default function Projects() {
         "/images/base/base6.png"
       ],
       tags: ["React", "Django", "PostgreSQL", "Python", "Mercado Pago"],
+      github: "https://github.com/LeonardoRFragoso/Base-Corporativa-Ecommerce",
       demo: "https://basecorporativa.store/",
       featured: true,
       saas: true,
