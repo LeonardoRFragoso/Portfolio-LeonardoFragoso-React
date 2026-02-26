@@ -27,7 +27,58 @@ export default function Projects() {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const projects: Project[] = [
-    // SaaS em Produção - Primeiro na lista
+    // 1. ProFlow - Plataforma para Freelancers
+    {
+      title: t.projects.projectsList[6].title,
+      description: t.projects.projectsList[6].description,
+      images: [
+        "/images/proflow/proflow.png",
+        "/images/proflow/proflow2.png",
+        "/images/proflow/proflow3.png"
+      ],
+      tags: ["Vue.js", "TypeScript", "Node.js", "PostgreSQL", "IA", "Stripe"],
+      demo: "https://www.proflow.pro/",
+      featured: true,
+      saas: true,
+    },
+    // 2. Base Corporativa - E-commerce
+    {
+      title: t.projects.projectsList[7].title,
+      description: t.projects.projectsList[7].description,
+      images: [
+        "/images/base/base1.png",
+        "/images/base/base2.png",
+        "/images/base/base3.png",
+        "/images/base/base4.png",
+        "/images/base/base5.png",
+        "/images/base/base6.png"
+      ],
+      tags: ["React", "Django", "PostgreSQL", "Python", "Mercado Pago"],
+      demo: "https://basecorporativa.store/",
+      featured: true,
+      saas: true,
+    },
+    // 3. Assistente Financeiro via WhatsApp - SaaS com cadastro obrigatório
+    {
+      title: t.projects.projectsList[17].title,
+      description: t.projects.projectsList[17].description,
+      images: [
+        "/images/WhatsAppFinance/1.png",
+        "/images/WhatsAppFinance/2.png",
+        "/images/WhatsAppFinance/3.png",
+        "/images/WhatsAppFinance/4.png",
+        "/images/WhatsAppFinance/5.png",
+        "/images/WhatsAppFinance/6.png",
+        "/images/WhatsAppFinance/7.png"
+      ],
+      tags: ["FastAPI", "Next.js 14", "OpenAI GPT-4", "PostgreSQL", "Redis", "Twilio"],
+      github: "https://github.com/LeonardoRFragoso/WhatsApp-Financial-Assistant",
+      demo: "https://assistente-financeiro-whatsapp.vercel.app/",
+      whatsapp: "https://wa.me/14155238886?text=join%20your-sandbox-code",
+      featured: true,
+      saas: true,
+    },
+    // 4. AgentesIA - Consultoria com IA
     {
       title: t.projects.projectsList[15].title,
       description: t.projects.projectsList[15].description,
@@ -50,92 +101,7 @@ export default function Projects() {
       featured: true,
       saas: true,
     },
-    // Assistente Financeiro via WhatsApp - SaaS com contato WhatsApp
-    {
-      title: t.projects.projectsList[17].title,
-      description: t.projects.projectsList[17].description,
-      images: [
-        "/images/WhatsAppFinance/1.png",
-        "/images/WhatsAppFinance/2.png",
-        "/images/WhatsAppFinance/3.png",
-        "/images/WhatsAppFinance/4.png",
-        "/images/WhatsAppFinance/5.png",
-        "/images/WhatsAppFinance/6.png",
-        "/images/WhatsAppFinance/7.png"
-      ],
-      tags: ["FastAPI", "Next.js 14", "OpenAI GPT-4", "PostgreSQL", "Redis", "Twilio"],
-      github: "https://github.com/LeonardoRFragoso/WhatsApp-Financial-Assistant",
-      whatsapp: "https://wa.me/14155238886?text=join%20your-sandbox-code",
-      featured: true,
-      saas: true,
-    },
-    {
-      title: t.projects.projectsList[6].title,
-      description: t.projects.projectsList[6].description,
-      images: [
-        "/images/proflow/proflow.png",
-        "/images/proflow/proflow2.png",
-        "/images/proflow/proflow3.png"
-      ],
-      tags: ["Vue.js", "TypeScript", "Node.js", "PostgreSQL", "IA", "Stripe"],
-      demo: "https://www.proflow.pro/",
-      featured: true,
-      saas: true,
-    },
-    {
-      title: t.projects.projectsList[7].title,
-      description: t.projects.projectsList[7].description,
-      images: [
-        "/images/base/base1.png",
-        "/images/base/base2.png",
-        "/images/base/base3.png",
-        "/images/base/base4.png",
-        "/images/base/base5.png",
-        "/images/base/base6.png"
-      ],
-      tags: ["React", "Django", "PostgreSQL", "Python", "Mercado Pago"],
-      demo: "https://basecorporativa.store/",
-      featured: true,
-      saas: true,
-    },
-    // Sistema de Monitoramento Digital Signage
-    {
-      title: t.projects.projectsList[5].title,
-      description: t.projects.projectsList[5].description,
-      images: [
-        "/images/digital-signage/1.jpg",
-        "/images/digital-signage/2.jpg",
-        "/images/digital-signage/3.jpg",
-        "/images/digital-signage/4.jpg",
-        "/images/digital-signage/5.jpg",
-        "/images/digital-signage/6.jpg",
-        "/images/digital-signage/7.jpg",
-        "/images/digital-signage/8.jpg",
-        "/images/digital-signage/9.jpg"
-      ],
-      tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
-      github: "https://github.com/LeonardoRFragoso/Digital-Signage-Platform",
-      featured: true,
-    },
-    // MedFlow Finance
-    {
-      title: t.projects.projectsList[8].title,
-      description: t.projects.projectsList[8].description,
-      images: [
-        "/images/medflow/medflow1.png",
-        "/images/medflow/medflow2.png",
-        "/images/medflow/medflow3.png",
-        "/images/medflow/medflow4.png",
-        "/images/medflow/medflow5.png",
-        "/images/medflow/medflow6.png",
-        "/images/medflow/medflow7.png",
-        "/images/medflow/medflow8.png"
-      ],
-      tags: ["Laravel 11", "Vue 3", "PostgreSQL", "API REST"],
-      github: "https://github.com/LeonardoRFragoso/MedFlow_Finance",
-      featured: true,
-    },
-    // LogiFlow CRM - Sistema completo para transportadoras
+    // 5. LogiFlow CRM - Sistema completo para transportadoras
     {
       title: t.projects.projectsList[13].title,
       description: t.projects.projectsList[13].description,
@@ -166,6 +132,70 @@ export default function Projects() {
         { label: "App Motorista", url: "https://logi-flow-app-motorista.vercel.app" },
         { label: "Portal Cliente", url: "https://logi-flow-z3t5.vercel.app" }
       ],
+      featured: true,
+      saas: true,
+    },
+    // 6. Sistema de Monitoramento Digital Signage
+    {
+      title: t.projects.projectsList[5].title,
+      description: t.projects.projectsList[5].description,
+      images: [
+        "/images/digital-signage/1.jpg",
+        "/images/digital-signage/2.jpg",
+        "/images/digital-signage/3.jpg",
+        "/images/digital-signage/4.jpg",
+        "/images/digital-signage/5.jpg",
+        "/images/digital-signage/6.jpg",
+        "/images/digital-signage/7.jpg",
+        "/images/digital-signage/8.jpg",
+        "/images/digital-signage/9.jpg"
+      ],
+      tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
+      github: "https://github.com/LeonardoRFragoso/Digital-Signage-Platform",
+      featured: true,
+    },
+    // 7. MedFlow Finance
+    {
+      title: t.projects.projectsList[8].title,
+      description: t.projects.projectsList[8].description,
+      images: [
+        "/images/medflow/medflow1.png",
+        "/images/medflow/medflow2.png",
+        "/images/medflow/medflow3.png",
+        "/images/medflow/medflow4.png",
+        "/images/medflow/medflow5.png",
+        "/images/medflow/medflow6.png",
+        "/images/medflow/medflow7.png",
+        "/images/medflow/medflow8.png"
+      ],
+      tags: ["Laravel 11", "Vue 3", "PostgreSQL", "API REST"],
+      github: "https://github.com/LeonardoRFragoso/MedFlow_Finance",
+      featured: true,
+    },
+    // 8. Andaimes Pini
+    {
+      title: t.projects.projectsList[4].title,
+      description: t.projects.projectsList[4].description,
+      images: [
+        "/images/Andaimes Pini/pini1.png",
+        "/images/Andaimes Pini/pini2.png",
+        "/images/Andaimes Pini/pini3.png",
+        "/images/Andaimes Pini/pini4.png",
+        "/images/Andaimes Pini/pini5.png",
+        "/images/Andaimes Pini/Pini6.png",
+        "/images/Andaimes Pini/Pini7.png",
+        "/images/Andaimes Pini/pini8.png",
+        "/images/Andaimes Pini/pini9.png",
+        "/images/Andaimes Pini/Pini10.png",
+        "/images/Andaimes Pini/pini11.png",
+        "/images/Andaimes Pini/pini12.png",
+        "/images/Andaimes Pini/pini13.png",
+        "/images/Andaimes Pini/pini14.png",
+        "/images/Andaimes Pini/pini15.png"
+      ],
+      tags: ["Flask", "React", "PostgreSQL"],
+      github: "https://github.com/LeonardoRFragoso/AndaimesPini_Project",
+      demo: "https://andaimes-pini-project.vercel.app/",
       featured: true,
       saas: true,
     },
@@ -279,31 +309,6 @@ export default function Projects() {
       tags: ["React 18", "JavaScript", "CSS Modules", "EmailJS"],
       github: "https://github.com/LeonardoRFragoso/PyScriptTech_React",
       demo: "https://py-script-tech-react.vercel.app/",
-      featured: true,
-    },
-    // Sistema para Andaimes Pini
-    {
-      title: t.projects.projectsList[4].title,
-      description: t.projects.projectsList[4].description,
-      images: [
-        "/images/Andaimes Pini/pini1.png",
-        "/images/Andaimes Pini/pini2.png",
-        "/images/Andaimes Pini/pini3.png",
-        "/images/Andaimes Pini/pini4.png",
-        "/images/Andaimes Pini/pini5.png",
-        "/images/Andaimes Pini/Pini6.png",
-        "/images/Andaimes Pini/Pini7.png",
-        "/images/Andaimes Pini/pini8.png",
-        "/images/Andaimes Pini/pini9.png",
-        "/images/Andaimes Pini/Pini10.png",
-        "/images/Andaimes Pini/pini11.png",
-        "/images/Andaimes Pini/pini12.png",
-        "/images/Andaimes Pini/pini13.png",
-        "/images/Andaimes Pini/pini14.png",
-        "/images/Andaimes Pini/pini15.png"
-      ],
-      tags: ["Flask", "React", "PostgreSQL"],
-      github: "https://github.com/LeonardoRFragoso/AndaimesPini_Project",
       featured: true,
     },
     // Projetos Corporativos - Por último

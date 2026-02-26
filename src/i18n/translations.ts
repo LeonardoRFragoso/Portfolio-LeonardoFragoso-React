@@ -252,7 +252,7 @@ export const translations = {
         },
         {
           title: 'Assistente Financeiro via WhatsApp',
-          description: 'Sistema SaaS completo de gestão financeira pessoal via WhatsApp com dashboard web e IA para processamento de linguagem natural. Registre despesas, receitas e lembretes usando linguagem informal. Backend Python/FastAPI com PostgreSQL e Redis, frontend Next.js 14 com TailwindCSS, integração Twilio WhatsApp e OpenAI GPT-4o.',
+          description: 'Sistema SaaS completo de gestão financeira pessoal via WhatsApp com dashboard web e IA para processamento de linguagem natural. IMPORTANTE: É necessário cadastro prévio no site antes de entrar em contato via WhatsApp. O número cadastrado deve ser o mesmo que enviará mensagens. Registre despesas, receitas e lembretes usando linguagem informal. Backend Python/FastAPI com PostgreSQL e Redis, frontend Next.js 14 com TailwindCSS, integração Twilio WhatsApp e OpenAI GPT-4o.',
         },
       ],
     },
@@ -547,7 +547,7 @@ export const translations = {
         },
         {
           title: 'Financial Assistant via WhatsApp',
-          description: 'Complete SaaS personal finance management system via WhatsApp with web dashboard and AI for natural language processing. Register expenses, income and reminders using informal language. Python/FastAPI backend with PostgreSQL and Redis, Next.js 14 frontend with TailwindCSS, Twilio WhatsApp integration and OpenAI GPT-4o.',
+          description: 'Complete SaaS personal finance management system via WhatsApp with web dashboard and AI for natural language processing. IMPORTANT: Prior registration on the website is required before contacting via WhatsApp. The registered number must be the same one that will send messages. Register expenses, income and reminders using informal language. Python/FastAPI backend with PostgreSQL and Redis, Next.js 14 frontend with TailwindCSS, Twilio WhatsApp integration and OpenAI GPT-4o.',
         },
       ],
     },
