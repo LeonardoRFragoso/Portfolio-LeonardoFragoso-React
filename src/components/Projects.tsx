@@ -74,7 +74,7 @@ export default function Projects() {
         "/images/WhatsAppFinance/7.png"
       ],
       tags: ["FastAPI", "Next.js 14", "OpenAI GPT-4", "PostgreSQL", "Redis", "Twilio"],
-      github: "https://github.com/LeonardoRFragoso/WhatsApp-Financial-Assistant",
+      github: "https://github.com/LeonardoRFragoso/AssistenteFinanceiroWhatsapp",
       demo: "https://assistente-financeiro-whatsapp.vercel.app/",
       whatsapp: "https://wa.me/14155238886?text=join%20your-sandbox-code",
       featured: true,
