@@ -351,7 +351,7 @@ export default function About() {
             {t.about.description}
           </motion.p>
 
-          {/* Stats Counter */}
+          {/* Stats Counter - Melhorado com animações */}
           <motion.div
             className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-12"
             initial={{ opacity: 0, y: 20 }}
@@ -360,10 +360,10 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             {[
-              { number: "20+", label: "Projetos Entregues" },
-              { number: "10+", label: "Anos em TI" },
-              { number: "6", label: "Certificações" },
-              { number: "10+", label: "Tecnologias" },
+              { number: "20+", label: t.about.stats.projects },
+              { number: "10+", label: t.about.stats.years },
+              { number: "6", label: t.about.stats.certifications },
+              { number: "10+", label: t.about.stats.technologies },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -390,7 +390,7 @@ export default function About() {
         </motion.div>
 
         <div className="space-y-20">
-          {/* Experience Section */}
+          {/* Experience Section - Timeline Vertical */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
@@ -427,18 +427,52 @@ export default function About() {
               </div>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-              {experienceData.map((exp, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                >
-                  <ExperienceCard {...exp} badgeLabel={t.about.experience.current} />
-                </motion.div>
-              ))}
+            {/* Timeline Vertical para Desktop, Grid para Mobile */}
+            <div className="max-w-4xl mx-auto">
+              <div className="hidden md:block relative">
+                {/* Linha vertical da timeline */}
+                <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-yellow-400/50 via-yellow-400/30 to-transparent"></div>
+                
+                {experienceData.map((exp, index) => (
+                  <motion.div
+                    key={index}
+                    className={`relative flex items-center mb-12 ${index % 2 === 0 ? 'flex-row-reverse' : ''}`}
+                    initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.2 }}
+                  >
+                    <div className={`w-1/2 ${index % 2 === 0 ? 'pl-8' : 'pr-8'}`}>
+                      <ExperienceCard {...exp} badgeLabel={t.about.experience.current} />
+                    </div>
+                    
+                    {/* Ponto na timeline */}
+                    <motion.div
+                      className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-yellow-400 rounded-full border-4 border-black shadow-lg"
+                      initial={{ scale: 0 }}
+                      whileInView={{ scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: index * 0.2 + 0.3 }}
+                      whileHover={{ scale: 1.5 }}
+                    />
+                  </motion.div>
+                ))}
+              </div>
+              
+              {/* Grid para Mobile */}
+              <div className="md:hidden grid grid-cols-1 gap-8">
+                {experienceData.map((exp, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
+                    <ExperienceCard {...exp} badgeLabel={t.about.experience.current} />
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
 

@@ -74,9 +74,9 @@ export default function Hero() {
         />
       </div>
 
-      {/* Enhanced Floating Particles */}
+      {/* Enhanced Floating Particles - Reduzido para melhor performance */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(25)].map((_, i) => (
+        {[...Array(12)].map((_, i) => (
           <motion.div
             key={i}
             className={`absolute ${
@@ -246,24 +246,24 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
           >
-            {/* Enhanced Tagline */}
+            {/* Enhanced Tagline - Melhor hierarquia visual */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="inline-flex items-center px-6 py-3 rounded-full bg-black/60 backdrop-blur-xl border-2 border-yellow-400/30 shadow-2xl hover:border-yellow-400/50 transition-all duration-500 group"
+              className="inline-flex items-center px-5 py-2.5 rounded-full bg-black/70 backdrop-blur-xl border border-yellow-400/40 shadow-lg hover:border-yellow-400/60 transition-all duration-500 group"
             >
               <motion.div
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
               >
-                <Sparkles className="h-5 w-5 text-yellow-400 mr-3" />
+                <Sparkles className="h-4 w-4 text-yellow-400 mr-2" />
               </motion.div>
-              <div className="relative h-5 w-44 overflow-hidden">
+              <div className="relative h-5 w-40 overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentRole}
-                    className="absolute inset-0 text-sm text-yellow-300 tracking-widest font-bold uppercase"
+                    className="absolute inset-0 text-xs text-yellow-400/90 tracking-wider font-semibold uppercase"
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -20, opacity: 0 }}
@@ -274,20 +274,20 @@ export default function Hero() {
                 </AnimatePresence>
               </div>
               <motion.div
-                className="ml-3 w-2 h-2 bg-yellow-400 rounded-full"
+                className="ml-2 w-1.5 h-1.5 bg-yellow-400 rounded-full"
                 animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               />
             </motion.div>
 
-            {/* Name */}
+            {/* Name - Maior destaque */}
             <motion.div
               className="relative"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.6 }}
             >
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight">
                 <span className="bg-gradient-to-r from-white via-yellow-400 to-amber-500 bg-clip-text text-transparent">
                   Leonardo{" "}
                 </span>
@@ -338,9 +338,10 @@ export default function Hero() {
                 className="group relative inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:via-amber-300 hover:to-yellow-400 transition-all duration-500 shadow-xl hover:shadow-yellow-400/50"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
+                aria-label={t.hero.viewProjects}
               >
                 <span className="font-bold text-black text-lg">{t.hero.viewProjects}</span>
-                <ArrowRight className="h-5 w-5 text-black ml-2" />
+                <ArrowRight className="h-5 w-5 text-black ml-2 group-hover:translate-x-1 transition-transform" />
               </motion.a>
               
               <motion.a
@@ -348,6 +349,7 @@ export default function Hero() {
                 className="group inline-flex items-center justify-center px-8 py-4 rounded-xl bg-black/70 backdrop-blur-xl border-2 border-yellow-400/40 hover:border-yellow-400/80 hover:bg-yellow-400/10 transition-all duration-500 shadow-xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
+                aria-label={t.hero.getInTouch}
               >
                 <span className="font-bold text-white text-lg group-hover:text-yellow-300 transition-colors">
                   {t.hero.getInTouch}

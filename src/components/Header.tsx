@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Github, Linkedin, Menu, X, Sparkles } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Github, Linkedin, Menu, X, Sparkles, Briefcase } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../i18n";
 import LanguageToggle from "./LanguageToggle";
@@ -7,14 +7,32 @@ import LanguageToggle from "./LanguageToggle";
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('home');
   const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
+      
+      const sections = ['home', 'about', 'projects', 'testimonials', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+      
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+          
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -68,15 +86,18 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden md:flex ml-10 space-x-8">
             {[
-              { href: "#home", label: t.nav.home },
-              { href: "#about", label: t.nav.about },
-              { href: "#projects", label: t.nav.projects },
-              { href: "#contact", label: t.nav.contact },
+              { href: "#home", label: t.nav.home, id: 'home' },
+              { href: "#about", label: t.nav.about, id: 'about' },
+              { href: "#projects", label: t.nav.projects, id: 'projects' },
+              { href: "#testimonials", label: t.nav.testimonials, id: 'testimonials' },
+              { href: "#contact", label: t.nav.contact, id: 'contact' },
             ].map((item, index) => (
               <motion.a
                 key={item.href}
                 href={item.href}
-                className="relative text-white/80 hover:text-yellow-300 px-4 py-2 text-lg font-medium transition-all duration-300 group"
+                className={`relative px-4 py-2 text-lg font-medium transition-all duration-300 group ${
+                  activeSection === item.id ? 'text-yellow-400' : 'text-white/80 hover:text-yellow-300'
+                }`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -84,8 +105,10 @@ export default function Header() {
               >
                 {item.label}
                 
-                {/* Animated underline */}
-                <span className="absolute left-0 bottom-0 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 transition-all duration-300 group-hover:w-full"></span>
+                {/* Animated underline - sempre visível quando ativo */}
+                <span className={`absolute left-0 bottom-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 transition-all duration-300 ${
+                  activeSection === item.id ? 'w-full' : 'w-0 group-hover:w-full'
+                }`}></span>
                 
                 {/* Glow effect on hover */}
                 <span className="absolute inset-0 rounded-lg bg-yellow-400/0 group-hover:bg-yellow-400/10 transition-all duration-300 blur-xl"></span>
@@ -93,8 +116,19 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Language Toggle & Social Links */}
-          <div className="hidden md:flex items-center space-x-6">
+          {/* Language Toggle, CTA & Social Links */}
+          <div className="hidden md:flex items-center space-x-4">
+            <motion.a
+              href="#contact"
+              className="px-6 py-2.5 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-yellow-400/50 flex items-center space-x-2"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              aria-label={t.nav.hireCTA}
+            >
+              <Briefcase className="w-4 h-4" />
+              <span>{t.nav.hireCTA}</span>
+            </motion.a>
+            
             <LanguageToggle />
             <motion.a
               href="https://github.com/LeonardoRFragoso"
@@ -172,15 +206,20 @@ export default function Header() {
           >
             <nav className="px-4 py-6 space-y-4">
               {[
-                { href: "#home", label: t.nav.home },
-                { href: "#about", label: t.nav.about },
-                { href: "#projects", label: t.nav.projects },
-                { href: "#contact", label: t.nav.contact },
+                { href: "#home", label: t.nav.home, id: 'home' },
+                { href: "#about", label: t.nav.about, id: 'about' },
+                { href: "#projects", label: t.nav.projects, id: 'projects' },
+                { href: "#testimonials", label: t.nav.testimonials, id: 'testimonials' },
+                { href: "#contact", label: t.nav.contact, id: 'contact' },
               ].map((item, index) => (
                 <motion.a
                   key={item.href}
                   href={item.href}
-                  className="block text-white/80 hover:text-yellow-400 px-4 py-3 text-lg font-medium transition-all duration-300 rounded-lg hover:bg-yellow-400/10"
+                  className={`block px-4 py-3 text-lg font-medium transition-all duration-300 rounded-lg ${
+                    activeSection === item.id 
+                      ? 'text-yellow-400 bg-yellow-400/10' 
+                      : 'text-white/80 hover:text-yellow-400 hover:bg-yellow-400/10'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
@@ -189,17 +228,39 @@ export default function Header() {
                 >
                   <span className="relative">
                     {item.label}
-                    <span className="absolute left-0 -bottom-1 w-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 group-hover:w-full transition-all duration-300"></span>
+                    {activeSection === item.id && (
+                      <motion.span 
+                        className="absolute left-0 -bottom-1 w-full h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500"
+                        layoutId="mobileActiveSection"
+                      />
+                    )}
                   </span>
                 </motion.a>
               ))}
+              
+              {/* Mobile CTA Button */}
+              <motion.div
+                className="px-4 pt-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.3, delay: 0.4 }}
+              >
+                <a
+                  href="#contact"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="w-full px-6 py-3 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black font-bold rounded-lg transition-all duration-300 shadow-lg flex items-center justify-center space-x-2"
+                >
+                  <Briefcase className="w-5 h-5" />
+                  <span>{t.nav.hireCTA}</span>
+                </a>
+              </motion.div>
               
               {/* Mobile Language Toggle & Social Links */}
               <motion.div
                 className="flex items-center justify-center space-x-8 pt-4 mt-6 border-t border-yellow-400/20"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.3, delay: 0.4 }}
+                transition={{ duration: 0.3, delay: 0.5 }}
               >
                 <motion.a
                   href="https://github.com/LeonardoRFragoso"

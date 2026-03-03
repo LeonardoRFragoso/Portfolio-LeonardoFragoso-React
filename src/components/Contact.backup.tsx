@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Mail, Github, Linkedin, Send, MessageCircle, Sparkles, Star, CheckCircle, Clock } from "lucide-react";
+import React from "react";
+import { Mail, Github, Linkedin, Send, MessageCircle, Sparkles, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../i18n";
 
@@ -38,12 +38,14 @@ const ContactCard = ({
     whileTap={{ scale: 0.98 }}
     aria-label={`${action} - ${title}`}
   >
+    {/* Featured Badge */}
     {featured && (
       <div className="absolute -top-3 -right-3 px-3 py-1 bg-gradient-to-r from-yellow-400 to-amber-500 text-black text-xs font-bold rounded-full">
         {badgeLabel}
       </div>
     )}
 
+    {/* Icon with Premium Effects */}
     <div className="relative mb-6">
       <motion.div
         className="w-20 h-20 rounded-2xl bg-gradient-to-r from-yellow-400/20 to-amber-500/20 flex items-center justify-center group-hover:from-yellow-400/30 group-hover:to-amber-500/30 transition-colors duration-500"
@@ -54,6 +56,7 @@ const ContactCard = ({
         })}
       </motion.div>
       
+      {/* Sparkle Effect */}
       <motion.div
         className="absolute -top-2 -right-2"
         animate={{
@@ -71,6 +74,7 @@ const ContactCard = ({
       </motion.div>
     </div>
 
+    {/* Content */}
     <div className="space-y-4">
       <h3 className="text-2xl font-bold text-white group-hover:text-yellow-300 transition-colors duration-300">
         {title}
@@ -80,6 +84,7 @@ const ContactCard = ({
         {description}
       </p>
       
+      {/* Call to Action */}
       <div className="flex items-center space-x-2 pt-2">
         <span className="text-yellow-400 font-semibold group-hover:text-yellow-300 transition-colors duration-300">
           {action}
@@ -99,6 +104,7 @@ const ContactCard = ({
       </div>
     </div>
 
+    {/* Hover Glow Effect */}
     <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
       <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400/10 to-amber-500/10 blur-xl"></div>
     </div>
@@ -107,39 +113,6 @@ const ContactCard = ({
 
 export default function Contact() {
   const { t } = useLanguage();
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  });
-  const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormStatus('sending');
-
-    try {
-      const mailtoLink = `mailto:leonardorfragoso@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`)}`;
-      window.location.href = mailtoLink;
-      
-      setTimeout(() => {
-        setFormStatus('success');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        setTimeout(() => setFormStatus('idle'), 5000);
-      }, 1000);
-    } catch (error) {
-      setFormStatus('error');
-      setTimeout(() => setFormStatus('idle'), 5000);
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
   
   const contactMethods = [
     {
@@ -171,16 +144,20 @@ export default function Contact() {
 
   return (
     <section id="contact" className="relative py-20 bg-black overflow-hidden">
+      {/* Background Effects */}
       <div className="absolute inset-0">
+        {/* Gradient Overlays */}
         <div className="absolute inset-0 bg-gradient-radial from-yellow-400/6 via-transparent to-transparent"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_75%,rgba(251,191,36,0.1),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(251,191,36,0.08),transparent_50%)]"></div>
         
+        {/* Animated Grid */}
         <div className="absolute inset-0 opacity-3">
           <div className="h-full w-full bg-[linear-gradient(to_right,#fbbf24_0.3px,transparent_0.3px),linear-gradient(to_bottom,#fbbf24_0.3px,transparent_0.3px)] bg-[size:4rem_4rem] animate-pulse-slow"></div>
         </div>
       </div>
 
+      {/* Floating Orbs */}
       <motion.div
         className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-yellow-400/15 to-amber-500/15 rounded-full blur-2xl"
         animate={{
@@ -208,6 +185,7 @@ export default function Contact() {
         }}
       />
 
+      {/* Floating Particles */}
       <div className="absolute inset-0 overflow-hidden">
         {[...Array(15)].map((_, i) => (
           <motion.div
@@ -238,6 +216,7 @@ export default function Contact() {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Title */}
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
@@ -254,6 +233,7 @@ export default function Contact() {
             {t.contact.title}
           </motion.h2>
           
+          {/* Decorative Line */}
           <motion.div
             className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-amber-500 mx-auto mb-8 rounded-full"
             initial={{ width: 0 }}
@@ -275,31 +255,8 @@ export default function Contact() {
                 {t.contact.subtitleHighlight}
               </span>
             </p>
-
-            <div className="flex flex-wrap items-center justify-center gap-6 mt-8">
-              <motion.div
-                className="flex items-center space-x-2 px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-              >
-                <CheckCircle className="w-5 h-5 text-green-400" />
-                <span className="text-green-400 font-medium text-sm">{t.contact.availability}</span>
-              </motion.div>
-
-              <motion.div
-                className="flex items-center space-x-2 px-4 py-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.6 }}
-              >
-                <Clock className="w-5 h-5 text-yellow-400" />
-                <span className="text-yellow-400 font-medium text-sm">{t.contact.responseTime}</span>
-              </motion.div>
-            </div>
             
+            {/* Decorative Elements */}
             <div className="flex items-center justify-center space-x-6 mt-8">
               <motion.div
                 className="w-12 h-0.5 bg-gradient-to-r from-transparent to-yellow-400"
@@ -332,125 +289,9 @@ export default function Contact() {
           </motion.div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
-            <div>
-              <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500 mb-6">
-                {t.contact.formTitle}
-              </h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-white/80 font-medium mb-2">
-                    {t.contact.formName}
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-black/60 border border-yellow-400/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400/60 transition-colors"
-                    placeholder="Seu nome completo"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-white/80 font-medium mb-2">
-                    {t.contact.formEmail}
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-black/60 border border-yellow-400/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400/60 transition-colors"
-                    placeholder="seu@email.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-white/80 font-medium mb-2">
-                    {t.contact.formSubject}
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-black/60 border border-yellow-400/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400/60 transition-colors"
-                    placeholder="Assunto da mensagem"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-white/80 font-medium mb-2">
-                    {t.contact.formMessage}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 bg-black/60 border border-yellow-400/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400/60 transition-colors resize-none"
-                    placeholder="Descreva seu projeto ou dúvida..."
-                  />
-                </div>
-
-                <motion.button
-                  type="submit"
-                  disabled={formStatus === 'sending'}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:via-amber-300 hover:to-yellow-400 text-black font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-yellow-400/50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
-                  whileHover={{ scale: formStatus === 'sending' ? 1 : 1.02 }}
-                  whileTap={{ scale: formStatus === 'sending' ? 1 : 0.98 }}
-                >
-                  {formStatus === 'sending' ? (
-                    <>
-                      <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                        className="w-5 h-5 border-2 border-black border-t-transparent rounded-full"
-                      />
-                      <span>{t.contact.formSending}</span>
-                    </>
-                  ) : formStatus === 'success' ? (
-                    <>
-                      <CheckCircle className="w-5 h-5" />
-                      <span>{t.contact.formSuccess}</span>
-                    </>
-                  ) : formStatus === 'error' ? (
-                    <span>{t.contact.formError}</span>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" />
-                      <span>{t.contact.formSend}</span>
-                    </>
-                  )}
-                </motion.button>
-              </form>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
+        {/* Contact Cards */}
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {contactMethods.map((method, index) => (
               <motion.div
                 key={method.title}
@@ -462,9 +303,10 @@ export default function Contact() {
                 <ContactCard {...method} badgeLabel={t.contact.preferred} />
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
 
+        {/* Additional Call to Action */}
         <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 20 }}
@@ -489,6 +331,7 @@ export default function Contact() {
           </motion.p>
         </motion.div>
 
+        {/* Decorative Bottom Element */}
         <motion.div
           className="flex justify-center mt-12"
           initial={{ opacity: 0, scale: 0 }}
