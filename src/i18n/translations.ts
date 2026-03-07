@@ -319,6 +319,18 @@ export const translations = {
       opportunities: 'oportunidades',
       and: 'e',
       collaborations: 'colaborações',
+      pjServices: {
+        title: 'Serviços PJ',
+        subtitle: 'Empresa regularizada para prestação de serviços',
+        companyName: 'Leonardo Fragoso Developer',
+        legalName: 'Leonardo Rodrigues Fragoso Desenvolvimento de Software LTDA',
+        cnpj: 'CNPJ: 65.032.889/0001-34',
+        companyType: 'Microempresa (M.E.) - Limitada Unipessoal',
+        services: 'Desenvolvimento de Software sob Encomenda',
+        invoicing: 'Emissão de Nota Fiscal',
+        description: 'Empresa regularizada e apta para prestação de serviços B2B com emissão de notas fiscais',
+        badge: 'CNPJ ATIVO',
+      },
     },
 
     // Footer
@@ -680,6 +692,18 @@ export const translations = {
       opportunities: 'opportunities',
       and: 'and',
       collaborations: 'collaborations',
+      pjServices: {
+        title: 'B2B Services',
+        subtitle: 'Registered company for service provision',
+        companyName: 'Leonardo Fragoso Developer',
+        legalName: 'Leonardo Rodrigues Fragoso Desenvolvimento de Software LTDA',
+        cnpj: 'CNPJ: 65.032.889/0001-34',
+        companyType: 'Microenterprise (M.E.) - Single-Member LLC',
+        services: 'Custom Software Development',
+        invoicing: 'Invoice Issuing',
+        description: 'Registered and qualified company for B2B services with invoice issuing',
+        badge: 'ACTIVE CNPJ',
+      },
     },
 
     // Footer

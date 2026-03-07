@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Mail, Github, Linkedin, Send, MessageCircle, Sparkles, Star, CheckCircle, Clock } from "lucide-react";
+import { Mail, Github, Linkedin, Send, MessageCircle, Sparkles, Star, CheckCircle, Clock, Building2, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../i18n";
 
@@ -464,6 +464,97 @@ export default function Contact() {
             ))}
           </motion.div>
         </div>
+
+        {/* PJ Services Section */}
+        <motion.div
+          className="max-w-4xl mx-auto mt-20"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="relative p-8 rounded-2xl bg-gradient-to-br from-black/90 via-yellow-400/5 to-black/90 border-2 border-yellow-400/30 backdrop-blur-md shadow-2xl overflow-hidden">
+            {/* Badge */}
+            <div className="absolute -top-3 -right-3 px-4 py-1.5 bg-gradient-to-r from-green-400 to-emerald-500 text-black text-xs font-bold rounded-full flex items-center space-x-1 shadow-lg">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-black"></span>
+              </span>
+              <span>{t.contact.pjServices.badge}</span>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* Left Side - Company Info */}
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="p-3 bg-yellow-400/10 rounded-lg">
+                    <Building2 className="w-6 h-6 text-yellow-400" />
+                  </div>
+                  <div>
+                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500">
+                      {t.contact.pjServices.title}
+                    </h3>
+                    <p className="text-white/60 text-sm">{t.contact.pjServices.subtitle}</p>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="p-4 bg-black/40 rounded-lg border border-yellow-400/20">
+                    <p className="text-xs text-white/50 mb-1">Razão Social</p>
+                    <p className="text-white font-medium text-sm">{t.contact.pjServices.legalName}</p>
+                  </div>
+
+                  <div className="p-4 bg-black/40 rounded-lg border border-yellow-400/20">
+                    <p className="text-xs text-white/50 mb-1">Nome Fantasia</p>
+                    <p className="text-white font-medium">{t.contact.pjServices.companyName}</p>
+                  </div>
+
+                  <div className="p-4 bg-black/40 rounded-lg border border-yellow-400/20">
+                    <p className="text-xs text-white/50 mb-1">CNPJ</p>
+                    <p className="text-yellow-400 font-bold text-lg tracking-wide">65.032.889/0001-34</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right Side - Services */}
+              <div className="space-y-4">
+                <div className="flex items-center space-x-3 mb-6">
+                  <div className="p-3 bg-yellow-400/10 rounded-lg">
+                    <FileText className="w-6 h-6 text-yellow-400" />
+                  </div>
+                  <div>
+                    <h4 className="text-xl font-bold text-white">Serviços Oferecidos</h4>
+                  </div>
+                </div>
+
+                <div className="space-y-3">
+                  <div className="p-4 bg-black/40 rounded-lg border border-yellow-400/20">
+                    <p className="text-xs text-white/50 mb-1">Tipo Jurídico</p>
+                    <p className="text-white font-medium">{t.contact.pjServices.companyType}</p>
+                  </div>
+
+                  <div className="p-4 bg-black/40 rounded-lg border border-yellow-400/20">
+                    <p className="text-xs text-white/50 mb-1">Atividade Principal</p>
+                    <p className="text-white font-medium">{t.contact.pjServices.services}</p>
+                  </div>
+
+                  <div className="p-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-lg border border-green-500/30">
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="w-5 h-5 text-green-400" />
+                      <p className="text-green-400 font-bold">{t.contact.pjServices.invoicing}</p>
+                    </div>
+                    <p className="text-white/70 text-sm mt-2">{t.contact.pjServices.description}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Decorative glow */}
+            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400/5 to-amber-500/5 blur-xl"></div>
+            </div>
+          </div>
+        </motion.div>
 
         <motion.div
           className="text-center mt-16"
