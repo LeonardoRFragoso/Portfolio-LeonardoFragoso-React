@@ -14,7 +14,7 @@ export default function Header() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      const sections = ['home', 'about', 'projects', 'testimonials', 'contact'];
+      const sections = ['home', 'about', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
       
       for (const section of sections) {
@@ -89,7 +89,6 @@ export default function Header() {
               { href: "#home", label: t.nav.home, id: 'home' },
               { href: "#about", label: t.nav.about, id: 'about' },
               { href: "#projects", label: t.nav.projects, id: 'projects' },
-              { href: "#testimonials", label: t.nav.testimonials, id: 'testimonials' },
               { href: "#contact", label: t.nav.contact, id: 'contact' },
             ].map((item, index) => (
               <motion.a
@@ -209,7 +208,6 @@ export default function Header() {
                 { href: "#home", label: t.nav.home, id: 'home' },
                 { href: "#about", label: t.nav.about, id: 'about' },
                 { href: "#projects", label: t.nav.projects, id: 'projects' },
-                { href: "#testimonials", label: t.nav.testimonials, id: 'testimonials' },
                 { href: "#contact", label: t.nav.contact, id: 'contact' },
               ].map((item, index) => (
                 <motion.a

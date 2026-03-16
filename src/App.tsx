@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Projects from "./components/Projects";
-import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import CustomCursor from "./components/CustomCursor";
 import { useLanguage } from "./i18n";
@@ -72,11 +71,6 @@ function App() {
         <div className="relative">
           <div className="h-px bg-gradient-to-r from-transparent via-yellow-400/20 to-transparent"></div>
           <Projects />
-        </div>
-        
-        <div className="relative">
-          <div className="h-px bg-gradient-to-r from-transparent via-yellow-400/20 to-transparent"></div>
-          <Testimonials />
         </div>
         
         <div className="relative">
