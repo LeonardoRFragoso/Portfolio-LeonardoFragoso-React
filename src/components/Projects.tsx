@@ -276,6 +276,52 @@ export default function Projects() {
       quickEval: 'github',
       complexity: 3,
     },
+    // TIER 5: "PROJETOS iTracker/ICTSI" - Sistemas corporativos em produção
+    {
+      title: t.projects.projectsList[18]?.title || 'Torre de Controle Operacional',
+      description: t.projects.projectsList[18]?.description || 'Dashboard executivo para monitoramento em tempo real de 20+ aplicações críticas.',
+      images: ["/images/itracker/torre-controle.png"],
+      tags: ["Python", "Streamlit", "Plotly", "Selenium", "Prometheus"],
+      category: ['enterprise'],
+      quickEval: 'github',
+      complexity: 5,
+    },
+    {
+      title: t.projects.projectsList[19]?.title || 'Bot Consulta DETRAN (RPA)',
+      description: t.projects.projectsList[19]?.description || 'Automação RPA processando 500+ consultas/dia.',
+      images: ["/images/itracker/bot-detran.png"],
+      tags: ["Python", "Selenium", "Pandas", "Multi-threading", "RPA"],
+      category: ['enterprise'],
+      quickEval: 'github',
+      complexity: 4,
+    },
+    {
+      title: t.projects.projectsList[20]?.title || 'CargoSnap - Gestão de Inspeções',
+      description: t.projects.projectsList[20]?.description || 'Sistema de gestão de inspeções de contêineres.',
+      images: ["/images/itracker/cargosnap.png"],
+      tags: ["Django REST", "PostgreSQL", "JWT", "API Integration"],
+      category: ['enterprise'],
+      quickEval: 'github',
+      complexity: 4,
+    },
+    {
+      title: t.projects.projectsList[21]?.title || 'GPS Tracking System',
+      description: t.projects.projectsList[21]?.description || 'Rastreamento de frotas em tempo real (50+ veículos).',
+      images: ["/images/itracker/gps-tracking.png"],
+      tags: ["Python", "Flask", "WebSocket", "Telematics API"],
+      category: ['enterprise'],
+      quickEval: 'github',
+      complexity: 4,
+    },
+    {
+      title: t.projects.projectsList[22]?.title || 'GateLog - Controle de Acesso',
+      description: t.projects.projectsList[22]?.description || 'Sistema de controle de acesso portuário.',
+      images: ["/images/itracker/gatelog.png"],
+      tags: ["Vue.js 3", "Django REST", "JWT", "PostgreSQL"],
+      category: ['enterprise'],
+      quickEval: 'github',
+      complexity: 4,
+    },
   ];
 
   const filteredProjects = useMemo(() => {
