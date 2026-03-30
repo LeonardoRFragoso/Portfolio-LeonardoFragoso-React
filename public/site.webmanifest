@@ -1,0 +1,31 @@
+{
+  "name": "Leonardo Fragoso - Full Stack Developer",
+  "short_name": "LF Dev",
+  "description": "Portfólio de Leonardo Fragoso - Desenvolvedor Full Stack especializado em Python, Django, React e automação",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#fbbf24",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}

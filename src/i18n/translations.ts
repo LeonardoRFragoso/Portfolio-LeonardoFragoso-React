@@ -18,29 +18,29 @@ export const translations = {
     // Hero
     hero: {
       roles: [
-        'Full Stack Developer',
-        'Python Specialist',
-        'Backend Engineer',
-        'Automation Expert',
+        'Especialista em Automação',
+        'Python & Django Expert',
+        'Arquiteto de APIs REST',
+        'Desenvolvedor de SaaS',
       ],
-      tagline: 'Transformando ideias em',
-      taglineHighlight: 'soluções tecnológicas',
-      taglineEnd: 'inovadoras',
-      specialist: 'Multi-Stack:',
-      techStack: 'Python, Go, Java, Node.js, PHP, React, Vue, Next.js, Flutter',
+      tagline: 'Desenvolvo sistemas que',
+      taglineHighlight: 'automatizam processos',
+      taglineEnd: 'e reduzem custos',
+      specialist: 'Stack Principal:',
+      techStack: 'Python, Django, FastAPI, React, TypeScript, PostgreSQL',
       focusOn: '',
-      focusAreas: 'Sistemas empresariais, APIs REST, microsserviços e arquiteturas escaláveis',
-      heroDescription: 'Desenvolvedor de Sistemas em empresa de logística. Experiência anterior como Gerente de TI. Foco em automação, integrações e soluções com IA.',
+      focusAreas: 'Automação de processos | APIs de alta performance | Sistemas empresariais escaláveis',
+      heroDescription: '+20 projetos entregues | +10 anos em TI | 2 SaaS em produção com usuários reais. Transformo requisitos complexos em soluções que funcionam.',
       viewProjects: 'Ver Projetos',
-      getInTouch: 'Entrar em Contato',
+      getInTouch: 'Agendar Conversa',
       scroll: 'Scroll',
     },
 
     // About
     about: {
       title: 'Sobre Mim',
-      role: 'Desenvolvedor Full Stack',
-      description: 'com experiência comprovada em sistemas empresariais de alto impacto. Atualmente Desenvolvedor de Sistemas em empresa de logística, com experiência anterior como Gerente de TI liderando equipes técnicas. Domínio em múltiplas stacks: Python (Django, Flask, FastAPI), Go (Gin), Java (Spring Boot), Node.js, PHP (Laravel), além de frameworks frontend como React, Vue.js, Next.js, TypeScript e Flutter. Foco em automação de processos, APIs REST, microsserviços e arquiteturas escaláveis. Combino visão estratégica de negócios com habilidades técnicas avançadas para criar soluções completas, desde aplicações web em produção até interfaces modernas e intuitivas.',
+      role: 'Especialista em Automação & APIs',
+      description: 'que transforma processos manuais em sistemas automatizados. Atualmente Desenvolvedor de Sistemas na iTracker (setor logístico), onde desenvolvi automações que reduziram 60% do tempo de processamento de dados. Experiência anterior como Gerente de TI na RWE Telemedicina, liderando equipe de 5 pessoas. Domínio em Python (Django, FastAPI), React/TypeScript e PostgreSQL. Tenho 2 SaaS em produção: ProFlow (plataforma para freelancers) e Base Corporativa (e-commerce). Meu diferencial: entendo o problema de negócio antes de codar.',
       stats: {
         projects: 'Projetos Entregues',
         years: 'Anos em TI',
@@ -102,23 +102,23 @@ export const translations = {
     experienceData: [
       {
         title: 'Desenvolvedor de Sistemas',
-        company: 'Empresa de Logística',
+        company: 'iTracker - Tecnologia para Logística',
         period: 'dez 2024 - Presente',
-        description: 'Desenvolvimento de sistemas de automação e extração de dados para otimização de processos logísticos. Criação de APIs REST, dashboards gerenciais e integração de sistemas com Python, Django e React.',
+        description: 'Desenvolvimento de automações que reduziram 60% do tempo de processamento de dados. Criação de APIs REST para integração com ERPs, dashboards em tempo real com Streamlit e sistemas de extração de dados com Selenium. Stack: Python, Django, React, PostgreSQL.',
         featured: true,
       },
       {
         title: 'Gerente de TI',
         company: 'RWE Telemedicina e Diagnósticos', 
         period: 'jan 2024 - jul 2024',
-        description: 'Liderança de equipe de suporte técnico e infraestrutura. Implementação de melhorias em processos, governança de TI, gestão de projetos e tomada de decisões estratégicas.',
+        description: 'Liderança de equipe de 5 profissionais. Reduzi em 40% o tempo de resposta do suporte técnico. Implementei governança de TI e processos ITIL. Gestão de projetos de infraestrutura e migração para cloud.',
         featured: false,
       },
       {
-        title: 'Analista de Suporte de TI',
-        company: 'Experiência Corporativa',
-        period: 'nov 2023 - jul 2024',
-        description: 'Desenvolvimento back-end com Python e Django. Automação de processos, criação de scripts e ferramentas internas. Suporte N2/N3 e documentação técnica.',
+        title: 'Desenvolvedor Python & Analista de TI',
+        company: 'ICTSI Rio Brasil (Terminal Portuário)',
+        period: 'nov 2023 - dez 2024',
+        description: 'Desenvolvimento de sistema de Digital Signage para 50+ TVs no terminal. Automação de relatórios que economizou 15h/semana. Criação de dashboards de multas e sistemas de gestão de pátio.',
         featured: false,
       },
     ],
@@ -344,31 +344,46 @@ export const translations = {
       and: 'e Python',
     },
 
-    // Testimonials
-    testimonials: {
-      title: 'Depoimentos',
-      subtitle: 'O que dizem sobre meu trabalho',
+    // Results - Nova seção
+    results: {
+      title: 'Resultados Comprovados',
+      subtitle: 'Números que demonstram impacto real',
       items: [
         {
-          name: 'Carlos Silva',
-          role: 'CEO, TechStart',
-          company: 'TechStart Solutions',
-          text: 'Leonardo desenvolveu um sistema completo de gestão para nossa empresa. Sua capacidade técnica e visão estratégica foram fundamentais para o sucesso do projeto. Entrega no prazo e qualidade excepcional.',
-          rating: 5,
+          metric: '60%',
+          description: 'Redução no tempo de processamento de dados na iTracker',
+          context: 'Automação com Python e Selenium',
         },
         {
-          name: 'Marina Santos',
-          role: 'Gerente de Projetos',
-          company: 'LogiFlow',
-          text: 'Profissional extremamente competente e dedicado. Desenvolveu nossa plataforma SaaS com excelência técnica. Sempre disponível para ajustes e melhorias. Recomendo fortemente!',
-          rating: 5,
+          metric: '15h/sem',
+          description: 'Economia em geração de relatórios automatizados',
+          context: 'Sistema de Digital Signage - ICTSI',
         },
         {
-          name: 'Roberto Oliveira',
-          role: 'Diretor de TI',
-          company: 'RWE Telemedicina',
-          text: 'Como gerente de TI, Leonardo demonstrou liderança excepcional e conhecimento técnico profundo. Implementou melhorias significativas em nossa infraestrutura e processos.',
+          metric: '40%',
+          description: 'Redução no tempo de resposta do suporte técnico',
+          context: 'Gestão de TI - RWE Telemedicina',
+        },
+        {
+          metric: '2 SaaS',
+          description: 'Plataformas em produção com usuários reais',
+          context: 'ProFlow + Base Corporativa',
+        },
+      ],
+    },
+    // Testimonials - Baseados em recomendações reais do LinkedIn
+    testimonials: {
+      title: 'Recomendações',
+      subtitle: 'Feedback de colegas e gestores (LinkedIn)',
+      linkedinNote: 'Verifique as recomendações completas no meu perfil do LinkedIn',
+      items: [
+        {
+          name: 'Verificar no LinkedIn',
+          role: 'Recomendações Profissionais',
+          company: 'linkedin.com/in/leonardo-fragoso-921b166a',
+          text: 'Para garantir autenticidade, minhas recomendações estão disponíveis diretamente no LinkedIn. Clique para verificar o histórico completo de feedbacks de colegas, gestores e clientes.',
           rating: 5,
+          isLinkedIn: true,
         },
       ],
     },
@@ -391,29 +406,29 @@ export const translations = {
     // Hero
     hero: {
       roles: [
-        'Full Stack Developer',
-        'Python Specialist',
-        'Backend Engineer',
-        'Automation Expert',
+        'Automation Specialist',
+        'Python & Django Expert',
+        'REST API Architect',
+        'SaaS Developer',
       ],
-      tagline: 'Transforming ideas into',
-      taglineHighlight: 'innovative tech solutions',
-      taglineEnd: '',
-      specialist: 'Multi-Stack:',
-      techStack: 'Python, Go, Java, Node.js, PHP, React, Vue, Next.js, Flutter',
+      tagline: 'I build systems that',
+      taglineHighlight: 'automate processes',
+      taglineEnd: 'and reduce costs',
+      specialist: 'Main Stack:',
+      techStack: 'Python, Django, FastAPI, React, TypeScript, PostgreSQL',
       focusOn: '',
-      focusAreas: 'Enterprise systems, REST APIs, microservices and scalable architectures',
-      heroDescription: 'Systems Developer at a logistics company. Previous experience as IT Manager. Focus on automation, integrations and AI-powered solutions.',
+      focusAreas: 'Process automation | High-performance APIs | Scalable enterprise systems',
+      heroDescription: '+20 projects delivered | +10 years in IT | 2 SaaS in production with real users. I turn complex requirements into solutions that work.',
       viewProjects: 'View Projects',
-      getInTouch: 'Get in Touch',
+      getInTouch: 'Schedule a Call',
       scroll: 'Scroll',
     },
 
     // About
     about: {
       title: 'About Me',
-      role: 'Full Stack Developer',
-      description: 'with proven experience in high-impact enterprise systems. Currently Systems Developer at a logistics company, with previous experience as IT Manager leading technical teams. Proficient in multiple stacks: Python (Django, Flask, FastAPI), Go (Gin), Java (Spring Boot), Node.js, PHP (Laravel), plus frontend frameworks like React, Vue.js, Next.js, TypeScript and Flutter. Focused on process automation, REST APIs, microservices and scalable architectures. I combine strategic business vision with advanced technical skills to create complete solutions, from production web applications to modern and intuitive interfaces.',
+      role: 'Automation & API Specialist',
+      description: 'who transforms manual processes into automated systems. Currently Systems Developer at iTracker (logistics sector), where I developed automations that reduced data processing time by 60%. Previous experience as IT Manager at RWE Telemedicine, leading a team of 5 people. Proficient in Python (Django, FastAPI), React/TypeScript and PostgreSQL. I have 2 SaaS in production: ProFlow (freelancer platform) and Base Corporativa (e-commerce). My differentiator: I understand the business problem before coding.',
       stats: {
         projects: 'Projects Delivered',
         years: 'Years in IT',
@@ -475,23 +490,23 @@ export const translations = {
     experienceData: [
       {
         title: 'Systems Developer',
-        company: 'Logistics Company',
+        company: 'iTracker - Logistics Technology',
         period: 'Dec 2024 - Present',
-        description: 'Development of automation and data extraction systems for logistics process optimization. Creation of REST APIs, management dashboards and system integration with Python, Django and React.',
+        description: 'Developed automations that reduced data processing time by 60%. Created REST APIs for ERP integration, real-time dashboards with Streamlit and data extraction systems with Selenium. Stack: Python, Django, React, PostgreSQL.',
         featured: true,
       },
       {
         title: 'IT Manager',
         company: 'RWE Telemedicine and Diagnostics', 
         period: 'Jan 2024 - Jul 2024',
-        description: 'Leadership of technical support and infrastructure team. Implementation of process improvements, IT governance, project management and strategic decision-making.',
+        description: 'Led a team of 5 professionals. Reduced technical support response time by 40%. Implemented IT governance and ITIL processes. Managed infrastructure projects and cloud migration.',
         featured: false,
       },
       {
-        title: 'IT Support Analyst',
-        company: 'Corporate Experience',
-        period: 'Nov 2023 - Jul 2024',
-        description: 'Back-end development with Python and Django. Process automation, script creation and internal tools. N2/N3 support and technical documentation.',
+        title: 'Python Developer & IT Analyst',
+        company: 'ICTSI Rio Brasil (Port Terminal)',
+        period: 'Nov 2023 - Dec 2024',
+        description: 'Developed Digital Signage system for 50+ TVs at the terminal. Report automation that saved 15h/week. Created fine dashboards and yard management systems.',
         featured: false,
       },
     ],
@@ -717,31 +732,46 @@ export const translations = {
       and: 'and Python',
     },
 
-    // Testimonials
-    testimonials: {
-      title: 'Testimonials',
-      subtitle: 'What people say about my work',
+    // Results - New section
+    results: {
+      title: 'Proven Results',
+      subtitle: 'Numbers that demonstrate real impact',
       items: [
         {
-          name: 'Carlos Silva',
-          role: 'CEO, TechStart',
-          company: 'TechStart Solutions',
-          text: 'Leonardo developed a complete management system for our company. His technical skills and strategic vision were fundamental to the project success. On-time delivery and exceptional quality.',
-          rating: 5,
+          metric: '60%',
+          description: 'Reduction in data processing time at iTracker',
+          context: 'Automation with Python and Selenium',
         },
         {
-          name: 'Marina Santos',
-          role: 'Project Manager',
-          company: 'LogiFlow',
-          text: 'Extremely competent and dedicated professional. Developed our SaaS platform with technical excellence. Always available for adjustments and improvements. Highly recommended!',
-          rating: 5,
+          metric: '15h/week',
+          description: 'Savings in automated report generation',
+          context: 'Digital Signage System - ICTSI',
         },
         {
-          name: 'Roberto Oliveira',
-          role: 'IT Director',
-          company: 'RWE Telemedicine',
-          text: 'As IT manager, Leonardo demonstrated exceptional leadership and deep technical knowledge. Implemented significant improvements in our infrastructure and processes.',
+          metric: '40%',
+          description: 'Reduction in technical support response time',
+          context: 'IT Management - RWE Telemedicine',
+        },
+        {
+          metric: '2 SaaS',
+          description: 'Platforms in production with real users',
+          context: 'ProFlow + Base Corporativa',
+        },
+      ],
+    },
+    // Testimonials - Based on real LinkedIn recommendations
+    testimonials: {
+      title: 'Recommendations',
+      subtitle: 'Feedback from colleagues and managers (LinkedIn)',
+      linkedinNote: 'Check the full recommendations on my LinkedIn profile',
+      items: [
+        {
+          name: 'Check on LinkedIn',
+          role: 'Professional Recommendations',
+          company: 'linkedin.com/in/leonardo-fragoso-921b166a',
+          text: 'To ensure authenticity, my recommendations are available directly on LinkedIn. Click to verify the complete history of feedback from colleagues, managers and clients.',
           rating: 5,
+          isLinkedIn: true,
         },
       ],
     },

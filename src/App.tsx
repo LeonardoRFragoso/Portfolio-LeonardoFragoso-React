@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Results from "./components/Results";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import CustomCursor from "./components/CustomCursor";
@@ -66,6 +67,11 @@ function App() {
           {/* Subtle separator */}
           <div className="h-px bg-gradient-to-r from-transparent via-yellow-400/20 to-transparent"></div>
           <About />
+        </div>
+        
+        <div className="relative">
+          <div className="h-px bg-gradient-to-r from-transparent via-yellow-400/20 to-transparent"></div>
+          <Results />
         </div>
         
         <div className="relative">

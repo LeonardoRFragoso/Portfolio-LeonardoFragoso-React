@@ -118,7 +118,9 @@ export default function Header() {
           {/* Language Toggle, CTA & Social Links */}
           <div className="hidden md:flex items-center space-x-4">
             <motion.a
-              href="#contact"
+              href="https://calendly.com/leonardorfragoso/30min"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-2.5 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-yellow-400/50 flex items-center space-x-2"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -244,7 +246,9 @@ export default function Header() {
                 transition={{ duration: 0.3, delay: 0.4 }}
               >
                 <a
-                  href="#contact"
+                  href="https://calendly.com/leonardorfragoso/30min"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() => setIsMenuOpen(false)}
                   className="w-full px-6 py-3 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black font-bold rounded-lg transition-all duration-300 shadow-lg flex items-center justify-center space-x-2"
                 >
