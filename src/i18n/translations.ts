@@ -279,27 +279,6 @@ export const translations = {
           title: 'Assistente Financeiro via WhatsApp',
           description: 'Sistema SaaS completo de gestão financeira pessoal via WhatsApp com dashboard web e IA para processamento de linguagem natural. IMPORTANTE: É necessário cadastro prévio no site antes de entrar em contato via WhatsApp. O número cadastrado deve ser o mesmo que enviará mensagens. Registre despesas, receitas e lembretes usando linguagem informal. Backend Python/FastAPI com PostgreSQL e Redis, frontend Next.js 14 com TailwindCSS, integração Twilio WhatsApp e OpenAI GPT-4o.',
         },
-        // Projetos iTracker/ICTSI
-        {
-          title: 'Torre de Controle Operacional',
-          description: 'Dashboard executivo para monitoramento em tempo real de 20+ aplicações críticas e rotinas automatizadas do terminal portuário. Redução de 60% no tempo de identificação de falhas operacionais. Stack: Python, Streamlit, Plotly, Selenium, Google APIs, Prometheus.',
-        },
-        {
-          title: 'Bot Consulta DETRAN (RPA)',
-          description: 'Automação RPA para consultas simultâneas em portais DETRAN (RJ, SP, ES) com geração automática de relatórios Excel. Economia de 15 horas semanais, processando 500+ consultas/dia. Stack: Python, Selenium, Pandas, OpenPyXL, Multi-threading.',
-        },
-        {
-          title: 'CargoSnap - Gestão de Inspeções',
-          description: 'Sistema de gestão de inspeções de contêineres com integração API externa e workflow de aprovação. Processamento de 100+ inspeções diárias com rastreabilidade completa. Stack: Django REST Framework, PostgreSQL, JWT, API Integration.',
-        },
-        {
-          title: 'GPS Tracking System',
-          description: 'Rastreamento de frotas em tempo real (50+ veículos) com detecção automática de eventos e alertas proativos de desvios. Visibilidade 100% da frota. Stack: Python, Flask, API Telematics, Geolocation, WebSocket.',
-        },
-        {
-          title: 'GateLog - Controle de Acesso Portuário',
-          description: 'Sistema de controle de entrada/saída com autenticação multi-empresa e logs auditáveis. Gestão de 200+ acessos diários com segurança e rastreabilidade. Stack: Vue.js 3, Vite, TailwindCSS, Django REST Framework, JWT, PostgreSQL.',
-        },
       ],
     },
 
@@ -687,27 +666,6 @@ export const translations = {
         {
           title: 'Financial Assistant via WhatsApp',
           description: 'Complete SaaS personal finance management system via WhatsApp with web dashboard and AI for natural language processing. IMPORTANT: Prior registration on the website is required before contacting via WhatsApp. The registered number must be the same one that will send messages. Register expenses, income and reminders using informal language. Python/FastAPI backend with PostgreSQL and Redis, Next.js 14 frontend with TailwindCSS, Twilio WhatsApp integration and OpenAI GPT-4o.',
-        },
-        // iTracker/ICTSI Projects
-        {
-          title: 'Operations Control Tower',
-          description: 'Executive dashboard for real-time monitoring of 20+ critical applications and automated routines at the port terminal. 60% reduction in operational failure identification time. Stack: Python, Streamlit, Plotly, Selenium, Google APIs, Prometheus.',
-        },
-        {
-          title: 'DETRAN Query Bot (RPA)',
-          description: 'RPA automation for simultaneous queries on DETRAN portals (RJ, SP, ES) with automatic Excel report generation. 15 hours weekly savings, processing 500+ queries/day. Stack: Python, Selenium, Pandas, OpenPyXL, Multi-threading.',
-        },
-        {
-          title: 'CargoSnap - Inspection Management',
-          description: 'Container inspection management system with external API integration and approval workflow. Processing 100+ daily inspections with complete traceability. Stack: Django REST Framework, PostgreSQL, JWT, API Integration.',
-        },
-        {
-          title: 'GPS Tracking System',
-          description: 'Real-time fleet tracking (50+ vehicles) with automatic event detection and proactive deviation alerts. 100% fleet visibility. Stack: Python, Flask, API Telematics, Geolocation, WebSocket.',
-        },
-        {
-          title: 'GateLog - Port Access Control',
-          description: 'Entry/exit control system with multi-company authentication and auditable logs. Management of 200+ daily accesses with security and traceability. Stack: Vue.js 3, Vite, TailwindCSS, Django REST Framework, JWT, PostgreSQL.',
         },
       ],
     },
