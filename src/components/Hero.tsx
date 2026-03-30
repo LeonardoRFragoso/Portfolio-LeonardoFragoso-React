@@ -259,11 +259,11 @@ export default function Hero() {
               >
                 <Sparkles className="h-4 w-4 text-yellow-400 mr-2" />
               </motion.div>
-              <div className="relative h-5 w-40 overflow-hidden">
+              <div className="relative h-5 min-w-[220px] overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentRole}
-                    className="absolute inset-0 text-xs text-yellow-400/90 tracking-wider font-semibold uppercase"
+                    className="absolute inset-0 text-xs text-yellow-400/90 tracking-wider font-semibold uppercase whitespace-nowrap"
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -20, opacity: 0 }}
