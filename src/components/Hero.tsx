@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Code2, Sparkles, Star } from "lucide-react";
+import { ArrowRight, Code2, Zap, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../i18n";
 
@@ -17,26 +17,27 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center bg-black pt-16 overflow-hidden"
+      className="relative min-h-screen flex items-center justify-center pt-16 overflow-hidden"
+      style={{ background: 'linear-gradient(135deg, #09071a 0%, #0f0d24 50%, #09071a 100%)' }}
     >
-      {/* Enhanced Background Effects */}
+      {/* Enhanced Background Effects - Tech Premium */}
       <div className="absolute inset-0">
         {/* Animated Grid */}
-        <div className="absolute inset-0 opacity-5">
-          <div className="h-full w-full bg-[linear-gradient(to_right,#fbbf24_0.5px,transparent_0.5px),linear-gradient(to_bottom,#fbbf24_0.5px,transparent_0.5px)] bg-[size:3rem_3rem] animate-pulse-slow"></div>
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="h-full w-full bg-[linear-gradient(to_right,#6366f1_0.5px,transparent_0.5px),linear-gradient(to_bottom,#6366f1_0.5px,transparent_0.5px)] bg-[size:4rem_4rem]"></div>
         </div>
         
-        {/* Gradient Overlays */}
-        <div className="absolute inset-0 bg-gradient-radial from-yellow-400/8 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(251,191,36,0.12),transparent_40%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(251,191,36,0.08),transparent_40%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(251,191,36,0.05),transparent_60%)]"></div>
+        {/* Gradient Overlays - Tech Premium */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.15),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(6,182,212,0.12),transparent_40%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.1),transparent_40%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(99,102,241,0.08),transparent_60%)]"></div>
       </div>
 
-      {/* Geometric Shapes */}
+      {/* Geometric Shapes - Tech Premium */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
-          className="absolute top-1/4 left-1/6 w-2 h-2 bg-yellow-400 rotate-45"
+          className="absolute top-1/4 left-1/6 w-2 h-2 bg-accent-400 rotate-45"
           animate={{
             rotate: [45, 405],
             scale: [1, 1.5, 1],
@@ -48,7 +49,7 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="absolute bottom-1/3 right-1/6 w-3 h-3 border border-yellow-400/50"
+          className="absolute bottom-1/3 right-1/6 w-3 h-3 border border-cyan-400/50"
           animate={{
             rotate: [0, 360],
             opacity: [0.5, 1, 0.5],
@@ -60,7 +61,7 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="absolute top-1/2 right-1/4 w-1 h-16 bg-gradient-to-b from-yellow-400/30 to-transparent"
+          className="absolute top-1/2 right-1/4 w-1 h-16 bg-gradient-to-b from-purple-400/30 to-transparent"
           animate={{
             scaleY: [1, 0.5, 1],
             opacity: [0.3, 0.8, 0.3],
@@ -74,17 +75,17 @@ export default function Hero() {
         />
       </div>
 
-      {/* Enhanced Floating Particles - Reduzido para melhor performance */}
+      {/* Enhanced Floating Particles - Tech Premium */}
       <div className="absolute inset-0 overflow-hidden">
-        {[...Array(12)].map((_, i) => (
+        {[...Array(15)].map((_, i) => (
           <motion.div
             key={i}
             className={`absolute ${
               i % 3 === 0 ? 'w-2 h-2' : i % 3 === 1 ? 'w-1 h-1' : 'w-1.5 h-1.5'
             } ${
-              i % 4 === 0 ? 'bg-yellow-400' : 
-              i % 4 === 1 ? 'bg-amber-400' : 
-              i % 4 === 2 ? 'bg-yellow-300' : 'bg-amber-300'
+              i % 4 === 0 ? 'bg-accent-400' : 
+              i % 4 === 1 ? 'bg-cyan-400' : 
+              i % 4 === 2 ? 'bg-purple-400' : 'bg-accent-300'
             } rounded-full`}
             initial={{
               x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
@@ -107,12 +108,12 @@ export default function Hero() {
         ))}
       </div>
 
-      {/* Enhanced Floating Orbs */}
+      {/* Enhanced Floating Orbs - Tech Premium */}
       <motion.div
-        className="absolute top-1/4 left-1/4 w-40 h-40 bg-gradient-to-r from-yellow-400/15 to-amber-500/15 rounded-full blur-3xl"
+        className="absolute top-1/4 left-1/4 w-48 h-48 bg-gradient-to-r from-accent-500/20 to-purple-500/20 rounded-full blur-3xl"
         animate={{
           scale: [1, 1.4, 0.8, 1.2, 1],
-          opacity: [0.3, 0.7, 0.2, 0.5, 0.3],
+          opacity: [0.3, 0.6, 0.2, 0.5, 0.3],
         }}
         transition={{
           duration: 8,
@@ -122,7 +123,7 @@ export default function Hero() {
       />
       
       <motion.div
-        className="absolute bottom-1/3 right-1/4 w-32 h-32 bg-gradient-to-r from-amber-400/20 to-yellow-500/20 rounded-full blur-2xl"
+        className="absolute bottom-1/3 right-1/4 w-40 h-40 bg-gradient-to-r from-cyan-400/20 to-accent-500/20 rounded-full blur-2xl"
         animate={{
           scale: [1.2, 0.8, 1.5, 1],
           opacity: [0.4, 0.1, 0.6, 0.4],
@@ -136,7 +137,7 @@ export default function Hero() {
       />
 
       <motion.div
-        className="absolute top-1/2 left-1/6 w-24 h-24 bg-gradient-to-r from-yellow-300/10 to-amber-400/10 rounded-full blur-xl"
+        className="absolute top-1/2 left-1/6 w-32 h-32 bg-gradient-to-r from-purple-400/15 to-cyan-400/15 rounded-full blur-xl"
         animate={{
           scale: [0.8, 1.3, 1, 1.1],
           opacity: [0.2, 0.5, 0.1, 0.3],
@@ -161,9 +162,9 @@ export default function Hero() {
             transition={{ duration: 1.2, ease: "easeOut" }}
           >
             <div className="relative">
-              {/* Animated Ring Background */}
+              {/* Animated Ring Background - Tech Premium */}
               <motion.div
-                className="absolute -inset-4 rounded-full bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-400 opacity-75 blur-md"
+                className="absolute -inset-4 rounded-full bg-gradient-to-r from-accent-500 via-purple-500 to-cyan-500 opacity-75 blur-md"
                 animate={{
                   rotate: [0, 360],
                 }}
@@ -176,7 +177,7 @@ export default function Hero() {
               
               {/* Secondary Glow */}
               <motion.div
-                className="absolute -inset-6 rounded-full bg-gradient-to-r from-yellow-400/30 to-amber-500/30 blur-xl"
+                className="absolute -inset-6 rounded-full bg-gradient-to-r from-accent-400/30 to-cyan-400/30 blur-xl"
                 animate={{
                   scale: [1, 1.1, 1],
                   opacity: [0.5, 0.8, 0.5],
@@ -190,7 +191,7 @@ export default function Hero() {
               
               {/* Image Container */}
               <motion.div
-                className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-yellow-400/50 shadow-2xl"
+                className="relative w-72 h-72 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-accent-400/50 shadow-2xl shadow-accent-500/20"
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3 }}
               >
@@ -202,10 +203,10 @@ export default function Hero() {
                 />
                 
                 {/* Subtle overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-900/30 via-transparent to-transparent" />
               </motion.div>
               
-              {/* Decorative Elements */}
+              {/* Decorative Elements - Tech Premium */}
               <motion.div
                 className="absolute -top-2 -right-2 w-8 h-8"
                 animate={{
@@ -218,7 +219,7 @@ export default function Hero() {
                   ease: "easeInOut",
                 }}
               >
-                <Star className="w-full h-full text-yellow-400 fill-yellow-400" />
+                <Zap className="w-full h-full text-cyan-400" />
               </motion.div>
               
               <motion.div
@@ -234,7 +235,7 @@ export default function Hero() {
                   delay: 2,
                 }}
               >
-                <Sparkles className="w-full h-full text-amber-400" />
+                <Sparkles className="w-full h-full text-purple-400" />
               </motion.div>
             </div>
           </motion.div>
@@ -246,24 +247,24 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
           >
-            {/* Enhanced Tagline - Melhor hierarquia visual */}
+            {/* Enhanced Tagline - Tech Premium */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1, delay: 0.4 }}
-              className="inline-flex items-center px-5 py-2.5 rounded-full bg-black/70 backdrop-blur-xl border border-yellow-400/40 shadow-lg hover:border-yellow-400/60 transition-all duration-500 group"
+              className="inline-flex items-center px-5 py-2.5 rounded-full bg-dark-900/70 backdrop-blur-xl border border-accent-400/40 shadow-lg hover:border-accent-400/60 transition-all duration-500 group"
             >
               <motion.div
                 animate={{ rotate: [0, 360] }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
               >
-                <Sparkles className="h-4 w-4 text-yellow-400 mr-2" />
+                <Sparkles className="h-4 w-4 text-accent-400 mr-2" />
               </motion.div>
               <div className="relative h-5 min-w-[220px] overflow-hidden">
                 <AnimatePresence mode="wait">
                   <motion.span
                     key={currentRole}
-                    className="absolute inset-0 text-xs text-yellow-400/90 tracking-wider font-semibold uppercase whitespace-nowrap"
+                    className="absolute inset-0 text-xs text-accent-300 tracking-wider font-semibold uppercase whitespace-nowrap"
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -20, opacity: 0 }}
@@ -274,13 +275,13 @@ export default function Hero() {
                 </AnimatePresence>
               </div>
               <motion.div
-                className="ml-2 w-1.5 h-1.5 bg-yellow-400 rounded-full"
+                className="ml-2 w-1.5 h-1.5 bg-cyan-400 rounded-full"
                 animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
                 transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
               />
             </motion.div>
 
-            {/* Name - Maior destaque */}
+            {/* Name - Tech Premium */}
             <motion.div
               className="relative"
               initial={{ opacity: 0, y: -20 }}
@@ -288,14 +289,14 @@ export default function Hero() {
               transition={{ duration: 1.2, delay: 0.6 }}
             >
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight">
-                <span className="bg-gradient-to-r from-white via-yellow-400 to-amber-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-white via-accent-400 to-cyan-400 bg-clip-text text-transparent">
                   Leonardo{" "}
                 </span>
-                <span className="text-yellow-400 font-black">Fragoso</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-purple-400 font-black">Fragoso</span>
               </h1>
             </motion.div>
 
-            {/* Subtitle */}
+            {/* Subtitle - Tech Premium */}
             <motion.div
               className="space-y-4"
               initial={{ opacity: 0, y: -10 }}
@@ -304,29 +305,29 @@ export default function Hero() {
             >
               <p className="text-xl sm:text-2xl text-white/95 leading-relaxed font-light">
                 {t.hero.tagline}{" "}
-                <span className="text-yellow-400 font-bold">{t.hero.taglineHighlight}</span>{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-400 font-bold">{t.hero.taglineHighlight}</span>{" "}
                 {t.hero.taglineEnd}
               </p>
               
               <div className="flex items-center justify-center lg:justify-start space-x-4">
-                <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-yellow-400" />
-                <Code2 className="w-6 h-6 text-yellow-400" />
-                <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-yellow-400" />
+                <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-accent-400" />
+                <Code2 className="w-6 h-6 text-accent-400" />
+                <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-cyan-400" />
               </div>
               
               <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
                 {t.hero.specialist}{" "}
-                <span className="text-yellow-400 font-semibold">{t.hero.techStack}</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-400 font-semibold">{t.hero.techStack}</span>
               </p>
               <p className="text-base sm:text-lg text-white/70 leading-relaxed">
-                <span className="text-yellow-400/90">{t.hero.focusAreas}</span>
+                <span className="text-accent-300/90">{t.hero.focusAreas}</span>
               </p>
               <p className="text-base text-white/60 leading-relaxed">
                 {t.hero.heroDescription}
               </p>
             </motion.div>
 
-            {/* Buttons */}
+            {/* Buttons - Tech Premium */}
             <motion.div
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6"
               initial={{ opacity: 0, y: 20 }}
@@ -335,27 +336,28 @@ export default function Hero() {
             >
               <motion.a
                 href="#projects"
-                className="group relative inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:via-amber-300 hover:to-yellow-400 transition-all duration-500 shadow-xl hover:shadow-yellow-400/50"
+                className="group relative inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-accent-500 via-purple-500 to-cyan-500 hover:from-accent-400 hover:via-purple-400 hover:to-cyan-400 transition-all duration-500 shadow-xl hover:shadow-accent-500/50 overflow-hidden"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 aria-label={t.hero.viewProjects}
               >
-                <span className="font-bold text-black text-lg">{t.hero.viewProjects}</span>
-                <ArrowRight className="h-5 w-5 text-black ml-2 group-hover:translate-x-1 transition-transform" />
+                <span className="absolute inset-0 bg-gradient-to-r from-accent-400 via-purple-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span className="font-bold text-white text-lg relative z-10">{t.hero.viewProjects}</span>
+                <ArrowRight className="h-5 w-5 text-white ml-2 group-hover:translate-x-1 transition-transform relative z-10" />
               </motion.a>
               
               <motion.a
                 href="#contact"
-                className="group inline-flex items-center justify-center px-8 py-4 rounded-xl bg-black/70 backdrop-blur-xl border-2 border-yellow-400/40 hover:border-yellow-400/80 hover:bg-yellow-400/10 transition-all duration-500 shadow-xl"
+                className="group inline-flex items-center justify-center px-8 py-4 rounded-xl bg-dark-900/70 backdrop-blur-xl border-2 border-accent-400/40 hover:border-accent-400/80 hover:bg-accent-500/10 transition-all duration-500 shadow-xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 aria-label={t.hero.getInTouch}
               >
-                <span className="font-bold text-white text-lg group-hover:text-yellow-300 transition-colors">
+                <span className="font-bold text-white text-lg group-hover:text-accent-300 transition-colors">
                   {t.hero.getInTouch}
                 </span>
                 <motion.div
-                  className="ml-2 w-2.5 h-2.5 bg-yellow-400 rounded-full"
+                  className="ml-2 w-2.5 h-2.5 bg-gradient-to-r from-accent-400 to-cyan-400 rounded-full"
                   animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 />
@@ -365,7 +367,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Enhanced Scroll Indicator - Posicionado bem abaixo dos botões */}
+      {/* Enhanced Scroll Indicator - Tech Premium */}
       <motion.div
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
         initial={{ opacity: 0, y: 20 }}
@@ -383,9 +385,9 @@ export default function Hero() {
             ease: "easeInOut",
           }}
         >
-          <div className="w-6 h-10 border-2 border-yellow-400/60 rounded-full flex justify-center relative">
+          <div className="w-6 h-10 border-2 border-accent-400/60 rounded-full flex justify-center relative">
             <motion.div
-              className="w-1.5 h-3 bg-yellow-400 rounded-full mt-2"
+              className="w-1.5 h-3 bg-gradient-to-b from-accent-400 to-cyan-400 rounded-full mt-2"
               animate={{
                 y: [0, 10, 0],
                 opacity: [1, 0.3, 1],
@@ -397,7 +399,7 @@ export default function Hero() {
               }}
             />
           </div>
-          <span className="text-yellow-400/80 text-xs font-medium uppercase tracking-wider">{t.hero.scroll}</span>
+          <span className="text-accent-300/80 text-xs font-medium uppercase tracking-wider">{t.hero.scroll}</span>
         </motion.div>
       </motion.div>
     </section>

@@ -339,13 +339,13 @@ export default function Projects() {
   };
 
   return (
-    <section id="projects" className="py-20 bg-black relative overflow-hidden">
+    <section id="projects" className="py-20 relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #09071a 0%, #0f0d24 50%, #09071a 100%)' }}>
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-radial from-yellow-400/3 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(251,191,36,0.04),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.08),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_70%,rgba(6,182,212,0.06),transparent_50%)]"></div>
         
         <motion.div
-          className="absolute top-1/3 right-1/4 w-40 h-40 bg-gradient-to-r from-yellow-400/10 to-amber-500/10 rounded-full blur-2xl"
+          className="absolute top-1/3 right-1/4 w-40 h-40 bg-gradient-to-r from-accent-500/15 to-cyan-500/15 rounded-full blur-2xl"
           animate={{
             scale: [1, 1.3, 1],
             opacity: [0.2, 0.4, 0.2],
@@ -367,20 +367,20 @@ export default function Projects() {
           transition={{ duration: 0.8 }}
         >
           <motion.h2
-            className="text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-yellow-400 to-amber-500 mb-6"
+            className="text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-accent-400 to-cyan-400 mb-6"
             style={{
-              filter: "drop-shadow(0 0 20px rgba(251, 191, 36, 0.3))",
+              filter: "drop-shadow(0 0 20px rgba(99, 102, 241, 0.3))",
             }}
           >
             {t.projects.title}
           </motion.h2>
           <p className="text-xl text-white/70 max-w-2xl mx-auto">
             {t.projects.subtitle}{" "}
-            <span className="text-yellow-400 font-semibold">{t.projects.subtitleHighlight}</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-400 font-semibold">{t.projects.subtitleHighlight}</span>
           </p>
           
           <motion.div
-            className="w-32 h-1 bg-gradient-to-r from-yellow-400 to-amber-500 mx-auto mt-8 rounded-full"
+            className="w-32 h-1 bg-gradient-to-r from-accent-500 via-purple-500 to-cyan-500 mx-auto mt-8 rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: 128 }}
             viewport={{ once: true }}
@@ -396,7 +396,7 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <div className="flex items-center space-x-2 text-yellow-400/80">
+          <div className="flex items-center space-x-2 text-accent-400/80">
             <Filter className="w-5 h-5" />
             <span className="text-sm font-medium">Filtrar:</span>
           </div>
@@ -406,8 +406,8 @@ export default function Projects() {
               onClick={() => setActiveFilter(filter.key)}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
                 activeFilter === filter.key
-                  ? 'bg-gradient-to-r from-yellow-400 to-amber-500 text-black shadow-lg shadow-yellow-400/30'
-                  : 'bg-black/60 text-white/70 border border-yellow-400/20 hover:border-yellow-400/40 hover:text-yellow-400'
+                  ? 'bg-gradient-to-r from-accent-500 via-purple-500 to-cyan-500 text-white shadow-lg shadow-accent-500/30'
+                  : 'bg-dark-900/60 text-white/70 border border-accent-500/20 hover:border-accent-400/40 hover:text-accent-400'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -425,7 +425,7 @@ export default function Projects() {
           transition={{ duration: 0.4 }}
         >
           <p className="text-white/60 text-sm">
-            {t.projects.showingProjects} <span className="text-yellow-400 font-bold">{filteredProjects.length}</span> {t.projects.of} {projects.length} {t.projects.projects}
+            {t.projects.showingProjects} <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-400 font-bold">{filteredProjects.length}</span> {t.projects.of} {projects.length} {t.projects.projects}
           </p>
         </motion.div>
 
@@ -451,9 +451,9 @@ export default function Projects() {
                   transition={{ duration: 0.4, delay: index * 0.05 }}
                   className={`group relative rounded-2xl overflow-hidden transition-all duration-500 transform hover:-translate-y-2 ${
                     project.featured 
-                      ? 'bg-gradient-to-br from-black/90 via-yellow-400/5 to-black/90 border-2 border-yellow-400/30' 
-                      : 'bg-black/60 border border-white/10'
-                  } backdrop-blur-md shadow-2xl hover:shadow-yellow-400/20`}
+                      ? 'bg-gradient-to-br from-dark-900/90 via-accent-500/5 to-dark-900/90 border-2 border-accent-400/30' 
+                      : 'bg-dark-900/60 border border-white/10'
+                  } backdrop-blur-md shadow-2xl hover:shadow-accent-500/20`}
                   whileHover={{ scale: 1.02 }}
                 >
                   {/* Badges superiores */}
@@ -468,7 +468,7 @@ export default function Projects() {
                       </div>
                     )}
                     {project.featured && !project.saas && (
-                      <div className="px-3 py-1 bg-gradient-to-r from-yellow-400 to-amber-500 text-black text-xs font-bold rounded-full">
+                      <div className="px-3 py-1 bg-gradient-to-r from-accent-500 via-purple-500 to-cyan-500 text-white text-xs font-bold rounded-full">
                         {t.projects.featured}
                       </div>
                     )}
@@ -509,7 +509,7 @@ export default function Projects() {
                       className="absolute inset-0 flex items-center justify-center bg-black/0 hover:bg-black/30 transition-all duration-300 opacity-0 group-hover:opacity-100"
                       aria-label={`${t.projects.viewGallery} - ${project.title}`}
                     >
-                      <div className="flex items-center space-x-2 px-4 py-2 bg-yellow-400/90 text-black font-bold rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                      <div className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-accent-500 to-cyan-500 text-white font-bold rounded-lg transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
                         <Eye className="h-5 w-5" />
                         <span>{t.projects.viewGallery}</span>
                       </div>
@@ -518,7 +518,7 @@ export default function Projects() {
 
                   <div className="p-6 space-y-4">
                     <div className="flex items-start justify-between gap-2">
-                      <h3 className="text-xl font-bold text-white group-hover:text-yellow-300 transition-colors flex-1">
+                      <h3 className="text-xl font-bold text-white group-hover:text-accent-300 transition-colors flex-1">
                         {project.title}
                       </h3>
                       {/* Complexity Stars */}
@@ -528,7 +528,7 @@ export default function Projects() {
                             key={i}
                             className={`w-3 h-3 ${
                               i < project.complexity
-                                ? 'text-yellow-400 fill-yellow-400'
+                                ? 'text-accent-400 fill-accent-400'
                                 : 'text-white/20'
                             }`}
                           />
@@ -544,13 +544,13 @@ export default function Projects() {
                       {project.tags.slice(0, 4).map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="px-3 py-1 rounded-full text-xs font-medium bg-yellow-400/10 text-yellow-300 border border-yellow-400/20 hover:bg-yellow-400/20 transition-colors"
+                          className="px-3 py-1 rounded-full text-xs font-medium bg-accent-500/10 text-accent-300 border border-accent-500/20 hover:bg-accent-500/20 transition-colors"
                         >
                           {tag}
                         </span>
                       ))}
                       {project.tags.length > 4 && (
-                        <span className="px-3 py-1 rounded-full text-xs font-medium bg-yellow-400/10 text-yellow-300 border border-yellow-400/20">
+                        <span className="px-3 py-1 rounded-full text-xs font-medium bg-accent-500/10 text-accent-300 border border-accent-500/20">
                           +{project.tags.length - 4}
                         </span>
                       )}
@@ -562,7 +562,7 @@ export default function Projects() {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center space-x-2 text-white hover:text-yellow-400 transition-colors group/link"
+                          className="flex items-center space-x-2 text-white hover:text-accent-400 transition-colors group/link"
                           aria-label={`${t.projects.code} - ${project.title}`}
                         >
                           <Github className="h-5 w-5 group-hover/link:scale-110 transition-transform" />
@@ -578,7 +578,7 @@ export default function Projects() {
                           className={`flex items-center space-x-2 transition-colors group/link ${
                             project.saas 
                               ? 'px-4 py-2 bg-gradient-to-r from-green-400 to-emerald-500 text-black font-bold rounded-lg hover:from-green-300 hover:to-emerald-400' 
-                              : 'text-white hover:text-yellow-400'
+                              : 'text-white hover:text-accent-400'
                           }`}
                           aria-label={`${t.projects.visitSite} - ${project.title}`}
                         >
@@ -611,7 +611,7 @@ export default function Projects() {
                             className={`flex items-center space-x-1 transition-colors group/link ${
                               project.saas 
                                 ? 'px-3 py-1.5 bg-gradient-to-r from-green-400 to-emerald-500 text-black text-xs font-bold rounded-lg hover:from-green-300 hover:to-emerald-400' 
-                                : 'px-3 py-1.5 bg-yellow-400/10 text-yellow-300 text-xs font-medium rounded-lg border border-yellow-400/20 hover:bg-yellow-400/20'
+                                : 'px-3 py-1.5 bg-accent-500/10 text-accent-300 text-xs font-medium rounded-lg border border-accent-500/20 hover:bg-accent-500/20'
                             }`}
                             aria-label={`${link.label} - ${project.title}`}
                           >
@@ -643,12 +643,12 @@ export default function Projects() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="relative max-w-2xl w-full mx-4 bg-gradient-to-br from-black/95 via-yellow-400/5 to-black/95 rounded-2xl border-2 border-yellow-400/30 backdrop-blur-xl overflow-hidden"
+              className="relative max-w-2xl w-full mx-4 bg-gradient-to-br from-dark-900/95 via-accent-500/5 to-dark-900/95 rounded-2xl border-2 border-accent-400/30 backdrop-blur-xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={closeLinksModal}
-                className="absolute top-4 right-4 z-30 w-10 h-10 flex items-center justify-center bg-black/70 hover:bg-yellow-400 text-white hover:text-black rounded-full transition-all duration-300 text-2xl font-bold"
+                className="absolute top-4 right-4 z-30 w-10 h-10 flex items-center justify-center bg-dark-900/70 hover:bg-accent-500 text-white rounded-full transition-all duration-300 text-2xl font-bold"
                 aria-label="Fechar"
               >
                 ×
@@ -656,11 +656,11 @@ export default function Projects() {
 
               <div className="p-8">
                 <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-yellow-400/20 to-amber-500/20 flex items-center justify-center">
-                    <ExternalLink className="w-6 h-6 text-yellow-400" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-accent-500/20 to-cyan-500/20 flex items-center justify-center">
+                    <ExternalLink className="w-6 h-6 text-accent-400" />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-400">
+                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-accent-400">
                       {selectedProjectLinks.title}
                     </h3>
                     <p className="text-white/60 text-sm">{t.projects.multipleApps}</p>
@@ -678,7 +678,7 @@ export default function Projects() {
                       href={link.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center justify-between p-4 rounded-xl bg-black/60 border-2 border-yellow-400/20 hover:border-yellow-400/60 hover:bg-yellow-400/5 transition-all duration-300"
+                      className="group flex items-center justify-between p-4 rounded-xl bg-dark-900/60 border-2 border-accent-500/20 hover:border-accent-400/60 hover:bg-accent-500/5 transition-all duration-300"
                       whileHover={{ scale: 1.02, x: 4 }}
                       whileTap={{ scale: 0.98 }}
                     >
@@ -687,7 +687,7 @@ export default function Projects() {
                           <ExternalLink className="w-5 h-5 text-black" />
                         </div>
                         <div>
-                          <h4 className="text-white font-bold group-hover:text-yellow-300 transition-colors">
+                          <h4 className="text-white font-bold group-hover:text-accent-300 transition-colors">
                             {link.label}
                           </h4>
                           <p className="text-white/50 text-xs">Clique para acessar</p>
@@ -697,16 +697,16 @@ export default function Projects() {
                         animate={{ x: [0, 4, 0] }}
                         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
                       >
-                        <ChevronRight className="w-5 h-5 text-yellow-400" />
+                        <ChevronRight className="w-5 h-5 text-accent-400" />
                       </motion.div>
                     </motion.a>
                   ))}
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-yellow-400/20">
+                <div className="mt-6 pt-6 border-t border-accent-500/20">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                      <Zap className="w-4 h-4 text-yellow-400" />
+                      <Zap className="w-4 h-4 text-cyan-400" />
                       <span className="text-white/70 text-sm">
                         {selectedProjectLinks.demoLinks?.length} aplicações disponíveis
                       </span>
@@ -716,7 +716,7 @@ export default function Projects() {
                         href={selectedProjectLinks.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center space-x-2 px-4 py-2 bg-black/60 border border-yellow-400/20 hover:border-yellow-400/40 rounded-lg transition-colors text-white hover:text-yellow-400"
+                        className="flex items-center space-x-2 px-4 py-2 bg-dark-900/60 border border-accent-500/20 hover:border-accent-400/40 rounded-lg transition-colors text-white hover:text-accent-400"
                       >
                         <Github className="w-4 h-4" />
                         <span className="text-sm font-medium">{t.projects.code}</span>
@@ -744,12 +744,12 @@ export default function Projects() {
               initial={{ scale: 0.8, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.8, opacity: 0 }}
-              className="relative max-w-5xl max-h-[90vh] bg-black/80 rounded-2xl border border-yellow-400/30 overflow-hidden"
+              className="relative max-w-5xl max-h-[90vh] bg-dark-900/80 rounded-2xl border border-accent-400/30 overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 z-30 w-10 h-10 flex items-center justify-center bg-black/70 hover:bg-yellow-400 text-white hover:text-black rounded-full transition-all duration-300"
+                className="absolute top-4 right-4 z-30 w-10 h-10 flex items-center justify-center bg-dark-900/70 hover:bg-accent-500 text-white rounded-full transition-all duration-300"
                 aria-label="Fechar galeria"
               >
                 ×
@@ -766,14 +766,14 @@ export default function Projects() {
                   <>
                     <button
                       onClick={prevImage}
-                      className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-black/70 hover:bg-yellow-400 text-white hover:text-black rounded-full transition-all duration-300"
+                      className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-dark-900/70 hover:bg-accent-500 text-white rounded-full transition-all duration-300"
                       aria-label="Imagem anterior"
                     >
                       <ChevronLeft className="h-6 w-6" />
                     </button>
                     <button
                       onClick={nextImage}
-                      className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-black/70 hover:bg-yellow-400 text-white hover:text-black rounded-full transition-all duration-300"
+                      className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 flex items-center justify-center bg-dark-900/70 hover:bg-accent-500 text-white rounded-full transition-all duration-300"
                       aria-label="Próxima imagem"
                     >
                       <ChevronRight className="h-6 w-6" />
@@ -787,7 +787,7 @@ export default function Projects() {
               </div>
 
               <div className="p-6 space-y-4">
-                <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-400">
+                <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-accent-400">
                   {selectedProject.title}
                 </h3>
                 <p className="text-white/80 leading-relaxed">
@@ -802,8 +802,8 @@ export default function Projects() {
                         onClick={() => setCurrentImageIndex(index)}
                         className={`flex-shrink-0 w-16 h-12 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
                           index === currentImageIndex 
-                            ? 'border-yellow-400 scale-110' 
-                            : 'border-white/20 hover:border-yellow-400/50'
+                            ? 'border-accent-400 scale-110' 
+                            : 'border-white/20 hover:border-accent-400/50'
                         }`}
                         aria-label={`Ver imagem ${index + 1}`}
                       >

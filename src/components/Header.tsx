@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Github, Linkedin, Menu, X, Sparkles, Briefcase } from "lucide-react";
+import { Github, Linkedin, Menu, X, Zap, Briefcase } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../i18n";
 import LanguageToggle from "./LanguageToggle";
@@ -40,7 +40,7 @@ export default function Header() {
     <motion.header
       className={`fixed w-full z-50 transition-all duration-500 ${
         isScrolled
-          ? "bg-black/80 backdrop-blur-xl border-b border-yellow-400/20 shadow-2xl shadow-yellow-400/10"
+          ? "bg-dark-900/90 backdrop-blur-xl border-b border-accent-500/20 shadow-2xl shadow-accent-500/10"
           : "bg-transparent"
       }`}
       role="navigation"
@@ -61,11 +61,11 @@ export default function Header() {
               className="group relative text-white font-bold text-2xl tracking-wide transition-all duration-300"
               aria-label="Ir para Home"
             >
-              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-white to-yellow-400 group-hover:from-yellow-400 group-hover:to-amber-500 transition-all duration-300">
+              <span className="relative z-10 text-transparent bg-clip-text bg-gradient-to-r from-white via-accent-400 to-cyan-400 group-hover:from-accent-400 group-hover:via-purple-400 group-hover:to-cyan-400 transition-all duration-300">
                 Leonardo Fragoso
               </span>
               
-              {/* Decorative sparkle */}
+              {/* Decorative element */}
               <motion.div
                 className="absolute -top-1 -right-1 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                 animate={{
@@ -78,7 +78,7 @@ export default function Header() {
                   ease: "easeInOut",
                 }}
               >
-                <Sparkles className="w-4 h-4 text-yellow-400" />
+                <Zap className="w-4 h-4 text-cyan-400" />
               </motion.div>
             </a>
           </motion.div>
@@ -95,7 +95,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={`relative px-4 py-2 text-lg font-medium transition-all duration-300 group ${
-                  activeSection === item.id ? 'text-yellow-400' : 'text-white/80 hover:text-yellow-300'
+                  activeSection === item.id ? 'text-accent-400' : 'text-white/80 hover:text-accent-300'
                 }`}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -104,13 +104,13 @@ export default function Header() {
               >
                 {item.label}
                 
-                {/* Animated underline - sempre visível quando ativo */}
-                <span className={`absolute left-0 bottom-0 h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500 transition-all duration-300 ${
+                {/* Animated underline */}
+                <span className={`absolute left-0 bottom-0 h-0.5 bg-gradient-to-r from-accent-400 via-purple-400 to-cyan-400 transition-all duration-300 ${
                   activeSection === item.id ? 'w-full' : 'w-0 group-hover:w-full'
                 }`}></span>
                 
                 {/* Glow effect on hover */}
-                <span className="absolute inset-0 rounded-lg bg-yellow-400/0 group-hover:bg-yellow-400/10 transition-all duration-300 blur-xl"></span>
+                <span className="absolute inset-0 rounded-lg bg-accent-400/0 group-hover:bg-accent-400/10 transition-all duration-300 blur-xl"></span>
               </motion.a>
             ))}
           </nav>
@@ -121,13 +121,14 @@ export default function Header() {
               href="https://calendly.com/leonardorfragoso/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-2.5 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-yellow-400/50 flex items-center space-x-2"
+              className="relative px-6 py-2.5 bg-gradient-to-r from-accent-500 via-purple-500 to-cyan-500 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-accent-500/50 flex items-center space-x-2 overflow-hidden group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               aria-label={t.nav.hireCTA}
             >
-              <Briefcase className="w-4 h-4" />
-              <span>{t.nav.hireCTA}</span>
+              <span className="absolute inset-0 bg-gradient-to-r from-accent-400 via-purple-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <Briefcase className="w-4 h-4 relative z-10" />
+              <span className="relative z-10">{t.nav.hireCTA}</span>
             </motion.a>
             
             <LanguageToggle />
@@ -136,12 +137,12 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
-              className="group relative p-2 text-white/70 hover:text-yellow-400 transition-all duration-300"
+              className="group relative p-2 text-white/70 hover:text-accent-400 transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
               <Github className="h-6 w-6" />
-              <span className="absolute inset-0 rounded-lg bg-yellow-400/0 group-hover:bg-yellow-400/20 transition-all duration-300 blur-lg"></span>
+              <span className="absolute inset-0 rounded-lg bg-accent-400/0 group-hover:bg-accent-400/20 transition-all duration-300 blur-lg"></span>
             </motion.a>
             
             <motion.a
@@ -149,12 +150,12 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="group relative p-2 text-white/70 hover:text-yellow-400 transition-all duration-300"
+              className="group relative p-2 text-white/70 hover:text-cyan-400 transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
             >
               <Linkedin className="h-6 w-6" />
-              <span className="absolute inset-0 rounded-lg bg-yellow-400/0 group-hover:bg-yellow-400/20 transition-all duration-300 blur-lg"></span>
+              <span className="absolute inset-0 rounded-lg bg-cyan-400/0 group-hover:bg-cyan-400/20 transition-all duration-300 blur-lg"></span>
             </motion.a>
           </div>
 
@@ -162,7 +163,7 @@ export default function Header() {
           <div className="md:hidden">
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="relative p-2 text-white/80 hover:text-yellow-400 transition-all duration-300"
+              className="relative p-2 text-white/80 hover:text-accent-400 transition-all duration-300"
               aria-label={isMenuOpen ? t.nav.closeMenu : t.nav.openMenu}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -199,7 +200,7 @@ export default function Header() {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div
-            className="md:hidden bg-black/95 backdrop-blur-xl border-t border-yellow-400/20"
+            className="md:hidden bg-dark-900/95 backdrop-blur-xl border-t border-accent-500/20"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -217,8 +218,8 @@ export default function Header() {
                   href={item.href}
                   className={`block px-4 py-3 text-lg font-medium transition-all duration-300 rounded-lg ${
                     activeSection === item.id 
-                      ? 'text-yellow-400 bg-yellow-400/10' 
-                      : 'text-white/80 hover:text-yellow-400 hover:bg-yellow-400/10'
+                      ? 'text-accent-400 bg-accent-500/10' 
+                      : 'text-white/80 hover:text-accent-400 hover:bg-accent-500/10'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                   initial={{ opacity: 0, x: -20 }}
@@ -230,7 +231,7 @@ export default function Header() {
                     {item.label}
                     {activeSection === item.id && (
                       <motion.span 
-                        className="absolute left-0 -bottom-1 w-full h-0.5 bg-gradient-to-r from-yellow-400 to-amber-500"
+                        className="absolute left-0 -bottom-1 w-full h-0.5 bg-gradient-to-r from-accent-400 via-purple-400 to-cyan-400"
                         layoutId="mobileActiveSection"
                       />
                     )}
@@ -250,7 +251,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setIsMenuOpen(false)}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-300 hover:to-amber-400 text-black font-bold rounded-lg transition-all duration-300 shadow-lg flex items-center justify-center space-x-2"
+                  className="w-full px-6 py-3 bg-gradient-to-r from-accent-500 via-purple-500 to-cyan-500 text-white font-bold rounded-xl transition-all duration-300 shadow-lg flex items-center justify-center space-x-2"
                 >
                   <Briefcase className="w-5 h-5" />
                   <span>{t.nav.hireCTA}</span>
@@ -259,7 +260,7 @@ export default function Header() {
               
               {/* Mobile Language Toggle & Social Links */}
               <motion.div
-                className="flex items-center justify-center space-x-8 pt-4 mt-6 border-t border-yellow-400/20"
+                className="flex items-center justify-center space-x-8 pt-4 mt-6 border-t border-accent-500/20"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.5 }}
@@ -269,7 +270,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
-                  className="group relative p-3 text-white/70 hover:text-yellow-400 transition-all duration-300 rounded-full hover:bg-yellow-400/10"
+                  className="group relative p-3 text-white/70 hover:text-accent-400 transition-all duration-300 rounded-full hover:bg-accent-500/10"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -281,7 +282,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
-                  className="group relative p-3 text-white/70 hover:text-yellow-400 transition-all duration-300 rounded-full hover:bg-yellow-400/10"
+                  className="group relative p-3 text-white/70 hover:text-cyan-400 transition-all duration-300 rounded-full hover:bg-cyan-500/10"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -300,7 +301,9 @@ export default function Header() {
         {[...Array(6)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-yellow-400 rounded-full opacity-30"
+            className={`absolute w-1 h-1 rounded-full opacity-30 ${
+              i % 3 === 0 ? 'bg-accent-400' : i % 3 === 1 ? 'bg-purple-400' : 'bg-cyan-400'
+            }`}
             initial={{
               x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
               y: Math.random() * 80,

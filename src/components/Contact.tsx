@@ -1,109 +1,52 @@
 import React, { useState } from "react";
-import { Mail, Github, Linkedin, Send, MessageCircle, Sparkles, Star, CheckCircle, Clock, Building2, FileText } from "lucide-react";
+import { Mail, Github, Linkedin, Send, MessageCircle, Star, CheckCircle, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../i18n";
 
 const ContactCard = ({ 
   icon, 
   title, 
-  description, 
   action, 
   href, 
   target, 
-  featured = false,
-  badgeLabel 
+  color = 'accent'
 }: {
   icon: JSX.Element;
   title: string;
-  description: string;
   action: string;
   href: string;
   target?: string;
-  featured?: boolean;
-  badgeLabel?: string;
-}) => (
-  <motion.a
-    href={href}
-    target={target}
-    rel={target ? "noopener noreferrer" : undefined}
-    className={`group relative block p-8 rounded-2xl transition-all duration-500 ${
-      featured 
-        ? 'bg-gradient-to-br from-black/90 via-yellow-400/5 to-black/90 border-2 border-yellow-400/30' 
-        : 'bg-black/60 border border-white/10'
-    } backdrop-blur-md shadow-2xl hover:shadow-yellow-400/25 transform hover:-translate-y-2`}
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true }}
-    whileHover={{ scale: 1.05 }}
-    whileTap={{ scale: 0.98 }}
-    aria-label={`${action} - ${title}`}
-  >
-    {featured && (
-      <div className="absolute -top-3 -right-3 px-3 py-1 bg-gradient-to-r from-yellow-400 to-amber-500 text-black text-xs font-bold rounded-full">
-        {badgeLabel}
-      </div>
-    )}
+  color?: 'accent' | 'cyan' | 'purple';
+}) => {
+  const colorClasses = {
+    accent: 'from-accent-500 to-accent-600 hover:from-accent-400 hover:to-accent-500 shadow-accent-500/20 hover:shadow-accent-500/40',
+    cyan: 'from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 shadow-cyan-500/20 hover:shadow-cyan-500/40',
+    purple: 'from-purple-500 to-purple-600 hover:from-purple-400 hover:to-purple-500 shadow-purple-500/20 hover:shadow-purple-500/40',
+  };
 
-    <div className="relative mb-6">
-      <motion.div
-        className="w-20 h-20 rounded-2xl bg-gradient-to-r from-yellow-400/20 to-amber-500/20 flex items-center justify-center group-hover:from-yellow-400/30 group-hover:to-amber-500/30 transition-colors duration-500"
-        whileHover={{ rotate: 8 }}
-      >
+  return (
+    <motion.a
+      href={href}
+      target={target}
+      rel={target ? "noopener noreferrer" : undefined}
+      className={`group flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r ${colorClasses[color]} shadow-lg transition-all duration-300`}
+      whileHover={{ scale: 1.02, y: -2 }}
+      whileTap={{ scale: 0.98 }}
+      aria-label={`${action} - ${title}`}
+    >
+      <div className="w-12 h-12 rounded-lg bg-white/20 flex items-center justify-center">
         {React.cloneElement(icon, { 
-          className: "h-10 w-10 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300" 
+          className: "h-6 w-6 text-white" 
         })}
-      </motion.div>
-      
-      <motion.div
-        className="absolute -top-2 -right-2"
-        animate={{
-          scale: [0, 1, 0],
-          rotate: [0, 180, 360],
-        }}
-        transition={{
-          duration: 3,
-          repeat: Infinity,
-          ease: "easeInOut",
-          delay: Math.random() * 2,
-        }}
-      >
-        <Sparkles className="w-5 h-5 text-yellow-400/80" />
-      </motion.div>
-    </div>
-
-    <div className="space-y-4">
-      <h3 className="text-2xl font-bold text-white group-hover:text-yellow-300 transition-colors duration-300">
-        {title}
-      </h3>
-      
-      <p className="text-white/70 leading-relaxed group-hover:text-white/90 transition-colors duration-300">
-        {description}
-      </p>
-      
-      <div className="flex items-center space-x-2 pt-2">
-        <span className="text-yellow-400 font-semibold group-hover:text-yellow-300 transition-colors duration-300">
-          {action}
-        </span>
-        <motion.div
-          animate={{
-            x: [0, 4, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <Send className="w-4 h-4 text-yellow-400 group-hover:text-yellow-300 transition-colors duration-300" />
-        </motion.div>
       </div>
-    </div>
-
-    <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-      <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400/10 to-amber-500/10 blur-xl"></div>
-    </div>
-  </motion.a>
-);
+      <div className="flex-1">
+        <h3 className="text-white font-bold text-lg">{title}</h3>
+        <p className="text-white/80 text-sm">{action}</p>
+      </div>
+      <Send className="w-5 h-5 text-white/80 group-hover:translate-x-1 transition-transform" />
+    </motion.a>
+  );
+};
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -145,44 +88,42 @@ export default function Contact() {
     {
       icon: <Mail />,
       title: t.contact.email.title,
-      description: t.contact.email.description,
       action: t.contact.email.action,
       href: "mailto:leonardorfragoso@gmail.com",
-      featured: true,
+      color: 'accent' as const,
     },
     {
       icon: <Github />,
       title: t.contact.github.title,
-      description: t.contact.github.description,
       action: t.contact.github.action,
       href: "https://github.com/LeonardoRFragoso",
       target: "_blank",
+      color: 'purple' as const,
     },
     {
       icon: <Linkedin />,
       title: t.contact.linkedin.title,
-      description: t.contact.linkedin.description,
       action: t.contact.linkedin.action,
       href: "https://www.linkedin.com/in/leonardo-fragoso-921b166a/",
       target: "_blank",
-      featured: true,
+      color: 'cyan' as const,
     },
   ];
 
   return (
-    <section id="contact" className="relative py-20 bg-black overflow-hidden">
+    <section id="contact" className="relative py-20 overflow-hidden" style={{ background: 'linear-gradient(135deg, #09071a 0%, #0f0d24 50%, #09071a 100%)' }}>
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-radial from-yellow-400/6 via-transparent to-transparent"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_75%,rgba(251,191,36,0.1),transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(251,191,36,0.08),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(99,102,241,0.1),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_75%,rgba(6,182,212,0.08),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_25%,rgba(168,85,247,0.06),transparent_50%)]"></div>
         
-        <div className="absolute inset-0 opacity-3">
-          <div className="h-full w-full bg-[linear-gradient(to_right,#fbbf24_0.3px,transparent_0.3px),linear-gradient(to_bottom,#fbbf24_0.3px,transparent_0.3px)] bg-[size:4rem_4rem] animate-pulse-slow"></div>
+        <div className="absolute inset-0 opacity-[0.02]">
+          <div className="h-full w-full bg-[linear-gradient(to_right,#6366f1_0.3px,transparent_0.3px),linear-gradient(to_bottom,#6366f1_0.3px,transparent_0.3px)] bg-[size:4rem_4rem]"></div>
         </div>
       </div>
 
       <motion.div
-        className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-yellow-400/15 to-amber-500/15 rounded-full blur-2xl"
+        className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-to-r from-accent-500/15 to-purple-500/15 rounded-full blur-2xl"
         animate={{
           scale: [1, 1.3, 1],
           opacity: [0.3, 0.6, 0.3],
@@ -195,7 +136,7 @@ export default function Contact() {
       />
       
       <motion.div
-        className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-gradient-to-r from-amber-400/12 to-yellow-500/12 rounded-full blur-xl"
+        className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-gradient-to-r from-cyan-400/12 to-accent-500/12 rounded-full blur-xl"
         animate={{
           scale: [1.2, 0.8, 1.2],
           opacity: [0.2, 0.5, 0.2],
@@ -215,7 +156,7 @@ export default function Contact() {
             className={`absolute ${
               i % 3 === 0 ? 'w-1.5 h-1.5' : i % 3 === 1 ? 'w-1 h-1' : 'w-2 h-2'
             } ${
-              i % 2 === 0 ? 'bg-yellow-400' : 'bg-amber-400'
+              i % 3 === 0 ? 'bg-accent-400' : i % 3 === 1 ? 'bg-cyan-400' : 'bg-purple-400'
             } rounded-full`}
             initial={{
               x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1200),
@@ -246,16 +187,16 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
         >
           <motion.h2
-            className="text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-yellow-400 to-amber-500 mb-6"
+            className="text-5xl sm:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-accent-400 to-cyan-400 mb-6"
             style={{
-              filter: "drop-shadow(0 0 20px rgba(251, 191, 36, 0.3))",
+              filter: "drop-shadow(0 0 20px rgba(99, 102, 241, 0.3))",
             }}
           >
             {t.contact.title}
           </motion.h2>
           
           <motion.div
-            className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-amber-500 mx-auto mb-8 rounded-full"
+            className="w-24 h-1 bg-gradient-to-r from-accent-500 via-purple-500 to-cyan-500 mx-auto mb-8 rounded-full"
             initial={{ width: 0 }}
             whileInView={{ width: 96 }}
             viewport={{ once: true }}
@@ -271,7 +212,7 @@ export default function Contact() {
           >
             <p className="text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               {t.contact.subtitle}{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500 font-bold">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 via-purple-400 to-cyan-400 font-bold">
                 {t.contact.subtitleHighlight}
               </span>
             </p>
@@ -289,20 +230,20 @@ export default function Contact() {
               </motion.div>
 
               <motion.div
-                className="flex items-center space-x-2 px-4 py-2 bg-yellow-500/10 border border-yellow-500/30 rounded-full"
+                className="flex items-center space-x-2 px-4 py-2 bg-accent-500/10 border border-accent-500/30 rounded-full"
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.6 }}
               >
-                <Clock className="w-5 h-5 text-yellow-400" />
-                <span className="text-yellow-400 font-medium text-sm">{t.contact.responseTime}</span>
+                <Clock className="w-5 h-5 text-accent-400" />
+                <span className="text-accent-400 font-medium text-sm">{t.contact.responseTime}</span>
               </motion.div>
             </div>
             
             <div className="flex items-center justify-center space-x-6 mt-8">
               <motion.div
-                className="w-12 h-0.5 bg-gradient-to-r from-transparent to-yellow-400"
+                className="w-12 h-0.5 bg-gradient-to-r from-transparent to-accent-400"
                 initial={{ width: 0 }}
                 whileInView={{ width: 48 }}
                 viewport={{ once: true }}
@@ -319,10 +260,10 @@ export default function Contact() {
                   ease: "easeInOut",
                 }}
               >
-                <MessageCircle className="w-6 h-6 text-yellow-400" />
+                <MessageCircle className="w-6 h-6 text-cyan-400" />
               </motion.div>
               <motion.div
-                className="w-12 h-0.5 bg-gradient-to-l from-transparent to-yellow-400"
+                className="w-12 h-0.5 bg-gradient-to-l from-transparent to-cyan-400"
                 initial={{ width: 0 }}
                 whileInView={{ width: 48 }}
                 viewport={{ once: true }}
@@ -332,22 +273,44 @@ export default function Contact() {
           </motion.div>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto mb-16">
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-8"
-          >
-            <div>
-              <h3 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500 mb-6">
-                {t.contact.formTitle}
-              </h3>
-              
-              <form onSubmit={handleSubmit} className="space-y-6">
+        {/* Cards de Contato Rápido */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          {contactMethods.map((method, index) => (
+            <motion.div
+              key={method.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+            >
+              <ContactCard {...method} />
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Formulário de Contato */}
+        <motion.div
+          className="max-w-2xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="p-8 rounded-2xl bg-dark-900/40 border border-white/10 backdrop-blur-sm">
+            <h3 className="text-2xl font-bold text-white mb-6 text-center">
+              {t.contact.formTitle}
+            </h3>
+            
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
-                  <label htmlFor="name" className="block text-white/80 font-medium mb-2">
+                  <label htmlFor="name" className="block text-white/70 text-sm font-medium mb-2">
                     {t.contact.formName}
                   </label>
                   <input
@@ -357,13 +320,13 @@ export default function Contact() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-black/60 border border-yellow-400/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400/60 transition-colors"
-                    placeholder="Seu nome completo"
+                    className="w-full px-4 py-3 bg-dark-900/60 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-accent-400/60 focus:ring-1 focus:ring-accent-400/30 transition-all"
+                    placeholder="Seu nome"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-white/80 font-medium mb-2">
+                  <label htmlFor="email" className="block text-white/70 text-sm font-medium mb-2">
                     {t.contact.formEmail}
                   </label>
                   <input
@@ -373,186 +336,75 @@ export default function Contact() {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-black/60 border border-yellow-400/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400/60 transition-colors"
+                    className="w-full px-4 py-3 bg-dark-900/60 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-accent-400/60 focus:ring-1 focus:ring-accent-400/30 transition-all"
                     placeholder="seu@email.com"
                   />
                 </div>
+              </div>
 
-                <div>
-                  <label htmlFor="subject" className="block text-white/80 font-medium mb-2">
-                    {t.contact.formSubject}
-                  </label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-black/60 border border-yellow-400/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400/60 transition-colors"
-                    placeholder="Assunto da mensagem"
-                  />
-                </div>
+              <div>
+                <label htmlFor="subject" className="block text-white/70 text-sm font-medium mb-2">
+                  {t.contact.formSubject}
+                </label>
+                <input
+                  type="text"
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-dark-900/60 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-accent-400/60 focus:ring-1 focus:ring-accent-400/30 transition-all"
+                  placeholder="Assunto da mensagem"
+                />
+              </div>
 
-                <div>
-                  <label htmlFor="message" className="block text-white/80 font-medium mb-2">
-                    {t.contact.formMessage}
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={6}
-                    className="w-full px-4 py-3 bg-black/60 border border-yellow-400/20 rounded-lg text-white placeholder-white/40 focus:outline-none focus:border-yellow-400/60 transition-colors resize-none"
-                    placeholder="Descreva seu projeto ou dúvida..."
-                  />
-                </div>
+              <div>
+                <label htmlFor="message" className="block text-white/70 text-sm font-medium mb-2">
+                  {t.contact.formMessage}
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={4}
+                  className="w-full px-4 py-3 bg-dark-900/60 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-accent-400/60 focus:ring-1 focus:ring-accent-400/30 transition-all resize-none"
+                  placeholder="Descreva seu projeto ou dúvida..."
+                />
+              </div>
 
-                <motion.button
-                  type="submit"
-                  disabled={formStatus === 'sending'}
-                  className="w-full px-8 py-4 bg-gradient-to-r from-yellow-400 via-amber-400 to-yellow-500 hover:from-yellow-300 hover:via-amber-300 hover:to-yellow-400 text-black font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-yellow-400/50 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
-                  whileHover={{ scale: formStatus === 'sending' ? 1 : 1.02 }}
-                  whileTap={{ scale: formStatus === 'sending' ? 1 : 0.98 }}
-                >
-                  {formStatus === 'sending' ? (
-                    <>
-                      <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                        className="w-5 h-5 border-2 border-black border-t-transparent rounded-full"
-                      />
-                      <span>{t.contact.formSending}</span>
-                    </>
-                  ) : formStatus === 'success' ? (
-                    <>
-                      <CheckCircle className="w-5 h-5" />
-                      <span>{t.contact.formSuccess}</span>
-                    </>
-                  ) : formStatus === 'error' ? (
-                    <span>{t.contact.formError}</span>
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5" />
-                      <span>{t.contact.formSend}</span>
-                    </>
-                  )}
-                </motion.button>
-              </form>
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="space-y-6"
-          >
-            {contactMethods.map((method, index) => (
-              <motion.div
-                key={method.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+              <motion.button
+                type="submit"
+                disabled={formStatus === 'sending'}
+                className="w-full px-6 py-3.5 bg-gradient-to-r from-accent-500 via-purple-500 to-cyan-500 hover:from-accent-400 hover:via-purple-400 hover:to-cyan-400 text-white font-bold rounded-lg transition-all duration-300 shadow-lg hover:shadow-accent-500/30 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                whileHover={{ scale: formStatus === 'sending' ? 1 : 1.01 }}
+                whileTap={{ scale: formStatus === 'sending' ? 1 : 0.99 }}
               >
-                <ContactCard {...method} badgeLabel={t.contact.preferred} />
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
-        {/* PJ Services Section */}
-        <motion.div
-          className="max-w-4xl mx-auto mt-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="relative p-8 rounded-2xl bg-gradient-to-br from-black/90 via-yellow-400/5 to-black/90 border-2 border-yellow-400/30 backdrop-blur-md shadow-2xl overflow-hidden">
-            {/* Badge */}
-            <div className="absolute -top-3 -right-3 px-4 py-1.5 bg-gradient-to-r from-green-400 to-emerald-500 text-black text-xs font-bold rounded-full flex items-center space-x-1 shadow-lg">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-black"></span>
-              </span>
-              <span>{t.contact.pjServices.badge}</span>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-8">
-              {/* Left Side - Company Info */}
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="p-3 bg-yellow-400/10 rounded-lg">
-                    <Building2 className="w-6 h-6 text-yellow-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-amber-500">
-                      {t.contact.pjServices.title}
-                    </h3>
-                    <p className="text-white/60 text-sm">{t.contact.pjServices.subtitle}</p>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <div className="p-4 bg-black/40 rounded-lg border border-yellow-400/20">
-                    <p className="text-xs text-white/50 mb-1">Razão Social</p>
-                    <p className="text-white font-medium text-sm">{t.contact.pjServices.legalName}</p>
-                  </div>
-
-                  <div className="p-4 bg-black/40 rounded-lg border border-yellow-400/20">
-                    <p className="text-xs text-white/50 mb-1">Nome Fantasia</p>
-                    <p className="text-white font-medium">{t.contact.pjServices.companyName}</p>
-                  </div>
-
-                  <div className="p-4 bg-black/40 rounded-lg border border-yellow-400/20">
-                    <p className="text-xs text-white/50 mb-1">CNPJ</p>
-                    <p className="text-yellow-400 font-bold text-lg tracking-wide">65.032.889/0001-34</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Side - Services */}
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="p-3 bg-yellow-400/10 rounded-lg">
-                    <FileText className="w-6 h-6 text-yellow-400" />
-                  </div>
-                  <div>
-                    <h4 className="text-xl font-bold text-white">Serviços Oferecidos</h4>
-                  </div>
-                </div>
-
-                <div className="space-y-3">
-                  <div className="p-4 bg-black/40 rounded-lg border border-yellow-400/20">
-                    <p className="text-xs text-white/50 mb-1">Tipo Jurídico</p>
-                    <p className="text-white font-medium">{t.contact.pjServices.companyType}</p>
-                  </div>
-
-                  <div className="p-4 bg-black/40 rounded-lg border border-yellow-400/20">
-                    <p className="text-xs text-white/50 mb-1">Atividade Principal</p>
-                    <p className="text-white font-medium">{t.contact.pjServices.services}</p>
-                  </div>
-
-                  <div className="p-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-lg border border-green-500/30">
-                    <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-5 h-5 text-green-400" />
-                      <p className="text-green-400 font-bold">{t.contact.pjServices.invoicing}</p>
-                    </div>
-                    <p className="text-white/70 text-sm mt-2">{t.contact.pjServices.description}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Decorative glow */}
-            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400/5 to-amber-500/5 blur-xl"></div>
-            </div>
+                {formStatus === 'sending' ? (
+                  <>
+                    <motion.div
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+                      className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                    />
+                    <span>{t.contact.formSending}</span>
+                  </>
+                ) : formStatus === 'success' ? (
+                  <>
+                    <CheckCircle className="w-5 h-5" />
+                    <span>{t.contact.formSuccess}</span>
+                  </>
+                ) : formStatus === 'error' ? (
+                  <span>{t.contact.formError}</span>
+                ) : (
+                  <>
+                    <Send className="w-5 h-5" />
+                    <span>{t.contact.formSend}</span>
+                  </>
+                )}
+              </motion.button>
+            </form>
           </div>
         </motion.div>
 
@@ -575,8 +427,8 @@ export default function Contact() {
             }}
           >
             {t.contact.footer}{" "}
-            <span className="text-yellow-400 font-semibold">{t.contact.opportunities}</span> {t.contact.and}{" "}
-            <span className="text-yellow-400 font-semibold">{t.contact.collaborations}</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-400 font-semibold">{t.contact.opportunities}</span> {t.contact.and}{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-cyan-400 font-semibold">{t.contact.collaborations}</span>
           </motion.p>
         </motion.div>
 
@@ -598,7 +450,7 @@ export default function Contact() {
               ease: "linear",
             }}
           >
-            <Star className="w-8 h-8 text-yellow-400/50" />
+            <Star className="w-8 h-8 text-accent-400/50" />
             <motion.div
               className="absolute inset-0"
               animate={{
@@ -611,7 +463,7 @@ export default function Contact() {
                 ease: "easeInOut",
               }}
             >
-              <Star className="w-8 h-8 text-yellow-400" />
+              <Star className="w-8 h-8 text-cyan-400" />
             </motion.div>
           </motion.div>
         </motion.div>

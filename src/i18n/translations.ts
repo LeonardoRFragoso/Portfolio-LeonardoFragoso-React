@@ -103,9 +103,9 @@ export const translations = {
       {
         title: 'Desenvolvedor de Sistemas',
         company: 'iTracker - Tecnologia para Logística',
-        period: 'dez 2024 - Presente',
+        period: 'dez 2024 - jan 2026',
         description: 'Desenvolvimento de automações que reduziram 60% do tempo de processamento de dados. Criação de APIs REST para integração com ERPs, dashboards em tempo real com Streamlit e sistemas de extração de dados com Selenium. Stack: Python, Django, React, PostgreSQL.',
-        featured: true,
+        featured: false,
       },
       {
         title: 'Gerente de TI',
@@ -491,9 +491,9 @@ export const translations = {
       {
         title: 'Systems Developer',
         company: 'iTracker - Logistics Technology',
-        period: 'Dec 2024 - Present',
+        period: 'Dec 2024 - Jan 2026',
         description: 'Developed automations that reduced data processing time by 60%. Created REST APIs for ERP integration, real-time dashboards with Streamlit and data extraction systems with Selenium. Stack: Python, Django, React, PostgreSQL.',
-        featured: true,
+        featured: false,
       },
       {
         title: 'IT Manager',
