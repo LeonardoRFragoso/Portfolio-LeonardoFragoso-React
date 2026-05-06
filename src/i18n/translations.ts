@@ -105,7 +105,7 @@ export const translations = {
         company: 'iTracker Logística Inteligente',
         period: 'dez 2024 - jan 2026 · 1 ano 2 meses',
         description: 'Desenvolvimento de soluções para o maior terminal portuário privado do Brasil (ICTSI). 8+ sistemas enterprise atendendo 200+ usuários diários, reduzindo processos manuais em 80%. Automações RPA processando 500+ consultas/dia. Principais projetos: Digital Signage Platform, Torre de Controle, CargoSnap, Bot DETRAN, GPS Tracking, GateLog. Stack: Python, Django, Flask, FastAPI, React, Vue.js 3, PostgreSQL, Redis, Docker.',
-        featured: true,
+        featured: false,
       },
       {
         title: 'Gerente de TI',
@@ -507,7 +507,7 @@ export const translations = {
         company: 'iTracker Intelligent Logistics',
         period: 'Dec 2024 - Jan 2026 · 1 year 2 months',
         description: 'Developing solutions for Brazil\'s largest private port terminal (ICTSI). 8+ enterprise systems serving 200+ daily users, reducing manual processes by 80%. RPA automations processing 500+ queries/day. Main projects: Digital Signage Platform, Control Tower, CargoSnap, DETRAN Bot, GPS Tracking, GateLog. Stack: Python, Django, Flask, FastAPI, React, Vue.js 3, PostgreSQL, Redis, Docker.',
-        featured: true,
+        featured: false,
       },
       {
         title: 'IT Manager',
