@@ -396,41 +396,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Enhanced Scroll Indicator - Tech Premium */}
-      <motion.div
-        className="absolute bottom-4 left-1/2 transform -translate-x-1/2 hidden lg:block"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2 }}
-      >
-        <motion.div
-          className="flex flex-col items-center space-y-3"
-          animate={{
-            y: [0, -6, 0],
-          }}
-          transition={{
-            duration: 3,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-        >
-          <div className="w-6 h-10 border-2 border-accent-400/60 rounded-full flex justify-center relative">
-            <motion.div
-              className="w-1.5 h-3 bg-gradient-to-b from-accent-400 to-cyan-400 rounded-full mt-2"
-              animate={{
-                y: [0, 10, 0],
-                opacity: [1, 0.3, 1],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-          </div>
-          <span className="text-accent-300/80 text-xs font-medium uppercase tracking-wider">{t.hero.scroll}</span>
-        </motion.div>
-      </motion.div>
     </section>
   );
 }
