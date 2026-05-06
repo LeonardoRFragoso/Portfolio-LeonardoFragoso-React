@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Github, ExternalLink, ChevronLeft, ChevronRight, Eye, MessageCircle, Filter, Clock, Zap, Star, Award } from "lucide-react";
+import { Github, ExternalLink, ChevronLeft, ChevronRight, Eye, MessageCircle, Filter, Clock, Zap, Star, Award, ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../i18n";
 
@@ -34,6 +34,8 @@ export default function Projects() {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
   const [showLinksModal, setShowLinksModal] = useState(false);
   const [selectedProjectLinks, setSelectedProjectLinks] = useState<Project | null>(null);
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const INITIAL_PROJECTS_COUNT = 6;
 
   const projects: Project[] = [
     // TIER 1: "WOW FACTOR" - Top 5 projetos que vendem
@@ -278,10 +280,15 @@ export default function Projects() {
     },
   ];
 
-  const filteredProjects = useMemo(() => {
+  const allFilteredProjects = useMemo(() => {
     if (activeFilter === 'all') return projects;
     return projects.filter(project => project.category.includes(activeFilter));
   }, [activeFilter, projects]);
+
+  const filteredProjects = useMemo(() => {
+    if (showAllProjects) return allFilteredProjects;
+    return allFilteredProjects.slice(0, INITIAL_PROJECTS_COUNT);
+  }, [allFilteredProjects, showAllProjects]);
 
   const filters: { key: FilterType; label: string }[] = [
     { key: 'all', label: t.projects.filterAll },
@@ -425,7 +432,7 @@ export default function Projects() {
           transition={{ duration: 0.4 }}
         >
           <p className="text-white/60 text-sm">
-            {t.projects.showingProjects} <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-400 font-bold">{filteredProjects.length}</span> {t.projects.of} {projects.length} {t.projects.projects}
+            {t.projects.showingProjects} <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-400 font-bold">{filteredProjects.length}</span> {t.projects.of} {allFilteredProjects.length} {t.projects.projects}
           </p>
         </motion.div>
 
@@ -627,6 +634,43 @@ export default function Projects() {
             })}
           </motion.div>
         </AnimatePresence>
+
+        {/* Botão Ver Mais / Ver Menos */}
+        {allFilteredProjects.length > INITIAL_PROJECTS_COUNT && (
+          <motion.div
+            className="flex justify-center mt-12"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <motion.button
+              onClick={() => setShowAllProjects(!showAllProjects)}
+              className="group flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-accent-500/10 via-purple-500/10 to-cyan-500/10 border-2 border-accent-400/30 hover:border-accent-400/60 rounded-xl text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-accent-500/20"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              {showAllProjects ? (
+                <>
+                  <ChevronUp className="w-5 h-5 text-accent-400 group-hover:text-accent-300 transition-colors" />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-400">
+                    {t.projects.viewLess}
+                  </span>
+                </>
+              ) : (
+                <>
+                  <ChevronDown className="w-5 h-5 text-accent-400 group-hover:text-accent-300 transition-colors" />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-400">
+                    {t.projects.viewMore}
+                  </span>
+                  <span className="px-2 py-1 bg-accent-500/20 text-accent-300 text-xs rounded-full">
+                    +{allFilteredProjects.length - INITIAL_PROJECTS_COUNT}
+                  </span>
+                </>
+              )}
+            </motion.button>
+          </motion.div>
+        )}
       </div>
 
       {/* Modal for Multiple Apps Links */}
