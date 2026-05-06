@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Code2, Zap, Sparkles } from "lucide-react";
+import { ArrowRight, Code2, Zap, Sparkles, Download, CheckCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../i18n";
 
@@ -247,6 +247,21 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1.2, ease: "easeOut", delay: 0.2 }}
           >
+            {/* Badge Disponível para Oportunidades */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-flex items-center px-4 py-2 rounded-full bg-green-500/10 border border-green-500/30 shadow-lg shadow-green-500/10 mb-4"
+            >
+              <span className="relative flex h-2.5 w-2.5 mr-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-500"></span>
+              </span>
+              <CheckCircle className="h-4 w-4 text-green-400 mr-2" />
+              <span className="text-green-400 text-sm font-semibold">{t.hero.availableBadge}</span>
+            </motion.div>
+
             {/* Enhanced Tagline - Tech Premium */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -361,6 +376,20 @@ export default function Hero() {
                   animate={{ scale: [1, 1.3, 1], opacity: [1, 0.7, 1] }}
                   transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                 />
+              </motion.a>
+
+              <motion.a
+                href="/CV-Leonardo-Fragoso-2025.pdf"
+                download
+                className="group inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-xl border-2 border-green-400/40 hover:border-green-400/80 hover:from-green-500/30 hover:to-emerald-500/30 transition-all duration-500 shadow-xl"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                aria-label={t.hero.downloadCV}
+              >
+                <Download className="h-5 w-5 text-green-400 mr-2 group-hover:text-green-300 transition-colors" />
+                <span className="font-bold text-green-400 text-lg group-hover:text-green-300 transition-colors">
+                  {t.hero.downloadCV}
+                </span>
               </motion.a>
             </motion.div>
           </motion.div>

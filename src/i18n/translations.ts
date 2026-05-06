@@ -18,21 +18,23 @@ export const translations = {
     // Hero
     hero: {
       roles: [
-        'Especialista em Automação',
+        'Desenvolvedor Full Stack',
         'Python & Django Expert',
         'Arquiteto de APIs REST',
-        'Desenvolvedor de SaaS',
+        '2 SaaS em Produção',
       ],
-      tagline: 'Desenvolvo sistemas que',
-      taglineHighlight: 'automatizam processos',
-      taglineEnd: 'e reduzem custos',
+      availableBadge: 'Disponível para novas oportunidades',
+      tagline: 'Desenvolvedor Full Stack',
+      taglineHighlight: 'Python & React',
+      taglineEnd: '| 2 SaaS em Produção',
       specialist: 'Stack Principal:',
       techStack: 'Python, Django, FastAPI, React, TypeScript, PostgreSQL',
       focusOn: '',
-      focusAreas: 'Automação de processos | APIs de alta performance | Sistemas empresariais escaláveis',
-      heroDescription: '+20 projetos entregues | +10 anos em TI | 2 SaaS em produção com usuários reais. Transformo requisitos complexos em soluções que funcionam.',
+      focusAreas: '8+ sistemas enterprise | 80% redução de processos manuais | 500+ consultas/dia automatizadas',
+      heroDescription: 'Transformo requisitos complexos em sistemas que funcionam. Experiência em liderança de equipe e entrega de soluções de alto impacto.',
       viewProjects: 'Ver Projetos',
-      getInTouch: 'Agendar Conversa',
+      getInTouch: 'Entrar em Contato',
+      downloadCV: 'Download CV',
       scroll: 'Scroll',
     },
 
@@ -42,10 +44,10 @@ export const translations = {
       role: 'Especialista em Automação & APIs',
       description: 'que transforma processos manuais em sistemas automatizados. Atualmente Desenvolvedor de Sistemas na iTracker (setor logístico), onde desenvolvi automações que reduziram 60% do tempo de processamento de dados. Experiência anterior como Gerente de TI na RWE Telemedicina, liderando equipe de 5 pessoas. Domínio em Python (Django, FastAPI), React/TypeScript e PostgreSQL. Tenho 2 SaaS em produção: ProFlow (plataforma para freelancers) e Base Corporativa (e-commerce). Meu diferencial: entendo o problema de negócio antes de codar.',
       stats: {
-        projects: 'Projetos Entregues',
-        years: 'Anos em TI',
-        certifications: 'Certificações',
-        technologies: 'Tecnologias',
+        systems: 'Sistemas Enterprise',
+        automation: 'Redução Processos',
+        saas: 'SaaS em Produção',
+        queries: 'Consultas/Dia',
       },
       experience: {
         title: 'Experiência Profissional',
@@ -61,6 +63,32 @@ export const translations = {
       education: {
         title: 'Formação & Certificações',
         featured: 'DESTAQUE',
+      },
+      whyHireMe: {
+        title: 'Por que me contratar?',
+        subtitle: 'Diferenciais que fazem a diferença',
+        items: [
+          {
+            title: 'Resultados Mensuráveis',
+            description: '8+ sistemas enterprise em produção, 80% de redução em processos manuais, 500+ consultas automatizadas por dia.',
+            icon: 'chart',
+          },
+          {
+            title: 'Experiência em Liderança',
+            description: 'Gerenciei equipe de 5 pessoas como Gerente de TI. Sei comunicar tecnicamente e traduzir para o negócio.',
+            icon: 'users',
+          },
+          {
+            title: 'Full Stack Real',
+            description: 'Do banco de dados ao deploy. Python, Django, React, PostgreSQL, Docker. 2 SaaS em produção com usuários reais.',
+            icon: 'code',
+          },
+          {
+            title: 'Entendo o Negócio',
+            description: 'Não codifico sem entender o problema. Experiência em logística, telemedicina e educação me deu visão de negócio.',
+            icon: 'briefcase',
+          },
+        ],
       },
     },
 
@@ -104,7 +132,9 @@ export const translations = {
         title: 'Desenvolvedor de Sistemas Junior',
         company: 'iTracker Logística Inteligente',
         period: 'dez 2024 - jan 2026 · 1 ano 2 meses',
-        description: 'Desenvolvimento de soluções para o maior terminal portuário privado do Brasil (ICTSI). 8+ sistemas enterprise atendendo 200+ usuários diários, reduzindo processos manuais em 80%. Automações RPA processando 500+ consultas/dia. Principais projetos: Digital Signage Platform, Torre de Controle, CargoSnap, Bot DETRAN, GPS Tracking, GateLog. Stack: Python, Django, Flask, FastAPI, React, Vue.js 3, PostgreSQL, Redis, Docker.',
+        description: 'Desenvolvimento de soluções para o maior terminal portuário privado do Brasil (ICTSI). 8+ sistemas enterprise atendendo 200+ usuários diários, reduzindo processos manuais em 80%. Automações RPA processando 500+ consultas/dia.',
+        impact: '80% redução processos | 500+ consultas/dia | 8+ sistemas',
+        tags: ['Python', 'Django', 'FastAPI', 'React', 'Vue.js', 'PostgreSQL', 'Docker'],
         featured: false,
       },
       {
@@ -112,6 +142,8 @@ export const translations = {
         company: 'RWE Telemedicina e Diagnósticos', 
         period: 'jan 2024 - jul 2024 · 7 meses',
         description: 'Coordenação e supervisão dos setores de suporte técnico, infraestrutura e governança de TI, garantindo operações diárias eficientes.',
+        impact: 'Liderança de equipe de 5 pessoas',
+        tags: ['Gestão de TI', 'ITIL', 'Governança', 'Python'],
         featured: false,
       },
       {
@@ -119,6 +151,7 @@ export const translations = {
         company: 'RWE Telemedicina e Diagnósticos',
         period: 'nov 2023 - jan 2024 · 3 meses',
         description: 'Desenvolvimento de back-end com Python e suporte técnico avançado.',
+        tags: ['Python', 'Back-end', 'Suporte N2'],
         featured: false,
       },
       {
@@ -126,13 +159,15 @@ export const translations = {
         company: 'RWE Telemedicina e Diagnósticos',
         period: 'out 2023 - nov 2023 · 2 meses',
         description: 'Atendimento de chamados telefônico e presencial. Backup e formatação de máquinas Windows, Linux e MacOS.',
+        tags: ['Windows', 'Linux', 'MacOS', 'Suporte N1'],
         featured: false,
       },
       {
         title: 'Assistente de T.I',
         company: 'MEDGRUPO',
         period: 'jan 2022 - out 2022 · 10 meses',
-        description: 'Suporte técnico aos colaboradores. Configuração e manutenção de VPN, conexão remota (RDP/Team Viewer), 3CX, Zabbix, Active Directory. Montagem e manutenção de computadores. Treinamento de estagiários.',
+        description: 'Suporte técnico aos colaboradores. Configuração e manutenção de VPN, conexão remota, Active Directory.',
+        tags: ['Active Directory', 'VPN', 'Zabbix', 'Infraestrutura'],
         featured: false,
       },
     ],
@@ -423,21 +458,23 @@ export const translations = {
     // Hero
     hero: {
       roles: [
-        'Automation Specialist',
+        'Full Stack Developer',
         'Python & Django Expert',
         'REST API Architect',
-        'SaaS Developer',
+        '2 SaaS in Production',
       ],
-      tagline: 'I build systems that',
-      taglineHighlight: 'automate processes',
-      taglineEnd: 'and reduce costs',
+      availableBadge: 'Available for new opportunities',
+      tagline: 'Full Stack Developer',
+      taglineHighlight: 'Python & React',
+      taglineEnd: '| 2 SaaS in Production',
       specialist: 'Main Stack:',
       techStack: 'Python, Django, FastAPI, React, TypeScript, PostgreSQL',
       focusOn: '',
-      focusAreas: 'Process automation | High-performance APIs | Scalable enterprise systems',
-      heroDescription: '+20 projects delivered | +10 years in IT | 2 SaaS in production with real users. I turn complex requirements into solutions that work.',
+      focusAreas: '8+ enterprise systems | 80% manual process reduction | 500+ queries/day automated',
+      heroDescription: 'I turn complex requirements into systems that work. Experience in team leadership and high-impact solution delivery.',
       viewProjects: 'View Projects',
-      getInTouch: 'Schedule a Call',
+      getInTouch: 'Get in Touch',
+      downloadCV: 'Download CV',
       scroll: 'Scroll',
     },
 
@@ -447,10 +484,10 @@ export const translations = {
       role: 'Automation & API Specialist',
       description: 'who transforms manual processes into automated systems. Currently Systems Developer at iTracker (logistics sector), where I developed automations that reduced data processing time by 60%. Previous experience as IT Manager at RWE Telemedicine, leading a team of 5 people. Proficient in Python (Django, FastAPI), React/TypeScript and PostgreSQL. I have 2 SaaS in production: ProFlow (freelancer platform) and Base Corporativa (e-commerce). My differentiator: I understand the business problem before coding.',
       stats: {
-        projects: 'Projects Delivered',
-        years: 'Years in IT',
-        certifications: 'Certifications',
-        technologies: 'Technologies',
+        systems: 'Enterprise Systems',
+        automation: 'Process Reduction',
+        saas: 'SaaS in Production',
+        queries: 'Queries/Day',
       },
       experience: {
         title: 'Professional Experience',
@@ -466,6 +503,32 @@ export const translations = {
       education: {
         title: 'Education & Certifications',
         featured: 'FEATURED',
+      },
+      whyHireMe: {
+        title: 'Why Hire Me?',
+        subtitle: 'Differentiators that make a difference',
+        items: [
+          {
+            title: 'Measurable Results',
+            description: '8+ enterprise systems in production, 80% reduction in manual processes, 500+ automated queries per day.',
+            icon: 'chart',
+          },
+          {
+            title: 'Leadership Experience',
+            description: 'Managed a team of 5 as IT Manager. I know how to communicate technically and translate to business.',
+            icon: 'users',
+          },
+          {
+            title: 'Real Full Stack',
+            description: 'From database to deploy. Python, Django, React, PostgreSQL, Docker. 2 SaaS in production with real users.',
+            icon: 'code',
+          },
+          {
+            title: 'Business Understanding',
+            description: "I don't code without understanding the problem. Experience in logistics, telemedicine and education gave me business vision.",
+            icon: 'briefcase',
+          },
+        ],
       },
     },
 
@@ -509,7 +572,9 @@ export const translations = {
         title: 'Junior Systems Developer',
         company: 'iTracker Intelligent Logistics',
         period: 'Dec 2024 - Jan 2026 · 1 year 2 months',
-        description: 'Developing solutions for Brazil\'s largest private port terminal (ICTSI). 8+ enterprise systems serving 200+ daily users, reducing manual processes by 80%. RPA automations processing 500+ queries/day. Main projects: Digital Signage Platform, Control Tower, CargoSnap, DETRAN Bot, GPS Tracking, GateLog. Stack: Python, Django, Flask, FastAPI, React, Vue.js 3, PostgreSQL, Redis, Docker.',
+        description: 'Developing solutions for Brazil\'s largest private port terminal (ICTSI). 8+ enterprise systems serving 200+ daily users, reducing manual processes by 80%. RPA automations processing 500+ queries/day.',
+        impact: '80% process reduction | 500+ queries/day | 8+ systems',
+        tags: ['Python', 'Django', 'FastAPI', 'React', 'Vue.js', 'PostgreSQL', 'Docker'],
         featured: false,
       },
       {
@@ -517,6 +582,8 @@ export const translations = {
         company: 'RWE Telemedicine and Diagnostics', 
         period: 'Jan 2024 - Jul 2024 · 7 months',
         description: 'Coordinated and supervised technical support, infrastructure and IT governance sectors, ensuring efficient daily operations.',
+        impact: 'Led team of 5 people',
+        tags: ['IT Management', 'ITIL', 'Governance', 'Python'],
         featured: false,
       },
       {
@@ -524,6 +591,7 @@ export const translations = {
         company: 'RWE Telemedicine and Diagnostics',
         period: 'Nov 2023 - Jan 2024 · 3 months',
         description: 'Back-end development with Python and advanced technical support.',
+        tags: ['Python', 'Back-end', 'N2 Support'],
         featured: false,
       },
       {
@@ -531,13 +599,15 @@ export const translations = {
         company: 'RWE Telemedicine and Diagnostics',
         period: 'Oct 2023 - Nov 2023 · 2 months',
         description: 'Phone and in-person ticket support. Backup and formatting of Windows, Linux and MacOS machines.',
+        tags: ['Windows', 'Linux', 'MacOS', 'N1 Support'],
         featured: false,
       },
       {
         title: 'IT Assistant',
         company: 'MEDGRUPO',
         period: 'Jan 2022 - Oct 2022 · 10 months',
-        description: 'Technical support for employees. VPN configuration and maintenance, remote connection (RDP/Team Viewer), 3CX, Zabbix, Active Directory. Computer assembly and maintenance. Intern training.',
+        description: 'Technical support for employees. VPN configuration and maintenance, remote connection, Active Directory.',
+        tags: ['Active Directory', 'VPN', 'Zabbix', 'Infrastructure'],
         featured: false,
       },
     ],

@@ -95,6 +95,8 @@ const ExperienceCard = ({
   company,
   period,
   description,
+  impact,
+  tags,
   featured = false,
   badgeLabel,
   index = 0,
@@ -103,6 +105,8 @@ const ExperienceCard = ({
   company: string;
   period: string;
   description: string;
+  impact?: string;
+  tags?: string[];
   featured?: boolean;
   badgeLabel?: string;
   index?: number;
@@ -164,6 +168,27 @@ const ExperienceCard = ({
         
         {/* Description */}
         <p className="text-white/70 leading-relaxed text-sm">{description}</p>
+
+        {/* Impact Badge */}
+        {impact && (
+          <div className="mt-3 inline-flex items-center px-3 py-1.5 bg-green-500/10 border border-green-500/30 rounded-lg">
+            <span className="text-green-400 text-xs font-semibold">📈 {impact}</span>
+          </div>
+        )}
+
+        {/* Tags */}
+        {tags && tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mt-3">
+            {tags.map((tag, tagIndex) => (
+              <span
+                key={tagIndex}
+                className="px-2 py-1 text-xs font-medium bg-accent-500/10 text-accent-300 border border-accent-500/20 rounded-md"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   </motion.div>
@@ -386,10 +411,10 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             {[
-              { number: "20+", label: t.about.stats.projects },
-              { number: "10+", label: t.about.stats.years },
-              { number: "6", label: t.about.stats.certifications },
-              { number: "10+", label: t.about.stats.technologies },
+              { number: "8+", label: t.about.stats.systems },
+              { number: "80%", label: t.about.stats.automation },
+              { number: "2", label: t.about.stats.saas },
+              { number: "500+", label: t.about.stats.queries },
             ].map((stat, index) => (
               <motion.div
                 key={index}
