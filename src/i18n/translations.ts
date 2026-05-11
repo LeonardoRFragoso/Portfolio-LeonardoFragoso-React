@@ -284,8 +284,8 @@ export const translations = {
           description: 'Plataforma corporativa de gerenciamento de TVs com suporte multi-empresa, comunicação em tempo real via WebSocket, compilação automática de vídeos com FFmpeg, integração nativa com Chromecast, métricas Prometheus e cache Redis para alta disponibilidade.',
         },
         {
-          title: 'ProFlow - Plataforma para Freelancers',
-          description: 'Plataforma web para freelancers com IA consultiva que sugere preços, gera propostas automáticas e protege contra calotes com sistema de pagamento em custódia. Inclui verificação de identidade (ProFlow Score), taxa fixa de 8% e suporte prioritário.',
+          title: 'ProFlow - O Sistema Operacional do Freelancer',
+          description: 'Plataforma completa para freelancers brasileiros com 4 pilares: ProFlow AI (IA consultiva com GPT-4 para precificação e propostas), ProFlow Secure (pagamento em custódia anti-calote com Mercado Pago e Asaas), ProFlow Score (reputação com KYC) e ProFlow Path (onboarding gamificado). Chat em tempo real via WebSocket, carteira virtual com saques PIX, sistema de assinaturas recorrentes e AI Auto-Fixer para correção automática de erros.',
         },
         {
           title: 'Base Corporativa - E-commerce',
@@ -724,8 +724,8 @@ export const translations = {
           description: 'Corporate TV management platform with multi-company support, real-time WebSocket communication, automatic video compilation with FFmpeg, native Chromecast integration, Prometheus metrics and Redis cache for high availability.',
         },
         {
-          title: 'ProFlow - Freelancer Platform',
-          description: 'Web platform for freelancers with consultive AI that suggests prices, generates automatic proposals and protects against defaults with escrow payment system. Includes identity verification (ProFlow Score), 8% flat fee and priority support.',
+          title: 'ProFlow - The Freelancer Operating System',
+          description: 'Complete platform for Brazilian freelancers with 4 pillars: ProFlow AI (consultive AI with GPT-4 for pricing and proposals), ProFlow Secure (anti-default escrow payment with Mercado Pago and Asaas), ProFlow Score (reputation with KYC) and ProFlow Path (gamified onboarding). Real-time chat via WebSocket, virtual wallet with PIX withdrawals, recurring subscription system and AI Auto-Fixer for automatic error correction.',
         },
         {
           title: 'Base Corporativa - E-commerce',

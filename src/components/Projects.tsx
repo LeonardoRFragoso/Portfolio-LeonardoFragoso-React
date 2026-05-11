@@ -44,7 +44,7 @@ export default function Projects() {
       title: t.projects.projectsList[6].title,
       description: t.projects.projectsList[6].description,
       images: ["/images/proflow/proflow.png", "/images/proflow/proflow2.png", "/images/proflow/proflow3.png"],
-      tags: ["Vue.js", "TypeScript", "Node.js", "PostgreSQL", "IA", "Stripe"],
+      tags: ["Vue.js 3", "Django", "TailwindCSS", "PostgreSQL", "OpenAI GPT-4", "Mercado Pago", "Asaas", "WebSocket"],
       github: "https://github.com/LeonardoRFragoso/ProFlow",
       demo: "https://www.proflow.pro/",
       featured: true,
