@@ -258,6 +258,21 @@ export const translations = {
       easyToEvaluate: 'Fácil de Avaliar',
       fullSystem: 'Sistema Completo',
       modernStack: 'Stack Moderna',
+      flagship: {
+        badge: 'PROJETO PRINCIPAL',
+        online: 'ONLINE',
+        accessPlatform: 'Acessar Plataforma',
+        viewCode: 'Ver Código',
+        gallery: 'Galeria',
+        photos: 'fotos',
+        complexity: 'Complexidade',
+        pillars: {
+          ai: { title: 'ProFlow AI', desc: 'IA com GPT-4' },
+          secure: { title: 'ProFlow Secure', desc: 'Escrow Anti-Calote' },
+          score: { title: 'ProFlow Score', desc: 'Reputação + KYC' },
+          path: { title: 'ProFlow Path', desc: 'Onboarding Gamificado' },
+        },
+      },
       projectsList: [
         {
           title: 'Sistema de Gestão Pátio',
@@ -698,6 +713,21 @@ export const translations = {
       easyToEvaluate: 'Easy to Evaluate',
       fullSystem: 'Full System',
       modernStack: 'Modern Stack',
+      flagship: {
+        badge: 'MAIN PROJECT',
+        online: 'ONLINE',
+        accessPlatform: 'Access Platform',
+        viewCode: 'View Code',
+        gallery: 'Gallery',
+        photos: 'photos',
+        complexity: 'Complexity',
+        pillars: {
+          ai: { title: 'ProFlow AI', desc: 'AI with GPT-4' },
+          secure: { title: 'ProFlow Secure', desc: 'Anti-Default Escrow' },
+          score: { title: 'ProFlow Score', desc: 'Reputation + KYC' },
+          path: { title: 'ProFlow Path', desc: 'Gamified Onboarding' },
+        },
+      },
       projectsList: [
         {
           title: 'Parking Lot Management System',

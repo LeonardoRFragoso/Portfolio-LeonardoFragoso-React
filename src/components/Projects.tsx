@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Github, ExternalLink, ChevronLeft, ChevronRight, Eye, MessageCircle, Filter, Clock, Zap, Star, Award, ChevronDown, ChevronUp } from "lucide-react";
+import { Github, ExternalLink, ChevronLeft, ChevronRight, Eye, MessageCircle, Filter, Clock, Zap, Star, Award, ChevronDown, ChevronUp, Rocket, Shield, Brain, TrendingUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../i18n";
 
@@ -23,6 +23,7 @@ interface Project {
   quickEval: '2-3' | '3-4' | '4-5' | '5-8' | 'github';
   complexity: 1 | 2 | 3 | 4 | 5;
   topForRecruiters?: boolean;
+  flagship?: boolean;
 }
 
 type FilterType = 'all' | 'saas' | 'ecommerce' | 'ai' | 'enterprise' | 'web';
@@ -39,7 +40,7 @@ export default function Projects() {
 
   const projects: Project[] = [
     // TIER 1: "WOW FACTOR" - Top 5 projetos que vendem
-    // #1 - ProFlow (MANTÉM)
+    // #1 - ProFlow (FLAGSHIP - Projeto Principal)
     {
       title: t.projects.projectsList[6].title,
       description: t.projects.projectsList[6].description,
@@ -49,6 +50,7 @@ export default function Projects() {
       demo: "https://www.proflow.pro/",
       featured: true,
       saas: true,
+      flagship: true,
       category: ['saas', 'web', 'ai'],
       quickEval: '2-3',
       complexity: 5,
@@ -281,7 +283,8 @@ export default function Projects() {
   ];
 
   const allFilteredProjects = useMemo(() => {
-    if (activeFilter === 'all') return projects;
+    // Se filtro é 'all', exclui o ProFlow (flagship) pois já aparece na seção Hero
+    if (activeFilter === 'all') return projects.filter(p => !p.flagship);
     return projects.filter(project => project.category.includes(activeFilter));
   }, [activeFilter, projects]);
 
@@ -435,6 +438,152 @@ export default function Projects() {
             {t.projects.showingProjects} <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-400 font-bold">{filteredProjects.length}</span> {t.projects.of} {allFilteredProjects.length} {t.projects.projects}
           </p>
         </motion.div>
+
+        {/* ProFlow Hero Section - Projeto Principal */}
+        {activeFilter === 'all' && (
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="mb-12"
+          >
+            <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-dark-900 via-accent-500/10 to-dark-900 border-2 border-accent-400/40 shadow-2xl shadow-accent-500/20">
+              {/* Background Effects */}
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(99,102,241,0.15),transparent_50%)]"></div>
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(6,182,212,0.1),transparent_50%)]"></div>
+              <motion.div
+                className="absolute top-10 right-10 w-32 h-32 bg-gradient-to-r from-accent-500/20 to-cyan-500/20 rounded-full blur-3xl"
+                animate={{ scale: [1, 1.2, 1], opacity: [0.3, 0.5, 0.3] }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              />
+              
+              <div className="relative z-10 grid lg:grid-cols-2 gap-8 p-8 lg:p-12">
+                {/* Left - Content */}
+                <div className="flex flex-col justify-center space-y-6">
+                  {/* Badges */}
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="px-4 py-1.5 bg-gradient-to-r from-amber-400 to-orange-500 text-black text-xs font-black rounded-full flex items-center gap-2 shadow-lg shadow-amber-500/30">
+                      <Rocket className="w-4 h-4" />
+                      {t.projects.flagship?.badge || 'PROJETO PRINCIPAL'}
+                    </span>
+                    <span className="px-3 py-1 bg-gradient-to-r from-green-400 to-emerald-500 text-black text-xs font-bold rounded-full flex items-center gap-1">
+                      <span className="relative flex h-2 w-2">
+                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-black opacity-75"></span>
+                        <span className="relative inline-flex rounded-full h-2 w-2 bg-black"></span>
+                      </span>
+                      {t.projects.flagship?.online || 'ONLINE'}
+                    </span>
+                  </div>
+
+                  {/* Title */}
+                  <h3 className="text-3xl lg:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-accent-300 to-cyan-300">
+                    {projects[0].title}
+                  </h3>
+
+                  {/* Description */}
+                  <p className="text-white/80 text-lg leading-relaxed">
+                    {projects[0].description}
+                  </p>
+
+                  {/* 4 Pillars */}
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="flex items-center gap-3 p-3 rounded-xl bg-accent-500/10 border border-accent-500/20">
+                      <Brain className="w-6 h-6 text-accent-400" />
+                      <div>
+                        <p className="text-white font-bold text-sm">{t.projects.flagship?.pillars?.ai?.title || 'ProFlow AI'}</p>
+                        <p className="text-white/60 text-xs">{t.projects.flagship?.pillars?.ai?.desc || 'IA com GPT-4'}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3 p-3 rounded-xl bg-green-500/10 border border-green-500/20">
+                      <Shield className="w-6 h-6 text-green-400" />
+                      <div>
+                        <p className="text-white font-bold text-sm">{t.projects.flagship?.pillars?.secure?.title || 'ProFlow Secure'}</p>
+                        <p className="text-white/60 text-xs">{t.projects.flagship?.pillars?.secure?.desc || 'Escrow Anti-Calote'}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3 p-3 rounded-xl bg-amber-500/10 border border-amber-500/20">
+                      <Star className="w-6 h-6 text-amber-400" />
+                      <div>
+                        <p className="text-white font-bold text-sm">{t.projects.flagship?.pillars?.score?.title || 'ProFlow Score'}</p>
+                        <p className="text-white/60 text-xs">{t.projects.flagship?.pillars?.score?.desc || 'Reputação + KYC'}</p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-3 p-3 rounded-xl bg-cyan-500/10 border border-cyan-500/20">
+                      <TrendingUp className="w-6 h-6 text-cyan-400" />
+                      <div>
+                        <p className="text-white font-bold text-sm">{t.projects.flagship?.pillars?.path?.title || 'ProFlow Path'}</p>
+                        <p className="text-white/60 text-xs">{t.projects.flagship?.pillars?.path?.desc || 'Onboarding Gamificado'}</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2">
+                    {projects[0].tags.map((tag, idx) => (
+                      <span key={idx} className="px-3 py-1 rounded-full text-xs font-medium bg-accent-500/15 text-accent-300 border border-accent-500/30">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* CTAs */}
+                  <div className="flex flex-wrap items-center gap-4 pt-2">
+                    <a
+                      href={projects[0].demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent-500 via-purple-500 to-cyan-500 text-white font-bold rounded-xl hover:shadow-lg hover:shadow-accent-500/30 transition-all duration-300 hover:scale-105"
+                    >
+                      <ExternalLink className="w-5 h-5" />
+                      {t.projects.flagship?.accessPlatform || 'Acessar Plataforma'}
+                    </a>
+                    <a
+                      href={projects[0].github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-6 py-3 bg-dark-900/60 border-2 border-accent-400/30 text-white font-bold rounded-xl hover:border-accent-400/60 transition-all duration-300"
+                    >
+                      <Github className="w-5 h-5" />
+                      {t.projects.flagship?.viewCode || 'Ver Código'}
+                    </a>
+                    <button
+                      onClick={() => openModal(projects[0])}
+                      className="flex items-center gap-2 px-4 py-3 text-accent-400 hover:text-accent-300 transition-colors"
+                    >
+                      <Eye className="w-5 h-5" />
+                      <span className="font-medium">{t.projects.flagship?.gallery || 'Galeria'} ({projects[0].images.length} {t.projects.flagship?.photos || 'fotos'})</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Right - Image */}
+                <div className="relative">
+                  <motion.div
+                    className="relative rounded-2xl overflow-hidden border-2 border-accent-400/20 shadow-2xl"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <img
+                      src={projects[0].images[0]}
+                      alt={projects[0].title}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+                    
+                    {/* Complexity Badge */}
+                    <div className="absolute bottom-4 right-4 flex items-center gap-1 px-3 py-1.5 bg-black/70 backdrop-blur-sm rounded-lg">
+                      <span className="text-white/70 text-xs mr-1">{t.projects.flagship?.complexity || 'Complexidade'}:</span>
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="w-4 h-4 text-accent-400 fill-accent-400" />
+                      ))}
+                    </div>
+                  </motion.div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        )}
 
         {/* Projects Grid */}
         <AnimatePresence mode="wait">
