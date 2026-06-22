@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import emailjs from '@emailjs/browser';
 import { Mail, Github, Linkedin, Send, MessageCircle, Star, CheckCircle, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../i18n";
@@ -50,6 +51,7 @@ const ContactCard = ({
 
 export default function Contact() {
   const { t } = useLanguage();
+  const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -60,17 +62,19 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!formRef.current) return;
     setFormStatus('sending');
 
     try {
-      const mailtoLink = `mailto:leonardorfragoso@gmail.com?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(`Nome: ${formData.name}\nEmail: ${formData.email}\n\nMensagem:\n${formData.message}`)}`;
-      window.location.href = mailtoLink;
-      
-      setTimeout(() => {
-        setFormStatus('success');
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        setTimeout(() => setFormStatus('idle'), 5000);
-      }, 1000);
+      await emailjs.sendForm(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        formRef.current,
+        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
+      );
+      setFormStatus('success');
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      setTimeout(() => setFormStatus('idle'), 5000);
     } catch (error) {
       setFormStatus('error');
       setTimeout(() => setFormStatus('idle'), 5000);
@@ -307,7 +311,7 @@ export default function Contact() {
               {t.contact.formTitle}
             </h3>
             
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form ref={formRef} onSubmit={handleSubmit} className="space-y-5">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label htmlFor="name" className="block text-white/70 text-sm font-medium mb-2">
