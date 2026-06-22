@@ -9,47 +9,44 @@ interface TechItem {
 
 const techStackData: TechItem[] = [
   // Backend
-  { name: "Python", level: 95, category: "backend" },
-  { name: "Django", level: 90, category: "backend" },
-  { name: "FastAPI", level: 85, category: "backend" },
-  { name: "Flask", level: 80, category: "backend" },
-  { name: "Go", level: 60, category: "backend" },
-  // Frontend
-  { name: "React", level: 80, category: "frontend" },
-  { name: "TypeScript", level: 75, category: "frontend" },
-  { name: "Vue.js", level: 70, category: "frontend" },
-  { name: "TailwindCSS", level: 85, category: "frontend" },
+  { name: "Python", level: 82, category: "backend" },
+  { name: "Django 5 / DRF", level: 78, category: "backend" },
+  { name: "FastAPI", level: 75, category: "backend" },
+  { name: "Flask", level: 65, category: "backend" },
+  // Frontend (Supporting)
+  { name: "Vue.js 3", level: 70, category: "frontend" },
+  { name: "React", level: 65, category: "frontend" },
+  { name: "TypeScript", level: 62, category: "frontend" },
+  { name: "TailwindCSS", level: 72, category: "frontend" },
   // Database
-  { name: "PostgreSQL", level: 85, category: "database" },
-  { name: "MySQL", level: 80, category: "database" },
+  { name: "PostgreSQL", level: 78, category: "database" },
   { name: "Redis", level: 70, category: "database" },
-  { name: "MongoDB", level: 65, category: "database" },
+  { name: "MySQL / MariaDB", level: 65, category: "database" },
+  { name: "SQLite", level: 72, category: "database" },
   // DevOps
-  { name: "Docker", level: 75, category: "devops" },
-  { name: "Linux", level: 85, category: "devops" },
-  { name: "Git", level: 90, category: "devops" },
-  { name: "AWS", level: 60, category: "devops" },
+  { name: "Docker", level: 72, category: "devops" },
+  { name: "Linux (Ubuntu)", level: 75, category: "devops" },
+  { name: "Git / GitHub", level: 78, category: "devops" },
+  { name: "AWS (EC2/S3/RDS)", level: 55, category: "devops" },
 ];
 
 const categoryLabels: { [key: string]: { pt: string; en: string } } = {
   backend: { pt: "Back-end", en: "Back-end" },
-  frontend: { pt: "Front-end", en: "Front-end" },
+  frontend: { pt: "Front-end (Suporte)", en: "Front-end (Supporting)" },
   database: { pt: "Banco de Dados", en: "Database" },
   devops: { pt: "DevOps & Cloud", en: "DevOps & Cloud" },
 };
 
 const getLevelLabel = (level: number, lang: string) => {
-  if (level >= 85) return lang === 'pt' ? 'Expert' : 'Expert';
-  if (level >= 70) return lang === 'pt' ? 'Avançado' : 'Advanced';
-  if (level >= 50) return lang === 'pt' ? 'Intermediário' : 'Intermediate';
+  if (level >= 75) return lang === 'pt' ? 'Avançado' : 'Advanced';
+  if (level >= 55) return lang === 'pt' ? 'Intermediário' : 'Intermediate';
   return lang === 'pt' ? 'Básico' : 'Basic';
 };
 
 const getLevelColor = (level: number) => {
-  if (level >= 85) return 'from-green-400 to-emerald-500';
-  if (level >= 70) return 'from-accent-400 to-purple-500';
-  if (level >= 50) return 'from-cyan-400 to-blue-500';
-  return 'from-gray-400 to-gray-500';
+  if (level >= 75) return 'from-green-400 to-emerald-500';
+  if (level >= 55) return 'from-accent-400 to-purple-500';
+  return 'from-cyan-400 to-blue-500';
 };
 
 export default function TechStack() {

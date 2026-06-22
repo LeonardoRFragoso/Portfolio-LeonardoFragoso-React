@@ -71,7 +71,11 @@ export default function Results() {
 
                   {/* Metric */}
                   <motion.div
-                    className="text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-accent-400 via-purple-400 to-cyan-400 mb-3"
+                    className={`font-black text-transparent bg-clip-text bg-gradient-to-r from-accent-400 via-purple-400 to-cyan-400 mb-3 leading-tight ${
+                      item.metric.length <= 3 ? 'text-5xl' :
+                      item.metric.length <= 7 ? 'text-4xl' :
+                      'text-3xl'
+                    }`}
                     initial={{ scale: 0.5 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}

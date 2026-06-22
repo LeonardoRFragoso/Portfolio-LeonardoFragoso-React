@@ -15,20 +15,18 @@ export default function Header() {
       setIsScrolled(window.scrollY > 50);
       
       const sections = ['home', 'about', 'projects', 'contact'];
-      const scrollPosition = window.scrollY + 100;
-      
+      const threshold = window.innerHeight * 0.4;
+      let current = 'home';
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetBottom = offsetTop + element.offsetHeight;
-          
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-            setActiveSection(section);
-            break;
+          const top = element.getBoundingClientRect().top + window.scrollY;
+          if (top > 0 && window.scrollY + threshold >= top) {
+            current = section;
           }
         }
       }
+      setActiveSection(current);
     };
 
     window.addEventListener("scroll", handleScroll);

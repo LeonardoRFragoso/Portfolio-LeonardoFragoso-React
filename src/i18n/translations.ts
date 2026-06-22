@@ -18,20 +18,20 @@ export const translations = {
     // Hero
     hero: {
       roles: [
-        'Desenvolvedor Full Stack',
-        'Python & Django Expert',
-        'Arquiteto de APIs REST',
-        '2 SaaS em Produção',
+        'Desenvolvedor Python Backend',
+        'Django · FastAPI · Expert',
+        'IA & Sistemas Enterprise',
+        'ProFlow.pro em Produção',
       ],
-      availableBadge: 'Disponível para novas oportunidades',
-      tagline: 'Desenvolvedor Full Stack',
-      taglineHighlight: 'Python & React',
-      taglineEnd: '| 2 SaaS em Produção',
+      availableBadge: 'Disponível para vagas Junior / Pleno',
+      tagline: 'Desenvolvedor Python Backend',
+      taglineHighlight: 'Django · FastAPI · IA',
+      taglineEnd: '| ProFlow.pro em Produção',
       specialist: 'Stack Principal:',
-      techStack: 'Python, Django, FastAPI, React, TypeScript, PostgreSQL',
+      techStack: 'Python, Django, FastAPI, PostgreSQL, Redis, Docker',
       focusOn: '',
-      focusAreas: '8+ sistemas enterprise | 80% redução de processos manuais | 500+ consultas/dia automatizadas',
-      heroDescription: 'Transformo requisitos complexos em sistemas que funcionam. Experiência em liderança de equipe e entrega de soluções de alto impacto.',
+      focusAreas: 'Django · FastAPI · APIs REST | Sistemas em produção | Buscando crescer em equipe',
+      heroDescription: 'Desenvolvedor Python backend com experiência em sistemas reais. Busco integrar uma equipe onde possa contribuir, aprender e me especializar cada vez mais.',
       viewProjects: 'Ver Projetos',
       getInTouch: 'Entrar em Contato',
       downloadCV: 'Download CV',
@@ -41,8 +41,8 @@ export const translations = {
     // About
     about: {
       title: 'Sobre Mim',
-      role: 'Especialista em Automação & APIs',
-      description: 'que transforma processos manuais em sistemas automatizados. Atualmente Desenvolvedor de Sistemas na iTracker (setor logístico), onde desenvolvi automações que reduziram 60% do tempo de processamento de dados. Experiência anterior como Gerente de TI na RWE Telemedicina, liderando equipe de 5 pessoas. Domínio em Python (Django, FastAPI), React/TypeScript e PostgreSQL. Tenho 2 SaaS em produção: ProFlow (plataforma para freelancers) e Base Corporativa (e-commerce). Meu diferencial: entendo o problema de negócio antes de codar.',
+      role: 'Desenvolvedor Python Backend',
+      description: 'com experiência prática em sistemas reais de produção. Na iTracker (ICTSI — maior terminal portuário privado do Brasil), atuei como desenvolvedor responsável por 6 sistemas enterprise — incluindo plataforma com pipeline LLM/RAG, sistema de controle de acesso portuário, plataforma de Digital Signage (rodando na intranet da ICTSI) e RPAs automatizando fluxos financeiros. Tenho o ProFlow (proflow.pro) em produção real, e mais 2 projetos com demos ao vivo: LogiFlow e AgentesIA — disponíveis para recrutadores e devs avaliarem. Busco uma equipe onde possa crescer, colaborar e aprofundar meu domínio em Django · FastAPI · APIs REST.',
       stats: {
         systems: 'Sistemas Enterprise',
         automation: 'Redução Processos',
@@ -69,23 +69,23 @@ export const translations = {
         subtitle: 'Diferenciais que fazem a diferença',
         items: [
           {
-            title: 'Resultados Mensuráveis',
-            description: '8+ sistemas enterprise em produção, 80% de redução em processos manuais, 500+ consultas automatizadas por dia.',
+            title: 'Experiência Real em Produção',
+            description: 'Sistemas Django e FastAPI rodando em produção, não apenas projetos acadêmicos. Stack aplicada em contextos reais: portuário, fintech e logística.',
             icon: 'chart',
           },
           {
-            title: 'Experiência em Liderança',
-            description: 'Gerenciei equipe de 5 pessoas como Gerente de TI. Sei comunicar tecnicamente e traduzir para o negócio.',
-            icon: 'users',
-          },
-          {
-            title: 'Full Stack Real',
-            description: 'Do banco de dados ao deploy. Python, Django, React, PostgreSQL, Docker. 2 SaaS em produção com usuários reais.',
+            title: 'Aprendizado Acelerado',
+            description: 'Em menos de 2 anos de desenvolvimento, entreguei sistemas enterprise e 4 SaaS. Aprendo rápido, me adapto e busco evoluir continuamente.',
             icon: 'code',
           },
           {
+            title: 'Colaboração & Equipe',
+            description: 'Busco ativamente trabalhar em equipe, receber mentoria e contribuir com crescimento coletivo. Comunicação técnica clara e abertura total a feedback.',
+            icon: 'users',
+          },
+          {
             title: 'Entendo o Negócio',
-            description: 'Não codifico sem entender o problema. Experiência em logística, telemedicina e educação me deu visão de negócio.',
+            description: 'Experiência em logística, fintech e telemedicina. Traduzo necessidades de negócio em código funcional com foco em impacto real.',
             icon: 'briefcase',
           },
         ],
@@ -95,33 +95,33 @@ export const translations = {
     // Skills Data
     skillsData: [
       { 
-        name: 'Python, Go & Frameworks', 
-        description: 'Django, Flask, FastAPI, Gin | APIs RESTful e GraphQL | Go para alta performance | Selenium, Pandas, NumPy | Celery, Redis | Desenvolvimento back-end robusto', 
+        name: 'Python & Frameworks Backend', 
+        description: 'Django 5, FastAPI, Flask · DRF, SQLAlchemy, Pydantic · Celery, Redis, Alembic · pytest · Desenvolvimento backend robusto e escalável', 
         level: 'Avançado',
       },
       { 
         name: 'Banco de Dados', 
-        description: 'PostgreSQL, MySQL, MariaDB, MongoDB, SQLite, Firebase | ORM (Django/SQLAlchemy) | Modelagem de dados, migrations e queries otimizadas', 
+        description: 'PostgreSQL, MySQL, MariaDB, SQLite · ORM (Django/SQLAlchemy) · Migrations e queries otimizadas · APScheduler, Flyway', 
         level: 'Intermediário',
       },
       { 
-        name: 'Frontend & Web', 
-        description: 'React, TypeScript, Next.js | HTML5, CSS3, JavaScript ES6+ | Tailwind CSS, Framer Motion, shadcn/ui | PWA e SPA', 
+        name: 'Frontend (Suporte)', 
+        description: 'Vue.js 3, TypeScript, React · JavaScript ES6+ · TailwindCSS · Chart.js, Plotly · PWA e SPA', 
         level: 'Intermediário',
       },
       { 
         name: 'DevOps & Cloud', 
-        description: 'Git/GitHub, Docker, CI/CD | AWS (EC2, S3, RDS) | Vercel, Railway | Power BI | Linux | Metodologias Ágeis (Scrum/Kanban)', 
+        description: 'Docker, Docker Compose · Linux (Ubuntu) · Nginx · AWS (EC2, S3, RDS) · Vercel, Railway · CI/CD · Prometheus, Grafana · Git/GitHub', 
         level: 'Intermediário',
       },
       { 
-        name: 'Automação & Dados', 
-        description: 'Selenium WebDriver, BeautifulSoup, Scrapy | ETL e pipelines de dados | Streamlit para dashboards | pytest, unittest', 
+        name: 'IA & Automação', 
+        description: 'Pipelines LLM/RAG · GPT-4 / OpenAI API · Vector Search · OpenSearch · RPA (Selenium + PyAutoGUI) · ETL Pipelines · BeautifulSoup, Scrapy · Streamlit · Pandas, NumPy', 
         level: 'Avançado',
       },
       { 
-        name: 'Infraestrutura & TI', 
-        description: 'Windows Server, Active Directory, GPO | Redes TCP/IP, VPN, Firewall | Virtualização | Gestão de equipes técnicas', 
+        name: 'APIs & Integrações', 
+        description: 'REST APIs · JWT Authentication · WebSockets, Socket.IO · Stripe, Mercado Pago · WhatsApp Business API · Google APIs · Microservices · Telematics GPS API', 
         level: 'Avançado',
       },
     ],
@@ -129,12 +129,12 @@ export const translations = {
     // Experience Data
     experienceData: [
       {
-        title: 'Desenvolvedor de Sistemas Junior',
-        company: 'iTracker Logística Inteligente',
+        title: 'Desenvolvedor Python Backend',
+        company: 'iTracker | ICTSI Group — Porto do Rio de Janeiro',
         period: 'dez 2024 - jan 2026 · 1 ano 2 meses',
-        description: 'Desenvolvimento de soluções para o maior terminal portuário privado do Brasil (ICTSI). 8+ sistemas enterprise atendendo 200+ usuários diários, reduzindo processos manuais em 80%. Automações RPA processando 500+ consultas/dia.',
-        impact: '80% redução processos | 500+ consultas/dia | 8+ sistemas',
-        tags: ['Python', 'Django', 'FastAPI', 'React', 'Vue.js', 'PostgreSQL', 'Docker'],
+        description: 'Desenvolvedor responsável pelo design, construção e deploy de 6 sistemas enterprise em produção para operações portuárias e logísticas — Python, Django, FastAPI, Linux, Docker. Integrou capacidades de IA/LLM na plataforma de analytics comercial e construiu bots RPA automatizando fluxos financeiros críticos.',
+        impact: '6 sistemas enterprise · LLM/RAG integrado · ProFlow.pro em produção',
+        tags: ['Python', 'Django 5', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker', 'LLM/RAG', 'Linux'],
         featured: false,
       },
       {
@@ -346,6 +346,10 @@ export const translations = {
           title: 'Assistente Financeiro via WhatsApp',
           description: 'Sistema SaaS completo de gestão financeira pessoal via WhatsApp com dashboard web e IA para processamento de linguagem natural. IMPORTANTE: É necessário cadastro prévio no site antes de entrar em contato via WhatsApp. O número cadastrado deve ser o mesmo que enviará mensagens. Registre despesas, receitas e lembretes usando linguagem informal. Backend Python/FastAPI com PostgreSQL e Redis, frontend Next.js 14 com TailwindCSS, integração Twilio WhatsApp e OpenAI GPT-4o.',
         },
+        {
+          title: 'Oráculo — Consultor Estratégico com IA',
+          description: 'Consultor estratégico com IA com pipeline OpenRAG completo. Interface estilo ChatGPT em React, analytics preditivos, dashboard executivo, gestão de orçamento e metas, e integração universal com dados de nuvem para logística e dados comerciais. Stack: OpenSearch · Langflow · Docling — totalmente conteinerizado em Docker.',
+        },
       ],
     },
 
@@ -413,28 +417,28 @@ export const translations = {
 
     // Results - Nova seção
     results: {
-      title: 'Resultados Comprovados',
-      subtitle: 'Números que demonstram impacto real',
+      title: 'Em Números',
+      subtitle: 'Trajetória real, entrega real',
       items: [
         {
-          metric: '200+',
-          description: 'Usuários ativos diariamente nos sistemas enterprise',
-          context: '8+ sistemas em produção na iTracker/ICTSI',
+          metric: '6',
+          description: 'Sistemas enterprise entregues em produção',
+          context: 'iTracker · ICTSI — Porto do Rio de Janeiro',
         },
         {
-          metric: '80%',
-          description: 'Redução em processos manuais com automação',
-          context: 'RPAs processando 500+ consultas/dia',
+          metric: 'ProFlow',
+          description: 'SaaS próprio em produção real',
+          context: 'proflow.pro — clientes reais, pagamentos integrados',
         },
         {
-          metric: '70%',
-          description: 'Redução em custos operacionais',
-          context: 'Soluções internas substituindo sistemas terceirizados',
+          metric: '300h+',
+          description: 'Certificações técnicas concluídas',
+          context: 'Python · Django · Full Stack · Data Analysis',
         },
         {
-          metric: '4 SaaS',
-          description: 'Plataformas online em produção',
-          context: 'ProFlow • LogiFlow • Base Corporativa • Digital Signage',
+          metric: '< 2 anos',
+          description: 'De suporte de TI a dev backend em produção',
+          context: 'Crescimento acelerado com foco em Python e Django',
         },
       ],
     },
@@ -473,20 +477,20 @@ export const translations = {
     // Hero
     hero: {
       roles: [
-        'Full Stack Developer',
-        'Python & Django Expert',
-        'REST API Architect',
-        '2 SaaS in Production',
+        'Python Backend Developer',
+        'Django · FastAPI · Expert',
+        'AI & Enterprise Systems',
+        'ProFlow.pro in Production',
       ],
-      availableBadge: 'Available for new opportunities',
-      tagline: 'Full Stack Developer',
-      taglineHighlight: 'Python & React',
-      taglineEnd: '| 2 SaaS in Production',
+      availableBadge: 'Available · Looking for Junior / Mid-level roles',
+      tagline: 'Python Backend Developer',
+      taglineHighlight: 'Django · FastAPI · AI',
+      taglineEnd: '| ProFlow.pro in Production',
       specialist: 'Main Stack:',
-      techStack: 'Python, Django, FastAPI, React, TypeScript, PostgreSQL',
+      techStack: 'Python, Django, FastAPI, PostgreSQL, Redis, Docker',
       focusOn: '',
-      focusAreas: '8+ enterprise systems | 80% manual process reduction | 500+ queries/day automated',
-      heroDescription: 'I turn complex requirements into systems that work. Experience in team leadership and high-impact solution delivery.',
+      focusAreas: 'Django · FastAPI · REST APIs | Real production systems | Looking to grow in a team',
+      heroDescription: 'Python backend developer with experience in real production systems. Looking to join a team where I can contribute, learn and keep growing.',
       viewProjects: 'View Projects',
       getInTouch: 'Get in Touch',
       downloadCV: 'Download CV',
@@ -496,8 +500,8 @@ export const translations = {
     // About
     about: {
       title: 'About Me',
-      role: 'Automation & API Specialist',
-      description: 'who transforms manual processes into automated systems. Currently Systems Developer at iTracker (logistics sector), where I developed automations that reduced data processing time by 60%. Previous experience as IT Manager at RWE Telemedicine, leading a team of 5 people. Proficient in Python (Django, FastAPI), React/TypeScript and PostgreSQL. I have 2 SaaS in production: ProFlow (freelancer platform) and Base Corporativa (e-commerce). My differentiator: I understand the business problem before coding.',
+      role: 'Python Backend Developer',
+      description: 'with hands-on experience in real production systems. At iTracker (ICTSI — Brazil\'s largest private port terminal), I worked as the developer responsible for 6 enterprise systems — including a platform with an LLM/RAG pipeline, port access control system, a Digital Signage platform (running on ICTSI\'s intranet) and RPA bots automating financial workflows. ProFlow (proflow.pro) is live in real production, plus 2 live demo projects — LogiFlow and AgentesIA — available for recruiters and developers to explore. Looking for a team where I can grow, collaborate and deepen my expertise in Django · FastAPI · REST APIs.',
       stats: {
         systems: 'Enterprise Systems',
         automation: 'Process Reduction',
@@ -524,23 +528,23 @@ export const translations = {
         subtitle: 'Differentiators that make a difference',
         items: [
           {
-            title: 'Measurable Results',
-            description: '8+ enterprise systems in production, 80% reduction in manual processes, 500+ automated queries per day.',
+            title: 'Real Production Experience',
+            description: 'Django and FastAPI systems running in production, not just academic projects. Stack applied in real business contexts: port logistics, fintech and transportation.',
             icon: 'chart',
           },
           {
-            title: 'Leadership Experience',
-            description: 'Managed a team of 5 as IT Manager. I know how to communicate technically and translate to business.',
-            icon: 'users',
-          },
-          {
-            title: 'Real Full Stack',
-            description: 'From database to deploy. Python, Django, React, PostgreSQL, Docker. 2 SaaS in production with real users.',
+            title: 'Fast Learner',
+            description: 'In less than 2 years of development, I delivered enterprise systems and 4 SaaS products. I learn quickly, adapt and continuously seek to improve.',
             icon: 'code',
           },
           {
+            title: 'Collaboration & Teamwork',
+            description: 'Actively looking to work in a team, receive mentorship and contribute to collective growth. Clear technical communication and full openness to feedback.',
+            icon: 'users',
+          },
+          {
             title: 'Business Understanding',
-            description: "I don't code without understanding the problem. Experience in logistics, telemedicine and education gave me business vision.",
+            description: 'Experience in logistics, fintech and telemedicine. I translate business needs into functional code focused on real impact.',
             icon: 'briefcase',
           },
         ],
@@ -550,33 +554,33 @@ export const translations = {
     // Skills Data
     skillsData: [
       { 
-        name: 'Python, Go & Frameworks', 
-        description: 'Django, Flask, FastAPI, Gin | RESTful & GraphQL APIs | Go for high performance | Selenium, Pandas, NumPy | Celery, Redis | Robust back-end development', 
+        name: 'Python & Backend Frameworks', 
+        description: 'Django 5, FastAPI, Flask · DRF, SQLAlchemy, Pydantic · Celery, Redis, Alembic · pytest · Robust and scalable backend development', 
         level: 'Advanced',
       },
       { 
         name: 'Databases', 
-        description: 'PostgreSQL, MySQL, MariaDB, MongoDB, SQLite, Firebase | ORM (Django/SQLAlchemy) | Data modeling, migrations and optimized queries', 
+        description: 'PostgreSQL, MySQL, MariaDB, SQLite · ORM (Django/SQLAlchemy) · Optimized migrations and queries · APScheduler, Flyway', 
         level: 'Intermediate',
       },
       { 
-        name: 'Frontend & Web', 
-        description: 'React, TypeScript, Next.js | HTML5, CSS3, JavaScript ES6+ | Tailwind CSS, Framer Motion, shadcn/ui | PWA and SPA', 
+        name: 'Frontend (Supporting)', 
+        description: 'Vue.js 3, TypeScript, React · JavaScript ES6+ · TailwindCSS · Chart.js, Plotly · PWA and SPA', 
         level: 'Intermediate',
       },
       { 
         name: 'DevOps & Cloud', 
-        description: 'Git/GitHub, Docker, CI/CD | AWS (EC2, S3, RDS) | Vercel, Railway | Power BI | Linux | Agile Methodologies (Scrum/Kanban)', 
+        description: 'Docker, Docker Compose · Linux (Ubuntu) · Nginx · AWS (EC2, S3, RDS) · Vercel, Railway · CI/CD · Prometheus, Grafana · Git/GitHub', 
         level: 'Intermediate',
       },
       { 
-        name: 'Automation & Data', 
-        description: 'Selenium WebDriver, BeautifulSoup, Scrapy | ETL and data pipelines | Streamlit for dashboards | pytest, unittest', 
+        name: 'AI & Automation', 
+        description: 'LLM/RAG Pipelines · GPT-4 / OpenAI API · Vector Search · OpenSearch · RPA (Selenium + PyAutoGUI) · ETL Pipelines · BeautifulSoup, Scrapy · Streamlit · Pandas, NumPy', 
         level: 'Advanced',
       },
       { 
-        name: 'Infrastructure & IT', 
-        description: 'Windows Server, Active Directory, GPO | TCP/IP Networks, VPN, Firewall | Virtualization | Technical team management', 
+        name: 'APIs & Integrations', 
+        description: 'REST APIs · JWT Authentication · WebSockets, Socket.IO · Stripe, Mercado Pago · WhatsApp Business API · Google APIs · Microservices · Telematics GPS API', 
         level: 'Advanced',
       },
     ],
@@ -584,12 +588,12 @@ export const translations = {
     // Experience Data
     experienceData: [
       {
-        title: 'Junior Systems Developer',
-        company: 'iTracker Intelligent Logistics',
+        title: 'Python Backend Developer',
+        company: 'iTracker | ICTSI Group — Porto do Rio de Janeiro',
         period: 'Dec 2024 - Jan 2026 · 1 year 2 months',
-        description: 'Developing solutions for Brazil\'s largest private port terminal (ICTSI). 8+ enterprise systems serving 200+ daily users, reducing manual processes by 80%. RPA automations processing 500+ queries/day.',
-        impact: '80% process reduction | 500+ queries/day | 8+ systems',
-        tags: ['Python', 'Django', 'FastAPI', 'React', 'Vue.js', 'PostgreSQL', 'Docker'],
+        description: 'Developer responsible for designing, building and deploying 6 production enterprise systems for port and logistics operations — Python, Django, FastAPI, Linux, Docker. Integrated AI/LLM capabilities into the commercial analytics platform and built RPA bots automating critical financial workflows.',
+        impact: '6 enterprise systems · LLM/RAG integrated · ProFlow.pro in production',
+        tags: ['Python', 'Django 5', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker', 'LLM/RAG', 'Linux'],
         featured: false,
       },
       {
@@ -801,6 +805,10 @@ export const translations = {
           title: 'Financial Assistant via WhatsApp',
           description: 'Complete SaaS personal finance management system via WhatsApp with web dashboard and AI for natural language processing. IMPORTANT: Prior registration on the website is required before contacting via WhatsApp. The registered number must be the same one that will send messages. Register expenses, income and reminders using informal language. Python/FastAPI backend with PostgreSQL and Redis, Next.js 14 frontend with TailwindCSS, Twilio WhatsApp integration and OpenAI GPT-4o.',
         },
+        {
+          title: 'Oráculo — AI Strategic Decision Consultant',
+          description: 'AI-powered strategic consultant with a full OpenRAG pipeline. ChatGPT-style React interface, predictive analytics, executive dashboard, budget & goal management, and universal cloud data integration for logistics and commercial data. Stack: OpenSearch · Langflow · Docling — fully containerized in Docker.',
+        },
       ],
     },
 
@@ -868,28 +876,28 @@ export const translations = {
 
     // Results - New section
     results: {
-      title: 'Proven Results',
-      subtitle: 'Numbers that demonstrate real impact',
+      title: 'By the Numbers',
+      subtitle: 'Real trajectory, real delivery',
       items: [
         {
-          metric: '200+',
-          description: 'Daily active users on enterprise systems',
-          context: '8+ systems in production at iTracker/ICTSI',
+          metric: '6',
+          description: 'Enterprise systems delivered in production',
+          context: 'iTracker · ICTSI — Porto do Rio de Janeiro',
         },
         {
-          metric: '80%',
-          description: 'Reduction in manual processes with automation',
-          context: 'RPAs processing 500+ queries/day',
+          metric: 'ProFlow',
+          description: 'Own SaaS in real production',
+          context: 'proflow.pro — real clients, integrated payments',
         },
         {
-          metric: '70%',
-          description: 'Reduction in operational costs',
-          context: 'Internal solutions replacing third-party systems',
+          metric: '300h+',
+          description: 'Technical certifications completed',
+          context: 'Python · Django · Full Stack · Data Analysis',
         },
         {
-          metric: '4 SaaS',
-          description: 'Online platforms in production',
-          context: 'ProFlow • LogiFlow • Base Corporativa • Digital Signage',
+          metric: '< 2 yrs',
+          description: 'From IT support to backend dev in production',
+          context: 'Fast growth focused on Python and Django',
         },
       ],
     },

@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../i18n";
 
 export default function Hero() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [currentRole, setCurrentRole] = useState(0);
 
   useEffect(() => {
@@ -197,7 +197,7 @@ export default function Hero() {
               >
                 <img
                   src="/images/Leo-Perfil.png"
-                  alt="Leonardo Fragoso - Full Stack Developer"
+                  alt="Leonardo Fragoso - Python Backend Developer"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: '50% 25%' }}
                 />
@@ -379,7 +379,7 @@ export default function Hero() {
               </motion.a>
 
               <motion.a
-                href="/CV-Leonardo-Fragoso-2025.pdf"
+                href={language === 'pt' ? '/Leonardo%20Fragoso%20_%20Desenvolvedor%20Python%20Backend.pdf' : '/Leonardo%20Fragoso%20_%20Python%20Backend%20Developer.pdf'}
                 download
                 className="group inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-xl border-2 border-green-400/40 hover:border-green-400/80 hover:from-green-500/30 hover:to-emerald-500/30 transition-all duration-500 shadow-xl"
                 whileHover={{ scale: 1.05, y: -2 }}

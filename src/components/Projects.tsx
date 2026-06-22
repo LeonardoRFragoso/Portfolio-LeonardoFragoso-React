@@ -39,8 +39,7 @@ export default function Projects() {
   const INITIAL_PROJECTS_COUNT = 6;
 
   const projects: Project[] = [
-    // TIER 1: "WOW FACTOR" - Top 5 projetos que vendem
-    // #1 - ProFlow (FLAGSHIP - Projeto Principal)
+    // #1 - ProFlow (FLAGSHIP)
     {
       title: t.projects.projectsList[6].title,
       description: t.projects.projectsList[6].description,
@@ -56,7 +55,22 @@ export default function Projects() {
       complexity: 5,
       topForRecruiters: true,
     },
-    // #2 - LogiFlow CRM (SOBE de #5)
+    // #2 - AgentesIA — IA multi-agente, demo ao vivo
+    {
+      title: t.projects.projectsList[15].title,
+      description: t.projects.projectsList[15].description,
+      images: ["/images/AgentesIA/1.png", "/images/AgentesIA/2.png", "/images/AgentesIA/3.png", "/images/AgentesIA/4.png", "/images/AgentesIA/5.png", "/images/AgentesIA/6.png", "/images/AgentesIA/7.png", "/images/AgentesIA/8.png", "/images/AgentesIA/9.png", "/images/AgentesIA/10.png", "/images/AgentesIA/11.png"],
+      tags: ["FastAPI", "Python", "Claude 3", "PostgreSQL", "Redis", "JWT"],
+      github: "https://github.com/LeonardoRFragoso/AgentesIA-Consultoria-de-Negocios-com-IA-Multi-Agentes",
+      demo: "https://agentes-ia-consultoria-de-negocios.vercel.app",
+      featured: true,
+      saas: true,
+      category: ['saas', 'ai', 'enterprise'],
+      quickEval: '4-5',
+      complexity: 5,
+      topForRecruiters: true,
+    },
+    // #3 - LogiFlow CRM — Python/FastAPI, demo ao vivo
     {
       title: t.projects.projectsList[13].title,
       description: t.projects.projectsList[13].description,
@@ -76,41 +90,12 @@ export default function Projects() {
       complexity: 5,
       topForRecruiters: true,
     },
-    // #3 - Base Corporativa (DESCE de #2)
-    {
-      title: t.projects.projectsList[7].title,
-      description: t.projects.projectsList[7].description,
-      images: ["/images/base/base1.png", "/images/base/base2.png", "/images/base/base3.png", "/images/base/base4.png", "/images/base/base5.png", "/images/base/base6.png"],
-      tags: ["React", "Django", "PostgreSQL", "Python", "Mercado Pago"],
-      github: "https://github.com/LeonardoRFragoso/base-corporativa",
-      demo: "https://basecorporativa.store/",
-      featured: true,
-      saas: true,
-      category: ['saas', 'ecommerce', 'web'],
-      quickEval: '3-4',
-      complexity: 4,
-      topForRecruiters: true,
-    },
-    // #4 - AgentesIA (MANTÉM)
-    {
-      title: t.projects.projectsList[15].title,
-      description: t.projects.projectsList[15].description,
-      images: ["/images/AgentesIA/1.png", "/images/AgentesIA/2.png", "/images/AgentesIA/3.png", "/images/AgentesIA/4.png", "/images/AgentesIA/5.png", "/images/AgentesIA/6.png", "/images/AgentesIA/7.png", "/images/AgentesIA/8.png", "/images/AgentesIA/9.png", "/images/AgentesIA/10.png", "/images/AgentesIA/11.png"],
-      tags: ["FastAPI", "Next.js 14", "Claude 3", "PostgreSQL", "Redis", "JWT"],
-      github: "https://github.com/LeonardoRFragoso/AgentesIA-Consultoria-de-Negocios-com-IA-Multi-Agentes",
-      demo: "https://agentes-ia-consultoria-de-negocios.vercel.app",
-      featured: true,
-      saas: true,
-      category: ['saas', 'ai', 'enterprise'],
-      quickEval: '4-5',
-      complexity: 5,
-    },
-    // #5 - Assistente WhatsApp (DESCE de #3)
+    // #4 - Assistente Financeiro WhatsApp — Python/FastAPI + IA
     {
       title: t.projects.projectsList[17].title,
       description: t.projects.projectsList[17].description,
       images: ["/images/WhatsAppFinance/1.png", "/images/WhatsAppFinance/2.png", "/images/WhatsAppFinance/3.png", "/images/WhatsAppFinance/4.png", "/images/WhatsAppFinance/5.png", "/images/WhatsAppFinance/6.png", "/images/WhatsAppFinance/7.png"],
-      tags: ["FastAPI", "Next.js 14", "OpenAI GPT-4", "PostgreSQL", "Redis", "Twilio"],
+      tags: ["Python", "FastAPI", "OpenAI GPT-4", "PostgreSQL", "Redis", "Twilio"],
       github: "https://github.com/LeonardoRFragoso/AssistenteFinanceiroWhatsapp",
       demo: "https://assistente-financeiro-whatsapp.vercel.app/",
       whatsapp: "https://wa.me/14155238886?text=join%20your-sandbox-code",
@@ -120,35 +105,101 @@ export default function Projects() {
       quickEval: '2-3',
       complexity: 4,
     },
-
-    // TIER 2: "DEMONSTRAÇÃO DE SKILLS" - Diversidade técnica
-    // #6 - TaskManager Go (SOBE de #11)
+    // #5 - Digital Signage — Python/Django, ICTSI enterprise (intranet)
     {
-      title: t.projects.projectsList[14].title,
-      description: t.projects.projectsList[14].description,
-      images: ["/images/GO API - Task Manager/1.png", "/images/GO API - Task Manager/2.png", "/images/GO API - Task Manager/3.png", "/images/GO API - Task Manager/4.png", "/images/GO API - Task Manager/5.png", "/images/GO API - Task Manager/6.png", "/images/GO API - Task Manager/7.png", "/images/GO API - Task Manager/8.png"],
-      tags: ["Go", "Vue.js 3", "PostgreSQL", "TailwindCSS", "JWT", "Docker"],
-      github: "https://github.com/LeonardoRFragoso/Go-API-Gestao-de-Projetos-e-Tarefas",
+      title: t.projects.projectsList[5].title,
+      description: t.projects.projectsList[5].description,
+      images: ["/images/digital-signage/1.jpg", "/images/digital-signage/2.jpg", "/images/digital-signage/3.jpg", "/images/digital-signage/4.jpg", "/images/digital-signage/5.jpg", "/images/digital-signage/6.jpg", "/images/digital-signage/7.jpg", "/images/digital-signage/8.jpg", "/images/digital-signage/9.jpg"],
+      tags: ["Python", "Django", "Flask", "WebSocket", "Redis", "FFmpeg", "PostgreSQL"],
+      github: "https://github.com/LeonardoRFragoso/Digital-Signage-Platform",
+      featured: true,
+      category: ['enterprise', 'web'],
+      quickEval: 'github',
+      complexity: 5,
+    },
+    // #6 - Não-Conformidades — Python/Django, ICTSI enterprise
+    {
+      title: t.projects.projectsList[1].title,
+      description: t.projects.projectsList[1].description,
+      images: ["/images/não-conformidade/1.jpg", "/images/não-conformidade/2.jpg", "/images/não-conformidade/3.jpg", "/images/não-conformidade/4.jpg", "/images/não-conformidade/5.jpg", "/images/não-conformidade/6.jpg", "/images/não-conformidade/7.jpg", "/images/não-conformidade/8.jpg"],
+      tags: ["Python", "Django", "DRF", "PostgreSQL", "JavaScript"],
+      github: "https://github.com/LeonardoRFragoso/nao-conformidade",
+      category: ['enterprise'],
+      quickEval: 'github',
+      complexity: 4,
+    },
+
+    // TIER 2: Python backend — projetos de skills
+    // #7 - BI-as-a-Service — Python/FastAPI + GPT-4
+    {
+      title: t.projects.projectsList[9].title,
+      description: t.projects.projectsList[9].description,
+      images: ["/images/SaaS/1SaaS - 1.png", "/images/SaaS/1SaaS - 2.png", "/images/SaaS/1SaaS - 3.png", "/images/SaaS/1SaaS - 4.png", "/images/SaaS/1SaaS - 5.png", "/images/SaaS/1SaaS - 6.png", "/images/SaaS/1SaaS - 7.png"],
+      tags: ["Python", "FastAPI", "React", "GPT-4", "Docker"],
+      github: "https://github.com/LeonardoRFragoso/SaaS",
+      featured: true,
+      category: ['saas', 'ai', 'enterprise'],
+      quickEval: 'github',
+      complexity: 5,
+    },
+    // #8 - Sistema Pátio — Python/Django, ICTSI enterprise
+    {
+      title: t.projects.projectsList[0].title,
+      description: t.projects.projectsList[0].description,
+      images: ["/images/Pátio/1.jpg", "/images/Pátio/2.jpg", "/images/Pátio/3.jpg", "/images/Pátio/4.jpg", "/images/Pátio/5.jpg", "/images/Pátio/6.jpg"],
+      tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
+      github: "https://github.com/LeonardoRFragoso/Patio",
+      category: ['enterprise'],
+      quickEval: 'github',
+      complexity: 3,
+    },
+    // #9 - Sistema GR — Python/Django, ICTSI enterprise
+    {
+      title: t.projects.projectsList[2].title,
+      description: t.projects.projectsList[2].description,
+      images: ["/images/GR/1.jpg", "/images/GR/2.jpg", "/images/GR/3.jpg", "/images/GR/4.jpg", "/images/GR/5.jpg", "/images/GR/6.jpg", "/images/GR/7.jpg", "/images/GR/8.jpg", "/images/GR/9.jpg", "/images/GR/10.jpg", "/images/GR/11.jpg", "/images/GR/12.jpg"],
+      tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
+      github: "https://github.com/LeonardoRFragoso/GR",
+      category: ['enterprise'],
+      quickEval: 'github',
+      complexity: 4,
+    },
+    // #10 - Dashboard Multas — Python/Streamlit
+    {
+      title: t.projects.projectsList[3].title,
+      description: t.projects.projectsList[3].description,
+      images: ["/images/dash-multas/1.jpg", "/images/dash-multas/2.jpg", "/images/dash-multas/3.jpg", "/images/dash-multas/4.jpg", "/images/dash-multas/5.jpg", "/images/dash-multas/6.jpg", "/images/dash-multas/7.jpg", "/images/dash-multas/8.jpg", "/images/dash-multas/9.jpg"],
+      tags: ["Streamlit", "Python", "Google Drive API", "Data Analysis"],
+      github: "https://github.com/LeonardoRFragoso/DashboardMultas",
+      category: ['enterprise'],
+      quickEval: 'github',
+      complexity: 3,
+    },
+    // #11 - MedFlow Finance
+    {
+      title: t.projects.projectsList[8].title,
+      description: t.projects.projectsList[8].description,
+      images: ["/images/medflow/medflow1.png", "/images/medflow/medflow2.png", "/images/medflow/medflow3.png", "/images/medflow/medflow4.png", "/images/medflow/medflow5.png", "/images/medflow/medflow6.png", "/images/medflow/medflow7.png", "/images/medflow/medflow8.png"],
+      tags: ["Laravel 11", "Vue 3", "PostgreSQL", "API REST"],
+      github: "https://github.com/LeonardoRFragoso/MedFlow_Finance",
       featured: true,
       category: ['enterprise', 'web'],
       quickEval: 'github',
       complexity: 4,
     },
-    // #7 - Andaimes Pini (DESCE de #8)
+    // #12 - FinanceControl — Flutter + Django REST
     {
-      title: t.projects.projectsList[4].title,
-      description: t.projects.projectsList[4].description,
-      images: ["/images/Andaimes Pini/pini1.png", "/images/Andaimes Pini/pini2.png", "/images/Andaimes Pini/pini3.png", "/images/Andaimes Pini/pini4.png", "/images/Andaimes Pini/pini5.png", "/images/Andaimes Pini/Pini6.png", "/images/Andaimes Pini/Pini7.png", "/images/Andaimes Pini/pini8.png", "/images/Andaimes Pini/pini9.png", "/images/Andaimes Pini/Pini10.png", "/images/Andaimes Pini/pini11.png", "/images/Andaimes Pini/pini12.png", "/images/Andaimes Pini/pini13.png", "/images/Andaimes Pini/pini14.png", "/images/Andaimes Pini/pini15.png"],
-      tags: ["Flask", "React", "PostgreSQL"],
-      github: "https://github.com/LeonardoRFragoso/AndaimesPini_Project",
-      demo: "https://andaimes-pini-project.vercel.app/",
+      title: t.projects.projectsList[11].title,
+      description: t.projects.projectsList[11].description,
+      images: ["/images/FinanceControl/financecontrol1.png", "/images/FinanceControl/financecontrol2.png", "/images/FinanceControl/financecontrol5.png", "/images/FinanceControl/financecontrol6.png"],
+      tags: ["Flutter", "Django REST", "Riverpod", "Mercado Pago", "JWT"],
+      github: "https://github.com/LeonardoRFragoso/gerenciador-financeiro",
       featured: true,
-      saas: true,
-      category: ['saas', 'web', 'enterprise'],
-      quickEval: '3-4',
-      complexity: 3,
+      category: ['enterprise', 'web'],
+      quickEval: 'github',
+      complexity: 4,
     },
-    // #8 - GNLink (DESCE de #9)
+    // #13 - GNLink — Next.js, frontend
     {
       title: t.projects.projectsList[12].title,
       description: t.projects.projectsList[12].description,
@@ -162,7 +213,7 @@ export default function Projects() {
       quickEval: '2-3',
       complexity: 3,
     },
-    // #9 - PyScript.tech (DESCE de #10)
+    // #14 - PyScript.tech — portfólio institucional
     {
       title: t.projects.projectsList[16].title,
       description: t.projects.projectsList[16].description,
@@ -176,7 +227,7 @@ export default function Projects() {
       quickEval: '2-3',
       complexity: 3,
     },
-    // #10 - APM Platform Java (SOBE de #12)
+    // #15 - APM Platform — Java/Spring Boot
     {
       title: t.projects.projectsList[10].title,
       description: t.projects.projectsList[10].description,
@@ -188,96 +239,42 @@ export default function Projects() {
       quickEval: 'github',
       complexity: 5,
     },
-
-    // TIER 3: "PROFUNDIDADE TÉCNICA" - Sistemas empresariais
-    // #11 - MedFlow Finance (DESCE de #7)
+    // #16 - Base Corporativa — e-commerce, não está no CV atual
     {
-      title: t.projects.projectsList[8].title,
-      description: t.projects.projectsList[8].description,
-      images: ["/images/medflow/medflow1.png", "/images/medflow/medflow2.png", "/images/medflow/medflow3.png", "/images/medflow/medflow4.png", "/images/medflow/medflow5.png", "/images/medflow/medflow6.png", "/images/medflow/medflow7.png", "/images/medflow/medflow8.png"],
-      tags: ["Laravel 11", "Vue 3", "PostgreSQL", "API REST"],
-      github: "https://github.com/LeonardoRFragoso/MedFlow_Finance",
+      title: t.projects.projectsList[7].title,
+      description: t.projects.projectsList[7].description,
+      images: ["/images/base/base1.png", "/images/base/base2.png", "/images/base/base3.png", "/images/base/base4.png", "/images/base/base5.png", "/images/base/base6.png"],
+      tags: ["React", "Django", "PostgreSQL", "Python", "Mercado Pago"],
+      github: "https://github.com/LeonardoRFragoso/base-corporativa",
+      demo: "https://basecorporativa.store/",
+      featured: true,
+      saas: true,
+      category: ['saas', 'ecommerce', 'web'],
+      quickEval: '3-4',
+      complexity: 4,
+    },
+    // #17 - TaskManager — Go backend (removido do CV atual)
+    {
+      title: t.projects.projectsList[14].title,
+      description: t.projects.projectsList[14].description,
+      images: ["/images/GO API - Task Manager/1.png", "/images/GO API - Task Manager/2.png", "/images/GO API - Task Manager/3.png", "/images/GO API - Task Manager/4.png", "/images/GO API - Task Manager/5.png", "/images/GO API - Task Manager/6.png", "/images/GO API - Task Manager/7.png", "/images/GO API - Task Manager/8.png"],
+      tags: ["Go", "Vue.js 3", "PostgreSQL", "TailwindCSS", "JWT", "Docker"],
+      github: "https://github.com/LeonardoRFragoso/Go-API-Gestao-de-Projetos-e-Tarefas",
       featured: true,
       category: ['enterprise', 'web'],
       quickEval: 'github',
       complexity: 4,
     },
-    // #12 - Digital Signage (DESCE de #6)
+    // #18 - Andaimes Pini — projeto menor
     {
-      title: t.projects.projectsList[5].title,
-      description: t.projects.projectsList[5].description,
-      images: ["/images/digital-signage/1.jpg", "/images/digital-signage/2.jpg", "/images/digital-signage/3.jpg", "/images/digital-signage/4.jpg", "/images/digital-signage/5.jpg", "/images/digital-signage/6.jpg", "/images/digital-signage/7.jpg", "/images/digital-signage/8.jpg", "/images/digital-signage/9.jpg"],
-      tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
-      github: "https://github.com/LeonardoRFragoso/Digital-Signage-Platform",
-      featured: true,
-      category: ['enterprise', 'web'],
-      quickEval: 'github',
-      complexity: 5,
-    },
-    // #13 - BI-as-a-Service (DESCE de #14)
-    {
-      title: t.projects.projectsList[9].title,
-      description: t.projects.projectsList[9].description,
-      images: ["/images/SaaS/1SaaS - 1.png", "/images/SaaS/1SaaS - 2.png", "/images/SaaS/1SaaS - 3.png", "/images/SaaS/1SaaS - 4.png", "/images/SaaS/1SaaS - 5.png", "/images/SaaS/1SaaS - 6.png", "/images/SaaS/1SaaS - 7.png"],
-      tags: ["Python", "FastAPI", "React", "GPT-4", "Docker"],
-      github: "https://github.com/LeonardoRFragoso/SaaS",
-      featured: true,
-      category: ['saas', 'ai', 'enterprise'],
-      quickEval: 'github',
-      complexity: 5,
-    },
-    // #14 - FinanceControl (DESCE de #13)
-    {
-      title: t.projects.projectsList[11].title,
-      description: t.projects.projectsList[11].description,
-      images: ["/images/FinanceControl/financecontrol1.png", "/images/FinanceControl/financecontrol2.png", "/images/FinanceControl/financecontrol5.png", "/images/FinanceControl/financecontrol6.png"],
-      tags: ["Flutter", "Django REST", "Riverpod", "Mercado Pago", "JWT"],
-      github: "https://github.com/LeonardoRFragoso/gerenciador-financeiro",
-      featured: true,
-      category: ['enterprise', 'web'],
-      quickEval: 'github',
-      complexity: 4,
-    },
-
-    // TIER 4: "EXPERIÊNCIA CORPORATIVA" - Projetos internos
-    {
-      title: t.projects.projectsList[0].title,
-      description: t.projects.projectsList[0].description,
-      images: ["/images/Pátio/1.jpg", "/images/Pátio/2.jpg", "/images/Pátio/3.jpg", "/images/Pátio/4.jpg", "/images/Pátio/5.jpg", "/images/Pátio/6.jpg"],
-      tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
-      github: "https://github.com/LeonardoRFragoso/Patio",
-      category: ['enterprise'],
-      quickEval: 'github',
-      complexity: 3,
-    },
-    {
-      title: t.projects.projectsList[1].title,
-      description: t.projects.projectsList[1].description,
-      images: ["/images/não-conformidade/1.jpg", "/images/não-conformidade/2.jpg", "/images/não-conformidade/3.jpg", "/images/não-conformidade/4.jpg", "/images/não-conformidade/5.jpg", "/images/não-conformidade/6.jpg", "/images/não-conformidade/7.jpg", "/images/não-conformidade/8.jpg"],
-      tags: ["Django", "Python", "JavaScript", "PostgreSQL"],
-      github: "https://github.com/LeonardoRFragoso/nao-conformidade",
-      category: ['enterprise'],
-      quickEval: 'github',
-      complexity: 4,
-    },
-    {
-      title: t.projects.projectsList[2].title,
-      description: t.projects.projectsList[2].description,
-      images: ["/images/GR/1.jpg", "/images/GR/2.jpg", "/images/GR/3.jpg", "/images/GR/4.jpg", "/images/GR/5.jpg", "/images/GR/6.jpg", "/images/GR/7.jpg", "/images/GR/8.jpg", "/images/GR/9.jpg", "/images/GR/10.jpg", "/images/GR/11.jpg", "/images/GR/12.jpg"],
-      tags: ["Python", "Django", "JavaScript", "PostgreSQL"],
-      github: "https://github.com/LeonardoRFragoso/GR",
-      category: ['enterprise'],
-      quickEval: 'github',
-      complexity: 4,
-    },
-    {
-      title: t.projects.projectsList[3].title,
-      description: t.projects.projectsList[3].description,
-      images: ["/images/dash-multas/1.jpg", "/images/dash-multas/2.jpg", "/images/dash-multas/3.jpg", "/images/dash-multas/4.jpg", "/images/dash-multas/5.jpg", "/images/dash-multas/6.jpg", "/images/dash-multas/7.jpg", "/images/dash-multas/8.jpg", "/images/dash-multas/9.jpg"],
-      tags: ["Streamlit", "Python", "Google Drive API", "Data Analysis"],
-      github: "https://github.com/LeonardoRFragoso/DashboardMultas",
-      category: ['enterprise'],
-      quickEval: 'github',
+      title: t.projects.projectsList[4].title,
+      description: t.projects.projectsList[4].description,
+      images: ["/images/Andaimes Pini/pini1.png", "/images/Andaimes Pini/pini2.png", "/images/Andaimes Pini/pini3.png", "/images/Andaimes Pini/pini4.png", "/images/Andaimes Pini/pini5.png", "/images/Andaimes Pini/Pini6.png", "/images/Andaimes Pini/Pini7.png", "/images/Andaimes Pini/pini8.png", "/images/Andaimes Pini/pini9.png", "/images/Andaimes Pini/Pini10.png", "/images/Andaimes Pini/pini11.png", "/images/Andaimes Pini/pini12.png", "/images/Andaimes Pini/pini13.png", "/images/Andaimes Pini/pini14.png", "/images/Andaimes Pini/pini15.png"],
+      tags: ["Flask", "React", "PostgreSQL"],
+      github: "https://github.com/LeonardoRFragoso/AndaimesPini_Project",
+      demo: "https://andaimes-pini-project.vercel.app/",
+      category: ['web'],
+      quickEval: '3-4',
       complexity: 3,
     },
   ];

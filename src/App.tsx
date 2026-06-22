@@ -11,7 +11,7 @@ import CustomCursor from "./components/CustomCursor";
 import { useLanguage } from "./i18n";
 
 function App() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   // Scroll suave para links de âncoras
   React.useEffect(() => {
     const handleSmoothScroll = (event: MouseEvent) => {
@@ -131,7 +131,7 @@ function App() {
                 <a href="#projects" className="text-white/60 hover:text-accent-400 transition-colors text-sm">Projetos</a>
                 <a href="#contact" className="text-white/60 hover:text-accent-400 transition-colors text-sm">Contato</a>
                 <a 
-                  href="/CV-Leonardo-Fragoso-2025.pdf" 
+                  href={language === 'pt' ? '/Leonardo%20Fragoso%20_%20Desenvolvedor%20Python%20Backend.pdf' : '/Leonardo%20Fragoso%20_%20Python%20Backend%20Developer.pdf'} 
                   download 
                   className="text-green-400 hover:text-green-300 transition-colors text-sm font-medium flex items-center"
                 >
