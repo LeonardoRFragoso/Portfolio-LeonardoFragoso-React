@@ -62,17 +62,32 @@ function findSystemChrome() {
   return undefined;
 }
 
-async function prerender() {
-  const puppeteer = (await import('puppeteer')).default;
-  const launchOptions = {
-    headless: 'new',
-    args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
-  };
-
-  const executablePath = process.env.PUPPETEER_EXECUTABLE_PATH || findSystemChrome();
-  if (executablePath) {
-    launchOptions.executablePath = executablePath;
+async function resolveChromium() {
+  const envPath = process.env.PUPPETEER_EXECUTABLE_PATH || findSystemChrome();
+  if (envPath) {
+    return { executablePath: envPath, args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'] };
   }
+
+  try {
+    const chromium = await import('@sparticuz/chromium');
+    const exe = await chromium.default.executablePath();
+    if (exe) {
+      return { executablePath: exe, args: chromium.default.args };
+    }
+  } catch {
+    // fallback to puppeteer default
+  }
+  return { args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'] };
+}
+
+async function prerender() {
+  const puppeteer = (await import('puppeteer-core')).default;
+  const chromium = await resolveChromium();
+  const launchOptions = {
+    headless: chromium.executablePath ? 'new' : undefined,
+    args: chromium.args,
+    executablePath: chromium.executablePath,
+  };
 
   const browser = await puppeteer.launch(launchOptions);
   const page = await browser.newPage();
