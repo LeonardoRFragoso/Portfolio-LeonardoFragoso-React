@@ -299,7 +299,6 @@ export default function Projects() {
       images: ["/images/oraculo/oraculo1.png"],
       tags: ["Python", "FastAPI", "OpenSearch", "Langflow", "Docling", "Docker", "React", "OpenAI"],
       github: "https://github.com/LeonardoRFragoso/Oraculo",
-      demo: "https://oraculo-ia.vercel.app",
       featured: true,
       saas: true,
       tier: 1,

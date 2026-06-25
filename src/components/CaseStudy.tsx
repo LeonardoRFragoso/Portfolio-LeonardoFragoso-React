@@ -7,7 +7,6 @@ import { trackEvent } from "../utils/analytics";
 const projectLinks: Record<string, { github: string; demo?: string }> = {
   oraculo: {
     github: "https://github.com/LeonardoRFragoso/Oraculo",
-    demo: "https://oraculo-ia.vercel.app",
   },
   proflow: {
     github: "https://github.com/LeonardoRFragoso/ProFlow",
