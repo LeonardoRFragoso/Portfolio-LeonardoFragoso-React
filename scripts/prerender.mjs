@@ -44,6 +44,24 @@ const server = http.createServer((req, res) => {
   });
 });
 
+function findSystemChrome() {
+  const candidates = [
+    '/usr/bin/google-chrome',
+    '/usr/bin/google-chrome-stable',
+    '/usr/bin/chromium',
+    '/usr/bin/chromium-browser',
+    '/bin/google-chrome',
+    '/bin/google-chrome-stable',
+    '/bin/chromium',
+    '/bin/chromium-browser',
+    '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
+  ];
+  for (const candidate of candidates) {
+    if (fs.existsSync(candidate)) return candidate;
+  }
+  return undefined;
+}
+
 async function prerender() {
   const puppeteer = (await import('puppeteer')).default;
   const launchOptions = {
@@ -51,7 +69,7 @@ async function prerender() {
     args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'],
   };
 
-  const executablePath = process.env.PUPPETEER_EXECUTABLE_PATH;
+  const executablePath = process.env.PUPPETEER_EXECUTABLE_PATH || findSystemChrome();
   if (executablePath) {
     launchOptions.executablePath = executablePath;
   }
