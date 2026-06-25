@@ -6,11 +6,11 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.5-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com/)
 [![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Netlify](https://img.shields.io/badge/Deploy-Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white)](https://leonardofragosodev.netlify.app/)
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://portfolio-leonardo-fragoso-react.vercel.app/)
 
-**Portfólio pessoal com React + TypeScript — projetos, stack e contato.**
+**Desenvolvedor Python Backend | Django · FastAPI · IA — projetos, stack e contato.**
 
-[🌐 Ver ao Vivo](https://leonardofragosodev.netlify.app/) • [Tecnologias](#️-stack) • [Instalação](#-instalação)
+[🌐 Ver ao Vivo](https://portfolio-leonardo-fragoso-react.vercel.app/) • [Tecnologias](#-stack) • [Instalação](#-instalação)
 
 </div>
 
@@ -18,7 +18,7 @@
 
 ## 🎯 Sobre
 
-Portfólio profissional desenvolvido com React e TypeScript, apresentando projetos em produção, stack tecnológico e informações de contato. Interface moderna com animações suaves via Framer Motion e layout totalmente responsivo.
+Portfólio profissional de **Leonardo Fragoso — Desenvolvedor Python Backend | Django · FastAPI · IA**. Desenvolvido com React e TypeScript, apresenta projetos em produção, stack tecnológico e informações de contato. Interface moderna com animações suaves via Framer Motion e layout totalmente responsivo.
 
 ---
 

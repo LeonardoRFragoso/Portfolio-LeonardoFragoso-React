@@ -21,7 +21,7 @@ export default function LanguageToggle() {
           }`}
           animate={{ opacity: 1 }}
         >
-          PT
+          🇧🇷 PT
         </motion.span>
         
         <span className="mx-1.5 text-white/30">/</span>
@@ -34,7 +34,7 @@ export default function LanguageToggle() {
           }`}
           animate={{ opacity: 1 }}
         >
-          EN
+          🇺🇸 EN
         </motion.span>
       </div>
 

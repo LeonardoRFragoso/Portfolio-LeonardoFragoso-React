@@ -5,18 +5,34 @@ import About from "./components/About";
 import TechStack from "./components/TechStack";
 import WhyHireMe from "./components/WhyHireMe";
 import Results from "./components/Results";
+import SocialProof from "./components/SocialProof";
+import FeaturedProjects from "./components/FeaturedProjects";
 import Projects from "./components/Projects";
+import EngineeringImpact from "./components/EngineeringImpact";
+import CaseStudy from "./components/CaseStudy";
 import Contact from "./components/Contact";
+import WhatsAppFloatingButton from "./components/WhatsAppFloatingButton";
 import CustomCursor from "./components/CustomCursor";
 import { useLanguage } from "./i18n";
+import { trackEvent } from "./utils/analytics";
 
 function App() {
   const { t, language } = useLanguage();
+  const [hash, setHash] = React.useState(() => window.location.hash);
+
+  React.useEffect(() => {
+    const handleHashChange = () => setHash(window.location.hash);
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  const isCaseStudy = hash.startsWith("#case/");
+
   // Scroll suave para links de âncoras
   React.useEffect(() => {
     const handleSmoothScroll = (event: MouseEvent) => {
       const target = event.target as HTMLAnchorElement;
-      if (target.tagName === "A" && target.hash) {
+      if (target.tagName === "A" && target.hash && !target.hash.startsWith("#case/")) {
         event.preventDefault();
         const targetId = target.hash.slice(1); // Remove o '#' para capturar o ID
         const targetElement = document.getElementById(targetId);
@@ -61,6 +77,9 @@ function App() {
       <Header />
 
       {/* Conteúdo Principal */}
+      {isCaseStudy ? (
+        <CaseStudy />
+      ) : (
       <main className="relative z-10">
         <Hero />
         
@@ -85,10 +104,25 @@ function App() {
           <div className="h-px bg-gradient-to-r from-transparent via-accent-400/20 to-transparent"></div>
           <Results />
         </div>
-        
+
+        <div className="relative">
+          <div className="h-px bg-gradient-to-r from-transparent via-accent-400/20 to-transparent"></div>
+          <SocialProof />
+        </div>
+
+        <div className="relative">
+          <div className="h-px bg-gradient-to-r from-transparent via-accent-400/20 to-transparent"></div>
+          <FeaturedProjects />
+        </div>
+
         <div className="relative">
           <div className="h-px bg-gradient-to-r from-transparent via-accent-400/20 to-transparent"></div>
           <Projects />
+        </div>
+
+        <div className="relative">
+          <div className="h-px bg-gradient-to-r from-transparent via-cyan-400/20 to-transparent"></div>
+          <EngineeringImpact />
         </div>
         
         <div className="relative">
@@ -96,6 +130,10 @@ function App() {
           <Contact />
         </div>
       </main>
+      )}
+
+      {/* Floating WhatsApp Button */}
+      <WhatsAppFloatingButton />
 
       {/* Rodapé Premium */}
       <footer className="relative z-10 bg-dark-900/95 backdrop-blur-xl border-t border-accent-500/20">
@@ -127,12 +165,13 @@ function App() {
             <div className="space-y-4">
               <h4 className="text-white font-semibold">Links Rápidos</h4>
               <div className="flex flex-col space-y-2">
-                <a href="#about" className="text-white/60 hover:text-accent-400 transition-colors text-sm">Sobre Mim</a>
-                <a href="#projects" className="text-white/60 hover:text-accent-400 transition-colors text-sm">Projetos</a>
-                <a href="#contact" className="text-white/60 hover:text-accent-400 transition-colors text-sm">Contato</a>
-                <a 
-                  href={language === 'pt' ? '/Leonardo%20Fragoso%20_%20Desenvolvedor%20Python%20Backend.pdf' : '/Leonardo%20Fragoso%20_%20Python%20Backend%20Developer.pdf'} 
-                  download 
+                <a href="#about" onClick={() => trackEvent('footer_link_click', { link: 'about' })} className="text-white/60 hover:text-accent-400 transition-colors text-sm">Sobre Mim</a>
+                <a href="#projects" onClick={() => trackEvent('footer_link_click', { link: 'projects' })} className="text-white/60 hover:text-accent-400 transition-colors text-sm">Projetos</a>
+                <a href="#contact" onClick={() => trackEvent('footer_link_click', { link: 'contact' })} className="text-white/60 hover:text-accent-400 transition-colors text-sm">Contato</a>
+                <a
+                  href={language === 'pt' ? '/Leonardo%20Fragoso%20_%20Desenvolvedor%20Python%20Backend.pdf' : '/Leonardo%20Fragoso%20_%20Python%20Backend%20Developer.pdf'}
+                  download
+                  onClick={() => trackEvent('cta_download_cv_click', { location: 'footer' })}
                   className="text-green-400 hover:text-green-300 transition-colors text-sm font-medium flex items-center"
                 >
                   <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -151,6 +190,7 @@ function App() {
                   href="https://github.com/LeonardoRFragoso"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent('cta_github_click', { location: 'footer' })}
                   className="group flex items-center space-x-2 text-white/60 hover:text-accent-400 transition-colors text-sm"
                   aria-label={t.footer.visitGithub}
                 >
@@ -164,6 +204,7 @@ function App() {
                   href="https://www.linkedin.com/in/leonardo-fragoso-921b166a/"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent('cta_linkedin_click', { location: 'footer' })}
                   className="group flex items-center space-x-2 text-white/60 hover:text-cyan-400 transition-colors text-sm"
                   aria-label={t.footer.visitLinkedin}
                 >
@@ -175,6 +216,7 @@ function App() {
 
                 <a
                   href="mailto:leonardorfragoso@gmail.com"
+                  onClick={() => trackEvent('cta_email_click', { location: 'footer' })}
                   className="group flex items-center space-x-2 text-white/60 hover:text-purple-400 transition-colors text-sm"
                   aria-label={t.footer.sendEmail}
                 >

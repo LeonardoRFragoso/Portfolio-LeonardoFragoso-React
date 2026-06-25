@@ -3,6 +3,7 @@ import { Github, Linkedin, Menu, X, Zap, Briefcase } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../i18n";
 import LanguageToggle from "./LanguageToggle";
+import { trackEvent } from "../utils/analytics";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -92,6 +93,7 @@ export default function Header() {
               <motion.a
                 key={item.href}
                 href={item.href}
+                onClick={() => trackEvent('header_nav_click', { section: item.id })}
                 className={`relative px-4 py-2 text-lg font-medium transition-all duration-300 group ${
                   activeSection === item.id ? 'text-accent-400' : 'text-white/80 hover:text-accent-300'
                 }`}
@@ -119,6 +121,7 @@ export default function Header() {
               href="https://calendly.com/leonardorfragoso/30min"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackEvent('header_hire_click', { location: 'desktop_header' })}
               className="relative px-6 py-2.5 bg-gradient-to-r from-accent-500 via-purple-500 to-cyan-500 text-white font-bold rounded-xl transition-all duration-300 shadow-lg hover:shadow-accent-500/50 flex items-center space-x-2 overflow-hidden group"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -135,6 +138,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
+              onClick={() => trackEvent('cta_github_click', { location: 'desktop_header' })}
               className="group relative p-2 text-white/70 hover:text-accent-400 transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -148,6 +152,7 @@ export default function Header() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
+              onClick={() => trackEvent('cta_linkedin_click', { location: 'desktop_header' })}
               className="group relative p-2 text-white/70 hover:text-cyan-400 transition-all duration-300"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
@@ -219,7 +224,10 @@ export default function Header() {
                       ? 'text-accent-400 bg-accent-500/10' 
                       : 'text-white/80 hover:text-accent-400 hover:bg-accent-500/10'
                   }`}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    trackEvent('header_nav_click', { section: item.id });
+                    setIsMenuOpen(false);
+                  }}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -248,7 +256,10 @@ export default function Header() {
                   href="https://calendly.com/leonardorfragoso/30min"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    trackEvent('header_hire_click', { location: 'mobile_header' });
+                    setIsMenuOpen(false);
+                  }}
                   className="w-full px-6 py-3 bg-gradient-to-r from-accent-500 via-purple-500 to-cyan-500 text-white font-bold rounded-xl transition-all duration-300 shadow-lg flex items-center justify-center space-x-2"
                 >
                   <Briefcase className="w-5 h-5" />
@@ -268,6 +279,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="GitHub"
+                  onClick={() => trackEvent('cta_github_click', { location: 'mobile_header' })}
                   className="group relative p-3 text-white/70 hover:text-accent-400 transition-all duration-300 rounded-full hover:bg-accent-500/10"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
@@ -280,6 +292,7 @@ export default function Header() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
+                  onClick={() => trackEvent('cta_linkedin_click', { location: 'mobile_header' })}
                   className="group relative p-3 text-white/70 hover:text-cyan-400 transition-all duration-300 rounded-full hover:bg-cyan-500/10"
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}

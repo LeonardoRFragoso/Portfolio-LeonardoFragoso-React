@@ -3,6 +3,7 @@ import emailjs from '@emailjs/browser';
 import { Mail, Github, Linkedin, Send, MessageCircle, Star, CheckCircle, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "../i18n";
+import { trackEvent } from "../utils/analytics";
 
 const ContactCard = ({ 
   icon, 
@@ -10,19 +11,22 @@ const ContactCard = ({
   action, 
   href, 
   target, 
-  color = 'accent'
+  color = 'accent',
+  onClick,
 }: {
   icon: JSX.Element;
   title: string;
   action: string;
   href: string;
   target?: string;
-  color?: 'accent' | 'cyan' | 'purple';
+  color?: 'accent' | 'cyan' | 'purple' | 'green';
+  onClick?: () => void;
 }) => {
   const colorClasses = {
     accent: 'from-accent-500 to-accent-600 hover:from-accent-400 hover:to-accent-500 shadow-accent-500/20 hover:shadow-accent-500/40',
     cyan: 'from-cyan-500 to-cyan-600 hover:from-cyan-400 hover:to-cyan-500 shadow-cyan-500/20 hover:shadow-cyan-500/40',
     purple: 'from-purple-500 to-purple-600 hover:from-purple-400 hover:to-purple-500 shadow-purple-500/20 hover:shadow-purple-500/40',
+    green: 'from-green-500 to-green-600 hover:from-green-400 hover:to-green-500 shadow-green-500/20 hover:shadow-green-500/40',
   };
 
   return (
@@ -30,6 +34,7 @@ const ContactCard = ({
       href={href}
       target={target}
       rel={target ? "noopener noreferrer" : undefined}
+      onClick={onClick}
       className={`group flex items-center gap-4 p-4 rounded-xl bg-gradient-to-r ${colorClasses[color]} shadow-lg transition-all duration-300`}
       whileHover={{ scale: 1.02, y: -2 }}
       whileTap={{ scale: 0.98 }}
@@ -49,13 +54,16 @@ const ContactCard = ({
   );
 };
 
+const WHATSAPP_NUMBER = import.meta.env.VITE_WHATSAPP_NUMBER || '5521999999999';
+
 export default function Contact() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const formRef = useRef<HTMLFormElement>(null);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     subject: '',
+    projectType: '',
     message: '',
   });
   const [formStatus, setFormStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -64,6 +72,7 @@ export default function Contact() {
     e.preventDefault();
     if (!formRef.current) return;
     setFormStatus('sending');
+    trackEvent('contact_form_submit', { projectType: formData.projectType });
 
     try {
       await emailjs.sendForm(
@@ -73,21 +82,30 @@ export default function Contact() {
         { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY }
       );
       setFormStatus('success');
-      setFormData({ name: '', email: '', subject: '', message: '' });
+      setFormData({ name: '', email: '', subject: '', projectType: '', message: '' });
+      trackEvent('contact_form_success', { projectType: formData.projectType });
       setTimeout(() => setFormStatus('idle'), 5000);
-    } catch (error) {
+    } catch {
       setFormStatus('error');
+      trackEvent('contact_form_error', { projectType: formData.projectType });
       setTimeout(() => setFormStatus('idle'), 5000);
     }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData(prev => ({
       ...prev,
       [e.target.name]: e.target.value
     }));
   };
-  
+
+  const whatsappMessage = encodeURIComponent(
+    language === 'pt'
+      ? `Olá Leonardo, vi seu portfólio e gostaria de discutir um projeto.`
+      : `Hello Leonardo, I saw your portfolio and would like to discuss a project.`
+  );
+  const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
+
   const contactMethods = [
     {
       icon: <Mail />,
@@ -95,14 +113,16 @@ export default function Contact() {
       action: t.contact.email.action,
       href: "mailto:leonardorfragoso@gmail.com",
       color: 'accent' as const,
+      onClick: () => trackEvent('cta_email_click', { location: 'contact_section' }),
     },
     {
-      icon: <Github />,
-      title: t.contact.github.title,
-      action: t.contact.github.action,
-      href: "https://github.com/LeonardoRFragoso",
+      icon: <MessageCircle />,
+      title: t.contact.whatsapp.title,
+      action: t.contact.whatsapp.action,
+      href: whatsappHref,
       target: "_blank",
-      color: 'purple' as const,
+      color: 'green' as const,
+      onClick: () => trackEvent('cta_whatsapp_click', { location: 'contact_section' }),
     },
     {
       icon: <Linkedin />,
@@ -111,6 +131,16 @@ export default function Contact() {
       href: "https://www.linkedin.com/in/leonardo-fragoso-921b166a/",
       target: "_blank",
       color: 'cyan' as const,
+      onClick: () => trackEvent('cta_linkedin_click', { location: 'contact_section' }),
+    },
+    {
+      icon: <Github />,
+      title: t.contact.github.title,
+      action: t.contact.github.action,
+      href: "https://github.com/LeonardoRFragoso",
+      target: "_blank",
+      color: 'purple' as const,
+      onClick: () => trackEvent('cta_github_click', { location: 'contact_section' }),
     },
   ];
 
@@ -279,7 +309,7 @@ export default function Contact() {
 
         {/* Cards de Contato Rápido */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-4xl mx-auto mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -360,6 +390,30 @@ export default function Contact() {
                   className="w-full px-4 py-3 bg-dark-900/60 border border-white/10 rounded-lg text-white placeholder-white/30 focus:outline-none focus:border-accent-400/60 focus:ring-1 focus:ring-accent-400/30 transition-all"
                   placeholder="Assunto da mensagem"
                 />
+              </div>
+
+              <div>
+                <label htmlFor="projectType" className="block text-white/70 text-sm font-medium mb-2">
+                  {t.contact.projectType.label}
+                </label>
+                <select
+                  id="projectType"
+                  name="projectType"
+                  value={formData.projectType}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 bg-dark-900/60 border border-white/10 rounded-lg text-white focus:outline-none focus:border-accent-400/60 focus:ring-1 focus:ring-accent-400/30 transition-all appearance-none"
+                  style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='white' stroke-width='2'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E")`, backgroundRepeat: 'no-repeat', backgroundPosition: 'right 1rem center', backgroundSize: '1.25rem' }}
+                >
+                  <option value="" disabled className="bg-dark-900 text-white/50">
+                    {t.contact.projectType.placeholder}
+                  </option>
+                  <option value="backend" className="bg-dark-900 text-white">{t.contact.projectType.options.backend}</option>
+                  <option value="ai" className="bg-dark-900 text-white">{t.contact.projectType.options.ai}</option>
+                  <option value="corporate" className="bg-dark-900 text-white">{t.contact.projectType.options.corporate}</option>
+                  <option value="automation" className="bg-dark-900 text-white">{t.contact.projectType.options.automation}</option>
+                  <option value="other" className="bg-dark-900 text-white">{t.contact.projectType.options.other}</option>
+                </select>
               </div>
 
               <div>

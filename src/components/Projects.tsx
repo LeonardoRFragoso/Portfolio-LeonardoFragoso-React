@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Github, ExternalLink, ChevronLeft, ChevronRight, Eye, MessageCircle, Filter, Clock, Zap, Star, Award, ChevronDown, ChevronUp, Rocket, Shield, Brain, TrendingUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../i18n";
+import { trackEvent } from "../utils/analytics";
 
 interface DemoLink {
   label: string;
@@ -24,6 +25,7 @@ interface Project {
   complexity: 1 | 2 | 3 | 4 | 5;
   topForRecruiters?: boolean;
   flagship?: boolean;
+  tier?: 1 | 2 | 3;
 }
 
 type FilterType = 'all' | 'saas' | 'ecommerce' | 'ai' | 'enterprise' | 'web';
@@ -33,12 +35,8 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
-  const [showLinksModal, setShowLinksModal] = useState(false);
-  const [selectedProjectLinks, setSelectedProjectLinks] = useState<Project | null>(null);
-  const [showAllProjects, setShowAllProjects] = useState(false);
-  const INITIAL_PROJECTS_COUNT = 6;
-
-  const projects: Project[] = [
+  const [showMoreProjects, setShowMoreProjects] = useState(false);
+  const projects = useMemo<Project[]>(() => [
     // #1 - ProFlow (FLAGSHIP)
     {
       title: t.projects.projectsList[6].title,
@@ -54,6 +52,7 @@ export default function Projects() {
       quickEval: '2-3',
       complexity: 5,
       topForRecruiters: true,
+      tier: 1,
     },
     // #2 - AgentesIA — IA multi-agente, demo ao vivo
     {
@@ -69,6 +68,7 @@ export default function Projects() {
       quickEval: '4-5',
       complexity: 5,
       topForRecruiters: true,
+      tier: 2,
     },
     // #3 - LogiFlow CRM — Python/FastAPI, demo ao vivo
     {
@@ -89,6 +89,7 @@ export default function Projects() {
       quickEval: '5-8',
       complexity: 5,
       topForRecruiters: true,
+      tier: 1,
     },
     // #4 - Assistente Financeiro WhatsApp — Python/FastAPI + IA
     {
@@ -104,6 +105,7 @@ export default function Projects() {
       category: ['saas', 'ai', 'web'],
       quickEval: '2-3',
       complexity: 4,
+      tier: 2,
     },
     // #5 - Digital Signage — Python/Django, ICTSI enterprise (intranet)
     {
@@ -116,6 +118,7 @@ export default function Projects() {
       category: ['enterprise', 'web'],
       quickEval: 'github',
       complexity: 5,
+      tier: 2,
     },
     // #6 - Não-Conformidades — Python/Django, ICTSI enterprise
     {
@@ -127,6 +130,7 @@ export default function Projects() {
       category: ['enterprise'],
       quickEval: 'github',
       complexity: 4,
+      tier: 2,
     },
 
     // TIER 2: Python backend — projetos de skills
@@ -141,6 +145,7 @@ export default function Projects() {
       category: ['saas', 'ai', 'enterprise'],
       quickEval: 'github',
       complexity: 5,
+      tier: 2,
     },
     // #8 - Sistema Pátio — Python/Django, ICTSI enterprise
     {
@@ -152,6 +157,7 @@ export default function Projects() {
       category: ['enterprise'],
       quickEval: 'github',
       complexity: 3,
+      tier: 3,
     },
     // #9 - Sistema GR — Python/Django, ICTSI enterprise
     {
@@ -163,6 +169,7 @@ export default function Projects() {
       category: ['enterprise'],
       quickEval: 'github',
       complexity: 4,
+      tier: 3,
     },
     // #10 - Dashboard Multas — Python/Streamlit
     {
@@ -174,6 +181,7 @@ export default function Projects() {
       category: ['enterprise'],
       quickEval: 'github',
       complexity: 3,
+      tier: 3,
     },
     // #11 - MedFlow Finance
     {
@@ -186,6 +194,7 @@ export default function Projects() {
       category: ['enterprise', 'web'],
       quickEval: 'github',
       complexity: 4,
+      tier: 3,
     },
     // #12 - FinanceControl — Flutter + Django REST
     {
@@ -212,6 +221,7 @@ export default function Projects() {
       category: ['web'],
       quickEval: '2-3',
       complexity: 3,
+      tier: 3,
     },
     // #14 - PyScript.tech — portfólio institucional
     {
@@ -226,6 +236,7 @@ export default function Projects() {
       category: ['web'],
       quickEval: '2-3',
       complexity: 3,
+      tier: 3,
     },
     // #15 - APM Platform — Java/Spring Boot
     {
@@ -238,6 +249,7 @@ export default function Projects() {
       category: ['enterprise'],
       quickEval: 'github',
       complexity: 5,
+      tier: 2,
     },
     // #16 - Base Corporativa — e-commerce, não está no CV atual
     {
@@ -252,6 +264,7 @@ export default function Projects() {
       category: ['saas', 'ecommerce', 'web'],
       quickEval: '3-4',
       complexity: 4,
+      tier: 3,
     },
     // #17 - TaskManager — Go backend (removido do CV atual)
     {
@@ -264,6 +277,7 @@ export default function Projects() {
       category: ['enterprise', 'web'],
       quickEval: 'github',
       complexity: 4,
+      tier: 3,
     },
     // #18 - Andaimes Pini — projeto menor
     {
@@ -276,19 +290,37 @@ export default function Projects() {
       category: ['web'],
       quickEval: '3-4',
       complexity: 3,
+      tier: 3,
     },
-  ];
+    // #19 - Oráculo — Consultor Estratégico com IA
+    {
+      title: t.projects.projectsList[18].title,
+      description: t.projects.projectsList[18].description,
+      images: ["/images/oraculo/oraculo1.png"],
+      tags: ["Python", "FastAPI", "OpenSearch", "Langflow", "Docling", "Docker", "React", "OpenAI"],
+      github: "https://github.com/LeonardoRFragoso/Oraculo",
+      demo: "https://oraculo-ia.vercel.app",
+      featured: true,
+      saas: true,
+      tier: 1,
+      category: ['saas', 'ai', 'enterprise'],
+      quickEval: '4-5',
+      complexity: 5,
+      topForRecruiters: true,
+    },
+  ], [t]);
+
+  const mainProjects = useMemo(() => projects.filter(p => p.tier !== 3), [projects]);
 
   const allFilteredProjects = useMemo(() => {
-    // Se filtro é 'all', exclui o ProFlow (flagship) pois já aparece na seção Hero
-    if (activeFilter === 'all') return projects.filter(p => !p.flagship);
-    return projects.filter(project => project.category.includes(activeFilter));
-  }, [activeFilter, projects]);
+    // Se filtro é 'all', exclui o ProFlow (flagship) pois já aparece na seção Hero e mantém apenas tier 1/2
+    if (activeFilter === 'all') return mainProjects.filter(p => !p.flagship);
+    return mainProjects.filter(project => project.category.includes(activeFilter));
+  }, [activeFilter, mainProjects]);
 
-  const filteredProjects = useMemo(() => {
-    if (showAllProjects) return allFilteredProjects;
-    return allFilteredProjects.slice(0, INITIAL_PROJECTS_COUNT);
-  }, [allFilteredProjects, showAllProjects]);
+  const filteredProjects = useMemo(() => allFilteredProjects, [allFilteredProjects]);
+
+  const moreProjects = useMemo(() => projects.filter(p => p.tier === 3), [projects]);
 
   const filters: { key: FilterType; label: string }[] = [
     { key: 'all', label: t.projects.filterAll },
@@ -333,16 +365,6 @@ export default function Projects() {
 
   const closeModal = () => {
     setSelectedProject(null);
-  };
-
-  const openLinksModal = (project: Project) => {
-    setSelectedProjectLinks(project);
-    setShowLinksModal(true);
-  };
-
-  const closeLinksModal = () => {
-    setShowLinksModal(false);
-    setSelectedProjectLinks(null);
   };
 
   return (
@@ -611,6 +633,15 @@ export default function Projects() {
                 >
                   {/* Badges superiores */}
                   <div className="absolute top-4 left-4 z-20 flex flex-col gap-2">
+                    {(project.demo || project.demoLinks) && (
+                      <div className="px-3 py-1 bg-[#dcfce7] text-[#166534] border border-[#bbf7d0] text-xs font-bold rounded-full flex items-center gap-1">
+                        <span className="relative flex h-2 w-2">
+                          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#16a34a] opacity-75"></span>
+                          <span className="relative inline-flex rounded-full h-2 w-2 bg-[#16a34a]"></span>
+                        </span>
+                        ONLINE
+                      </div>
+                    )}
                     {project.saas && (
                       <div className="px-3 py-1 bg-gradient-to-r from-green-400 to-emerald-500 text-black text-xs font-bold rounded-full flex items-center gap-1">
                         <span className="relative flex h-2 w-2">
@@ -781,144 +812,127 @@ export default function Projects() {
           </motion.div>
         </AnimatePresence>
 
-        {/* Botão Ver Mais / Ver Menos */}
-        {allFilteredProjects.length > INITIAL_PROJECTS_COUNT && (
-          <motion.div
-            className="flex justify-center mt-12"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <motion.button
-              onClick={() => setShowAllProjects(!showAllProjects)}
-              className="group flex items-center space-x-3 px-8 py-4 bg-gradient-to-r from-accent-500/10 via-purple-500/10 to-cyan-500/10 border-2 border-accent-400/30 hover:border-accent-400/60 rounded-xl text-white font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-accent-500/20"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              {showAllProjects ? (
-                <>
-                  <ChevronUp className="w-5 h-5 text-accent-400 group-hover:text-accent-300 transition-colors" />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-400">
-                    {t.projects.viewLess}
-                  </span>
-                </>
-              ) : (
-                <>
-                  <ChevronDown className="w-5 h-5 text-accent-400 group-hover:text-accent-300 transition-colors" />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-400">
-                    {t.projects.viewMore}
-                  </span>
-                  <span className="px-2 py-1 bg-accent-500/20 text-accent-300 text-xs rounded-full">
-                    +{allFilteredProjects.length - INITIAL_PROJECTS_COUNT}
-                  </span>
-                </>
-              )}
-            </motion.button>
-          </motion.div>
-        )}
       </div>
 
-      {/* Modal for Multiple Apps Links */}
-      <AnimatePresence>
-        {showLinksModal && selectedProjectLinks && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 backdrop-blur-md"
-            onClick={closeLinksModal}
+      {/* More Projects Section */}
+      {activeFilter === 'all' && moreProjects.length > 0 && (
+        <motion.div
+          className="mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <div className="text-center mb-8">
+            <h3 className="text-2xl font-bold text-white/80 mb-2">
+              {t.projects.moreProjectsTitle}
+            </h3>
+            <p className="text-white/50 text-sm">
+              {t.projects.moreProjectsSubtitle}
+            </p>
+          </div>
+
+          <motion.button
+            onClick={() => setShowMoreProjects(!showMoreProjects)}
+            className="w-full flex items-center justify-center space-x-3 px-8 py-4 bg-dark-900/40 border-2 border-white/10 hover:border-accent-400/40 rounded-xl text-white/70 font-semibold transition-all duration-300 hover:text-white"
+            whileHover={{ scale: 1.01 }}
+            whileTap={{ scale: 0.99 }}
           >
-            <motion.div
-              initial={{ scale: 0.8, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.8, opacity: 0 }}
-              className="relative max-w-2xl w-full mx-4 bg-gradient-to-br from-dark-900/95 via-accent-500/5 to-dark-900/95 rounded-2xl border-2 border-accent-400/30 backdrop-blur-xl overflow-hidden"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button
-                onClick={closeLinksModal}
-                className="absolute top-4 right-4 z-30 w-10 h-10 flex items-center justify-center bg-dark-900/70 hover:bg-accent-500 text-white rounded-full transition-all duration-300 text-2xl font-bold"
-                aria-label="Fechar"
+            {showMoreProjects ? (
+              <>
+                <ChevronUp className="w-5 h-5 text-accent-400" />
+                <span>{t.projects.hideMoreProjects}</span>
+              </>
+            ) : (
+              <>
+                <ChevronDown className="w-5 h-5 text-accent-400" />
+                <span>{t.projects.showMoreProjects}</span>
+                <span className="px-2 py-1 bg-accent-500/20 text-accent-300 text-xs rounded-full">
+                  +{moreProjects.length}
+                </span>
+              </>
+            )}
+          </motion.button>
+
+          <AnimatePresence>
+            {showMoreProjects && (
+              <motion.div
+                initial={{ opacity: 0, height: 0 }}
+                animate={{ opacity: 1, height: 'auto' }}
+                exit={{ opacity: 0, height: 0 }}
+                transition={{ duration: 0.4 }}
+                className="overflow-hidden"
               >
-                ×
-              </button>
-
-              <div className="p-8">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-accent-500/20 to-cyan-500/20 flex items-center justify-center">
-                    <ExternalLink className="w-6 h-6 text-accent-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-accent-400">
-                      {selectedProjectLinks.title}
-                    </h3>
-                    <p className="text-white/60 text-sm">{t.projects.multipleApps}</p>
-                  </div>
-                </div>
-
-                <p className="text-white/70 leading-relaxed mb-6">
-                  {selectedProjectLinks.description}
-                </p>
-
-                <div className="space-y-3">
-                  {selectedProjectLinks.demoLinks?.map((link, index) => (
-                    <motion.a
-                      key={index}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center justify-between p-4 rounded-xl bg-dark-900/60 border-2 border-accent-500/20 hover:border-accent-400/60 hover:bg-accent-500/5 transition-all duration-300"
-                      whileHover={{ scale: 1.02, x: 4 }}
-                      whileTap={{ scale: 0.98 }}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+                  {moreProjects.map((project, index) => (
+                    <motion.div
+                      key={`more-${project.title}-${index}`}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: index * 0.05 }}
+                      className="group relative rounded-xl overflow-hidden bg-dark-900/40 border border-white/10 hover:border-accent-400/30 transition-all duration-300"
                     >
-                      <div className="flex items-center space-x-4">
-                        <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-green-400 to-emerald-500 flex items-center justify-center">
-                          <ExternalLink className="w-5 h-5 text-black" />
+                      <div className="relative h-48 overflow-hidden">
+                        <img
+                          src={project.images[0]}
+                          alt={project.title}
+                          width="400"
+                          height="192"
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                      </div>
+                      <div className="p-4 space-y-3">
+                        <h4 className="text-lg font-bold text-white group-hover:text-accent-300 transition-colors">
+                          {project.title}
+                        </h4>
+                        <p className="text-white/60 text-sm line-clamp-2">
+                          {project.description}
+                        </p>
+                        <div className="flex flex-wrap gap-1">
+                          {project.tags.slice(0, 4).map((tag, idx) => (
+                            <span key={idx} className="px-2 py-0.5 rounded-full text-xs bg-accent-500/10 text-accent-300 border border-accent-500/20">
+                              {tag}
+                            </span>
+                          ))}
                         </div>
-                        <div>
-                          <h4 className="text-white font-bold group-hover:text-accent-300 transition-colors">
-                            {link.label}
-                          </h4>
-                          <p className="text-white/50 text-xs">Clique para acessar</p>
+                        <div className="flex items-center gap-3 pt-2">
+                          {project.github && (
+                            <a
+                              href={project.github}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-white/70 hover:text-accent-400 transition-colors"
+                              onClick={() => trackEvent('project_github_click', { project: project.title })}
+                              aria-label={`${t.projects.code} - ${project.title}`}
+                            >
+                              <Github className="w-4 h-4" />
+                            </a>
+                          )}
+                          {project.demo && (
+                            <a
+                              href={project.demo}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-white/70 hover:text-accent-400 transition-colors"
+                              onClick={() => trackEvent('project_demo_click', { project: project.title })}
+                              aria-label={`${t.projects.visitSite} - ${project.title}`}
+                            >
+                              <ExternalLink className="w-4 h-4" />
+                            </a>
+                          )}
                         </div>
                       </div>
-                      <motion.div
-                        animate={{ x: [0, 4, 0] }}
-                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                      >
-                        <ChevronRight className="w-5 h-5 text-accent-400" />
-                      </motion.div>
-                    </motion.a>
+                    </motion.div>
                   ))}
                 </div>
-
-                <div className="mt-6 pt-6 border-t border-accent-500/20">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center space-x-2">
-                      <Zap className="w-4 h-4 text-cyan-400" />
-                      <span className="text-white/70 text-sm">
-                        {selectedProjectLinks.demoLinks?.length} aplicações disponíveis
-                      </span>
-                    </div>
-                    {selectedProjectLinks.github && (
-                      <a
-                        href={selectedProjectLinks.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center space-x-2 px-4 py-2 bg-dark-900/60 border border-accent-500/20 hover:border-accent-400/40 rounded-lg transition-colors text-white hover:text-accent-400"
-                      >
-                        <Github className="w-4 h-4" />
-                        <span className="text-sm font-medium">{t.projects.code}</span>
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+      )}
 
       {/* Modal for Image Gallery */}
       <AnimatePresence>

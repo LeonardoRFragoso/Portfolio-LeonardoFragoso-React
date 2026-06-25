@@ -1,18 +1,10 @@
-import { useState, useEffect } from "react";
-import { ArrowRight, Code2, Zap, Sparkles, Download, CheckCircle } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { ArrowRight, Zap, Sparkles, Download, CheckCircle, MessageCircle, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 import { useLanguage } from "../i18n";
+import { trackEvent } from "../utils/analytics";
 
 export default function Hero() {
   const { t, language } = useLanguage();
-  const [currentRole, setCurrentRole] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentRole((prev) => (prev + 1) % t.hero.roles.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [t.hero.roles.length]);
 
   return (
     <section
@@ -197,7 +189,11 @@ export default function Hero() {
               >
                 <img
                   src="/images/Leo-Perfil.png"
-                  alt="Leonardo Fragoso - Python Backend Developer"
+                  alt="Leonardo Fragoso - Desenvolvedor Python Backend | Django · FastAPI · IA"
+                  width="384"
+                  height="384"
+                  loading="eager"
+                  fetchPriority="high"
                   className="w-full h-full object-cover"
                   style={{ objectPosition: '50% 25%' }}
                 />
@@ -262,38 +258,17 @@ export default function Hero() {
               <span className="text-green-400 text-sm font-semibold">{t.hero.availableBadge}</span>
             </motion.div>
 
-            {/* Enhanced Tagline - Tech Premium */}
+            {/* Headline - Tech Premium */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.4 }}
-              className="inline-flex items-center px-5 py-2.5 rounded-full bg-dark-900/70 backdrop-blur-xl border border-accent-400/40 shadow-lg hover:border-accent-400/60 transition-all duration-500 group"
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="inline-flex items-center px-4 py-2 rounded-full bg-accent-500/10 border border-accent-400/40 shadow-lg shadow-accent-500/10"
             >
-              <motion.div
-                animate={{ rotate: [0, 360] }}
-                transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-              >
-                <Sparkles className="h-4 w-4 text-accent-400 mr-2" />
-              </motion.div>
-              <div className="relative h-5 min-w-[220px] overflow-hidden">
-                <AnimatePresence mode="wait">
-                  <motion.span
-                    key={currentRole}
-                    className="absolute inset-0 text-xs text-accent-300 tracking-wider font-semibold uppercase whitespace-nowrap"
-                    initial={{ y: 20, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    exit={{ y: -20, opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    {t.hero.roles[currentRole % t.hero.roles.length]}
-                  </motion.span>
-                </AnimatePresence>
-              </div>
-              <motion.div
-                className="ml-2 w-1.5 h-1.5 bg-cyan-400 rounded-full"
-                animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
-                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-              />
+              <Sparkles className="h-4 w-4 text-accent-400 mr-2" />
+              <span className="text-sm text-accent-300 font-semibold tracking-wide uppercase">
+                {t.hero.techPills}
+              </span>
             </motion.div>
 
             {/* Name - Tech Premium */}
@@ -311,65 +286,81 @@ export default function Hero() {
               </h1>
             </motion.div>
 
-            {/* Subtitle - Tech Premium */}
+            {/* Main Value Proposition */}
             <motion.div
-              className="space-y-4"
+              className="space-y-5"
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.8 }}
             >
-              <p className="text-xl sm:text-2xl text-white/95 leading-relaxed font-light">
-                {t.hero.tagline}{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-400 font-bold">{t.hero.taglineHighlight}</span>{" "}
-                {t.hero.taglineEnd}
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight">
+                {t.hero.headline}
+              </h2>
+              <p className="text-xl sm:text-2xl text-white/90 leading-relaxed font-light">
+                {t.hero.subheadline}
               </p>
-              
-              <div className="flex items-center justify-center lg:justify-start space-x-4">
-                <div className="w-12 h-0.5 bg-gradient-to-r from-transparent to-accent-400" />
-                <Code2 className="w-6 h-6 text-accent-400" />
-                <div className="w-12 h-0.5 bg-gradient-to-l from-transparent to-cyan-400" />
+
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-3">
+                {t.hero.proofPoints.map((point, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center gap-2 px-4 py-2 rounded-full bg-dark-900/70 border border-white/10 backdrop-blur-sm"
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
+                  >
+                    <CheckCircle className="w-4 h-4 text-green-400" />
+                    <span className="text-sm text-white/90 font-medium">{point}</span>
+                  </motion.div>
+                ))}
               </div>
-              
-              <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
-                {t.hero.specialist}{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-cyan-400 font-semibold">{t.hero.techStack}</span>
-              </p>
-              <p className="text-base sm:text-lg text-white/70 leading-relaxed">
-                <span className="text-accent-300/90">{t.hero.focusAreas}</span>
-              </p>
-              <p className="text-base text-white/60 leading-relaxed">
-                {t.hero.heroDescription}
-              </p>
             </motion.div>
 
             {/* Buttons - Tech Premium */}
             <motion.div
-              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-6"
+              className="flex flex-wrap gap-4 justify-center lg:justify-start pt-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1.2, delay: 1 }}
+              transition={{ duration: 1.2, delay: 1.2 }}
             >
               <motion.a
+                href="https://wa.me/5521980292791?text=Olá%20Leonardo%2C%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar%20sobre%20uma%20oportunidade."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative inline-flex items-center justify-center px-6 py-4 flex-1 min-w-[160px] max-w-[280px] rounded-xl bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-400 hover:via-emerald-400 hover:to-teal-400 transition-all duration-500 shadow-xl hover:shadow-green-500/50 overflow-hidden"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                aria-label={t.hero.whatsappCta}
+                onClick={() => trackEvent('cta_whatsapp_click', { location: 'hero' })}
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-green-400 via-emerald-400 to-teal-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <MessageCircle className="h-5 w-5 text-white mr-2 relative z-10" />
+                <span className="font-bold text-white text-lg relative z-10">{t.hero.whatsappCta}</span>
+                <ArrowRight className="h-5 w-5 text-white ml-2 group-hover:translate-x-1 transition-transform relative z-10" />
+              </motion.a>
+
+              <motion.a
+                href="mailto:leonardorfragoso@gmail.com"
+                className="group inline-flex items-center justify-center px-6 py-4 flex-1 min-w-[160px] max-w-[280px] rounded-xl bg-dark-900/70 backdrop-blur-xl border-2 border-white/30 hover:border-white/60 hover:bg-white/10 transition-all duration-500 shadow-xl"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                aria-label={t.hero.emailCta}
+                onClick={() => trackEvent('cta_email_click', { location: 'hero' })}
+              >
+                <Mail className="h-5 w-5 text-white mr-2 relative z-10" />
+                <span className="font-bold text-white text-lg relative z-10">{t.hero.emailCta}</span>
+              </motion.a>
+
+              <motion.a
                 href="#projects"
-                className="group relative inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-accent-500 via-purple-500 to-cyan-500 hover:from-accent-400 hover:via-purple-400 hover:to-cyan-400 transition-all duration-500 shadow-xl hover:shadow-accent-500/50 overflow-hidden"
+                className="group inline-flex items-center justify-center px-6 py-4 flex-1 min-w-[160px] max-w-[280px] rounded-xl bg-dark-900/70 backdrop-blur-xl border-2 border-accent-400/40 hover:border-accent-400/80 hover:bg-accent-500/10 transition-all duration-500 shadow-xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 aria-label={t.hero.viewProjects}
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-accent-400 via-purple-400 to-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                <span className="font-bold text-white text-lg relative z-10">{t.hero.viewProjects}</span>
-                <ArrowRight className="h-5 w-5 text-white ml-2 group-hover:translate-x-1 transition-transform relative z-10" />
-              </motion.a>
-              
-              <motion.a
-                href="#contact"
-                className="group inline-flex items-center justify-center px-8 py-4 rounded-xl bg-dark-900/70 backdrop-blur-xl border-2 border-accent-400/40 hover:border-accent-400/80 hover:bg-accent-500/10 transition-all duration-500 shadow-xl"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                aria-label={t.hero.getInTouch}
+                onClick={() => trackEvent('cta_projects_click', { location: 'hero' })}
               >
                 <span className="font-bold text-white text-lg group-hover:text-accent-300 transition-colors">
-                  {t.hero.getInTouch}
+                  {t.hero.viewProjects}
                 </span>
                 <motion.div
                   className="ml-2 w-2.5 h-2.5 bg-gradient-to-r from-accent-400 to-cyan-400 rounded-full"
@@ -381,10 +372,11 @@ export default function Hero() {
               <motion.a
                 href={language === 'pt' ? '/Leonardo%20Fragoso%20_%20Desenvolvedor%20Python%20Backend.pdf' : '/Leonardo%20Fragoso%20_%20Python%20Backend%20Developer.pdf'}
                 download
-                className="group inline-flex items-center justify-center px-8 py-4 rounded-xl bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-xl border-2 border-green-400/40 hover:border-green-400/80 hover:from-green-500/30 hover:to-emerald-500/30 transition-all duration-500 shadow-xl"
+                className="group inline-flex items-center justify-center px-6 py-4 flex-1 min-w-[160px] max-w-[280px] rounded-xl bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-xl border-2 border-green-400/40 hover:border-green-400/80 hover:from-green-500/30 hover:to-emerald-500/30 transition-all duration-500 shadow-xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.98 }}
                 aria-label={t.hero.downloadCV}
+                onClick={() => trackEvent('cta_download_cv_click', { location: 'hero' })}
               >
                 <Download className="h-5 w-5 text-green-400 mr-2 group-hover:text-green-300 transition-colors" />
                 <span className="font-bold text-green-400 text-lg group-hover:text-green-300 transition-colors">

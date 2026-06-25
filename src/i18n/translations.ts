@@ -18,12 +18,21 @@ export const translations = {
     // Hero
     hero: {
       roles: [
-        'Desenvolvedor Python Backend',
-        'Django · FastAPI · Expert',
-        'IA & Sistemas Enterprise',
+        'Desenvolvedor Python Backend | Django · FastAPI · IA',
+        'APIs · IA · Sistemas Enterprise',
+        'Django · FastAPI · PostgreSQL',
         'ProFlow.pro em Produção',
       ],
-      availableBadge: 'Disponível para vagas Junior / Pleno',
+      availableBadge: 'Disponível para contratação',
+      headline: 'Desenvolvedor Python Backend | Django · FastAPI · IA',
+      subheadline: 'APIs, IA Aplicada e Sistemas Corporativos para empresas que precisam escalar.',
+      techPills: 'Django · FastAPI · PostgreSQL · Docker · OpenAI',
+      projectsDelivered: '+20 projetos entregues',
+      proofPoints: [
+        'SaaS próprio em produção',
+        '6 sistemas enterprise',
+        '+20 projetos no GitHub',
+      ],
       tagline: 'Desenvolvedor Python Backend',
       taglineHighlight: 'Django · FastAPI · IA',
       taglineEnd: '| ProFlow.pro em Produção',
@@ -32,16 +41,39 @@ export const translations = {
       focusOn: '',
       focusAreas: 'Django · FastAPI · APIs REST | Sistemas em produção | Buscando crescer em equipe',
       heroDescription: 'Desenvolvedor Python backend com experiência em sistemas reais. Busco integrar uma equipe onde possa contribuir, aprender e me especializar cada vez mais.',
+      contactMe: 'Fale Comigo',
+      whatsappCta: 'Falar no WhatsApp',
+      emailCta: 'Enviar Email',
       viewProjects: 'Ver Projetos',
       getInTouch: 'Entrar em Contato',
       downloadCV: 'Download CV',
       scroll: 'Scroll',
     },
 
+    // Social Proof
+    socialProof: {
+      title: 'Provas de entrega real',
+      subtitle: 'Não só código — resultados em produção',
+      items: [
+        {
+          text: 'Experiência em sistemas utilizados no maior terminal portuário privado do Brasil.',
+          context: 'iTracker · ICTSI — Porto do Rio de Janeiro',
+        },
+        {
+          text: 'Desenvolvimento de mais de 6 sistemas corporativos.',
+          context: 'Django · FastAPI · PostgreSQL · Docker',
+        },
+        {
+          text: 'Mais de 20 projetos publicados no GitHub.',
+          context: 'Repositórios públicos para avaliação técnica',
+        },
+      ],
+    },
+
     // About
     about: {
       title: 'Sobre Mim',
-      role: 'Desenvolvedor Python Backend',
+      role: 'Desenvolvedor Python Backend | Django · FastAPI · IA',
       description: 'com experiência prática em sistemas reais de produção. Na iTracker (ICTSI — maior terminal portuário privado do Brasil), atuei como desenvolvedor responsável por 6 sistemas enterprise — incluindo plataforma com pipeline LLM/RAG, sistema de controle de acesso portuário, plataforma de Digital Signage (rodando na intranet da ICTSI) e RPAs automatizando fluxos financeiros. Tenho o ProFlow (proflow.pro) em produção real, e mais 2 projetos com demos ao vivo: LogiFlow e AgentesIA — disponíveis para recrutadores e devs avaliarem. Busco uma equipe onde possa crescer, colaborar e aprofundar meu domínio em Django · FastAPI · APIs REST.',
       stats: {
         systems: 'Sistemas Enterprise',
@@ -66,27 +98,27 @@ export const translations = {
       },
       whyHireMe: {
         title: 'Por que me contratar?',
-        subtitle: 'Diferenciais que fazem a diferença',
+        subtitle: 'Backend, IA e sistemas que geram resultado',
         items: [
           {
-            title: 'Experiência Real em Produção',
-            description: 'Sistemas Django e FastAPI rodando em produção, não apenas projetos acadêmicos. Stack aplicada em contextos reais: portuário, fintech e logística.',
-            icon: 'chart',
+            title: 'Experiência em Sistemas Enterprise',
+            description: '6+ sistemas corporativos entregues na iTracker/ICTSI, incluindo plataforma LLM/RAG, Digital Signage, controle de acesso portuário e RPAs financeiros.',
+            icon: 'briefcase',
           },
           {
-            title: 'Aprendizado Acelerado',
-            description: 'Em menos de 2 anos de desenvolvimento, entreguei sistemas enterprise e 4 SaaS. Aprendo rápido, me adapto e busco evoluir continuamente.',
+            title: 'Aplicações com IA Aplicada',
+            description: 'Projetos em produção com OpenAI GPT-4, Claude 3, OpenRAG, Langflow e Docling. De chatbots a consultores estratégicos com indexação semântica.',
             icon: 'code',
           },
           {
-            title: 'Colaboração & Equipe',
-            description: 'Busco ativamente trabalhar em equipe, receber mentoria e contribuir com crescimento coletivo. Comunicação técnica clara e abertura total a feedback.',
-            icon: 'users',
+            title: 'Arquitetura de APIs e Backend',
+            description: 'APIs REST bem estruturadas com Django, FastAPI, PostgreSQL, Redis, Docker e WebSocket. Foco em performance, escalabilidade e manutenibilidade.',
+            icon: 'chart',
           },
           {
-            title: 'Entendo o Negócio',
-            description: 'Experiência em logística, fintech e telemedicina. Traduzo necessidades de negócio em código funcional com foco em impacto real.',
-            icon: 'briefcase',
+            title: 'Sistemas em Produção',
+            description: 'ProFlow.pro rodando em produção real, além de LogiFlow e AgentesIA com demos ao vivo. Entrega de valor real, não apenas código de tutorial.',
+            icon: 'users',
           },
         ],
       },
@@ -253,6 +285,12 @@ export const translations = {
       viewMore: 'Ver Mais Projetos',
       viewLess: 'Ver Menos',
       viewAllProjects: 'Ver Todos os Projetos',
+      moreProjectsTitle: 'Mais Projetos',
+      moreProjectsSubtitle: 'Outros trabalhos e experimentações técnicas',
+      showMoreProjects: 'Ver Projetos Adicionais',
+      hideMoreProjects: 'Ocultar Projetos Adicionais',
+      contactAboutProject: 'Quero algo assim',
+      contactProjectSubject: 'Gostaria de conversar sobre este projeto',
       topForRecruiters: 'Top 3 para Recrutadores',
       topForRecruitersSubtitle: 'Projetos selecionados para avaliação rápida e completa',
       easyToEvaluate: 'Fácil de Avaliar',
@@ -390,6 +428,23 @@ export const translations = {
       opportunities: 'oportunidades',
       and: 'e',
       collaborations: 'colaborações',
+      whatsapp: {
+        title: 'WhatsApp',
+        description: 'Atendimento rápido para dúvidas, propostas e projetos urgentes',
+        action: 'Enviar mensagem',
+        label: 'Fale pelo WhatsApp',
+      },
+      projectType: {
+        label: 'Tipo de projeto',
+        placeholder: 'Selecione o tipo de projeto',
+        options: {
+          backend: 'Backend API',
+          ai: 'IA / Machine Learning',
+          corporate: 'Sistema Corporativo',
+          automation: 'Automação',
+          other: 'Outro',
+        },
+      },
       pjServices: {
         title: 'Serviços PJ',
         subtitle: 'Empresa regularizada para prestação de serviços',
@@ -402,6 +457,66 @@ export const translations = {
         description: 'Empresa regularizada e apta para prestação de serviços B2B com emissão de notas fiscais',
         badge: 'CNPJ ATIVO',
       },
+    },
+
+    // Featured Projects
+    featuredProjects: {
+      title: 'Projetos em Destaque',
+      subtitle: 'Arquitetura, IA e sistemas reais em produção',
+      problem: 'Problema',
+      solution: 'Solução',
+      architecture: 'Arquitetura',
+      keyResults: 'Resultados',
+      caseStudy: 'Ver Case Study',
+      viewDemo: 'Demo',
+      viewCode: 'GitHub',
+      items: [
+        {
+          id: 'oraculo',
+          title: 'Oráculo IA',
+          role: 'Backend Engineer / AI Integration',
+          problem: 'Empresas perdem decisões estratégicas porque dados dispersos (planilhas, PDFs, sistemas legados) não são transformados em insights acionáveis de forma rápida.',
+          solution: 'Consultor estratégico com IA que ingestiona documentos, executa pipeline OpenRAG com OpenSearch + Langflow + Docling e responde em linguagem natural com fontes verificáveis.',
+          architecture: 'FastAPI · OpenSearch · Langflow · Docling · Docker · React · OpenAI',
+          results: [
+            'Pipeline OpenRAG com indexação semântica',
+            'Containerização completa com Docker',
+            'Respostas com citação de fontes',
+          ],
+        },
+        {
+          id: 'proflow',
+          title: 'ProFlow AI',
+          role: 'Full Stack / Backend Lead',
+          problem: 'Freelancers brasileiros sofrem com insegurança de pagamento, precificação errada e falta de automação em propostas e contratos.',
+          solution: 'SaaS completo com 4 pilares: IA consultiva (GPT-4), pagamento em custódia (Mercado Pago + Asaas), reputação com KYC e onboarding gamificado.',
+          architecture: 'Django · PostgreSQL · Vue.js 3 · WebSocket · Redis · OpenAI GPT-4 · Mercado Pago · Asaas',
+          results: [
+            'SaaS próprio em produção (proflow.pro)',
+            'Chat em tempo real e carteira virtual com PIX',
+            'Assinaturas recorrentes e escrow anti-calote',
+          ],
+        },
+        {
+          id: 'logiflow',
+          title: 'LogiFlow CRM',
+          role: 'Backend Engineer / System Integrations',
+          problem: 'Transportadoras e empresas de logística usam sistemas isolados para vendas, operações, faturamento e rastreamento, gerando retrabalho e atrasos.',
+          solution: 'CRM SaaS unificando gestão comercial, operacional e fiscal com 4 apps integrados (CRM, App Motorista, Portal Cliente, Site Institucional).',
+          architecture: 'FastAPI · PostgreSQL · Redis · Vue.js 3 · WebSocket · ERPs (Omie/Bling/Tiny) · WhatsApp · Mercado Pago · GPS',
+          results: [
+            '4 aplicações integradas em uma stack única',
+            'Integrações com ERPs, WhatsApp e rastreamento GPS',
+            'Emissão de CT-e/MDF-e e faturamento automatizado',
+          ],
+        },
+      ],
+    },
+
+    // Floating WhatsApp
+    floatingWhatsApp: {
+      tooltip: 'Fale comigo no WhatsApp',
+      message: 'Olá Leonardo, vi seu portfólio e gostaria de discutir um projeto.',
     },
 
     // Footer
@@ -458,6 +573,46 @@ export const translations = {
         },
       ],
     },
+
+    // Engineering Impact
+    engineeringImpact: {
+      title: 'Impacto em Engenharia',
+      subtitle: 'Resultados técnicos que geram valor de negócio',
+      items: {
+        enterprise: {
+          title: 'Sistemas Enterprise',
+          description: 'Sistemas usados no maior terminal portuário privado do Brasil, com milhares de usuários internos e criticidade operacional.',
+        },
+        saas: {
+          title: 'SaaS com Pagamentos',
+          description: 'ProFlow.pro com pagamentos em custódia, assinaturas recorrentes, PIX e integração com Mercado Pago e Asaas.',
+        },
+        multitenant: {
+          title: 'Multi-Tenant',
+          description: 'Arquitetura que isola dados por empresa em LogiFlow, ProFlow e Oráculo, pronta para escalar.',
+        },
+        realtime: {
+          title: 'Sistemas em Tempo Real',
+          description: 'WebSocket + Redis para chat, notificações, atualizações de status e Digital Signage em produção.',
+        },
+        ai: {
+          title: 'Aplicações com IA',
+          description: 'GPT-4, Claude 3, OpenRAG, Langflow e Docling em produção para consultoria, propostas e análise de documentos.',
+        },
+        integrations: {
+          title: 'Integrações e APIs',
+          description: 'ERP Omie/Bling/Tiny, WhatsApp, GPS, CT-e/MDF-e, fiscal e automações RPA conectadas a sistemas legados.',
+        },
+        production: {
+          title: 'Deploy em Produção',
+          description: 'Docker, Vercel, CI/CD, servidores Linux e aplicações reais servindo clientes e usuários finais.',
+        },
+        security: {
+          title: 'Segurança e Compliance',
+          description: 'JWT, KYC, escrow, RBAC, logs de auditoria e separação de dados sensíveis por cliente.',
+        },
+      },
+    },
   },
 
   en: {
@@ -477,31 +632,63 @@ export const translations = {
     // Hero
     hero: {
       roles: [
-        'Python Backend Developer',
-        'Django · FastAPI · Expert',
-        'AI & Enterprise Systems',
+        'Python Backend Developer | Django · FastAPI · AI',
+        'APIs · AI · Enterprise Systems',
+        'Django · FastAPI · PostgreSQL',
         'ProFlow.pro in Production',
       ],
-      availableBadge: 'Available · Looking for Junior / Mid-level roles',
+      availableBadge: 'Available for hire',
+      headline: 'Python Backend Developer | Django · FastAPI · AI',
+      subheadline: 'APIs, Applied AI and Corporate Systems for companies that need to scale.',
+      techPills: 'Django · FastAPI · PostgreSQL · Docker · OpenAI',
+      projectsDelivered: '+20 projects delivered',
+      proofPoints: [
+        'Own SaaS in production',
+        '6 enterprise systems',
+        '+20 projects on GitHub',
+      ],
       tagline: 'Python Backend Developer',
       taglineHighlight: 'Django · FastAPI · AI',
       taglineEnd: '| ProFlow.pro in Production',
       specialist: 'Main Stack:',
       techStack: 'Python, Django, FastAPI, PostgreSQL, Redis, Docker',
       focusOn: '',
-      focusAreas: 'Django · FastAPI · REST APIs | Real production systems | Looking to grow in a team',
-      heroDescription: 'Python backend developer with experience in real production systems. Looking to join a team where I can contribute, learn and keep growing.',
+      focusAreas: 'Django · FastAPI · REST APIs | Business-critical systems | SaaS with payments | Applied AI',
+      heroDescription: 'Python Backend Developer focused on production systems, APIs and applied AI. I build backends that handle real business-critical workloads, from enterprise port operations to live SaaS with payments.',
+      contactMe: 'Contact Me',
+      whatsappCta: 'WhatsApp Me',
+      emailCta: 'Send Email',
       viewProjects: 'View Projects',
       getInTouch: 'Get in Touch',
       downloadCV: 'Download CV',
       scroll: 'Scroll',
     },
 
+    // Social Proof
+    socialProof: {
+      title: 'Proof of real delivery',
+      subtitle: 'Not just code — results in production',
+      items: [
+        {
+          text: 'Experience in systems used at Brazil\'s largest private port terminal.',
+          context: 'iTracker · ICTSI — Porto do Rio de Janeiro',
+        },
+        {
+          text: 'Development of more than 6 corporate systems.',
+          context: 'Django · FastAPI · PostgreSQL · Docker',
+        },
+        {
+          text: 'More than 20 projects published on GitHub.',
+          context: 'Public repositories for technical evaluation',
+        },
+      ],
+    },
+
     // About
     about: {
       title: 'About Me',
-      role: 'Python Backend Developer',
-      description: 'with hands-on experience in real production systems. At iTracker (ICTSI — Brazil\'s largest private port terminal), I worked as the developer responsible for 6 enterprise systems — including a platform with an LLM/RAG pipeline, port access control system, a Digital Signage platform (running on ICTSI\'s intranet) and RPA bots automating financial workflows. ProFlow (proflow.pro) is live in real production, plus 2 live demo projects — LogiFlow and AgentesIA — available for recruiters and developers to explore. Looking for a team where I can grow, collaborate and deepen my expertise in Django · FastAPI · REST APIs.',
+      role: 'Python Backend Developer | Django · FastAPI · AI',
+      description: 'with hands-on experience in real production systems. At iTracker (ICTSI — Brazil\'s largest private port terminal), I led the design, build and deployment of 6 enterprise systems — including an LLM/RAG analytics platform, port access control, a Digital Signage platform (running on ICTSI\'s intranet) and RPA bots automating financial workflows. ProFlow (proflow.pro) is live in real production, with integrated payments, escrow and subscriptions. LogiFlow and Oráculo also have live demos for technical evaluation. I deliver backend systems that are observable, scalable and business-critical, and I am open to remote opportunities with global teams.',
       stats: {
         systems: 'Enterprise Systems',
         automation: 'Process Reduction',
@@ -525,27 +712,27 @@ export const translations = {
       },
       whyHireMe: {
         title: 'Why Hire Me?',
-        subtitle: 'Differentiators that make a difference',
+        subtitle: 'Backend, AI and systems that deliver business results',
         items: [
           {
-            title: 'Real Production Experience',
-            description: 'Django and FastAPI systems running in production, not just academic projects. Stack applied in real business contexts: port logistics, fintech and transportation.',
-            icon: 'chart',
+            title: 'Enterprise Systems',
+            description: 'Delivered and operated 6+ corporate systems at iTracker/ICTSI, including LLM/RAG analytics, Digital Signage, port access control and RPA bots that automated financial workflows.',
+            icon: 'briefcase',
           },
           {
-            title: 'Fast Learner',
-            description: 'In less than 2 years of development, I delivered enterprise systems and 4 SaaS products. I learn quickly, adapt and continuously seek to improve.',
+            title: 'Applied AI & RAG',
+            description: 'Production projects with OpenAI GPT-4, Claude 3, OpenSearch, Langflow and Docling. From AI assistants to strategic consultants with semantic indexing.',
             icon: 'code',
           },
           {
-            title: 'Collaboration & Teamwork',
-            description: 'Actively looking to work in a team, receive mentorship and contribute to collective growth. Clear technical communication and full openness to feedback.',
-            icon: 'users',
+            title: 'Backend Architecture',
+            description: 'REST APIs with Django, FastAPI, PostgreSQL, Redis, Docker, WebSocket. I care about performance, data integrity, test coverage and long-term maintainability.',
+            icon: 'chart',
           },
           {
-            title: 'Business Understanding',
-            description: 'Experience in logistics, fintech and telemedicine. I translate business needs into functional code focused on real impact.',
-            icon: 'briefcase',
+            title: 'SaaS in Production',
+            description: 'ProFlow.pro is live with real users, payments, escrow and subscriptions. LogiFlow and Oráculo have live demos for technical evaluation.',
+            icon: 'users',
           },
         ],
       },
@@ -712,6 +899,12 @@ export const translations = {
       viewMore: 'View More Projects',
       viewLess: 'View Less',
       viewAllProjects: 'View All Projects',
+      moreProjectsTitle: 'More Projects',
+      moreProjectsSubtitle: 'Other work and technical experiments',
+      showMoreProjects: 'Show Additional Projects',
+      hideMoreProjects: 'Hide Additional Projects',
+      contactAboutProject: 'Want something similar',
+      contactProjectSubject: 'I would like to discuss this project',
       topForRecruiters: 'Top 3 for Recruiters',
       topForRecruitersSubtitle: 'Selected projects for quick and complete evaluation',
       easyToEvaluate: 'Easy to Evaluate',
@@ -849,6 +1042,23 @@ export const translations = {
       opportunities: 'opportunities',
       and: 'and',
       collaborations: 'collaborations',
+      whatsapp: {
+        title: 'WhatsApp',
+        description: 'Quick response for questions, proposals and urgent projects',
+        action: 'Send message',
+        label: 'Chat on WhatsApp',
+      },
+      projectType: {
+        label: 'Project Type',
+        placeholder: 'Select the project type',
+        options: {
+          backend: 'Backend API',
+          ai: 'AI / Machine Learning',
+          corporate: 'Corporate System',
+          automation: 'Automation',
+          other: 'Other',
+        },
+      },
       pjServices: {
         title: 'B2B Services',
         subtitle: 'Registered company for service provision',
@@ -861,6 +1071,66 @@ export const translations = {
         description: 'Registered and qualified company for B2B services with invoice issuing',
         badge: 'ACTIVE CNPJ',
       },
+    },
+
+    // Featured Projects
+    featuredProjects: {
+      title: 'Featured Projects',
+      subtitle: 'Architecture, AI and real systems in production',
+      problem: 'Problem',
+      solution: 'Solution',
+      architecture: 'Architecture',
+      keyResults: 'Results',
+      caseStudy: 'View Case Study',
+      viewDemo: 'Demo',
+      viewCode: 'GitHub',
+      items: [
+        {
+          id: 'oraculo',
+          title: 'Oráculo IA',
+          role: 'Backend Engineer / AI Integration',
+          problem: 'Companies lose strategic decisions because scattered data (spreadsheets, PDFs, legacy systems) is not turned into actionable insights quickly.',
+          solution: 'AI strategic consultant that ingests documents, runs an OpenRAG pipeline with OpenSearch + Langflow + Docling and answers in natural language with verifiable sources.',
+          architecture: 'FastAPI · OpenSearch · Langflow · Docling · Docker · React · OpenAI',
+          results: [
+            'OpenRAG pipeline with semantic indexing',
+            'Full containerization with Docker',
+            'Answers with source citations',
+          ],
+        },
+        {
+          id: 'proflow',
+          title: 'ProFlow AI',
+          role: 'Full Stack / Backend Lead',
+          problem: 'Brazilian freelancers struggle with payment insecurity, wrong pricing and lack of automation in proposals and contracts.',
+          solution: 'Complete SaaS with 4 pillars: AI consulting (GPT-4), escrow payment (Mercado Pago + Asaas), reputation with KYC and gamified onboarding.',
+          architecture: 'Django · PostgreSQL · Vue.js 3 · WebSocket · Redis · OpenAI GPT-4 · Mercado Pago · Asaas',
+          results: [
+            'Own SaaS in production (proflow.pro)',
+            'Real-time chat and virtual wallet with PIX',
+            'Recurring subscriptions and anti-fraud escrow',
+          ],
+        },
+        {
+          id: 'logiflow',
+          title: 'LogiFlow CRM',
+          role: 'Backend Engineer / System Integrations',
+          problem: 'Transportation and logistics companies use isolated systems for sales, operations, billing and tracking, causing rework and delays.',
+          solution: 'SaaS CRM unifying commercial, operational and fiscal management with 4 integrated apps (CRM, Driver App, Customer Portal, Institutional Site).',
+          architecture: 'FastAPI · PostgreSQL · Redis · Vue.js 3 · WebSocket · ERPs (Omie/Bling/Tiny) · WhatsApp · Mercado Pago · GPS',
+          results: [
+            '4 integrated applications in a single stack',
+            'Integrations with ERPs, WhatsApp and GPS tracking',
+            'CT-e/MDF-e issuance and automated billing',
+          ],
+        },
+      ],
+    },
+
+    // Floating WhatsApp
+    floatingWhatsApp: {
+      tooltip: 'Chat with me on WhatsApp',
+      message: 'Hello Leonardo, I saw your portfolio and would like to discuss a project.',
     },
 
     // Footer
@@ -916,6 +1186,46 @@ export const translations = {
           isLinkedIn: true,
         },
       ],
+    },
+
+    // Engineering Impact
+    engineeringImpact: {
+      title: 'Engineering Impact',
+      subtitle: 'Technical outcomes that drive business value',
+      items: {
+        enterprise: {
+          title: 'Enterprise Systems',
+          description: 'Systems running at the largest private port terminal in Brazil, with thousands of internal users and operational criticality.',
+        },
+        saas: {
+          title: 'SaaS with Payments',
+          description: 'ProFlow.pro with escrow payments, recurring subscriptions, PIX and integration with Mercado Pago and Asaas.',
+        },
+        multitenant: {
+          title: 'Multi-Tenant',
+          description: 'Architecture isolating data per company in LogiFlow, ProFlow and Oráculo, ready to scale.',
+        },
+        realtime: {
+          title: 'Real-Time Systems',
+          description: 'WebSocket + Redis for chat, notifications, status updates and Digital Signage in production.',
+        },
+        ai: {
+          title: 'AI Applications',
+          description: 'GPT-4, Claude 3, OpenRAG, Langflow and Docling in production for consulting, proposals and document analysis.',
+        },
+        integrations: {
+          title: 'Integrations & APIs',
+          description: 'ERP Omie/Bling/Tiny, WhatsApp, GPS, CT-e/MDF-e, tax and RPA automations connected to legacy systems.',
+        },
+        production: {
+          title: 'Production Deployment',
+          description: 'Docker, Vercel, CI/CD, Linux servers and real applications serving clients and end users.',
+        },
+        security: {
+          title: 'Security & Compliance',
+          description: 'JWT, KYC, escrow, RBAC, audit logs and sensitive data separation per client.',
+        },
+      },
     },
   },
 };

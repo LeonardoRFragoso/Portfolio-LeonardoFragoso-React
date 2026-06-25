@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-leonardo-fragoso-react.vercel.app/sitemap.xml
