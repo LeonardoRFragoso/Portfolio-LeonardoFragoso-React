@@ -1,8 +1,7 @@
 import { useState, useMemo } from "react";
-import { Github, ExternalLink, ChevronLeft, ChevronRight, Eye, MessageCircle, Filter, Clock, Zap, Star, Award, ChevronDown, ChevronUp, Rocket, Shield, Brain, TrendingUp } from "lucide-react";
+import { Github, ExternalLink, ChevronLeft, ChevronRight, Eye, MessageCircle, Filter, Clock, Zap, Star, Award, Rocket, Shield, Brain, TrendingUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "../i18n";
-import { trackEvent } from "../utils/analytics";
 
 interface DemoLink {
   label: string;
@@ -35,7 +34,6 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [activeFilter, setActiveFilter] = useState<FilterType>('all');
-  const [showMoreProjects, setShowMoreProjects] = useState(false);
   const projects = useMemo<Project[]>(() => [
     // #1 - ProFlow (FLAGSHIP)
     {
@@ -318,8 +316,6 @@ export default function Projects() {
   }, [activeFilter, mainProjects]);
 
   const filteredProjects = useMemo(() => allFilteredProjects, [allFilteredProjects]);
-
-  const moreProjects = useMemo(() => projects.filter(p => p.tier === 3), [projects]);
 
   const filters: { key: FilterType; label: string }[] = [
     { key: 'all', label: t.projects.filterAll },
@@ -812,126 +808,6 @@ export default function Projects() {
         </AnimatePresence>
 
       </div>
-
-      {/* More Projects Section */}
-      {activeFilter === 'all' && moreProjects.length > 0 && (
-        <motion.div
-          className="mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white/80 mb-2">
-              {t.projects.moreProjectsTitle}
-            </h3>
-            <p className="text-white/50 text-sm">
-              {t.projects.moreProjectsSubtitle}
-            </p>
-          </div>
-
-          <motion.button
-            onClick={() => setShowMoreProjects(!showMoreProjects)}
-            className="w-full flex items-center justify-center space-x-3 px-8 py-4 bg-dark-900/40 border-2 border-white/10 hover:border-accent-400/40 rounded-xl text-white/70 font-semibold transition-all duration-300 hover:text-white"
-            whileHover={{ scale: 1.01 }}
-            whileTap={{ scale: 0.99 }}
-          >
-            {showMoreProjects ? (
-              <>
-                <ChevronUp className="w-5 h-5 text-accent-400" />
-                <span>{t.projects.hideMoreProjects}</span>
-              </>
-            ) : (
-              <>
-                <ChevronDown className="w-5 h-5 text-accent-400" />
-                <span>{t.projects.showMoreProjects}</span>
-                <span className="px-2 py-1 bg-accent-500/20 text-accent-300 text-xs rounded-full">
-                  +{moreProjects.length}
-                </span>
-              </>
-            )}
-          </motion.button>
-
-          <AnimatePresence>
-            {showMoreProjects && (
-              <motion.div
-                initial={{ opacity: 0, height: 0 }}
-                animate={{ opacity: 1, height: 'auto' }}
-                exit={{ opacity: 0, height: 0 }}
-                transition={{ duration: 0.4 }}
-                className="overflow-hidden"
-              >
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-                  {moreProjects.map((project, index) => (
-                    <motion.div
-                      key={`more-${project.title}-${index}`}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3, delay: index * 0.05 }}
-                      className="group relative rounded-xl overflow-hidden bg-dark-900/40 border border-white/10 hover:border-accent-400/30 transition-all duration-300"
-                    >
-                      <div className="relative h-48 overflow-hidden">
-                        <img
-                          src={project.images[0]}
-                          alt={project.title}
-                          width="400"
-                          height="192"
-                          loading="lazy"
-                          decoding="async"
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                      </div>
-                      <div className="p-4 space-y-3">
-                        <h4 className="text-lg font-bold text-white group-hover:text-accent-300 transition-colors">
-                          {project.title}
-                        </h4>
-                        <p className="text-white/60 text-sm line-clamp-2">
-                          {project.description}
-                        </p>
-                        <div className="flex flex-wrap gap-1">
-                          {project.tags.slice(0, 4).map((tag, idx) => (
-                            <span key={idx} className="px-2 py-0.5 rounded-full text-xs bg-accent-500/10 text-accent-300 border border-accent-500/20">
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
-                        <div className="flex items-center gap-3 pt-2">
-                          {project.github && (
-                            <a
-                              href={project.github}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-white/70 hover:text-accent-400 transition-colors"
-                              onClick={() => trackEvent('project_github_click', { project: project.title })}
-                              aria-label={`${t.projects.code} - ${project.title}`}
-                            >
-                              <Github className="w-4 h-4" />
-                            </a>
-                          )}
-                          {project.demo && (
-                            <a
-                              href={project.demo}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              className="text-white/70 hover:text-accent-400 transition-colors"
-                              onClick={() => trackEvent('project_demo_click', { project: project.title })}
-                              aria-label={`${t.projects.visitSite} - ${project.title}`}
-                            >
-                              <ExternalLink className="w-4 h-4" />
-                            </a>
-                          )}
-                        </div>
-                      </div>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-        </motion.div>
-      )}
 
       {/* Modal for Image Gallery */}
       <AnimatePresence>
