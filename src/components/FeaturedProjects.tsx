@@ -15,6 +15,17 @@ const projectLinks: Record<string, { github: string; demo?: string }> = {
     github: "https://github.com/LeonardoRFragoso/LogiFlow",
     demo: "https://logi-flow-wuhp.vercel.app",
   },
+  pyscript: {
+    github: "https://github.com/LeonardoRFragoso/PyScriptTech_React",
+    demo: "https://py-script-tech-react.vercel.app/",
+  },
+  portfolio: {
+    github: "https://github.com/LeonardoRFragoso/Portfolio-LeonardoFragoso-React",
+    demo: "https://portfolio-leonardo-fragoso-react.vercel.app/",
+  },
+  digitalsignage: {
+    github: "https://github.com/LeonardoRFragoso/Digital-Signage-Platform",
+  },
 };
 
 export default function FeaturedProjects() {
