@@ -123,6 +123,8 @@ export default function Projects() {
       quickEval: 'github',
       complexity: 5,
       tier: 2,
+      showInMainGrid: true,
+      priority: 6,
     },
     // #6 - Não-Conformidades — Python/Django, ICTSI enterprise
     {
@@ -256,8 +258,6 @@ export default function Projects() {
       quickEval: 'github',
       complexity: 5,
       tier: 2,
-      showInMainGrid: true,
-      priority: 6,
     },
     // #16 - Base Corporativa — e-commerce, não está no CV atual
     {
