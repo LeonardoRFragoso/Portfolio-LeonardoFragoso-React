@@ -294,7 +294,7 @@ export default function Projects() {
     {
       title: t.projects.projectsList[18].title,
       description: t.projects.projectsList[18].description,
-      images: ["/images/oraculo/oraculo1.png"],
+      images: ["/images/oraculo/1.png"],
       tags: ["Python", "FastAPI", "OpenSearch", "Langflow", "Docling", "Docker", "React", "OpenAI"],
       github: "https://github.com/LeonardoRFragoso/Oraculo",
       featured: true,

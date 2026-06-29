@@ -18,7 +18,7 @@ const projectLinks: Record<string, { github: string; demo?: string }> = {
 };
 
 const projectImages: Record<string, string> = {
-  oraculo: "/images/oraculo/oraculo1.png",
+  oraculo: "/images/oraculo/1.png",
   proflow: "/images/proflow/proflow.png",
   logiflow: "/images/LogiFlow/site-divulgacao/1.png",
 };
