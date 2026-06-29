@@ -15,26 +15,12 @@ const projectLinks: Record<string, { github: string; demo?: string }> = {
   logiflow: {
     github: "https://github.com/LeonardoRFragoso/LogiFlow",
   },
-  pyscript: {
-    github: "https://github.com/LeonardoRFragoso/PyScriptTech_React",
-    demo: "https://py-script-tech-react.vercel.app/",
-  },
-  portfolio: {
-    github: "https://github.com/LeonardoRFragoso/Portfolio-LeonardoFragoso-React",
-    demo: "https://portfolio-leonardo-fragoso-react.vercel.app/",
-  },
-  digitalsignage: {
-    github: "https://github.com/LeonardoRFragoso/Digital-Signage-Platform",
-  },
 };
 
 const projectImages: Record<string, string> = {
   oraculo: "/images/oraculo/1.png",
   proflow: "/images/proflow/proflow.png",
   logiflow: "/images/LogiFlow/site-divulgacao/1.png",
-  pyscript: "/images/PyScriptTech/1.png",
-  portfolio: "/images/Leo-Perfil.png",
-  digitalsignage: "/images/digital-signage/1.jpg",
 };
 
 export default function CaseStudy() {
