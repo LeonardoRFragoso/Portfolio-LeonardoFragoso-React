@@ -388,6 +388,10 @@ export const translations = {
           title: 'Oráculo — Consultor Estratégico com IA',
           description: 'Consultor estratégico com IA com pipeline OpenRAG completo. Interface estilo ChatGPT em React, analytics preditivos, dashboard executivo, gestão de orçamento e metas, e integração universal com dados de nuvem para logística e dados comerciais. Stack: OpenSearch · Langflow · Docling — totalmente conteinerizado em Docker.',
         },
+        {
+          title: 'Portfolio Leonardo Fragoso',
+          description: 'Portfólio profissional em React com TypeScript, Vite, Tailwind CSS e Framer Motion. Inclui internacionalização (PT/EN), SEO otimizado com meta tags, sitemap, robots.txt, prerender para crawlers, CTAs de WhatsApp/Email e analytics. Apresentação unificada de projetos, stack e experiência para recrutadores.',
+        },
       ],
     },
 
@@ -1001,6 +1005,10 @@ export const translations = {
         {
           title: 'Oráculo — AI Strategic Decision Consultant',
           description: 'AI-powered strategic consultant with a full OpenRAG pipeline. ChatGPT-style React interface, predictive analytics, executive dashboard, budget & goal management, and universal cloud data integration for logistics and commercial data. Stack: OpenSearch · Langflow · Docling — fully containerized in Docker.',
+        },
+        {
+          title: 'Leonardo Fragoso Portfolio',
+          description: 'Professional portfolio built with React, TypeScript, Vite, Tailwind CSS and Framer Motion. Includes internationalization (PT/EN), SEO optimization with meta tags, sitemap, robots.txt, prerender for crawlers, WhatsApp/Email CTAs and analytics. Unified presentation of projects, stack and experience for recruiters.',
         },
       ],
     },

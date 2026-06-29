@@ -25,6 +25,8 @@ interface Project {
   topForRecruiters?: boolean;
   flagship?: boolean;
   tier?: 1 | 2 | 3;
+  showInMainGrid?: boolean;
+  priority?: number;
 }
 
 type FilterType = 'all' | 'saas' | 'ecommerce' | 'ai' | 'enterprise' | 'web';
@@ -51,6 +53,8 @@ export default function Projects() {
       complexity: 5,
       topForRecruiters: true,
       tier: 1,
+      showInMainGrid: true,
+      priority: 2,
     },
     // #2 - AgentesIA — IA multi-agente, demo ao vivo
     {
@@ -88,6 +92,8 @@ export default function Projects() {
       complexity: 5,
       topForRecruiters: true,
       tier: 1,
+      showInMainGrid: true,
+      priority: 3,
     },
     // #4 - Assistente Financeiro WhatsApp — Python/FastAPI + IA
     {
@@ -234,7 +240,9 @@ export default function Projects() {
       category: ['web'],
       quickEval: '2-3',
       complexity: 3,
-      tier: 3,
+      tier: 2,
+      showInMainGrid: true,
+      priority: 4,
     },
     // #15 - APM Platform — Java/Spring Boot
     {
@@ -248,6 +256,8 @@ export default function Projects() {
       quickEval: 'github',
       complexity: 5,
       tier: 2,
+      showInMainGrid: true,
+      priority: 6,
     },
     // #16 - Base Corporativa — e-commerce, não está no CV atual
     {
@@ -304,16 +314,39 @@ export default function Projects() {
       quickEval: '4-5',
       complexity: 5,
       topForRecruiters: true,
+      showInMainGrid: true,
+      priority: 1,
+    },
+    // #20 - Portfolio Leonardo Fragoso — este site
+    {
+      title: t.projects.projectsList[19].title,
+      description: t.projects.projectsList[19].description,
+      images: ["/images/Leo-Perfil.png"],
+      tags: ["React 18", "TypeScript", "Vite", "Tailwind CSS", "Framer Motion", "SEO"],
+      github: "https://github.com/LeonardoRFragoso/Portfolio-LeonardoFragoso-React",
+      demo: "https://portfolio-leonardo-fragoso-react.vercel.app",
+      featured: true,
+      saas: true,
+      category: ['web'],
+      quickEval: '2-3',
+      complexity: 3,
+      tier: 2,
+      showInMainGrid: true,
+      priority: 5,
     },
   ], [t]);
 
   const mainProjects = useMemo(() => projects.filter(p => p.tier !== 3), [projects]);
 
   const allFilteredProjects = useMemo(() => {
-    // Se filtro é 'all', exclui o ProFlow (flagship) pois já aparece na seção Hero e mantém apenas tier 1/2
-    if (activeFilter === 'all') return mainProjects.filter(p => !p.flagship);
+    // Se filtro é 'all', mostra os projetos curados com showInMainGrid ordenados por priority
+    if (activeFilter === 'all') {
+      return projects
+        .filter(p => p.showInMainGrid)
+        .sort((a, b) => (a.priority || 999) - (b.priority || 999));
+    }
     return mainProjects.filter(project => project.category.includes(activeFilter));
-  }, [activeFilter, mainProjects]);
+  }, [activeFilter, mainProjects, projects]);
 
   const filteredProjects = useMemo(() => allFilteredProjects, [allFilteredProjects]);
 
